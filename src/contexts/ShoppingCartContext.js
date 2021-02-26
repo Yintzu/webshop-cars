@@ -15,13 +15,16 @@ const ShoppingCartProvider = (props) => {
         }
     ]);
 
+    // Will connect to buy-buttons later
+    // Set the cart array by creating a new array, adding the new item at the front of the array, then spreading out the old array after.
     const addToCart = (newItem) => {
         setShoppingCartItems([newItem, ...shoppingCartItems]);
     }
 
+    // Will connect to "remove"-buttons
+    // Removes the clicked item using filter
+    // Might want to use the vin-number attached to each car to compare later
     const removeFromCart = (itemToRemove) => {
-        // If it does not work like this later
-        // Check if vin-number matches later, when we have the correct car-objects in the array.
         setShoppingCartItems(shoppingCartItems.filter(item => item !== itemToRemove));
     }
 
