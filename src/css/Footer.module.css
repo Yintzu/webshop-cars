@@ -1,0 +1,23 @@
+.footer {
+    background-color: lightgrey;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    font-size: .7rem;
+}
+.navlink {
+    font-size: 1rem;
+}
+.link, .navlink {
+    text-decoration: none;
+    color: rgb(37, 37, 37);
+}
+.link:hover, .navlink:hover {
+    color: white;
+}
+.container {
+    margin: 2rem;
+}
+.footer p {
+    margin-top: .5rem;
+}
