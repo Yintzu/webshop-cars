@@ -5,17 +5,21 @@
   padding: 1rem;
 }
 
-a {
+.cartIcon, .logo, .links {
   color: #333;
   text-decoration: none;
 }
 
-.navLinks {
-  margin-left: 2rem;
+.cartIcon:hover, .logo:hover, .links:hover {
+  color: #111;
 }
 
-.navLinks a {
+.links {
   margin: 0 .5rem;
+}
+
+.navLinks {
+  margin-left: 2rem;
 }
 
 .active {
