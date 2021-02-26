@@ -9,7 +9,10 @@ const Navbar = () => {
                 <NavLink className={style.links} activeClassName={style.active} exact to="/">Home</NavLink>
                 <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
             </div> 
-            <NavLink className={style.cartIcon} exact to="/checkout">CART</NavLink>
+            <NavLink className={style.cartIcon} exact to="/checkout">
+                    <div className={style.numOfItems}>1</div>
+                    <img className={style.img} src="./assets/icons/cart-icon.png"/>
+            </NavLink>
         </nav>
      );
 }

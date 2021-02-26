@@ -3,6 +3,7 @@
   background-color: rgb(190, 190, 190);
   display: flex;
   padding: 1rem;
+  align-items: center;
 }
 
 .cartIcon, .logo, .links {
@@ -27,5 +28,30 @@
 }
 
 .cartIcon {
+  position: relative;
   margin-left: auto;
+  margin-right: .5rem;
+  width: 35px;
+}
+
+.cartIcon:active {
+  transform: scale(1.05);
+}
+
+.img {
+  width: 100%;
+}
+
+.numOfItems {
+  font-size: .7rem;
+  font-weight: bold;
+  border-radius: 4px;
+  color: #eee;
+  position: absolute;
+  right: -4px;
+  top: -6px;
+  padding: 2px 7px;
+  background: linear-gradient(183deg, rgb(107, 195, 219) 0%, rgb(22, 109, 117) 100%);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.08),
+              inset 1px 1px 1px rgba(255, 255, 255, 0.25);
 }
