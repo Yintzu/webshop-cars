@@ -5,11 +5,12 @@ import About from './pages/About'
 import Checkout from './pages/Checkout'
 import Confirmation from './pages/Confirmation'
 import Details from './pages/Details'
-
+import ShoppingCartContext from "./contexts/ShoppingCartContext";
 
 function App() {
   return (
     <div className="App">
+    <ShoppingCartContext>
       <BrowserRouter>
         <Navbar />
         <Route exact path="/" component={Home}/>
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/confirmation" component={Confirmation}/>
         <Route exact path="/details" component={Details}/>
       </BrowserRouter>
+    </ShoppingCartContext>
     </div>
   );
 }
