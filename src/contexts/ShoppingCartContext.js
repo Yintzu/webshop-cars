@@ -13,15 +13,21 @@ const ShoppingCartProvider = (props) => {
             name: "test two",
             year: 24
         }
-    ])
+    ]);
 
+    const addToCart = (newItem) => {
+        setShoppingCartItems([newItem, ...shoppingCartItems]);
+    }
 
     const values = {
-        shoppingCartItems
+        shoppingCartItems,
+        addToCart,
     }
 
     return (
-        <ShoppingCartContext.Provider value={values}>{props.children}</ShoppingCartContext.Provider>
+        <ShoppingCartContext.Provider value={values}>
+            {props.children}
+        </ShoppingCartContext.Provider>
     );
 }
 
