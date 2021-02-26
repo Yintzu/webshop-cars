@@ -1,10 +1,12 @@
+import { NavLink } from 'react-router-dom';
 import style from '../css/Navbar.module.css';
 
 const Navbar = () => {
     return ( 
-        <div>
-            
-        </div>
+        <nav className={style.navbar}>
+            <NavLink exact to="/">Home</NavLink>
+            <NavLink exact to="/about">About</NavLink>
+        </nav>
      );
 }
  
