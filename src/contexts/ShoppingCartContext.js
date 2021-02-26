@@ -15,9 +15,13 @@ const ShoppingCartProvider = (props) => {
         }
     ]);
 
+    const addToCart = (newItem) => {
+        setShoppingCartItems([newItem, ...shoppingCartItems]);
+    }
 
     const values = {
-        shoppingCartItems
+        shoppingCartItems,
+        addToCart,
     }
 
     return (
