@@ -4,11 +4,12 @@ import About from './pages/About'
 import Checkout from './pages/Checkout'
 import Confirmation from './pages/Confirmation'
 import Details from './pages/Details'
-
+import ShoppingCartContext from "./contexts/ShoppingCartContext";
 
 function App() {
   return (
     <div className="App">
+    <ShoppingCartContext>
       <BrowserRouter>
         <Route exact path="/" component={Home}/>
         <Route exact path="/about" component={About}/>
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/confirmation" component={Confirmation}/>
         <Route exact path="/details" component={Details}/>
       </BrowserRouter>
+    </ShoppingCartContext>
     </div>
   );
 }
