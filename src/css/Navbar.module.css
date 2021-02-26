@@ -1,5 +1,27 @@
 .navbar {
   width: 100%;
-  background-color: peachpuff;
-  height: 40px;
+  background-color: rgb(190, 190, 190);
+  display: flex;
+  padding: 1rem;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+.navLinks {
+  margin-left: 2rem;
+}
+
+.navLinks a {
+  margin: 0 .5rem;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.cartIcon {
+  margin-left: auto;
 }

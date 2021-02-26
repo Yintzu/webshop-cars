@@ -5,9 +5,11 @@ const Navbar = () => {
     return ( 
         <nav className={style.navbar}>
             <NavLink exact to="/">A LOGO</NavLink>
-            <NavLink exact to="/">Home</NavLink>
-            <NavLink exact to="/about">About</NavLink>
-            <NavLink exact to="/checkout">CART</NavLink>
+            <div className={style.navLinks} activeClassName={style.active}>
+                <NavLink exact to="/">Home</NavLink>
+                <NavLink exact to="/about">About</NavLink>
+            </div> 
+            <NavLink className={style.cartIcon} exact to="/checkout">CART</NavLink>
         </nav>
      );
 }
