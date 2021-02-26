@@ -13,7 +13,7 @@ const ShoppingCartProvider = (props) => {
             name: "test two",
             year: 24
         }
-    ])
+    ]);
 
 
     const values = {
@@ -21,7 +21,9 @@ const ShoppingCartProvider = (props) => {
     }
 
     return (
-        <ShoppingCartContext.Provider value={values}>{props.children}</ShoppingCartContext.Provider>
+        <ShoppingCartContext.Provider value={values}>
+            {props.children}
+        </ShoppingCartContext.Provider>
     );
 }
 
