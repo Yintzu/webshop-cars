@@ -1,3 +1,5 @@
+import style from '../css/About.module.css';
+
 const About = () => {
     return ( 
         <div>
