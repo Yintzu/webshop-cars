@@ -19,9 +19,16 @@ const ShoppingCartProvider = (props) => {
         setShoppingCartItems([newItem, ...shoppingCartItems]);
     }
 
+    const removeFromCart = (itemToRemove) => {
+        // If it does not work like this later
+        // Check if vin-number matches later, when we have the correct car-objects in the array.
+        setShoppingCartItems(shoppingCartItems.filter(item => item !== itemToRemove));
+    }
+
     const values = {
         shoppingCartItems,
         addToCart,
+        removeFromCart,
     }
 
     return (
