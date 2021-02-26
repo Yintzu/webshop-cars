@@ -18,6 +18,14 @@ const Checkout = () => {
                         </div>
                     ))}
                 </div>
+                <div className="row">
+                    <div className={`col-12 col-sm-6 ${style.info}`}>
+                        <h1>Your info</h1>
+                    </div>
+                    <div className={`col-12 col-sm-6 ${style.payment}`}>
+                        <h1>Payment</h1>
+                    </div>
+                </div>
             </div>
         </div>
     );
