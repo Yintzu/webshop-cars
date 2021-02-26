@@ -20,10 +20,10 @@ const Checkout = () => {
                         ))}
                     </div>
                 </div>
-                <div className="row">
-                    <div className={`col-12 col-sm-6 ${style.info}`}>
-                        <h1>Your info</h1>
-                        <form>
+                <form>
+                    <div className="row">
+                        <div className={`col-12 col-sm-6 ${style.info}`}>
+                            <h1>Your info</h1>
                             <label htmlFor="firstName">First name</label>
                             <input type="text" id="firstName"></input>
 
@@ -32,7 +32,7 @@ const Checkout = () => {
 
                             <label htmlFor="address">Address</label>
                             <input type="text" id="address"></input>
-                            
+
                             <label htmlFor="postalnr">Postal number</label>
                             <input type="text" id="postalnr"></input>
 
@@ -44,12 +44,18 @@ const Checkout = () => {
 
                             <label htmlFor="email">E-mail</label>
                             <input type="text" id="email"></input>
-                        </form>
+                        </div>
+                        <div className={`col-12 col-sm-6 ${style.payment}`}>
+                            <h1>Payment options</h1>
+                            <input type="radio" id="card" value="card" name="radio"></input>
+                            <label htmlFor="card">Credit card</label>
+                            <input type="radio" id="invoice" value="invoice" name="radio"></input>
+                            <label htmlFor="invoice">Invoice</label>
+                            <input type="radio" id="swish" value="swish" name="radio"></input>
+                            <label htmlFor="swish">Swish</label>
+                        </div>
                     </div>
-                    <div className={`col-12 col-sm-6 ${style.payment}`}>
-                        <h1>Payment</h1>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     );
