@@ -1,5 +1,13 @@
 .shoppinglist{
-    width: 90%;
+    width: 100%;
     border: 1px solid black;
     margin: 2rem auto;
+}
+
+.info{
+    border: 1px solid black;
+}
+
+.payment{
+    border: 1px solid black;
 }
