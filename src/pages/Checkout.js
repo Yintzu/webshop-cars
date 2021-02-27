@@ -4,7 +4,7 @@ import style from '../css/Checkout.module.css';
 
 const Checkout = () => {
 
-    const { shoppingCartItems } = useContext(ShoppingCartContext)
+    const { shoppingCartItems, removeFromCart } = useContext(ShoppingCartContext)
 
     return (
         <div className="checkout">
@@ -12,27 +12,27 @@ const Checkout = () => {
                 <h1>Your shopping cart</h1>
                 <div className="row">
                     <div className={style.shoppinglist}>
-                        {shoppingCartItems.map((item, key) => (
-                            <div key={key} className={`row ${style.shoppingCartCard}`}>
-
-                                <div className="col-2">Image Placeholder</div>
-                                <div className="col-7">
-                                    <h2>{`${item.make} ${item.model}`}</h2>
-                                    <p>{`${item.descShort}`}</p>
+                        {shoppingCartItems.length == 0 ? <h2 className="text-center">No items in cart</h2> :
+                            shoppingCartItems.map((item, key) => (
+                                <div key={key} className={`row ${style.shoppingCartCard}`}>
+                                    <div className="col-2">Image Placeholder</div>
+                                    <div className="col-7">
+                                        <h2>{`${item.make} ${item.model}`}</h2>
+                                        <p>{`${item.descShort}`}</p>
+                                    </div>
+                                    <div className={`col-2 ${style.flexer}`}>
+                                        <p className="mb-0"><strong>{`${item.price} kr`}</strong></p>
+                                    </div>
+                                    <div className={`col-1 ${style.flexer}`}><span className={style.removeButton} onClick={() => removeFromCart(item)}>X</span></div>
                                 </div>
-                                <div className={`col-2 ${style.flexer}`}>
-                                    <p className="mb-0"><strong>{`${item.price} kr`}</strong></p>
-                                </div>
-                                <div className={`col-1 ${style.flexer}`}><span className={style.removeButton}>X</span></div>
-                            </div>
-                        ))}
+                            ))}
                     </div>
                 </div>
 
                 <form>
                     <div className="row">
                         <div className={`col-12 col-sm-6 ${style.info}`}>
-                            <h1>Your info</h1>
+                            <h2 className="text-center">Your info</h2>
 
                             <label htmlFor="firstName">First name</label>
                             <input className="form-control" type="text" id="firstName" required></input>
@@ -62,7 +62,7 @@ const Checkout = () => {
                         </div>
 
                         <div className={`col-12 col-sm-6 ${style.payment}`}>
-                            <h1>Payment options</h1>
+                            <h2 className="text-center">Payment options</h2>
                             <div>
                                 <input className={style.radioButton} type="radio" id="card" value="card" name="radio" required></input>
                                 <label htmlFor="card">Credit card</label>
