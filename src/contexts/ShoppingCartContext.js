@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const ShoppingCartContext = createContext();
 
@@ -39,6 +39,7 @@ const ShoppingCartProvider = (props) => {
             miles: 15226
           },
     ]);
+    const [cartTotal, setCartTotal] = useState(0);
 
     // Will connect to buy-buttons later
     // Set the cart array by creating a new array, adding the new item at the front of the array, then spreading out the old array after.
@@ -53,9 +54,14 @@ const ShoppingCartProvider = (props) => {
         setShoppingCartItems(shoppingCartItems.filter(item => item !== itemToRemove));
     }
 
+    // Adds the price of all items in cart together on change in cart-array
+    useEffect(() => {
+        setCartTotal(shoppingCartItems.reduce((sum, curr) => sum + curr.price, 0));
+    }, [shoppingCartItems]);
+
     // This function can be used to get date, time and day
     // For receipt only date is needed I think, the rest is "just in case"
-    // Can retrieve just the date with createTimeStamp()[0]
+    // Choose the one you need with createTimeStamp()[index], or save all in a variable
     const createTimeStamp = () => {
         const timestamp = new Date();
         const date = timestamp.toLocaleDateString('sv-SE');
@@ -71,6 +77,7 @@ const ShoppingCartProvider = (props) => {
         addToCart,
         removeFromCart,
         createTimeStamp,
+        cartTotal,
     }
 
     return (
