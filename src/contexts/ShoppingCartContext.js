@@ -59,7 +59,7 @@ const ShoppingCartProvider = (props) => {
     const createTimeStamp = () => {
         const timestamp = new Date();
         const date = timestamp.toLocaleDateString('sv-SE');
-        const time = timestamp.toLocaleDateString('sv-SE', { hour: '2-digit', minute: '2-digit' });
+        const time = timestamp.toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit' });
         const dayArray = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         const day = dayArray[timestamp.getDay()];
 
