@@ -4,7 +4,7 @@ import style from '../css/Checkout.module.css';
 
 const Checkout = () => {
 
-    const { shoppingCartItems } = useContext(ShoppingCartContext)
+    const { shoppingCartItems, removeFromCart } = useContext(ShoppingCartContext)
 
     return (
         <div className="checkout">
@@ -23,7 +23,7 @@ const Checkout = () => {
                                 <div className={`col-2 ${style.flexer}`}>
                                     <p className="mb-0"><strong>{`${item.price} kr`}</strong></p>
                                 </div>
-                                <div className={`col-1 ${style.flexer}`}><span className={style.removeButton}>X</span></div>
+                                <div className={`col-1 ${style.flexer}`}><span className={style.removeButton} onClick={() => removeFromCart(item)}>X</span></div>
                             </div>
                         ))}
                     </div>
