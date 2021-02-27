@@ -6,7 +6,7 @@ import style from '../css/Navbar.module.css';
 const Navbar = () => {
     // Importing cart from ShoppingCartContext
     // Using its length in render of cart icon
-    const { shoppingCartItems: cart } = useContext(ShoppingCartContext);
+    const { shoppingCartItems: cart, createTimeStamp } = useContext(ShoppingCartContext);
     const [onCartUpdate, setOnCartUpdate] = useState(false);
 
     // On change in cart, set onCartUpdate to true and then back to false after a short duration
@@ -30,6 +30,7 @@ const Navbar = () => {
                     { cart.length > 0 ? <div className={`${style.cartNumber} ${onCartUpdate ? style.cartUpdate : ''}`}><span>{cart.length}</span></div> : ''}
                     <img className={style.img} src="./assets/icons/cart-icon.png"/>
             </NavLink>
+            <div className={style.infoBar}></div>
         </nav>
      );
 }
