@@ -10,12 +10,20 @@ const Checkout = () => {
         <div className="checkout">
             <div className="container">
                 <h1>Your shopping cart</h1>
-                <div className="row text-center">
+                <div className="row">
                     <div className={style.shoppinglist}>
                         {shoppingCartItems.map((item, key) => (
-                            <div key={key}>
-                                <p>{item.name}</p>
-                                <p>{item.year}</p>
+                            <div key={key} className={`row ${style.shoppingCartCard}`}>
+
+                                <div className="col-2">Image Placeholder</div>
+                                <div className="col-7">
+                                    <h2>{`${item.make} ${item.model}`}</h2>
+                                    <p>{`${item.descShort}`}</p>
+                                </div>
+                                <div className={`col-2 ${style.flexer}`}>
+                                    <p className="mb-0"><strong>{`${item.price} kr`}</strong></p>
+                                </div>
+                                <div className={`col-1 ${style.flexer}`}><span className={style.removeButton}>X</span></div>
                             </div>
                         ))}
                     </div>
