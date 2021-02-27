@@ -40,7 +40,7 @@ const Navbar = () => {
                     <span>{`${createTimeStamp()[2]} ${createTimeStamp()[0]}`}</span>
                 </div>
                 <span className={style.totalSum}>
-                    {`${cart.length} ${itemS} in cart: ${cartTotal} kr`}
+                    {`${cart.length} ${itemS} in cart: ${new Intl.NumberFormat('sv-SE', { currency: 'SEK', style: 'decimal' }).format(cartTotal)} kr`}
                 </span>
             </div>
         </div>
