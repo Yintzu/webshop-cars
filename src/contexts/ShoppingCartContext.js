@@ -53,10 +53,24 @@ const ShoppingCartProvider = (props) => {
         setShoppingCartItems(shoppingCartItems.filter(item => item !== itemToRemove));
     }
 
+    // This function can be used to get date, time and day
+    // For receipt only date is needed I think, the rest is "just in case"
+    // Can retrieve just the date with createTimeStamp()[0]
+    const createTimeStamp = () => {
+        const timestamp = new Date();
+        const date = timestamp.toLocaleDateString('sv-SE');
+        const time = timestamp.toLocaleDateString('sv-SE', { hour: '2-digit', minute: '2-digit' });
+        const dayArray = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const day = dayArray[timestamp.getDay()];
+
+        return [date, time, day];
+    }
+
     const values = {
         shoppingCartItems,
         addToCart,
         removeFromCart,
+        createTimeStamp,
     }
 
     return (
