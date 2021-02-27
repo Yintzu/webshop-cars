@@ -10,7 +10,7 @@ const Navbar = () => {
     const [onCartUpdate, setOnCartUpdate] = useState(false);
 
     // On change in cart, set onCartUpdate to true and then back to false after a short duration
-    // While true, will have css-class with animation
+    // While true, the div in render will have a css-class with animation
     useEffect(() => {
         setOnCartUpdate(true);
         setTimeout(() => {
@@ -27,7 +27,7 @@ const Navbar = () => {
             </div> 
             <NavLink className={style.cartIcon} exact to="/checkout">
                     {/* Div with numbers will be displayed based on cart length, if 0 it won't be displayed at all */}
-                    { cart.length > 0 ? <div className={`${style.cartNumber} ${onCartUpdate ? style.cartUpdate : ''}`}>{cart.length}</div> : ''}
+                    { cart.length > 0 ? <div className={`${style.cartNumber} ${onCartUpdate ? style.cartUpdate : ''}`}><span>{cart.length}</span></div> : ''}
                     <img className={style.img} src="./assets/icons/cart-icon.png"/>
             </NavLink>
         </nav>
