@@ -18,6 +18,8 @@ const Navbar = () => {
         }, 400)
     }, [cart])
 
+    let itemS = cart.length === 1 ? 'item' : 'items';
+
     return ( 
         <div className={style.navContainer}>
             <nav className={style.navbar}>
@@ -37,7 +39,9 @@ const Navbar = () => {
                     <span>This is only a test: </span>
                     <span>{`${createTimeStamp()[2]} ${createTimeStamp()[0]}`}</span>
                 </div>
-                <span>{cartTotal}</span>
+                <span className={style.totalSum}>
+                    {`${cart.length} ${itemS} in cart: ${cartTotal} kr`}
+                </span>
             </div>
         </div>
      );
