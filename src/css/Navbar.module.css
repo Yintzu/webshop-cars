@@ -76,3 +76,9 @@
   animation-name: updateAnimation;
   animation-duration: .4s;
 }
+
+.infoBar {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(221, 221, 221);
+}
