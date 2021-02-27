@@ -1,3 +1,11 @@
+h1{
+    text-align: center;
+}
+
+input{
+    margin-bottom: 1rem;
+}
+
 .shoppinglist{
     width: 100%;
     border: 1px solid black;
@@ -11,3 +19,4 @@
 .payment{
     border: 1px solid black;
 }
+
