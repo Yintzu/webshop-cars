@@ -6,7 +6,7 @@ import style from '../css/Navbar.module.css';
 const Navbar = () => {
     // Importing cart from ShoppingCartContext
     // Using its length in render of cart icon
-    const { shoppingCartItems: cart, createTimeStamp } = useContext(ShoppingCartContext);
+    const { shoppingCartItems: cart, createTimeStamp, cartTotal } = useContext(ShoppingCartContext);
     const [onCartUpdate, setOnCartUpdate] = useState(false);
 
     // On change in cart, set onCartUpdate to true and then back to false after a short duration
@@ -37,6 +37,7 @@ const Navbar = () => {
                     <span>This is only a test: </span>
                     <span>{`${createTimeStamp()[2]} ${createTimeStamp()[0]}`}</span>
                 </div>
+                <span>{cartTotal}</span>
             </div>
         </div>
      );
