@@ -12,6 +12,24 @@ input{
     margin: 2rem auto;
 }
 
+.shoppingCartCard{
+    border: 1px solid lightslategray;
+    border-radius: 3px;
+    margin: 1rem 0.5rem;
+}
+
+.removeButton{
+    color: white;
+    background-color: red;
+    padding: 5px 12px;
+    border-radius: 3px;
+}
+
+.removeButton:hover{
+    cursor: pointer;
+    background-color: tomato;
+}
+
 .info{
     border: 1px solid black;
 }
@@ -22,4 +40,10 @@ input{
 
 .radioButton{
     margin-right: 1rem;
+}
+
+.flexer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
