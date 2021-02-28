@@ -36,7 +36,7 @@ const Checkout = () => {
                                         {`${shoppingCartItems.length} ${itemS} in cart`}
                                     </h3>
                                     <h3>
-                                        {`${new Intl.NumberFormat('sv-SE', { currency: 'SEK', style: 'decimal' }).format(cartTotal)} kr`}
+                                        {`Total: ${new Intl.NumberFormat('sv-SE', { currency: 'SEK', style: 'decimal' }).format(cartTotal)} kr`}
                                     </h3>
                                 </div>
                             </div>
@@ -77,21 +77,28 @@ const Checkout = () => {
                         </div>
 
                         <div className={`col-12 col-sm-6 ${style.payment}`}>
-                            <h2 className="text-center">Payment options</h2>
                             <div>
-                                <input className={style.radioButton} type="radio" id="card" value="card" name="radio" required></input>
-                                <label htmlFor="card">Credit card</label>
+                                <h2 className="text-center">Payment options</h2>
+                                <div>
+                                    <input className={style.radioButton} type="radio" id="card" value="card" name="radio" required></input>
+                                    <label htmlFor="card">Credit card</label>
+                                </div>
+                                <div>
+                                    <input className={style.radioButton} type="radio" id="invoice" value="invoice" name="radio"></input>
+                                    <label htmlFor="invoice">Invoice</label>
+                                </div>
+                                <div>
+                                    <input className={style.radioButton} type="radio" id="swish" value="swish" name="radio"></input>
+                                    <label htmlFor="swish">Swish</label>
+                                </div>
                             </div>
-                            <div>
-                                <input className={style.radioButton} type="radio" id="invoice" value="invoice" name="radio"></input>
-                                <label htmlFor="invoice">Invoice</label>
+                            <div className="mb-3">
+                                <hr />
+                                <h3 className="text-center">
+                                    {`Price total: ${new Intl.NumberFormat('sv-SE', { currency: 'SEK', style: 'decimal' }).format(cartTotal)} kr`}
+                                </h3>
+                                <button className="btn btn-success d-block mx-auto">Place order</button>
                             </div>
-                            <div>
-                                <input className={style.radioButton} type="radio" id="swish" value="swish" name="radio"></input>
-                                <label htmlFor="swish">Swish</label>
-                            </div>
-
-                            <button className="btn btn-success d-block mx-auto">Place order</button>
                         </div>
                     </div>
                 </form>
