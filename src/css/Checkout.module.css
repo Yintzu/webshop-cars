@@ -30,8 +30,15 @@ input{
     background-color: tomato;
 }
 
-.info, .payment{
+.info{
     border: 1px solid black;
+}
+
+.payment{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .radioButton{
