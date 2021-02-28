@@ -41,6 +41,13 @@ input{
     flex-direction: column;
 }
 
+.cardInfo{
+    background-color: peachpuff;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
 .radioButton{
     margin-right: 1rem;
 }
