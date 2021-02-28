@@ -72,11 +72,15 @@ const ShoppingCartProvider = (props) => {
         return [date, time, day];
     }
 
+    // Formats numbers into "100 000 kr"
+    const formatSum = (sum) => `${new Intl.NumberFormat('sv-SE', { currency: 'SEK', style: 'decimal' }).format(sum)} kr`;
+
     const values = {
         shoppingCartItems,
         addToCart,
         removeFromCart,
         createTimeStamp,
+        formatSum,
         cartTotal,
     }
 
