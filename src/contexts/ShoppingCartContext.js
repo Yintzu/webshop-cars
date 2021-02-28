@@ -41,6 +41,11 @@ const ShoppingCartProvider = (props) => {
     ]);
     const [cartTotal, setCartTotal] = useState(0);
 
+    // Adds the price of all items in cart together on change in cart-array
+    useEffect(() => {
+        setCartTotal(shoppingCartItems.reduce((sum, curr) => sum + curr.price, 0));
+    }, [shoppingCartItems]);
+
     // Will connect to buy-buttons later
     // Set the cart array by creating a new array, adding the new item at the front of the array, then spreading out the old array after.
     const addToCart = (newItem) => {
@@ -53,11 +58,6 @@ const ShoppingCartProvider = (props) => {
     const removeFromCart = (itemToRemove) => {
         setShoppingCartItems(shoppingCartItems.filter(item => item !== itemToRemove));
     }
-
-    // Adds the price of all items in cart together on change in cart-array
-    useEffect(() => {
-        setCartTotal(shoppingCartItems.reduce((sum, curr) => sum + curr.price, 0));
-    }, [shoppingCartItems]);
 
     // This function can be used to get date, time and day
     // For receipt only date is needed I think, the rest is "just in case"

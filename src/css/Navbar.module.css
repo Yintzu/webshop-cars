@@ -78,6 +78,8 @@
 }
 
 .infoBar {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   background-color: rgb(221, 221, 221);
   padding: .5rem 1rem;
