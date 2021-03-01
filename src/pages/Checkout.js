@@ -1,15 +1,36 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { ShoppingCartContext } from "../contexts/ShoppingCartContext";
+import { UserContext } from "../contexts/UserContext";
 import style from '../css/Checkout.module.css';
 
 const Checkout = () => {
 
-    const { shoppingCartItems, removeFromCart, cartTotal } = useContext(ShoppingCartContext)
+    const { shoppingCartItems, removeFromCart, cartTotal, formatSum } = useContext(ShoppingCartContext)
+    const {} = useContext(UserContext)
 
     const [radioStatus, setRadioStatus] = useState("");
+
+    const [formInput, setFormInput] = useState([]);
+
     const radioHandler = (e) => {
         setRadioStatus(e.target.value)
     }
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        let formInputObject = {};
+
+        document.querySelectorAll("form input").forEach((item) => {
+            if (item.type === "radio" && item.checked === true) {
+                formInputObject["payment"] = item.value
+            } else if (item.type !== "radio") {
+                formInputObject[item.id] = item.value;
+            }
+        })
+        setFormInput([formInputObject, ...formInput])
+    }
+
+    useEffect(()=> console.log(formInput), [formInput])
 
     let itemS = shoppingCartItems.length === 1 ? 'item' : 'items';
 
@@ -30,7 +51,7 @@ const Checkout = () => {
                                             <p>{`${item.descShort}`}</p>
                                         </div>
                                         <div className={`col-2 ${style.flexer}`}>
-                                            <p className="mb-0"><strong>{`${new Intl.NumberFormat('sv-SE', { currency: 'SEK', style: 'decimal' }).format(item.price)} kr`}</strong></p>
+                                            <p className="mb-0"><strong>{`${formatSum(item.price)}`}</strong></p>
                                         </div>
                                         <div className={`col-1 ${style.flexer}`}><span className={style.removeButton} onClick={() => removeFromCart(item)}>X</span></div>
                                     </div>
@@ -41,7 +62,7 @@ const Checkout = () => {
                                         {`${shoppingCartItems.length} ${itemS} in cart`}
                                     </h3>
                                     <h3>
-                                        {`Total: ${new Intl.NumberFormat('sv-SE', { currency: 'SEK', style: 'decimal' }).format(cartTotal)} kr`}
+                                        {`Total: ${formatSum(cartTotal)}`}
                                     </h3>
                                 </div>
                             </div>
@@ -49,16 +70,16 @@ const Checkout = () => {
                     </div>
                 </div>
 
-                <form>
+                <form onSubmit={submitHandler}>
                     <div className="row">
-                        <div className={`col-12 col-sm-6 ${style.info}`}>
+                        <div className={`col-12 col-sm-6 info ${style.info}`}>
                             <h2 className="text-center">Your info</h2>
 
                             <label htmlFor="firstName">First name</label>
                             <input className="form-control" type="text" id="firstName" required></input>
 
-                            <label htmlFor="surname">Surname</label>
-                            <input className="form-control" type="text" id="surname" required></input>
+                            <label htmlFor="lastName">Last name</label>
+                            <input className="form-control" type="text" id="lastName" required></input>
 
                             <label htmlFor="address">Address</label>
                             <input className="form-control" type="text" id="address" required></input>
@@ -78,7 +99,7 @@ const Checkout = () => {
                             <input className="form-control" type="text" id="phone" required></input>
 
                             <label htmlFor="email">E-mail</label>
-                            <input className="form-control" type="text" id="email" required></input>
+                            <input className="form-control" type="email" id="email" required></input>
                         </div>
 
                         <div className={`col-12 col-sm-6 ${style.payment}`}>
@@ -119,7 +140,7 @@ const Checkout = () => {
                             <div className="mb-3">
                                 <hr />
                                 <h3 className="text-center">
-                                    {`Price total: ${new Intl.NumberFormat('sv-SE', { currency: 'SEK', style: 'decimal' }).format(cartTotal)} kr`}
+                                    {`Price total: ${formatSum(cartTotal)}`}
                                 </h3>
                                 <button className="btn btn-success d-block mx-auto">Place order</button>
                             </div>
