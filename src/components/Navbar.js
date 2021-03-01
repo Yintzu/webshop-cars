@@ -27,6 +27,7 @@ const Navbar = () => {
                 <div className={style.navLinks}>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/">Home</NavLink>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
+                    <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Test</NavLink>
                 </div> 
                 <NavLink className={style.cartIcon} exact to="/checkout">
                         {/* Div with numbers will be displayed based on cart length, if 0 it won't be displayed at all */}
