@@ -1,12 +1,26 @@
 import {
     createContext,
-    useState
+    useState,
+    useEffect
 } from "react";
 export const CarContext = createContext()
 
 const CarContextProvider = (props) => {
     const [cars, setcars]= useState([])
-    console.log("hi");
+    
+    const createCarList  =() =>{
+        const carlist=require("../json/cars.json")
+        const carlists=carlist.map(car=>{ 
+            return {
+                ...car,
+                carImg:`./assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`
+            }
+        })
+        console.log(carlists);
+        setcars(carlists)
+    }
+    
+    
     const values={}
     return (
         <CarContext.Provider value={values}>
