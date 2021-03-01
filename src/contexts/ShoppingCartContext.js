@@ -52,7 +52,11 @@ const ShoppingCartProvider = (props) => {
     // Will connect to buy-buttons later
     // Set the cart array by creating a new array, adding the new item at the front of the array, then spreading out the old array after.
     const addToCart = (newItem) => {
-        setShoppingCartItems([newItem, ...shoppingCartItems]);
+        if (!shoppingCartItems.includes(newItem)) {
+            setShoppingCartItems([newItem, ...shoppingCartItems]);  
+        } else {
+            alert('this item is already in your cart')
+        }    
     }
 
     // Will connect to "remove"-buttons
