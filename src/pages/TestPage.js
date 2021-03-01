@@ -1,12 +1,14 @@
 import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { CarContext } from '../contexts/CarContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import style from '../css/TestPage.module.css';
 import Search from '../components/Search';
 
 const TestPage = () => {
-  const { cars } = useContext(CarContext);
   const { shoppingCartItems } = useContext(ShoppingCartContext);
+  const { cars, viewCar } = useContext(CarContext);
+  const history = useHistory();
   const { addToCart, removeFromCart } = useContext(ShoppingCartContext);
 
   return ( 
@@ -14,7 +16,7 @@ const TestPage = () => {
       <Search/>
       {cars.length ? 
         cars.map(car => (
-          <div key={car.vin} className={style.carCard}>
+          <div key={car.vin} className={style.carCard} onClick={() => viewCar(car, history)}>
             <div className={style.imgContainer}>
               <img src={car.carImg}></img>
             </div>
