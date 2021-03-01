@@ -14,7 +14,8 @@ const ShoppingCartProvider = (props) => {
             descShort: "in lectus pellentesque at nulla suspendisse potenti cras in purus eu",
             descLong: "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
             price: 554963,
-            miles: 15432
+            miles: 15432,
+            carImg: './assets/car-pictures/Chevrolet-Camaro-1973.jpg'
           },
           {
             make: "Pontiac",
@@ -25,7 +26,8 @@ const ShoppingCartProvider = (props) => {
             descShort: "purus sit amet nulla quisque arcu libero rutrum ac lobortis vel dapibus at diam",
             descLong: "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
             price: 299379,
-            miles: 12346
+            miles: 12346,
+            carImg: './assets/car-pictures/Pontiac-Montana SV6-2006.jpg'
           },
           {
             make: "Mercury",
@@ -36,7 +38,8 @@ const ShoppingCartProvider = (props) => {
             descShort: "purus sit amet nulla quisque arcu libero rutrum ac lobortis",
             descLong: "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
             price: 486455,
-            miles: 15226
+            miles: 15226,
+            carImg: './assets/car-pictures/Mercury-Mountaineer-2009.jpg'
           },
     ]);
     const [cartTotal, setCartTotal] = useState(0);
@@ -49,7 +52,11 @@ const ShoppingCartProvider = (props) => {
     // Will connect to buy-buttons later
     // Set the cart array by creating a new array, adding the new item at the front of the array, then spreading out the old array after.
     const addToCart = (newItem) => {
-        setShoppingCartItems([newItem, ...shoppingCartItems]);
+        if (!shoppingCartItems.includes(newItem)) {
+            setShoppingCartItems([newItem, ...shoppingCartItems]);  
+        } else {
+            alert('this item is already in your cart')
+        }    
     }
 
     // Will connect to "remove"-buttons
@@ -72,11 +79,15 @@ const ShoppingCartProvider = (props) => {
         return [date, time, day];
     }
 
+    // Formats numbers into "100 000 kr"
+    const formatSum = (sum) => `${new Intl.NumberFormat('sv-SE', { currency: 'SEK', style: 'decimal' }).format(sum)} kr`;
+
     const values = {
         shoppingCartItems,
         addToCart,
         removeFromCart,
         createTimeStamp,
+        formatSum,
         cartTotal,
     }
 

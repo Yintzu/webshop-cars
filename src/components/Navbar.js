@@ -6,7 +6,7 @@ import style from '../css/Navbar.module.css';
 const Navbar = () => {
     // Importing cart from ShoppingCartContext
     // Using its length in render of cart icon
-    const { shoppingCartItems: cart, createTimeStamp, cartTotal } = useContext(ShoppingCartContext);
+    const { shoppingCartItems: cart, createTimeStamp, cartTotal, formatSum } = useContext(ShoppingCartContext);
     const [onCartUpdate, setOnCartUpdate] = useState(false);
 
     // On change in cart, set onCartUpdate to true and then back to false after a short duration
@@ -27,6 +27,7 @@ const Navbar = () => {
                 <div className={style.navLinks}>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/">Home</NavLink>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
+                    <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Test</NavLink>
                 </div> 
                 <NavLink className={style.cartIcon} exact to="/checkout">
                         {/* Div with numbers will be displayed based on cart length, if 0 it won't be displayed at all */}
@@ -40,7 +41,7 @@ const Navbar = () => {
                     <span>{`${createTimeStamp()[2]} ${createTimeStamp()[0]}`}</span>
                 </div>
                 <span className={style.totalSum}>
-                    {`${cart.length} ${itemS} in cart: ${new Intl.NumberFormat('sv-SE', { currency: 'SEK', style: 'decimal' }).format(cartTotal)} kr`}
+                    {`${cart.length} ${itemS} in cart: ${formatSum(cartTotal)}`}
                 </span>
             </div>
         </div>
