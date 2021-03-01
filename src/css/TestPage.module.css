@@ -26,12 +26,21 @@
   border: none;
   background-color: rgb(146, 185, 206);
   padding: .2rem;
+  min-width: 100px;
   border-radius: 5px;
   margin-left: auto;
 }
 
+.removeBtn {
+  background-color: tomato;
+}
+
 .addToCartBtn:hover {
   background-color: rgb(123, 157, 175);
+}
+
+.removeBtn:hover {
+  background-color: rgb(201, 80, 58);
 }
 
 .imgContainer {
