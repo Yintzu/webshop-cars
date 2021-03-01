@@ -1,17 +1,19 @@
 import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { CarContext } from '../contexts/CarContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import style from '../css/TestPage.module.css';
 
 const TestPage = () => {
-  const { cars } = useContext(CarContext);
+  const history = useHistory();
+  const { cars, viewCar } = useContext(CarContext);
   const { addToCart } = useContext(ShoppingCartContext);
 
   return ( 
     <div className={style.testPageWrapper}>
       {cars.length ? 
         cars.map(car => (
-          <div key={car.vin} className={style.carCard}>
+          <div key={car.vin} className={style.carCard} onClick={() => viewCar(car, history)}>
             <div className={style.imgContainer}>
               <img src={car.carImg}></img>
             </div>

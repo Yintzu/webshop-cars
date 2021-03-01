@@ -6,33 +6,33 @@ import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 
 const Details = () => {
 
-    const { } = useContext(CarContext);
+    const { clickedCar } = useContext(CarContext);
     const { addToCart } = useContext(ShoppingCartContext);
 
     return ( 
         <div className={style.details}>
             <div className="row">
                 <div className={`col ${style.imageWrapper}`}>
-                    <img src="./assets/car-pictures/Chevrolet-Camaro-1973.jpg" alt="make model year"/>
+                    <img src={clickedCar.carImg} alt="make model year"/>
                 </div>
-                <div className={`col-4 ${style.buy}`}>
-                    <h3>Chevrolet Camaro 1973</h3>
-                    <p>city</p>
-                    <h4 className={style.price}>554 963 kr</h4>
-                    <button /* onClick={() => addToCart( )} */ className="btn btn-dark btn-lg" >Buy Car</button>
+                <div className={`col-md-4 ${style.buy}`}>
+                    <h3>{clickedCar.make} {clickedCar.model} {clickedCar.year}</h3>
+                    <p>{clickedCar.city}</p>
+                    <h4 className={style.price}>{clickedCar.price} kr</h4>
+                    <button onClick={() => addToCart(clickedCar)} className="btn btn-dark btn-lg" >Buy Car</button>
                 </div>
             </div>
             <div className="row">
                 <div className="col">
                     <ul>
-                        <li>make</li>
-                        <li>model</li>
-                        <li>year</li>
-                        <li>miles</li>
+                        <li>{clickedCar.make}</li>
+                        <li>{clickedCar.model}</li>
+                        <li>{clickedCar.year}</li>
+                        <li>{clickedCar.miles} miles</li>
                     </ul>
-                    <p>description description description description description description</p>
+                    <p>{clickedCar.descLong}</p>
                 </div>
-                <div className="col-4">
+                <div className="col-md-4">
                     Place some images here
                 </div>
             </div>

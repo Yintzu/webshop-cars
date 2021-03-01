@@ -6,7 +6,11 @@
 .buy {
     background: white;
     padding: 2rem;
-    margin: 0 1rem;
+    margin: .5rem auto;
+    margin-right: 1rem;
+}
+.imageWrapper {
+    margin: .5rem auto;
 }
 .imageWrapper img {
     width: 100%;
