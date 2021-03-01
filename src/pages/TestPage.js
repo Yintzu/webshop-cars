@@ -9,12 +9,12 @@ const TestPage = () => {
     <div className={style.testPageWrapper}>
       {cars.length ? 
         cars.map(car => (
-          <div className={style.carCard}>
-          <h5>{car.make}</h5>
-          <h5>{car.model}</h5>
-          <p>{car.year}</p>
-          <button className={style.addToCartBtn}>Add To Cart</button>
-        </div>
+          <div key={car.vin} className={style.carCard}>
+            <h5>{car.make}</h5>
+            <h5>{car.model}</h5>
+            <p>{car.year}</p>
+            <button className={style.addToCartBtn}>Add To Cart</button>
+          </div>
         ))
         
         : <div>Loading...</div>}
