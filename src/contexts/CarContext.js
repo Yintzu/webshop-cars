@@ -19,6 +19,9 @@ const CarContextProvider = (props) => {
         console.log(carlists);
         setcars(carlists)
     }
+    useEffect(()=>{
+        createCarList();
+    },[])
     
     
     const values={}
