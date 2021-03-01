@@ -10,8 +10,9 @@
   display: flex;
   align-items: center;
   margin-bottom: .5rem;
-  border: 1px solid black;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.24);
   padding: .5rem;
+  background-color: rgb(224, 232, 235);
 }
 
 .carCard * {
@@ -22,7 +23,7 @@
 .addToCartBtn {
   cursor: pointer;
   border: none;
-  background-color: rgb(140, 183, 207);
+  background-color: rgb(146, 185, 206);
   padding: .2rem;
   border-radius: 5px;
   margin-left: auto;
