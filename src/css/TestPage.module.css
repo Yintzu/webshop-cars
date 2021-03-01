@@ -1,5 +1,5 @@
 .testPageWrapper {
-  max-width: 500px;
+  max-width: 600px;
   margin: 1rem auto;
   border: 1px solid black;
   padding: 1rem;
@@ -31,4 +31,13 @@
 
 .addToCartBtn:hover {
   background-color: rgb(123, 157, 175);
+}
+
+.imgContainer {
+  width: 80px;
+  margin-right: .6rem;
+}
+
+.imgContainer img {
+  width: 100%;
 }
