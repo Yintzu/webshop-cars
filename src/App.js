@@ -7,10 +7,12 @@ import Confirmation from './pages/Confirmation';
 import Details from './pages/Details';
 import Footer from './components/Footer';
 import ShoppingCartContext from "./contexts/ShoppingCartContext";
+import CarContextProvider from './contexts/CarContext';
 
 function App() {
   return (
     <div className="App">
+      <CarContextProvider>
     <ShoppingCartContext>
       <BrowserRouter>
         <Navbar />
@@ -24,6 +26,7 @@ function App() {
         <Footer />
       </BrowserRouter>
     </ShoppingCartContext>
+      </CarContextProvider>
     </div>
   );
 }
