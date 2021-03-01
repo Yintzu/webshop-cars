@@ -7,7 +7,7 @@ const Checkout = () => {
 
     const { shoppingCartItems, removeFromCart, cartTotal, formatSum } = useContext(ShoppingCartContext)
     const { boughtCars, setBoughtCars } = useContext(UserContext)
-
+    // console.log(shoppingCartItems);
     const [radioStatus, setRadioStatus] = useState("");
 
     const [formInput, setFormInput] = useState([]);
@@ -28,10 +28,13 @@ const Checkout = () => {
             }
         })
         setFormInput([formInputObject, ...formInput])
-        setBoughtCars([shoppingCartItems, ...boughtCars])
+        setBoughtCars(shoppingCartItems, ...boughtCars)
     }
 
-    useEffect(()=> console.log(formInput), [formInput])
+    useEffect(()=> {
+        console.log("User info from orders:");
+        console.log(formInput)
+    }, [formInput])
 
     let itemS = shoppingCartItems.length === 1 ? 'item' : 'items';
 

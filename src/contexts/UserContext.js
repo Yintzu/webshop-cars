@@ -1,10 +1,15 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const UserContext = createContext();
 
 const UserContextProvider = (props) => {
 
-    const[boughtCars, setBoughtCars] = useState([]);
+    const [boughtCars, setBoughtCars] = useState([]);
+
+    useEffect(() => {
+        console.log("Bought cars:");
+        console.log(boughtCars)
+    }, [boughtCars])
 
     const values = {
         boughtCars,
