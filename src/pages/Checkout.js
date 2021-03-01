@@ -1,10 +1,12 @@
 import { useContext, useState, useEffect } from "react";
 import { ShoppingCartContext } from "../contexts/ShoppingCartContext";
+import { UserContext } from "../contexts/UserContext";
 import style from '../css/Checkout.module.css';
 
 const Checkout = () => {
 
     const { shoppingCartItems, removeFromCart, cartTotal, formatSum } = useContext(ShoppingCartContext)
+    const {} = useContext(UserContext)
 
     const [radioStatus, setRadioStatus] = useState("");
 
