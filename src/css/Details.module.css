@@ -1,0 +1,25 @@
+.details {
+    margin-top: 2rem;
+    background: lightgrey;
+    padding: 2rem;
+}
+.buy {
+    background: white;
+    padding: 2rem;
+    margin: .5rem auto;
+    margin-right: 1rem;
+}
+.imageWrapper {
+    margin: .5rem auto;
+}
+.imageWrapper img {
+    width: 100%;
+}
+.price {
+    margin: 2rem 0 1rem;
+}
+.details ul {
+    list-style-type: none;
+    margin-top: 1rem;
+    padding: 0;
+}

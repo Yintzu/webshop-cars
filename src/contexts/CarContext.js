@@ -3,11 +3,12 @@ import {
     useState,
     useEffect
 } from "react";
+
 export const CarContext = createContext()
 
 const CarContextProvider = (props) => {
     const [cars, setcars]= useState([])
-    
+
     const createCarList  =() =>{
         const carlist=require("../json/cars.json")
         const carlists=carlist.map(car=>{ 
@@ -24,7 +25,32 @@ const CarContextProvider = (props) => {
     },[])
     
     
-    const values={}
+    const [clickedCar, setClickedCar] = useState({});
+    const viewCar = (clickedCarData, history) => {
+        setClickedCar(clickedCarData);
+        history.push('/details') 
+    }
+    const [searchResult, setSearchResult] = useState([]);
+    const filterCars = (event, inputValue) => {
+        event.preventDefault();
+        let filteredCars = []
+        filteredCars = cars.filter(car => {
+            if (car.carImg.toLowerCase().includes(inputValue.toLowerCase())) {
+                return true
+            }
+        })
+        setSearchResult(filteredCars)
+        console.log(filteredCars)
+    }
+
+
+    const values={
+      cars,
+      viewCar,
+      clickedCar,
+      searchResult,
+      filterCars,
+    }
     return (
         <CarContext.Provider value={values}>
             {props.children}

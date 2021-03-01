@@ -4,7 +4,13 @@
   box-sizing: border-box; 
 }
 
+body {
+  padding-top: 120px;
+}
+
 .site-container {
   max-width: 900px;
   margin: 0 auto;
 }
+
+
