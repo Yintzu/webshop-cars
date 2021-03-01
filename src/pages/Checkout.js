@@ -6,7 +6,7 @@ import style from '../css/Checkout.module.css';
 const Checkout = () => {
 
     const { shoppingCartItems, removeFromCart, cartTotal, formatSum } = useContext(ShoppingCartContext)
-    const {} = useContext(UserContext)
+    const { boughtCars, setBoughtCars } = useContext(UserContext)
 
     const [radioStatus, setRadioStatus] = useState("");
 
@@ -28,6 +28,7 @@ const Checkout = () => {
             }
         })
         setFormInput([formInputObject, ...formInput])
+        setBoughtCars([shoppingCartItems, ...boughtCars])
     }
 
     useEffect(()=> console.log(formInput), [formInput])
