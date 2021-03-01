@@ -2,7 +2,7 @@ import styles from '../css/Confirmation.module.css';
 
 const Confirmation = () => {
     return ( 
-        <div className="container">
+        <div className="container-fluid">
           <h1 className={styles.confirmationHeading}>Thank you for your order</h1>
             <div className="row"> 
               <div className={`
