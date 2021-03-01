@@ -1,11 +1,13 @@
 import { useContext, useState, useEffect } from "react";
 import { ShoppingCartContext } from "../contexts/ShoppingCartContext";
+import { UserContext } from "../contexts/UserContext";
 import style from '../css/Checkout.module.css';
 
 const Checkout = () => {
 
     const { shoppingCartItems, removeFromCart, cartTotal, formatSum } = useContext(ShoppingCartContext)
-
+    const { boughtCars, setBoughtCars } = useContext(UserContext)
+    // console.log(shoppingCartItems);
     const [radioStatus, setRadioStatus] = useState("");
 
     const [formInput, setFormInput] = useState([]);
@@ -26,9 +28,13 @@ const Checkout = () => {
             }
         })
         setFormInput([formInputObject, ...formInput])
+        setBoughtCars(shoppingCartItems, ...boughtCars)
     }
 
-    useEffect(()=> console.log(formInput), [formInput])
+    useEffect(()=> {
+        console.log("User info from orders:");
+        console.log(formInput)
+    }, [formInput])
 
     let itemS = shoppingCartItems.length === 1 ? 'item' : 'items';
 
@@ -97,7 +103,7 @@ const Checkout = () => {
                             <input className="form-control" type="text" id="phone" required></input>
 
                             <label htmlFor="email">E-mail</label>
-                            <input className="form-control" type="text" id="email" required></input>
+                            <input className="form-control" type="email" id="email" required></input>
                         </div>
 
                         <div className={`col-12 col-sm-6 ${style.payment}`}>
