@@ -23,8 +23,10 @@ const CarContextProvider = (props) => {
         createCarList();
     },[])
     
-    
-    const values={}
+
+    const values={
+      cars,
+    }
     return (
         <CarContext.Provider value={values}>
             {props.children}
