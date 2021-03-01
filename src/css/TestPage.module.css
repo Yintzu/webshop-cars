@@ -3,7 +3,6 @@
   margin: 1rem auto;
   border: 1px solid black;
   padding: 1rem;
-
 }
 
 .carCard {
@@ -13,12 +12,16 @@
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.24);
   padding: .5rem;
   background-color: rgb(224, 232, 235);
-  cursor: pointer;
 }
 
 .carCard * {
   margin: 0;
   margin-right: .4rem;  
+}
+.imgTxtWrapper {
+  display: flex;
+  align-items: center; 
+  cursor: pointer;
 }
 
 .addToCartBtn {
