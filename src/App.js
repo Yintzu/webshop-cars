@@ -14,11 +14,13 @@ function App() {
     <ShoppingCartContext>
       <BrowserRouter>
         <Navbar />
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/about" component={About}/>
-        <Route exact path="/checkout" component={Checkout}/>
-        <Route exact path="/confirmation" component={Confirmation}/>
-        <Route exact path="/details" component={Details}/>
+        <div className="site-container">
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/about" component={About}/>
+          <Route exact path="/checkout" component={Checkout}/>
+          <Route exact path="/confirmation" component={Confirmation}/>
+          <Route exact path="/details" component={Details}/>
+        </div>
         <Footer />
       </BrowserRouter>
     </ShoppingCartContext>
