@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { CarContext } from '../contexts/CarContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import style from '../css/TestPage.module.css';
+import Search from '../components/Search';
 
 const TestPage = () => {
   const { cars } = useContext(CarContext);
@@ -9,6 +10,7 @@ const TestPage = () => {
 
   return ( 
     <div className={style.testPageWrapper}>
+      <Search/>
       {cars.length ? 
         cars.map(car => (
           <div key={car.vin} className={style.carCard}>
