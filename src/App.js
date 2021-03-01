@@ -6,6 +6,7 @@ import Checkout from './pages/Checkout';
 import Confirmation from './pages/Confirmation';
 import Details from './pages/Details';
 import Footer from './components/Footer';
+import TestPage from './pages/TestPage';
 import ShoppingCartContext from "./contexts/ShoppingCartContext";
 import CarContextProvider from './contexts/CarContext';
 import UserContext from './contexts/UserContext';

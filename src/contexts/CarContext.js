@@ -24,7 +24,9 @@ const CarContextProvider = (props) => {
     },[])
     
     
-    const values={}
+    const values={
+      cars,
+    }
     return (
         <CarContext.Provider value={values}>
             {props.children}
