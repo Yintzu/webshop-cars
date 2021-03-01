@@ -12,7 +12,14 @@ const Confirmation = () => {
               `}>                 
                 <h3>Order number: 1275758489</h3>
                   <p>Delivery details</p>
-                  
+                    <button type="button" 
+                    className={`
+                    ${styles.backButton}
+                    btn 
+                    btn-dark
+                   `}>Back</button>
+
+                    <button type="button" className="btn btn-info">Print</button>
               </div>
               <div className={`
                 ${styles.confirmationBox}
@@ -43,10 +50,12 @@ const Confirmation = () => {
                     <p>$650 000</p>
                  </div>
                 </div>
+               
               </div>
-                     
+               
             </div>
-            <button type="button" className="btn btn-secondary">Back</button>
+            
+            
         </div>
   
      );
