@@ -6,9 +6,10 @@ import style from '../css/TestPage.module.css';
 import Search from '../components/Search';
 
 const TestPage = () => {
-  const history = useHistory();
+  const { shoppingCartItems } = useContext(ShoppingCartContext);
   const { cars, viewCar } = useContext(CarContext);
-  const { addToCart } = useContext(ShoppingCartContext);
+  const history = useHistory();
+  const { addToCart, removeFromCart } = useContext(ShoppingCartContext);
 
   return ( 
     <div className={style.testPageWrapper}>
@@ -24,7 +25,11 @@ const TestPage = () => {
               <h5>{car.model}</h5>
               <p>{car.year}</p>
             </div>
-            <button onClick={() => addToCart(car)} className={`col-md-3 ${style.addToCartBtn}`}>Add To Cart</button>
+            { 
+            !shoppingCartItems.includes(car) ? 
+              <button onClick={() => addToCart(car)} className={`col-md-2 ${style.addToCartBtn}`}>Add To Cart</button> :
+              <button onClick={() => removeFromCart(car)} className={`col-md-2 ${style.addToCartBtn} ${style.removeBtn}`}>Remove</button>
+            }
           </div>
         ))
         
