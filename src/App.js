@@ -6,6 +6,7 @@ import Checkout from './pages/Checkout';
 import Confirmation from './pages/Confirmation';
 import Details from './pages/Details';
 import Footer from './components/Footer';
+import TestPage from './pages/TestPage';
 import ShoppingCartContext from "./contexts/ShoppingCartContext";
 import CarContextProvider from './contexts/CarContext';
 
@@ -19,6 +20,7 @@ function App() {
         <div className="site-container">
           <Route exact path="/" component={Home}/>
           <Route exact path="/about" component={About}/>
+          <Route exact path="/testpage" component={TestPage}/>
           <Route exact path="/checkout" component={Checkout}/>
           <Route exact path="/confirmation" component={Confirmation}/>
           <Route exact path="/details" component={Details}/>
