@@ -26,6 +26,7 @@ function App() {
           <Route exact path="/confirmation" component={Confirmation}/>
           <Route exact path="/details" component={Details}/>
         </div>
+        <CarCard></CarCard>
         <Footer />
       </BrowserRouter>
     </ShoppingCartContext>
