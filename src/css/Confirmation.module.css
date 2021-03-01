@@ -1,4 +1,16 @@
-.confirmation {
-    background-color: pink !important;
+
+.confirmationBox {
+    background-color: #eeeeee !important;
     padding: 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.confirmationHeading {
+    margin-top: 30px;
+}
+
+.backButton{
+    margin-right: 10px !important;
 }
