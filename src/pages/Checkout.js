@@ -97,7 +97,7 @@ const Checkout = () => {
                             <input className="form-control" type="text" id="phone" required></input>
 
                             <label htmlFor="email">E-mail</label>
-                            <input className="form-control" type="text" id="email" required></input>
+                            <input className="form-control" type="email" id="email" required></input>
                         </div>
 
                         <div className={`col-12 col-sm-6 ${style.payment}`}>
