@@ -4,7 +4,7 @@ import style from '../css/Checkout.module.css';
 
 const Checkout = () => {
 
-    const { shoppingCartItems, removeFromCart, cartTotal } = useContext(ShoppingCartContext)
+    const { shoppingCartItems, removeFromCart, cartTotal, formatSum } = useContext(ShoppingCartContext)
 
     const [radioStatus, setRadioStatus] = useState("");
     const radioHandler = (e) => {
@@ -30,7 +30,7 @@ const Checkout = () => {
                                             <p>{`${item.descShort}`}</p>
                                         </div>
                                         <div className={`col-2 ${style.flexer}`}>
-                                            <p className="mb-0"><strong>{`${new Intl.NumberFormat('sv-SE', { currency: 'SEK', style: 'decimal' }).format(item.price)} kr`}</strong></p>
+                                            <p className="mb-0"><strong>{`${formatSum(item.price)} kr`}</strong></p>
                                         </div>
                                         <div className={`col-1 ${style.flexer}`}><span className={style.removeButton} onClick={() => removeFromCart(item)}>X</span></div>
                                     </div>
@@ -41,7 +41,7 @@ const Checkout = () => {
                                         {`${shoppingCartItems.length} ${itemS} in cart`}
                                     </h3>
                                     <h3>
-                                        {`Total: ${new Intl.NumberFormat('sv-SE', { currency: 'SEK', style: 'decimal' }).format(cartTotal)} kr`}
+                                        {`Total: ${formatSum(cartTotal)}`}
                                     </h3>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@ const Checkout = () => {
                             <div className="mb-3">
                                 <hr />
                                 <h3 className="text-center">
-                                    {`Price total: ${new Intl.NumberFormat('sv-SE', { currency: 'SEK', style: 'decimal' }).format(cartTotal)} kr`}
+                                    {`Price total: ${formatSum(cartTotal)}`}
                                 </h3>
                                 <button className="btn btn-success d-block mx-auto">Place order</button>
                             </div>
