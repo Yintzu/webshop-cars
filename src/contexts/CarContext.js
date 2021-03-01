@@ -30,12 +30,26 @@ const CarContextProvider = (props) => {
         setClickedCar(clickedCarData);
         history.push('/details') 
     }
+    const [searchResult, setSearchResult] = useState([]);
+    const filterCars = (event, inputValue) => {
+        event.preventDefault();
+        let filteredCars = []
+        filteredCars = cars.filter(car => {
+            if (car.carImg.toLowerCase().includes(inputValue.toLowerCase())) {
+                return true
+            }
+        })
+        setSearchResult(filteredCars)
+        console.log(filteredCars)
+    }
 
 
     const values={
       cars,
       viewCar,
       clickedCar,
+      searchResult,
+      filterCars,
     }
     return (
         <CarContext.Provider value={values}>
