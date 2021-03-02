@@ -29,6 +29,7 @@ const CarContextProvider = (props) => {
         history.push(`/details/${clickedCar.vin}`) 
     }
 
+    /* Search function */
     const [searchResult, setSearchResult] = useState([]);
     const filterCars = (event, inputValue) => {
         event.preventDefault();
@@ -40,6 +41,8 @@ const CarContextProvider = (props) => {
         })
         setSearchResult(filteredCars)
         console.log(filteredCars)
+        
+        
     }
 
 

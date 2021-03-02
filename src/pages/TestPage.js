@@ -7,15 +7,17 @@ import Search from '../components/Search';
 
 const TestPage = () => {
   const { shoppingCartItems } = useContext(ShoppingCartContext);
-  const { cars, viewCar } = useContext(CarContext);
+  const { cars, viewCar, searchResult } = useContext(CarContext);
   const history = useHistory();
   const { addToCart, removeFromCart } = useContext(ShoppingCartContext);
+
+const renderList = searchResult.length ? searchResult : cars
 
   return ( 
     <div className={style.testPageWrapper}>
       <Search/>
-      {cars.length ? 
-        cars.map(car => (
+      {renderList.length ? 
+        renderList.map(car => (
           <div key={car.vin} data={car} className={style.carCard}>
             <div className={`col-md ${style.imgTxtWrapper}`} onClick={() => viewCar(car, history)}>
               <div className={style.imgContainer}>

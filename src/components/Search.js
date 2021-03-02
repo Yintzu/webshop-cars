@@ -8,7 +8,8 @@ const Search = () => {
 
     return (
         <div className={style.search}>
-            <form onSubmit={event => filterCars(event, inputValue)}>
+            <form onSubmit={event => {
+                filterCars(event, inputValue)}}>
                 <div className={style.input}>
                     <input type="text" placeholder="Search..." onChange={e => setInputValue(e.target.value)}/>
                     <button type="submit"><img src="./assets/icons/search-icon.png" alt="search"/></button>
