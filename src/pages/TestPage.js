@@ -16,7 +16,7 @@ const TestPage = () => {
       <Search/>
       {cars.length ? 
         cars.map(car => (
-          <div key={car.vin} className={style.carCard}>
+          <div key={car.vin} data={car} className={style.carCard}>
             <div className={`col-md ${style.imgTxtWrapper}`} onClick={() => viewCar(car, history)}>
               <div className={style.imgContainer}>
                 <img src={car.carImg}></img>
