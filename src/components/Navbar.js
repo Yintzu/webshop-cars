@@ -23,7 +23,7 @@ const Navbar = () => {
     return ( 
         <div className={style.navContainer}>
             <nav className={style.navbar}>
-                <NavLink className={style.logo} exact to="/">A LOGO</NavLink>
+                <NavLink className={style.logo} exact to="/"><img src="./assets/icons/rrrr.gif"></img></NavLink>
                 <div className={style.navLinks}>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/">Home</NavLink>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
