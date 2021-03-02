@@ -4,40 +4,24 @@ import { CarContext } from '../contexts/CarContext';
 
 const Search = () => {
     const [inputValue, setInputValue] = useState("");
-    const { filterCars } = useContext(CarContext);
+    const { filterCars, resetRenderList } = useContext(CarContext);
+    const [searched, setSearched] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         filterCars(inputValue);
         setInputValue('');
+        setSearched(true);
     }
 
     const handleChange = (e) => {
         setInputValue(e.target.value)
     }
 
-    // useEffect(() => {
-    //     let filteredCars = cars.filter(car => {
-    //         let matchString = `${car.make} ${car.model} ${car.year}`;
-    //         if (matchString.toLowerCase().includes(inputValue.toLowerCase())) {
-    //             return true
-    //         }
-    //     })
-    //     if (filteredCars.length) {
-    //         setSearchResult(filteredCars);
-    //     } else {
-    //         setSearchResult(null);
-    //     }
-        
-    // }, [inputValue]);
-
-    // const filterCars = (inputValue) => {
-    //     let filteredCars = cars.filter(car => {
-    //         if (car.carImg.toLowerCase().includes(inputValue.toLowerCase())) {
-    //             return true
-    //         }
-    //     })
-    // }
+    const handleResetSearch = () => {
+        setSearched(false);
+        resetRenderList();
+    }
 
     return (
         <div className={style.search}>
@@ -48,6 +32,8 @@ const Search = () => {
                     <button type="submit"><img src="./assets/icons/search-icon.png" alt="search"/></button>
                 </div>
             </form>
+            { searched ? 
+             <button onClick={handleResetSearch} className={style.clearSearch}>See all cars</button> : <div></div>}
         </div>
     );
 }
