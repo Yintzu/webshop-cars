@@ -1,4 +1,5 @@
 import styles from '../css/Confirmation.module.css';
+import { NavLink } from 'react-router-dom';
 
 const Confirmation = () => {
     return ( 
@@ -29,17 +30,18 @@ const Confirmation = () => {
                     <p className={styles.containerTextLast}>Delivery method: Pick up at store</p>
 
                     {/* Buttons start */}
-                    <button type="button" 
+                    <NavLink exact to="/"><button type="button" 
                     className={`
                     ${styles.backButton}
                     btn 
                     btn-dark
-                   `}>Back</button>
+                   `}>Back</button></NavLink> 
                     <button type="button"
                      className={`
                      ${styles.printButton}
                      btn 
                      btn-info`}
+                     onClick={() => window.print()}
                      >Print</button>
               </div>
 
@@ -73,14 +75,9 @@ const Confirmation = () => {
                     <p className={styles.containerText}>$650 000</p>
                  </div>
                 </div>
-               
-              </div>
-               
-            </div>
-            
-            
+              </div> 
+            </div> 
         </div>
-  
      );
 }
  

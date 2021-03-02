@@ -26,7 +26,7 @@ function App() {
                 <Route exact path="/testpage" component={TestPage} />
                 <Route exact path="/checkout" component={Checkout} />
                 <Route exact path="/confirmation" component={Confirmation} />
-                <Route exact path="/details/:id" component={Details} />
+                <Route exact path="/:id" component={Details} />
               </div>
               <Footer />
             </BrowserRouter>

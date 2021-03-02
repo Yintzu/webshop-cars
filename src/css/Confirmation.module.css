@@ -5,11 +5,13 @@ hr {
 	border-top: 1px dotted #303030;
     
 }
+
 .mainHeading {
     font-size: 1.8rem;
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
     color: #1792A6 !important;
+    margin-top: 15px;
 }
 
 .smallerHeading {
@@ -36,7 +38,7 @@ hr {
 }
 
 .confirmationBox {
-    background-color: #eeeeee !important;
+    background-color: #EBF5F2 !important;
     padding: 30px;
     margin-top: 20px;
     border-radius: 5px;
