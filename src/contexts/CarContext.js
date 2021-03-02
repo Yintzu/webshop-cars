@@ -26,7 +26,7 @@ const CarContextProvider = (props) => {
     
     
     const viewCar = (clickedCar, history) => {
-        history.push(`/details/${clickedCar.vin}`) 
+        history.push(`/${clickedCar.vin}`) 
     }
 
     const [searchResult, setSearchResult] = useState([]);
