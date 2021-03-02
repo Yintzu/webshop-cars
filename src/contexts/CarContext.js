@@ -30,21 +30,21 @@ const CarContextProvider = (props) => {
     }
 
     /* Search function */
-    const [searchResult, setSearchResult] = useState([]);
+    // const [searchResult, setSearchResult] = useState([]);
     
-    const filterCars = (/* event, */ inputValue) => {
-        /* event.preventDefault(); */
-        let filteredCars = []
-        filteredCars = cars.filter(car => {
-            if (car.carImg.toLowerCase().includes(inputValue.toLowerCase())) {
-                return true
-            }
-        })
-        setSearchResult(filteredCars)
-        console.log(filteredCars)
+    // const filterCars = (/* event, */ inputValue) => {
+    //     /* event.preventDefault(); */
+    //     let filteredCars = []
+    //     filteredCars = cars.filter(car => {
+    //         if (car.carImg.toLowerCase().includes(inputValue.toLowerCase())) {
+    //             return true
+    //         }
+    //     })
+    //     setSearchResult(filteredCars)
+    //     console.log(filteredCars)
         
         
-    }
+    // }
 
 
     const values={
