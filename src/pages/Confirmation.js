@@ -10,26 +10,40 @@ const Confirmation = () => {
               col-sm
               col-md-offset-2
               `}>                 
-                <h3 className={styles.smallHeading}>Order number: 1275758489</h3>
+                <h3 className={styles.smallerHeading}>Order number: 1275758489</h3>
                   <p className={styles.containerText}>Delivery details</p>
                     <hr/>
-                    <h4 className={styles.smallerHeading}>Delivery for</h4>
-                    <p className={styles.containerText}>Mrs Susanne Eneroth</p>
-                    <h4 className={styles.smallerHeading}>Delivery address</h4>
+                    <h4 className={styles.smallHeading}>Delivery for</h4>
+                    <p className={styles.containerText}>Ms Sara Persson</p>
+                    <h4 className={styles.smallHeading}>Delivery address</h4>
                     <p className={styles.containerText}>Storgatan 6</p>
                     <p className={styles.containerText}>217 57 Malmö</p>
-                    <h4 className={styles.smallerHeading}>Telephone</h4>  
-                    <p className={styles.containerTextLast}>+46707171929</p>
+                    <h4 className={styles.smallHeading}>Telephone</h4>  
+                    <p className={styles.containerText}>+46704123456</p>
+
+                    {/* Order Info */}
+                    <h4 className={styles.smallHeading}>Order info</h4>
+                    <p className={styles.containerText}>Order number: 1275758489</p>
+                    <p className={styles.containerText}>Order date: 2021-03-02</p>
+                    <p className={styles.containerText}>Payment method: VISA</p>
+                    <p className={styles.containerTextLast}>Delivery method: Pick up at store</p>
+
+                    {/* Buttons start */}
                     <button type="button" 
                     className={`
                     ${styles.backButton}
                     btn 
                     btn-dark
                    `}>Back</button>
-                    <button type="button" className="btn btn-info">Print</button>
+                    <button type="button"
+                     className={`
+                     ${styles.printButton}
+                     btn 
+                     btn-info`}
+                     >Print</button>
               </div>
 
-              {/* Start box right - Summary */}
+              {/* Box right - Summary */}
               <div className={`
                 ${styles.confirmationBox}
                 mx-md-2
@@ -37,7 +51,7 @@ const Confirmation = () => {
                 col-lg-4
                 col-md-offset-5
               `}> 
-                <h3>Summary</h3>
+                <h3 className={styles.smallerHeading}>Summary</h3>
                 <hr/>
                 <div className="row">
                   <div className="col">
