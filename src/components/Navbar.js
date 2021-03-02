@@ -32,7 +32,10 @@ const Navbar = () => {
                 <NavLink className={style.cartIcon} exact to="/checkout">
                         {/* Div with numbers will be displayed based on cart length, if 0 it won't be displayed at all */}
                         { cart.length > 0 ? <div className={`${style.cartNumber} ${onCartUpdate ? style.cartUpdate : ''}`}><span>{cart.length}</span></div> : ''}
-                        <img className={style.img} src="./assets/icons/cart-icon.png"/>
+                        <img className={style.img} src="./assets/icons/shopping-cart-web.png"/>
+                </NavLink>
+                <NavLink className={ style.acctContact} exact to="/">
+                    <img className={style.img} src="./assets/icons/account-contact-circle.png"/>
                 </NavLink>
             </nav>
             <div className={style.infoBar}>
