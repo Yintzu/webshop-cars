@@ -36,7 +36,7 @@ const CarContextProvider = (props) => {
         /* event.preventDefault(); */
         let filteredCars = []
         filteredCars = cars.filter(car => {
-            if (car.make.toLowerCase().includes(inputValue.toLowerCase())) {
+            if (car.carImg.toLowerCase().includes(inputValue.toLowerCase())) {
                 return true
             }
         })
