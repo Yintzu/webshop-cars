@@ -41,7 +41,7 @@ const Confirmation = () => {
                      ${styles.printButton}
                      btn 
                      btn-info`}
-                     onClick={window.print}
+                     onClick={() => window.print()}
                      >Print</button>
               </div>
 
