@@ -14,7 +14,7 @@ const CarContextProvider = (props) => {
         const carlists=carlist.map(car=>{ 
             return {
                 ...car,
-                carImg:`./assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`
+                carImg:`../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`
             }
         })
         console.log(carlists);
@@ -26,7 +26,7 @@ const CarContextProvider = (props) => {
     
     
     const viewCar = (clickedCar, history) => {
-        history.push(`/details/${clickedCar.vin}`) 
+        history.push(`/${clickedCar.vin}`) 
     }
 
     const [searchResult, setSearchResult] = useState([]);
