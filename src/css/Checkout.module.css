@@ -1,0 +1,59 @@
+h1{
+    text-align: center;
+}
+
+input{
+    margin-bottom: 1rem;
+}
+
+.shoppinglist{
+    width: 100%;
+    border: 1px solid black;
+    margin: 2rem auto;
+}
+
+.shoppingCartCard{
+    border: 1px solid lightslategray;
+    border-radius: 3px;
+    margin: 1rem 0.5rem;
+}
+
+.removeButton{
+    color: white;
+    background-color: red;
+    padding: 5px 12px;
+    border-radius: 3px;
+}
+
+.removeButton:hover{
+    cursor: pointer;
+    background-color: tomato;
+}
+
+.info{
+    border: 1px solid black;
+}
+
+.payment{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.cardInfo{
+    background-color: peachpuff;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.radioButton{
+    margin-right: 1rem;
+}
+
+.flexer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
