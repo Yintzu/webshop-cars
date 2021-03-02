@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { ShoppingCartContext } from "../contexts/ShoppingCartContext";
 import { UserContext } from "../contexts/UserContext";
 import style from '../css/Checkout.module.css';
@@ -7,6 +8,7 @@ const Checkout = () => {
 
     const { shoppingCartItems, removeFromCart, removeAllFromCart, cartTotal, formatSum } = useContext(ShoppingCartContext)
     const { boughtCars, setBoughtCars } = useContext(UserContext)
+    const history = useHistory();
 
     const [radioStatus, setRadioStatus] = useState("");
 
@@ -30,6 +32,7 @@ const Checkout = () => {
         setFormInput([formInputObject, ...formInput])
         setBoughtCars(shoppingCartItems, ...boughtCars)
         removeAllFromCart();
+        history.push("/confirmation");
     }
 
     useEffect(()=> {
