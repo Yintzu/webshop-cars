@@ -4,28 +4,32 @@ import { CarContext } from '../contexts/CarContext';
 
 const Search = () => {
     const [inputValue, setInputValue] = useState("");
-    const { cars, setSearchResult } = useContext(CarContext);
-    // const [searchResult, setSearchResult] = useState([]);
-    // const {filterCars} = useContext(CarContext);
+    const { filterCars } = useContext(CarContext);
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        setInputValue("");
+        e.preventDefault();
+        filterCars(inputValue);
+        setInputValue('');
     }
 
     const handleChange = (e) => {
         setInputValue(e.target.value)
     }
 
-    useEffect(() => {
-        let filteredCars = cars.filter(car => {
-            if (car.carImg.toLowerCase().includes(inputValue.toLowerCase())) {
-                return true
-            }
-        })
-
-        setSearchResult(filteredCars);
-    }, [inputValue]);
+    // useEffect(() => {
+    //     let filteredCars = cars.filter(car => {
+    //         let matchString = `${car.make} ${car.model} ${car.year}`;
+    //         if (matchString.toLowerCase().includes(inputValue.toLowerCase())) {
+    //             return true
+    //         }
+    //     })
+    //     if (filteredCars.length) {
+    //         setSearchResult(filteredCars);
+    //     } else {
+    //         setSearchResult(null);
+    //     }
+        
+    // }, [inputValue]);
 
     // const filterCars = (inputValue) => {
     //     let filteredCars = cars.filter(car => {

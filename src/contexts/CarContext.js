@@ -31,28 +31,26 @@ const CarContextProvider = (props) => {
 
     /* Search function */
     const [searchResult, setSearchResult] = useState([]);
-    
-    // const filterCars = (/* event, */ inputValue) => {
-    //     /* event.preventDefault(); */
-    //     let filteredCars = []
-    //     filteredCars = cars.filter(car => {
-    //         if (car.carImg.toLowerCase().includes(inputValue.toLowerCase())) {
-    //             return true
-    //         }
-    //     })
-    //     setSearchResult(filteredCars)
-    //     console.log(filteredCars)
-        
-        
-    // }
+    const [renderList, setRenderList] = useState(cars);
+    const filterCars = (inputValue) => {
+        let filteredCars = []
+        filteredCars = cars.filter(car => {
+            let matchString = `${car.make} ${car.model} ${car.year}`;
+            if (matchString.toLowerCase().includes(inputValue.toLowerCase())) {
+                return true
+            }
+        })
+        console.log(filteredCars)  
+    }
 
 
     const values={
       cars,
       viewCar,
       searchResult,
-    //   filterCars,
+      filterCars,
       setSearchResult,
+      renderList,
     }
     return (
         <CarContext.Provider value={values}>
