@@ -2,23 +2,23 @@ import styles from '../css/Confirmation.module.css';
 
 const Confirmation = () => {
     return ( 
-        <div className="container-fluid">
-          <h1 className={styles.confirmationHeading}>Thank you for your order</h1>
+        <div className="container">
+          <h1 className={styles.mainHeading}>Thank you for your order</h1>
             <div className="row"> 
               <div className={`
               ${styles.confirmationBox}
               col-sm
               col-md-offset-2
               `}>                 
-                <h3>Order number: 1275758489</h3>
+                <h3 className={styles.smallHeading}>Order number: 1275758489</h3>
                   <p className={styles.containerText}>Delivery details</p>
                     <hr/>
-                    <h4>Delivery for</h4>
+                    <h4 className={styles.smallerHeading}>Delivery for</h4>
                     <p className={styles.containerText}>Mrs Susanne Eneroth</p>
-                    <h4>Delivery address</h4>
+                    <h4 className={styles.smallerHeading}>Delivery address</h4>
                     <p className={styles.containerText}>Storgatan 6</p>
                     <p className={styles.containerText}>217 57 Malmö</p>
-                    <h4>Telephone</h4>  
+                    <h4 className={styles.smallerHeading}>Telephone</h4>  
                     <p className={styles.containerTextLast}>+46707171929</p>
                     <button type="button" 
                     className={`
