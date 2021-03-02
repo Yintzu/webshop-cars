@@ -25,11 +25,10 @@ const CarContextProvider = (props) => {
     },[])
     
     
-    const [clickedCar, setClickedCar] = useState({});
-    const viewCar = (clickedCarData, history) => {
-        setClickedCar(clickedCarData);
-        history.push('/details') 
+    const viewCar = (clickedCar, history) => {
+        history.push(`/details/${clickedCar.vin}`) 
     }
+
     const [searchResult, setSearchResult] = useState([]);
     const filterCars = (event, inputValue) => {
         event.preventDefault();
@@ -47,7 +46,6 @@ const CarContextProvider = (props) => {
     const values={
       cars,
       viewCar,
-      clickedCar,
       searchResult,
       filterCars,
     }
