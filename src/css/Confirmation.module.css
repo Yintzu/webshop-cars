@@ -1,3 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+
+hr {
+    background-color: #ffffff;
+	border-top: 1px dotted #303030;
+    
+}
+.mainHeading {
+    font-size: 1.8rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    color: #1792A6 !important;
+}
+
+.smallerHeading {
+    font-size: 1.4rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    color: #1792A6 !important;
+    margin-top: 0;
+    margin-bottom: 12px;
+    
+}
+
+.smallHeading {
+    color: #1792A6 !important;
+    font-size: 1.2rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    margin-bottom: 12px;
+    margin-top: 25px;
+}
+
+.container {
+    margin-left: 25% !important;
+}
 
 .confirmationBox {
     background-color: #eeeeee !important;
@@ -5,6 +41,7 @@
     margin-top: 20px;
     border-radius: 5px;
     position: relative;
+    box-shadow: 2px 2px 2px #d2d2d2;
 }
 
 .confirmationHeading {
@@ -13,4 +50,27 @@
 
 .backButton{
     margin-right: 10px !important;
+    background: #1792A6 !important;
+    border: none;
+}
+
+.printButton {
+    background: #DA6547 !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.containerText {
+    line-height: .8;
+    color: #303030 !important;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+}
+
+.containerTextLast {
+    line-height: .7;
+    margin-bottom: 50px;
+    color: #303030 !important;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
 }
