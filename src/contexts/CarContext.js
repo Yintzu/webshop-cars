@@ -30,7 +30,7 @@ const CarContextProvider = (props) => {
     }
 
     /* Search function */
-    // const [searchResult, setSearchResult] = useState([]);
+    const [searchResult, setSearchResult] = useState([]);
     
     // const filterCars = (/* event, */ inputValue) => {
     //     /* event.preventDefault(); */
@@ -51,7 +51,8 @@ const CarContextProvider = (props) => {
       cars,
       viewCar,
       searchResult,
-      filterCars,
+    //   filterCars,
+      setSearchResult,
     }
     return (
         <CarContext.Provider value={values}>

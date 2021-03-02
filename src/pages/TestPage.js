@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { CarContext } from '../contexts/CarContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
@@ -10,8 +10,13 @@ const TestPage = () => {
   const { cars, viewCar, searchResult } = useContext(CarContext);
   const history = useHistory();
   const { addToCart, removeFromCart } = useContext(ShoppingCartContext);
+  const [renderList, setRenderList] = useState([]);
 
-const renderList = searchResult.length ? searchResult : cars
+// const renderList = searchResult.length ? searchResult : cars
+
+  useEffect(() => {
+    setRenderList(searchResult);
+  }, [searchResult])
 
   return ( 
     <div className={style.testPageWrapper}>
@@ -35,7 +40,7 @@ const renderList = searchResult.length ? searchResult : cars
           </div>
         ))
         
-        : <div>Loading...</div>}
+        : <div>No results....</div>}
     </div>
    );
 }
