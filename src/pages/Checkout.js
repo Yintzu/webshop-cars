@@ -12,7 +12,7 @@ const Checkout = () => {
 
     const [radioStatus, setRadioStatus] = useState("");
 
-    const [formInput, setFormInput] = useState([]);
+    const [orderInfo, setOrderInfo] = useState([]);
 
     const radioHandler = (e) => {
         setRadioStatus(e.target.value)
@@ -20,16 +20,16 @@ const Checkout = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        let formInputObject = {};
+        let orderInfoObject = {};
 
         document.querySelectorAll("form input").forEach((item) => {
             if (item.type === "radio" && item.checked === true) {
-                formInputObject["payment"] = item.value
+                orderInfoObject["payment"] = item.value
             } else if (item.type !== "radio") {
-                formInputObject[item.id] = item.value;
+                orderInfoObject[item.id] = item.value;
             }
         })
-        setFormInput([formInputObject, ...formInput])
+        setOrderInfo([orderInfoObject, ...orderInfo])
         setBoughtCars(shoppingCartItems, ...boughtCars)
         removeAllFromCart();
         history.push("/confirmation");
@@ -37,8 +37,8 @@ const Checkout = () => {
 
     useEffect(()=> {
         console.log("User info from orders:");
-        console.log(formInput)
-    }, [formInput])
+        console.log(orderInfo)
+    }, [orderInfo])
 
     let itemS = shoppingCartItems.length === 1 ? 'item' : 'items';
 
