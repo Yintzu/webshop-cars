@@ -31,11 +31,12 @@ const CarContextProvider = (props) => {
 
     /* Search function */
     const [searchResult, setSearchResult] = useState([]);
-    const filterCars = (event, inputValue) => {
-        event.preventDefault();
+    
+    const filterCars = (/* event, */ inputValue) => {
+        /* event.preventDefault(); */
         let filteredCars = []
         filteredCars = cars.filter(car => {
-            if (car.carImg.toLowerCase().includes(inputValue.toLowerCase())) {
+            if (car.make.toLowerCase().includes(inputValue.toLowerCase())) {
                 return true
             }
         })
