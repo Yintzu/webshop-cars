@@ -10,6 +10,7 @@ import TestPage from './pages/TestPage';
 import ShoppingCartContext from "./contexts/ShoppingCartContext";
 import CarContextProvider from './contexts/CarContext';
 import UserContext from './contexts/UserContext';
+import CarCard from './components/CarCard';
 
 function App() {
   return (
