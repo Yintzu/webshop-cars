@@ -3,11 +3,12 @@ import {
     useState,
     useEffect
 } from "react";
+
 export const CarContext = createContext()
 
 const CarContextProvider = (props) => {
     const [cars, setcars]= useState([])
-    
+
     const createCarList  =() =>{
         const carlist=require("../json/cars.json")
         const carlists=carlist.map(car=>{ 
@@ -23,6 +24,11 @@ const CarContextProvider = (props) => {
         createCarList();
     },[])
     
+    
+    const viewCar = (clickedCar, history) => {
+        history.push(`/details/${clickedCar.vin}`) 
+    }
+
     const [searchResult, setSearchResult] = useState([]);
     const filterCars = (event, inputValue) => {
         event.preventDefault();
@@ -36,8 +42,10 @@ const CarContextProvider = (props) => {
         console.log(filteredCars)
     }
 
+
     const values={
       cars,
+      viewCar,
       searchResult,
       filterCars,
     }

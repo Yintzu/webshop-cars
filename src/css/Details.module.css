@@ -1,12 +1,19 @@
 .details {
     margin-top: 2rem;
-    background: lightgrey;
     padding: 2rem;
+    border: #eee 2px solid;
+    border-radius: 5px;
 }
 .buy {
-    background: white;
+    background: #eee;
     padding: 2rem;
-    margin: 0 1rem;
+    margin: .5rem auto;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+.imageWrapper {
+    margin: .5rem auto;
+    border-radius: 5px;
 }
 .imageWrapper img {
     width: 100%;
