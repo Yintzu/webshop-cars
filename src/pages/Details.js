@@ -8,7 +8,7 @@ const Details = (props) => {
 
     const { cars } = useContext(CarContext);
     const [ car, setCar ] = useState(null);
-    const { addToCart, formatSum } = useContext(ShoppingCartContext);
+    const { addToCart, formatSum, shoppingCartItems, removeFromCart } = useContext(ShoppingCartContext);
 
     useEffect(() => {
         if(cars) {
@@ -29,7 +29,12 @@ const Details = (props) => {
                         <h3>{car.make} {car.model} {car.year}</h3>
                         <p>{car.city}</p>
                         <h4 className={style.price}>{formatSum(car.price)}</h4>
-                        <button onClick={() => addToCart(car)} className="btn btn-dark btn-lg" >Buy Car</button>
+                        {/* <button onClick={() => addToCart(car)} className="btn btn-dark btn-lg" >Add to cart</button> */}
+                        { 
+            !shoppingCartItems.includes(car) ? 
+            <button onClick={() => addToCart(car)} className="btn btn-dark btn-lg" >Add to cart</button> :
+              <button onClick={() => removeFromCart(car)} className={`btn btn-lg ${style.addToCartBtn} ${style.removeBtn}`}>Remove</button>
+            }
                     </div>
                 </div>
                 <div className="row">
