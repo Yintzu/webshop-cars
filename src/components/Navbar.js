@@ -23,7 +23,7 @@ const Navbar = () => {
     return ( 
         <div className={style.navContainer}>
             <nav className={style.navbar}>
-                <NavLink className={style.logo} exact to="/">A LOGO</NavLink>
+                <NavLink className={style.logo} exact to="/"><img className={style.img} src="./assets/app-components/webshop-logo.png"/></NavLink>
                 <div className={style.navLinks}>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/">Home</NavLink>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
@@ -37,6 +37,7 @@ const Navbar = () => {
                 <NavLink className={ style.acctContact} exact to="/">
                     <img className={style.img} src="./assets/icons/account-contact-circle.png"/>
                 </NavLink>
+
             </nav>
             <div className={style.infoBar}>
                 <div className={style.dateTime}>
