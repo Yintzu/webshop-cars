@@ -11,6 +11,7 @@ import ShoppingCartContext from "./contexts/ShoppingCartContext";
 import CarContextProvider from './contexts/CarContext';
 import UserContext from './contexts/UserContext';
 import CarCard from './components/CarCard';
+import CarList from './components/CarList';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                 <Route exact path="/confirmation" component={Confirmation} />
                 <Route exact path="/details/:id" component={Details} />
               </div>
+              <CarList></CarList>
               <Footer />
             </BrowserRouter>
           </ShoppingCartContext>
