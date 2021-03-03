@@ -1,0 +1,8 @@
+.popupCartWrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 500px;
+  background-color: red;
+}

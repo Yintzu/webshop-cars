@@ -11,6 +11,7 @@ import ShoppingCartContext from "./contexts/ShoppingCartContext";
 import CarContextProvider from './contexts/CarContext';
 import UserContext from './contexts/UserContext';
 import CarCard from './components/CarCard';
+import PopupCart from './components/PopupCart';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <UserContext>
           <ShoppingCartContext>
             <BrowserRouter>
+              <PopupCart />
               <Navbar />
               <div className="site-container">
                 <Route exact path="/" component={Home} />
