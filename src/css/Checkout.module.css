@@ -6,6 +6,11 @@ input{
     margin-bottom: 1rem;
 }
 
+select{
+    width: 100%;
+}
+
+
 .shoppinglist{
     width: 100%;
     border: 1px solid black;

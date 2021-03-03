@@ -33,17 +33,16 @@ const Details = (props) => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col">
+                    <div className={`col ${style.desc}`}>
+                        <p>{car.descLong}</p>
+                    </div>
+                    <div className="col-md-4">
                         <ul>
                             <li>Make: {car.make}</li>
                             <li>Model: {car.model}</li>
                             <li>Year: {car.year}</li>
                             <li>Miles: {car.miles} miles</li>
                         </ul>
-                        <p>{car.descLong}</p>
-                    </div>
-                    <div className="col-md-4">
-                        Place some images here
                     </div>
                 </div>
             </div>
