@@ -41,12 +41,12 @@ const Checkout = () => {
         history.push("/confirmation");
     }
 
-    const selectPriceRenderer = (select) => {
-        if (select === "Pick up at store"){
+    const selectPriceRenderer = (selection) => {
+        if (selection === "Pick up at store"){
             return <p>0 kr</p>
-        } else if (select === "Delivery by truck"){
+        } else if (selection === "Delivery by truck"){
             return <p>2000 kr</p>
-        } else if (select === "Delivery by helicopter") {
+        } else if (selection === "Delivery by helicopter") {
             return <p>10000 kr</p>
         }
     }
