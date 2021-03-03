@@ -41,14 +41,16 @@ const Checkout = () => {
         history.push("/confirmation");
     }
 
-    const selectPriceRenderer = (select) => {
-        if (select === "Pick up at store"){
-            return <p>0 kr</p>
-        } else if (select === "Delivery by truck"){
-            return <p>2000 kr</p>
-        } else if (select === "Delivery by helicopter") {
-            return <p>10000 kr</p>
+    let deliveryPrice = 0;
+    const selectPriceRenderer = (selection) => {
+        if (selection === "Pick up at store"){
+            deliveryPrice = 0;
+        } else if (selection === "Delivery by truck"){
+            deliveryPrice = 2000;
+        } else if (selection === "Delivery by helicopter") {
+            deliveryPrice = 10000;
         }
+        return <p className="text-end fw-bold">{formatSum(deliveryPrice)}</p>
     }
 
         /* useEffect(() => {
@@ -92,7 +94,7 @@ const Checkout = () => {
                                             </select>
                                         </div>
                                         <div className="col-2">
-                                            {selectPriceRenderer(selectStatus)}
+                                            {selectPriceRenderer(selectStatus) /* Shows delivery price depending on selection */}
                                         </div>
                                     </div>
                                 </div>
@@ -102,7 +104,7 @@ const Checkout = () => {
                                         {`${shoppingCartItems.length} ${itemS} in cart`}
                                     </h3>
                                     <h3>
-                                        {`Total: ${formatSum(cartTotal)}`}
+                                        {`Total: ${formatSum(cartTotal+deliveryPrice)}`}
                                     </h3>
                                 </div>
                             </div>

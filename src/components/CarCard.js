@@ -1,36 +1,22 @@
+import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
+import { CarContext } from "../contexts/CarContext";
+import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import style from '../css/CarCard.module.css';
 
-const CarCard = () => {
+const CarCard = (props) => {
+    const history = useHistory();
+    const { addToCart, removeFromCart,shoppingCartItems } = useContext(ShoppingCartContext);
+    const { viewCar } = useContext(CarContext);
+
     return (
-        <div className="row">
-            <div class="col-sm-6">
-                <div class="card mt-2 mx-2">
-                    <img src="assets/car-pictures/Volvo-XC70-2006.jpg" className="card-img-top" alt="A good affordable car" />
-                    <div className="card-body">
-                        <h5 className="card-title">Bilnamn och modell</h5>
-                        <p className="card-text">Shortdesc</p>
-                        <a href="#" className="btn btn-primary float-end">Buy</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div className="card mt-2 mx-2">
-                    <img src="assets/car-pictures/Volvo-XC70-2006.jpg" className="card-img-top" alt="A good affordable car" />
-                    <div className="card-body">
-                        <h5 className="card-title">Bilnamn och modell</h5>
-                        <p className="card-text">Shortdesc</p>
-                        <a href="#" className="btn btn-primary float-end">Buy</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div className="card mt-2 mx-2">
-                    <img src="assets/car-pictures/Volvo-XC70-2006.jpg" className="card-img-top" alt="A good affordable car" />
-                    <div className="card-body">
-                        <h5 className="card-title">Bilnamn och modell</h5>
-                        <p className="card-text">Shortdesc</p>
-                        <a href="#" className="btn btn-primary float-end">Buy</a>
-                    </div>
+        <div className={`col-sm-6 ${style.carCard}`}>
+            <div className="card mt-2 mx-2">
+                <img src={props.car.carImg} className="card-img-top" alt="A good affordable car" onClick={() => viewCar(props.car, history)}/>
+                <div className="card-body">
+                    <h5 className="card-title">{props.car.make} {props.car.model} {props.car.year}</h5>
+                    <p className="card-text">{props.car.descShort}</p>
+                    <button onClick={() => addToCart(props.car) }className="btn btn-primary float-end">Add To Cart</button>
                 </div>
             </div>
         </div>
