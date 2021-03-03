@@ -35,7 +35,7 @@ const Checkout = () => {
         history.push("/confirmation");
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         console.log("User info from orders:");
         console.log(orderInfo)
     }, [orderInfo])
@@ -77,84 +77,84 @@ const Checkout = () => {
                         } {/* Ternary operator end */}
                     </div>
                 </div>
+                {shoppingCartItems.length > 0 &&
+                    <form onSubmit={submitHandler}>
+                        <div className="row">
+                            <div className={`col-12 col-sm-6 info ${style.info}`}>
+                                <h2 className="text-center">Your info</h2>
 
-                <form onSubmit={submitHandler}>
-                    <div className="row">
-                        <div className={`col-12 col-sm-6 info ${style.info}`}>
-                            <h2 className="text-center">Your info</h2>
+                                <label htmlFor="firstName">First name</label>
+                                <input className="form-control" type="text" id="firstName" required></input>
 
-                            <label htmlFor="firstName">First name</label>
-                            <input className="form-control" type="text" id="firstName" required></input>
+                                <label htmlFor="lastName">Last name</label>
+                                <input className="form-control" type="text" id="lastName" required></input>
 
-                            <label htmlFor="lastName">Last name</label>
-                            <input className="form-control" type="text" id="lastName" required></input>
+                                <label htmlFor="address">Address</label>
+                                <input className="form-control" type="text" id="address" required></input>
 
-                            <label htmlFor="address">Address</label>
-                            <input className="form-control" type="text" id="address" required></input>
-
-                            <div className="row">
-                                <div className="col-6">
-                                    <label htmlFor="postalnr">Postal number</label>
-                                    <input className="form-control" type="text" id="postalnr" required></input>
+                                <div className="row">
+                                    <div className="col-6">
+                                        <label htmlFor="postalnr">Postal number</label>
+                                        <input className="form-control" type="text" id="postalnr" required></input>
+                                    </div>
+                                    <div className="col-6">
+                                        <label htmlFor="city">City</label>
+                                        <input className="form-control" type="text" id="city" required></input>
+                                    </div>
                                 </div>
-                                <div className="col-6">
-                                    <label htmlFor="city">City</label>
-                                    <input className="form-control" type="text" id="city" required></input>
-                                </div>
+
+                                <label htmlFor="phone">Phone number</label>
+                                <input className="form-control" type="text" id="phone" required></input>
+
+                                <label htmlFor="email">E-mail</label>
+                                <input className="form-control" type="email" id="email" required></input>
                             </div>
 
-                            <label htmlFor="phone">Phone number</label>
-                            <input className="form-control" type="text" id="phone" required></input>
-
-                            <label htmlFor="email">E-mail</label>
-                            <input className="form-control" type="email" id="email" required></input>
-                        </div>
-
-                        <div className={`col-12 col-sm-6 ${style.payment}`}>
-                            <div>
-                                <h2 className="text-center">Payment options</h2>
+                            <div className={`col-12 col-sm-6 ${style.payment}`}>
                                 <div>
-                                    <input className={style.radioButton} type="radio" id="creditCard" value="card" name="radio" checked={radioStatus == "card"} onChange={radioHandler} required></input>
-                                    <label htmlFor="creditCard">Credit card</label>
-                                </div>
-                                {radioStatus === "card" &&
-                                    <div className={style.cardInfo}>
-                                        <label htmlFor="cardOwner">Name of card owner</label>
-                                        <input className="form-control" type="text" id="cardOwner"></input>
-                                        <label htmlFor="cardNumber">Card number</label>
-                                        <input className="form-control" type="text" id="cardNumber"></input>
-                                        <div className="row">
-                                            <div className="col-6">
-                                                <label htmlFor="expiration">Expiration date</label>
-                                                <input className="form-control" type="text" id="expiration"></input>
+                                    <h2 className="text-center">Payment options</h2>
+                                    <div>
+                                        <input className={style.radioButton} type="radio" id="creditCard" value="card" name="radio" checked={radioStatus == "card"} onChange={radioHandler} required></input>
+                                        <label htmlFor="creditCard">Credit card</label>
+                                    </div>
+                                    {radioStatus === "card" &&
+                                        <div className={style.cardInfo}>
+                                            <label htmlFor="cardOwner">Name of card owner</label>
+                                            <input className="form-control" type="text" id="cardOwner"></input>
+                                            <label htmlFor="cardNumber">Card number</label>
+                                            <input className="form-control" type="text" id="cardNumber"></input>
+                                            <div className="row">
+                                                <div className="col-6">
+                                                    <label htmlFor="expiration">Expiration date</label>
+                                                    <input className="form-control" type="text" id="expiration"></input>
+                                                </div>
+                                                <div className="col-6">
+                                                    <label htmlFor="cvv">CVV</label>
+                                                    <input className="form-control" type="text" id="cvv"></input>
+                                                </div>
                                             </div>
-                                            <div className="col-6">
-                                                <label htmlFor="cvv">CVV</label>
-                                                <input className="form-control" type="text" id="cvv"></input>
-                                            </div>
-                                        </div>
-                                    </div>}
-                                <div>
-                                    <input className={style.radioButton} type="radio" id="invoice" value="invoice" name="radio" checked={radioStatus == "invoice"} onChange={radioHandler}></input>
-                                    <label htmlFor="invoice">Invoice</label>
+                                        </div>}
+                                    <div>
+                                        <input className={style.radioButton} type="radio" id="invoice" value="invoice" name="radio" checked={radioStatus == "invoice"} onChange={radioHandler}></input>
+                                        <label htmlFor="invoice">Invoice</label>
+                                    </div>
+                                    {radioStatus === "invoice" && <div className="alert alert-primary">An invoice with payment details will be delivered to your address.</div>}
+                                    <div>
+                                        <input className={style.radioButton} type="radio" id="swish" value="swish" name="radio" checked={radioStatus == "swish"} onChange={radioHandler}></input>
+                                        <label htmlFor="swish">Swish</label>
+                                    </div>
+                                    {radioStatus === "swish" && <div className="alert alert-primary">You will be prompted to open your Swish app to make a payment after you place your order.</div>}
                                 </div>
-                                {radioStatus === "invoice" && <div className="alert alert-primary">An invoice with payment details will be delivered to your address.</div>}
-                                <div>
-                                    <input className={style.radioButton} type="radio" id="swish" value="swish" name="radio" checked={radioStatus == "swish"} onChange={radioHandler}></input>
-                                    <label htmlFor="swish">Swish</label>
+                                <div className="mb-3">
+                                    <hr />
+                                    <h3 className="text-center">
+                                        {`Price total: ${formatSum(cartTotal)}`}
+                                    </h3>
+                                    <button className="btn btn-success d-block mx-auto">Place order</button>
                                 </div>
-                                {radioStatus === "swish" && <div className="alert alert-primary">You will be prompted to open your Swish app to make a payment after you place your order.</div>}
-                            </div>
-                            <div className="mb-3">
-                                <hr />
-                                <h3 className="text-center">
-                                    {`Price total: ${formatSum(cartTotal)}`}
-                                </h3>
-                                <button className="btn btn-success d-block mx-auto">Place order</button>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>}
             </div>
         </div>
     );
