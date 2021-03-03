@@ -1,11 +1,14 @@
 .popupCartWrapper {
   position: fixed;
-  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  padding: .5rem .5rem;
   z-index: 3000;
   top: 110px;
   right: 0;
   width: 350px;
-  background-color: rgb(218, 218, 218);
+  background-color: rgb(235, 235, 235);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.295);
 }
 
 .cartItemsWrapper {
@@ -15,9 +18,15 @@
 .cartItem {
   display: flex;
   align-items: center;
-  padding: .3rem;
-  border: 1px solid black;
-  margin-bottom: .1rem;
+  padding: .4rem .3rem;
+  background-color: #eee;
+  margin-bottom: .2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.212);
+  /* box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.137); */
+}
+
+.cartItemsWrapper .cartItem:first-child {
+  border-top: none;
 }
 
 .cartImgWrapper {
@@ -52,10 +61,34 @@
 }
 
 .cartRemoveBtn {
-  font-size: .8rem;
+  font-size: .7rem;
+  color: rgb(238, 238, 238);
   border: none;
-  background: rgb(238, 74, 107);
-  padding: 0rem .4rem;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.123);
+  border-radius: 50%;
+  background: rgb(221, 60, 93);
+  width: 20px;
+  height: 20px;
   margin-left: .5rem;
+}
+
+.totalSumWrapper {
+  display: flex;
+  padding: .5rem;
+  border-top: 1px solid black;
+  margin-top: .4rem;
+  justify-content: space-between;
+}
+
+.totalSumWrapper h5 {
+  font-size: 1rem;
+}
+
+.toCheckoutBtn {
+  color: white;
+  width: 100%;
+  border: none;
+  border-radius: 7px;
+  padding: .5rem 1rem;
+  background: linear-gradient(180deg, rgb(80, 205, 240) 0%, rgb(64, 166, 206) 100%);
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.158);
 }

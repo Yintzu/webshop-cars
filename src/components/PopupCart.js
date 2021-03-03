@@ -3,7 +3,7 @@ import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import style from '../css/PopupCart.module.css';
 
 const PopupCart = () => {
-  const { shoppingCartItems, formatSum, removeFromCart } = useContext(ShoppingCartContext);
+  const { shoppingCartItems, formatSum, removeFromCart, cartTotal } = useContext(ShoppingCartContext);
 
   return ( 
     <div className={style.popupCartWrapper}>
@@ -27,6 +27,11 @@ const PopupCart = () => {
           </div>
         ))}
       </div>
+      <div className={style.totalSumWrapper}>
+          <h5>Total:</h5>
+          <h5>{formatSum(cartTotal)}</h5>
+      </div>
+      <button className={style.toCheckoutBtn}>Go to checkout</button>
     </div>
    );
 }
