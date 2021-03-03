@@ -38,10 +38,13 @@ const CarContextProvider = (props) => {
     }, [cars]);
 
     const filterCars = (inputValue) => {
+        // Split the input-string into an array
         let inputArray = inputValue.split(' ');
         console.log(inputArray);
         let filteredCars = []
 
+        // Check each item in cars-array
+        // Check each word in the inputArray to see if one or more matches the matchString
         cars.forEach(car => {
             let matchString = `${car.make} ${car.model} ${car.year}`.toLowerCase();
             inputArray.forEach(word => {
