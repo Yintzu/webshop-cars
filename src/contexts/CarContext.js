@@ -39,7 +39,7 @@ const CarContextProvider = (props) => {
 
     const filterCars = (inputValue) => {
         // Split the input-string into an array
-        let inputArray = inputValue.split(' ');
+        let inputArray = inputValue.toLowerCase().split(' ');
         console.log(inputArray);
         let filteredCars = []
 
