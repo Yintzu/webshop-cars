@@ -8,7 +8,7 @@ const Details = (props) => {
 
     const { cars } = useContext(CarContext);
     const [ car, setCar ] = useState(null);
-    const { addToCart } = useContext(ShoppingCartContext);
+    const { addToCart, formatSum, shoppingCartItems, removeFromCart } = useContext(ShoppingCartContext);
 
     useEffect(() => {
         if(cars) {
@@ -28,22 +28,25 @@ const Details = (props) => {
                     <div className={`col-md-4 ${style.buy}`}>
                         <h3>{car.make} {car.model} {car.year}</h3>
                         <p>{car.city}</p>
-                        <h4 className={style.price}>{car.price} kr</h4>
-                        <button onClick={() => addToCart(car)} className="btn btn-dark btn-lg" >Buy Car</button>
+                        <h4 className={style.price}>{formatSum(car.price)}</h4>
+                        { 
+                        !shoppingCartItems.includes(car) ? 
+                        <button onClick={() => addToCart(car)} className={`btn btn-lg ${style.addToCartBtn}`}>Add to cart</button> :
+                        <button onClick={() => removeFromCart(car)} className={`btn btn-lg ${style.removeBtn}`}>Remove</button>
+                        }
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col">
-                        <ul>
-                            <li>{car.make}</li>
-                            <li>{car.model}</li>
-                            <li>{car.year}</li>
-                            <li>{car.miles} miles</li>
-                        </ul>
+                <div className={`row ${style.descContainer}`}>
+                    <div className={`col ${style.desc}`}>
                         <p>{car.descLong}</p>
                     </div>
                     <div className="col-md-4">
-                        Place some images here
+                        <ul>
+                            <li>Make: {car.make}</li>
+                            <li>Model: {car.model}</li>
+                            <li>Year: {car.year}</li>
+                            <li>Miles: {car.miles} miles</li>
+                        </ul>
                     </div>
                 </div>
             </div>
