@@ -4,7 +4,7 @@ import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import style from '../css/PopupCart.module.css';
 
 const PopupCart = () => {
-  const { shoppingCartItems, formatSum, removeFromCart, cartTotal } = useContext(ShoppingCartContext);
+  const { shoppingCartItems: cart, formatSum, removeFromCart, cartTotal } = useContext(ShoppingCartContext);
   const history = useHistory();
 
   return ( 
@@ -13,24 +13,27 @@ const PopupCart = () => {
         <h4>Your cart:</h4>
       </div>
       <div className={style.cartItemsWrapper}>
-        {shoppingCartItems.map(car => (
-          <div className={style.cartItem} key={car.vin}>
-            <div className={style.cartImgWrapper}>
-              <img src={car.carImg} alt={car.make}/>
+        {
+          cart.length ? 
+          cart.map(car => (
+            <div className={style.cartItem} key={car.vin}>
+              <div className={style.cartImgWrapper}>
+                <img src={car.carImg} alt={car.make}/>
+              </div>
+              <div className={style.cartItemText}>
+                <h5 className={style.cartCarName}>
+                  {car.make} 
+                  {car.model} 
+                </h5>
+                <p className={style.cartYear}>{car.year}</p>
+              </div>
+              <div className={style.cartItemRight}>
+                <h5 className={style.carPrice}>{formatSum(car.price)}</h5>
+                <button onClick={() => removeFromCart(car)} className={style.cartRemoveBtn}>X</button>
+              </div>
             </div>
-            <div className={style.cartItemText}>
-              <h5 className={style.cartCarName}>
-                {car.make} 
-                {car.model} 
-              </h5>
-              <p className={style.cartYear}>{car.year}</p>
-            </div>
-            <div className={style.cartItemRight}>
-              <h5 className={style.carPrice}>{formatSum(car.price)}</h5>
-              <button onClick={() => removeFromCart(car)} className={style.cartRemoveBtn}>X</button>
-            </div>
-          </div>
-        ))}
+          )) : <h5 className={style.emptyCartMsg}>Your cart is empty :(</h5>
+        }
       </div>
       <div className={style.totalSumWrapper}>
           <h5>Total:</h5>

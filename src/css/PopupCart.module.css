@@ -103,3 +103,9 @@
 .toCheckoutBtn:active {
   transform: scale(1.01);
 }
+
+.emptyCartMsg {
+  font-size: .9rem;
+  margin-left: .2rem;
+  margin-top: .7rem;
+}
