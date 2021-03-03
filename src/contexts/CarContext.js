@@ -58,6 +58,9 @@ const CarContextProvider = (props) => {
                     }
                 }
             })
+            if (counter === 0) {
+                return;
+            }
             if (counter === testArray[0]) {
                 testArray[1].push(car);
             } else if (counter > testArray[0]) {
