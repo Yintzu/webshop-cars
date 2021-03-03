@@ -18,6 +18,13 @@ const Navbar = () => {
         }, 1500)
     }
 
+    const mouseOverHandler = () => {
+        if (timer) {
+            clearTimeout(timer)
+        };
+        setCartVisible(true);
+    }
+
     // On change in cart, set onCartUpdate to true and then back to false after a short duration
     // While true, the div in render will have a css-class with animation
     useEffect(() => {
@@ -38,7 +45,7 @@ const Navbar = () => {
                     <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Test</NavLink>
                 </div> 
-                <NavLink onMouseOver={() => setCartVisible(true)} onMouseLeave={mouseLeaveHandler} className={style.cartIcon} exact to="/checkout">
+                <NavLink onMouseOver={mouseOverHandler} onMouseLeave={mouseLeaveHandler} className={style.cartIcon} exact to="/checkout">
                         {/* Div with numbers will be displayed based on cart length, if 0 it won't be displayed at all */}
                         { cart.length > 0 ? <div className={`${style.cartNumber} ${onCartUpdate ? style.cartUpdate : ''}`}><span>{cart.length}</span></div> : ''}
                         <img className={style.img} src="./assets/icons/shopping-cart-web.png"/>
