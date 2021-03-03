@@ -11,11 +11,16 @@ const Checkout = () => {
     const history = useHistory();
 
     const [radioStatus, setRadioStatus] = useState("");
+    const [selectStatus, setSelectStatus] = useState("Pick up at store");
 
     const [orderInfo, setOrderInfo] = useState([]);
 
     const radioHandler = (e) => {
         setRadioStatus(e.target.value)
+    }
+
+    const selectHandler = (e) => {
+        setSelectStatus(e.target.options[e.target.selectedIndex].text)
     }
 
     const submitHandler = (e) => {
@@ -35,10 +40,20 @@ const Checkout = () => {
         history.push("/confirmation");
     }
 
-    useEffect(() => {
-        console.log("User info from orders:");
-        console.log(orderInfo)
-    }, [orderInfo])
+    const selectPriceRenderer = (select) => {
+        if (select === "Pick up at store"){
+            return <p>0 kr</p>
+        } else if (select === "Delivery by truck"){
+            return <p>2000 kr</p>
+        } else if (select === "Delivery by helicopter") {
+            return <p>10000 kr</p>
+        }
+    }
+
+    /*     useEffect(() => {
+            console.log("User info from orders:");
+            console.log(orderInfo)
+        }, [orderInfo]) */
 
     let itemS = shoppingCartItems.length === 1 ? 'item' : 'items';
 
@@ -65,6 +80,22 @@ const Checkout = () => {
                                     </div>
                                 ))}
                                 <hr />
+                                <div>
+                                    <h2 className="text-center">Delivery Options</h2>
+                                    <div className="row">
+                                        <div className="col-10">
+                                            <select id="deliveryOptions" onChange={selectHandler}>
+                                                <option>Pick up at store</option>
+                                                <option>Delivery by truck</option>
+                                                <option>Delivery by helicopter</option>
+                                            </select>
+                                        </div>
+                                        <div className="col-2">
+                                            {selectPriceRenderer(selectStatus)}
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
                                 <div className="d-flex justify-content-between">
                                     <h3>
                                         {`${shoppingCartItems.length} ${itemS} in cart`}
@@ -77,6 +108,7 @@ const Checkout = () => {
                         } {/* Ternary operator end */}
                     </div>
                 </div>
+                {/* Conditionally render the form if there are items in cart */}
                 {shoppingCartItems.length > 0 &&
                     <form onSubmit={submitHandler}>
                         <div className="row">
@@ -154,7 +186,7 @@ const Checkout = () => {
                                 </div>
                             </div>
                         </div>
-                    </form>}
+                    </form>/*Conditional form rendering end*/}
             </div>
         </div>
     );
