@@ -23,15 +23,16 @@ const Navbar = () => {
     return ( 
         <div className={style.navContainer}>
             <nav className={style.navbar}>
-                <NavLink className={style.logo} exact to="/">A LOGO</NavLink>
+                <NavLink className={style.logo} exact to="/"><img src="../assets/icons/rrrr.gif"></img></NavLink>
                 <div className={style.navLinks}>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/">Home</NavLink>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
+                    <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Test</NavLink>
                 </div> 
                 <NavLink className={style.cartIcon} exact to="/checkout">
                         {/* Div with numbers will be displayed based on cart length, if 0 it won't be displayed at all */}
                         { cart.length > 0 ? <div className={`${style.cartNumber} ${onCartUpdate ? style.cartUpdate : ''}`}><span>{cart.length}</span></div> : ''}
-                        <img className={style.img} src="./assets/icons/cart-icon.png"/>
+                        <img className={style.img} src="../assets/icons/cart-icon.png"/>
                 </NavLink>
             </nav>
             <div className={style.infoBar}>

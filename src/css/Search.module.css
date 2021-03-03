@@ -1,0 +1,18 @@
+.input {
+    text-align: center;
+}
+.search input {
+    border: solid darkgrey 2px; 
+    border-radius: 1rem;
+    padding: .5rem;
+    width: 50%;
+}
+.search button {
+    background: none;
+    border: none;
+    height: 40px;
+    margin: 1rem;
+}
+.search img {
+    height: 35px;
+}
