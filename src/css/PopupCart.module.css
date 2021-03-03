@@ -1,8 +1,47 @@
 .popupCartWrapper {
   position: fixed;
-  top: 0;
+  padding: .5rem;
+  z-index: 3000;
+  top: 110px;
   right: 0;
-  width: 500px;
-  height: 500px;
-  background-color: red;
+  width: 350px;
+  background-color: rgb(218, 218, 218);
+}
+
+.cartItemsWrapper {
+  width: 100%;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  padding: .3rem;
+  border: 1px solid black;
+  margin-bottom: .1rem;
+}
+
+.cartImgWrapper {
+  width: 50px;
+  margin-right: .5rem;
+} 
+
+.cartImgWrapper img {
+  width: 100%;
+}
+
+.cartItemText {
+  background-color: peachpuff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cartCarName {
+  font-size: .9rem;
+  margin: 0;
+}
+
+.cartYear {
+  font-size: .8rem;
+  margin: 0;
 }
