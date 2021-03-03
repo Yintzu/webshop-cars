@@ -30,18 +30,32 @@
 }
 
 .cartItemText {
-  background-color: peachpuff;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.cartCarName {
-  font-size: .9rem;
+.cartCarName, .carPrice {
+  font-size: .8rem;
   margin: 0;
 }
 
 .cartYear {
   font-size: .8rem;
   margin: 0;
+}
+
+.cartItemRight {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.cartRemoveBtn {
+  font-size: .8rem;
+  border: none;
+  background: rgb(238, 74, 107);
+  padding: 0rem .4rem;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.123);
+  margin-left: .5rem;
 }
