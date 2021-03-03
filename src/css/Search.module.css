@@ -16,3 +16,15 @@
 .search img {
     height: 35px;
 }
+
+.search {
+    text-align: center;
+}
+
+.search .clearSearch {
+    background: initial;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: .2rem .5rem;
+    background-color: rgb(245, 243, 243);
+}

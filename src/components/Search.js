@@ -1,21 +1,27 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import style from '../css/Search.module.css';
 import { CarContext } from '../contexts/CarContext';
 
 const Search = () => {
     const [inputValue, setInputValue] = useState("");
-    const {filterCars} = useContext(CarContext);
+    const { filterCars, resetRenderList } = useContext(CarContext);
+    const [searched, setSearched] = useState(false);
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        setInputValue("");
+        e.preventDefault();
+        filterCars(inputValue);
+        setInputValue('');
+        setSearched(true);
     }
 
     const handleChange = (e) => {
         setInputValue(e.target.value)
-        filterCars(inputValue);
     }
 
+    const handleResetSearch = () => {
+        setSearched(false);
+        resetRenderList();
+    }
 
     return (
         <div className={style.search}>
@@ -23,10 +29,11 @@ const Search = () => {
             <form onSubmit={handleSubmit}>
                 <div className={style.input}>
                     <input type="text" placeholder="Search..." value={inputValue} onChange={handleChange}/>
-                    {/* <input type="text" placeholder="Search..." value={inputValue} onChange={e => setInputValue(e.target.value)}/> */}
                     <button type="submit"><img src="./assets/icons/search-icon.png" alt="search"/></button>
                 </div>
             </form>
+            { searched ? 
+             <button onClick={handleResetSearch} className={style.clearSearch}>See all cars</button> : <div></div>}
         </div>
     );
 }

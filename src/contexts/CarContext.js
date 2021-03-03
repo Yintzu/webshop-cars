@@ -14,7 +14,7 @@ const CarContextProvider = (props) => {
         const carlists=carlist.map(car=>{ 
             return {
                 ...car,
-                carImg:`./assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`
+                carImg:`../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`
             }
         })
         console.log(carlists);
@@ -31,32 +31,48 @@ const CarContextProvider = (props) => {
 
     /* Search function */
     const [searchResult, setSearchResult] = useState([]);
-    
-    const filterCars = (/* event, */ inputValue) => {
-        /* event.preventDefault(); */
+    const [renderList, setRenderList] = useState([]);
+
+    useEffect(() => {
+        setRenderList(cars);
+    }, [cars]);
+
+    const filterCars = (inputValue) => {
         let filteredCars = []
         filteredCars = cars.filter(car => {
-            if (car.carImg.toLowerCase().includes(inputValue.toLowerCase())) {
+            let matchString = `${car.make} ${car.model} ${car.year}`;
+            if (matchString.toLowerCase().includes(inputValue.toLowerCase())) {
                 return true
             }
         })
-        setSearchResult(filteredCars)
-        console.log(filteredCars)
-        
-        
+
+        // Checks if something is in the filtered array
+        // Checks if there is nothing in the array but input is not empty
+        if (filteredCars.length !== 0) {
+            setRenderList(filteredCars);
+        } else if (inputValue !== '' && filteredCars.length === 0) {
+            setRenderList(null);
+        }
     }
 
+    // Resets the rendered list to all cars
+    const resetRenderList = () => {
+        setRenderList(cars);
+    }
 
     const values={
       cars,
       viewCar,
       searchResult,
       filterCars,
+      setSearchResult,
+      renderList,
+      resetRenderList,
     }
+
     return (
         <CarContext.Provider value={values}>
             {props.children}
-
         </CarContext.Provider>
     );
 }
