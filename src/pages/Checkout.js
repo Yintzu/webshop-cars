@@ -61,17 +61,17 @@ const Checkout = () => {
     let itemS = shoppingCartItems.length === 1 ? 'item' : 'items';
 
     return (
-        <div className="checkout">
+        <div className={`checkout ${style.quicksand}`}>
             <div className="container">
-                <h1>Your shopping cart</h1>
+                <h1 className="mt-3">Your shopping cart</h1>
                 <div className="row">
-                    <div className={style.shoppinglist}>
+                    <div className={`${style.shoppinglist} ${style.background}`}>
                         {/* Ternary operator to display "No items in cart" or loop out the items */}
                         {shoppingCartItems.length == 0 ? <h2 className="text-center">No items in cart</h2> :
                             <div>
                                 {shoppingCartItems.map((item, key) => (
                                     <div key={key} className={`row ${style.shoppingCartCard}`}>
-                                        <div className="col-2">Image Placeholder</div>
+                                        <div className={`col-2 ${style.flexer}`}><img className={style.w100} src={item.carImg}/></div>
                                         <div className="col-7">
                                             <h2>{`${item.make} ${item.model}`}</h2>
                                             <p>{`${item.descShort}`}</p>
@@ -115,8 +115,8 @@ const Checkout = () => {
                 {shoppingCartItems.length > 0 &&
                     <form onSubmit={submitHandler}>
                         <div className="row">
-                            <div className={`col-12 col-sm-6 info ${style.info}`}>
-                                <h2 className="text-center">Your info</h2>
+                            <div className={`col-12 col-sm-6 info ${style.info} ${style.background}`}>
+                                <h2 className="text-center mt-2">Your info</h2>
 
                                 <label htmlFor="firstName">First name</label>
                                 <input className="form-control" type="text" id="firstName" required></input>
@@ -145,9 +145,9 @@ const Checkout = () => {
                                 <input className="form-control" type="email" id="email" required></input>
                             </div>
 
-                            <div className={`col-12 col-sm-6 ${style.payment}`}>
+                            <div className={`col-12 col-sm-6 ${style.payment} ${style.background}`}>
                                 <div>
-                                    <h2 className="text-center">Payment options</h2>
+                                    <h2 className="text-center mt-2">Payment options</h2>
                                     <div>
                                         <input className={style.radioButton} type="radio" id="creditCard" value="card" name="radio" checked={radioStatus == "card"} onChange={radioHandler} required></input>
                                         <label htmlFor="creditCard">Credit card</label>
