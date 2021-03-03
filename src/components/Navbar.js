@@ -23,7 +23,7 @@ const Navbar = () => {
     return ( 
         <div className={style.navContainer}>
             <nav className={style.navbar}>
-                <NavLink className={style.logo} exact to="/"><img className={style.img} src="./assets/app-components/webshop-logo.png"/></NavLink>
+                <NavLink className={style.rrrrlogo} exact to="/"><img className={style.rrrrlogoImg} src="./assets/app-components/webshop-logo.png"/></NavLink>
                 <div className={style.navLinks}>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/">Home</NavLink>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
@@ -35,7 +35,7 @@ const Navbar = () => {
                         <img className={style.img} src="./assets/icons/shopping-cart-web.png"/>
                 </NavLink>
                 <NavLink className={ style.acctContact} exact to="/">
-                    <img className={style.img} src="./assets/icons/account-contact-circle.png"/>
+                    <img className={style.acctContactImg} src="./assets/icons/account-contact-circle.png"/>
                 </NavLink>
 
             </nav>

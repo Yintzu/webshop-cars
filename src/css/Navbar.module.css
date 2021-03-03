@@ -91,3 +91,21 @@
   background-color: rgb(230, 230, 230);
   padding: .5rem 1rem;
 }
+
+.rrrrlogoImg {
+  position: relative;
+  margin-left: auto;
+  margin-right: .5rem;
+  width: 75px;
+}
+
+.acctContactImg {
+  position: relative;
+  margin-left: auto;
+  margin-right: .5rem;
+  width: 30px;
+}
+
+.acctContactImg.img {
+  width: 100%;
+}
