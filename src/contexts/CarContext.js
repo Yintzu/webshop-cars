@@ -45,14 +45,7 @@ const CarContextProvider = (props) => {
             if (matchString.toLowerCase().includes(inputValue.toLowerCase())) {
                 return true
             }
-            /* let matchArray = [car.make, car.model, car.year];
-            matchArray.forEach((attribute) => {
-                if (attribute.toString().toLowerCase().includes(inputValue.toLowerCase())) {
-                    console.log(car)
-                    return true
-                }
-                
-            }) */
+            
         })
 
         // Checks if something is in the filtered array
