@@ -9,6 +9,9 @@ const PopupCart = () => {
 
   return ( 
     <div className={style.popupCartWrapper}>
+      <div className={style.cartTitle}>
+        <h4>Your cart:</h4>
+      </div>
       <div className={style.cartItemsWrapper}>
         {shoppingCartItems.map(car => (
           <div className={style.cartItem} key={car.vin}>

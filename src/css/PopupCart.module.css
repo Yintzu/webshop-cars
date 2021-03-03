@@ -4,11 +4,20 @@
   flex-direction: column;
   padding: .5rem .5rem;
   z-index: 3000;
-  top: 110px;
+  top: 109px;
   right: 0;
   width: 350px;
   background-color: rgb(235, 235, 235);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.295);
+}
+
+.cartTitle {
+  padding-left: .2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.61);
+}
+
+.cartTitle h4 {
+  font-size: 1.2rem;
 }
 
 .cartItemsWrapper {
@@ -71,8 +80,8 @@
 
 .totalSumWrapper {
   display: flex;
-  padding: .5rem;
-  border-top: 1px solid black;
+  padding: .5rem .2rem;
+  border-top: 1px solid rgba(36, 21, 21, 0.6);
   margin-top: .4rem;
   justify-content: space-between;
 }
@@ -89,4 +98,8 @@
   padding: .5rem 1rem;
   background: linear-gradient(180deg, rgb(80, 205, 240) 0%, rgb(64, 166, 206) 100%);
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.158);
+}
+
+.toCheckoutBtn:active {
+  transform: scale(1.01);
 }
