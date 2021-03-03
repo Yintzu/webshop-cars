@@ -37,3 +37,7 @@
 .desc p {
     margin-top: 1rem;
 }
+.details .removeBtn {
+    background-color: tomato;
+    color: white;
+}
