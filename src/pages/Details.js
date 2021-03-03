@@ -29,15 +29,14 @@ const Details = (props) => {
                         <h3>{car.make} {car.model} {car.year}</h3>
                         <p>{car.city}</p>
                         <h4 className={style.price}>{formatSum(car.price)}</h4>
-                        {/* <button onClick={() => addToCart(car)} className="btn btn-dark btn-lg" >Add to cart</button> */}
                         { 
-            !shoppingCartItems.includes(car) ? 
-            <button onClick={() => addToCart(car)} className="btn btn-dark btn-lg" >Add to cart</button> :
-              <button onClick={() => removeFromCart(car)} className={`btn btn-lg ${style.addToCartBtn} ${style.removeBtn}`}>Remove</button>
-            }
+                        !shoppingCartItems.includes(car) ? 
+                        <button onClick={() => addToCart(car)} className={`btn btn-lg ${style.addToCartBtn}`}>Add to cart</button> :
+                        <button onClick={() => removeFromCart(car)} className={`btn btn-lg ${style.removeBtn}`}>Remove</button>
+                        }
                     </div>
                 </div>
-                <div className="row">
+                <div className={`row ${style.descContainer}`}>
                     <div className={`col ${style.desc}`}>
                         <p>{car.descLong}</p>
                     </div>
