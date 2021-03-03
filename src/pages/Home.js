@@ -1,10 +1,11 @@
 import style from '../css/Home.module.css';
 import CarList from '../components/CarList';
+import Search from '../components/Search';
 
 const Home = () => {
     return ( 
         <div>
-            On home
+            <Search />
             <CarList />
         </div>
      );
