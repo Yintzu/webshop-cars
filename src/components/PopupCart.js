@@ -1,9 +1,11 @@
 import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import style from '../css/PopupCart.module.css';
 
 const PopupCart = () => {
   const { shoppingCartItems, formatSum, removeFromCart, cartTotal } = useContext(ShoppingCartContext);
+  const history = useHistory();
 
   return ( 
     <div className={style.popupCartWrapper}>
@@ -31,7 +33,7 @@ const PopupCart = () => {
           <h5>Total:</h5>
           <h5>{formatSum(cartTotal)}</h5>
       </div>
-      <button className={style.toCheckoutBtn}>Go to checkout</button>
+      <button onClick={() => history.push('/checkout')} className={style.toCheckoutBtn}>Go to checkout</button>
     </div>
    );
 }
