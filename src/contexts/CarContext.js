@@ -40,8 +40,12 @@ const CarContextProvider = (props) => {
     const filterCars = (inputValue) => {
         let filteredCars = []
         filteredCars = cars.filter(car => {
-            let matchString = `${car.make} ${car.model} ${car.year}`;
-            if (matchString.toLowerCase().includes(inputValue.toLowerCase())) {
+            // let matchString = `${car.make} ${car.model} ${car.year}`;
+            let matchArray = [car.make.toLowerCase(), car.model.toLowerCase(), car.year];
+            // if (matchString.toLowerCase().includes(inputValue.toLowerCase())) {
+            //     return true
+            // }
+            if (inputValue.includes(matchArray[0]) || inputValue.includes(matchArray[1]) || inputValue.includes(matchArray[2]) ) {
                 return true
             }
         })
