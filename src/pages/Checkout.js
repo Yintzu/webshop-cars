@@ -34,6 +34,7 @@ const Checkout = () => {
                 orderInfoObject[item.id] = item.value;
             }
         })
+        orderInfoObject["delivery"] = selectStatus;
         setOrderInfo([orderInfoObject, ...orderInfo])
         setBoughtCars(shoppingCartItems, ...boughtCars)
         removeAllFromCart();
@@ -50,7 +51,7 @@ const Checkout = () => {
         }
     }
 
-    /*     useEffect(() => {
+        /* useEffect(() => {
             console.log("User info from orders:");
             console.log(orderInfo)
         }, [orderInfo]) */
