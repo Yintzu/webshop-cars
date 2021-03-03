@@ -14,7 +14,7 @@ const CarContextProvider = (props) => {
         const carlists=carlist.map(car=>{ 
             return {
                 ...car,
-                carImg:`./assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`
+                carImg:`../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`
             }
         })
         console.log(carlists);
@@ -24,12 +24,11 @@ const CarContextProvider = (props) => {
         createCarList();
     },[])
     
-    
-    const [clickedCar, setClickedCar] = useState({});
-    const viewCar = (clickedCarData, history) => {
-        setClickedCar(clickedCarData);
-        history.push('/details') 
+    /* Direction to  */
+    const viewCar = (clickedCar, history) => {
+        history.push(`/details/${clickedCar.vin}`) 
     }
+
     const [searchResult, setSearchResult] = useState([]);
     const filterCars = (event, inputValue) => {
         event.preventDefault();
@@ -47,7 +46,6 @@ const CarContextProvider = (props) => {
     const values={
       cars,
       viewCar,
-      clickedCar,
       searchResult,
       filterCars,
     }

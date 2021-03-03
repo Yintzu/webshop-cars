@@ -1,19 +1,27 @@
 .details {
     margin-top: 2rem;
-    background: lightgrey;
     padding: 2rem;
+    border: #eee 2px solid;
+    border-radius: 5px;
 }
 .buy {
-    background: white;
+    background: #eee;
     padding: 2rem;
     margin: .5rem auto;
     margin-right: 1rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #d2d2d2;
 }
 .imageWrapper {
-    margin: .5rem auto;
+    margin: .5rem 1rem;
+    border-radius: 5px;
+    padding: 0;
+    box-shadow: 2px 2px 2px #d2d2d2;
 }
 .imageWrapper img {
     width: 100%;
+    border-radius: 5px;
+    margin: 0;
 }
 .price {
     margin: 2rem 0 1rem;
@@ -22,4 +30,10 @@
     list-style-type: none;
     margin-top: 1rem;
     padding: 0;
+}
+.details li {
+    font-size: 1.2rem;
+}
+.desc p {
+    margin-top: 1rem;
 }
