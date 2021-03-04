@@ -8,7 +8,7 @@
 
 .navbar {
   width: 100%;
-  background-color: rgb(235, 245, 242);
+  background-color: #f4f4f4 !important;
   display: flex;
   padding: 1rem;
   align-items: center;
@@ -25,16 +25,19 @@
 
 .links {
   margin: 0 .5rem;
+  color: #2C7CAE !important;
+}
+
+.links:hover {
+  color: #DA6547 !important;
 }
 
 .navLinks {
   margin-left: 2rem;
-  font-weight: bold;
-  color: 
 }
 
 .active {
-  text-decoration: underline;
+  color: #DA6547 !important;
 }
 
 .cartIcon {
@@ -91,8 +94,9 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  background-color: rgb(230, 230, 230);
+  background-color: #2C7CAE;
   padding: .5rem 1rem;
+  color: #E9f2f4 !important;
 }
 
 .rrrrlogoImg {
