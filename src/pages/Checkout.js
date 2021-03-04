@@ -113,27 +113,27 @@ const Checkout = () => {
                                 <h2 className="text-center mt-2">Your info</h2>
 
                                 <label htmlFor="firstName">First name</label>
-                                <input className="form-control" type="text" id="firstName" pattern="[A-Za-z\s]+" required></input>
+                                <input className="form-control" type="text" id="firstName" pattern="[A-Öa-ö\s]+" required></input>
 
                                 <label htmlFor="lastName">Last name</label>
-                                <input className="form-control" type="text" id="lastName" required></input>
+                                <input className="form-control" type="text" id="lastName" pattern="[A-Öa-ö\s]+" required></input>
 
                                 <label htmlFor="address">Address</label>
-                                <input className="form-control" type="text" id="address" required></input>
+                                <input className="form-control" type="text" id="address" pattern="[A-Öa-ö\s\d]+" required></input>
 
                                 <div className="row">
                                     <div className="col-6">
                                         <label htmlFor="postalnr">Postal number</label>
-                                        <input className="form-control" type="text" id="postalnr" required></input>
+                                        <input className="form-control" type="text" id="postalnr" pattern="[\d]{3}\s?[\d]{2}" required></input>
                                     </div>
                                     <div className="col-6">
                                         <label htmlFor="city">City</label>
-                                        <input className="form-control" type="text" id="city" required></input>
+                                        <input className="form-control" type="text" id="city" pattern="[A-Öa-ö\s]+" required></input>
                                     </div>
                                 </div>
 
                                 <label htmlFor="phone">Phone number</label>
-                                <input className="form-control" type="text" id="phone" required></input>
+                                <input className="form-control" type="text" id="phone" pattern="\+?[\d]{8,14}" required></input>
 
                                 <label htmlFor="email">E-mail</label>
                                 <input className="form-control" type="email" id="email" required></input>
@@ -149,17 +149,17 @@ const Checkout = () => {
                                     {radioStatus === "card" &&
                                         <div className={style.cardInfo}>
                                             <label htmlFor="cardOwner">Name of card owner</label>
-                                            <input className="form-control" type="text" id="cardOwner"></input>
+                                            <input className="form-control" type="text" id="cardOwner" pattern="[A-Öa-ö\s]+" required></input>
                                             <label htmlFor="cardNumber">Card number</label>
-                                            <input className="form-control" type="text" id="cardNumber"></input>
+                                            <input className="form-control" type="text" id="cardNumber" pattern="[\d]{4}\s?[\d]{4}\s?[\d]{4}\s?[\d]{4}" required></input>
                                             <div className="row">
-                                                <div className="col-6">
-                                                    <label htmlFor="expiration">Expiration date</label>
-                                                    <input className="form-control" type="text" id="expiration"></input>
+                                                <div className="col-8">
+                                                    <label htmlFor="expiration">Expiration date (mm-yy)</label>
+                                                    <input className="form-control" type="text" id="expiration" pattern="[\d]{2}-[\d]{2}" required></input>
                                                 </div>
-                                                <div className="col-6">
+                                                <div className="col-4">
                                                     <label htmlFor="cvv">CVV</label>
-                                                    <input className="form-control" type="text" id="cvv"></input>
+                                                    <input className="form-control" type="text" id="cvv" pattern="[\d]{3}" required></input>
                                                 </div>
                                             </div>
                                         </div>}

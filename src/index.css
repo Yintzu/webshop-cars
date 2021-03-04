@@ -6,6 +6,10 @@
   box-sizing: border-box; 
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   padding-top: 120px;
   font-family: 'Quicksand', sans-serif;;
@@ -16,6 +20,7 @@ p {
 }
 
 .site-container {
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
 }
