@@ -70,7 +70,7 @@ const Confirmation = () => {
           <hr />
           <div className="row">
             <div className="col">
-              <p className={styles.containerText}>{shoppingCartItems[0].make}</p>
+              <p className={styles.containerText}>Volvo V70</p>
               <hr />
             </div>
             <div className="col">
