@@ -50,7 +50,7 @@ const Checkout = () => {
         } else if (selection === "Delivery by helicopter") {
             deliveryPrice = 10000;
         }
-        return <p className="text-end fw-bold">{formatSum(deliveryPrice)}</p>
+        return <p className={`${style.deliveryPrice}`}>{formatSum(deliveryPrice)}</p>
     }
 
         /* useEffect(() => {
@@ -73,7 +73,7 @@ const Checkout = () => {
                                     <div key={key} className={`row ${style.shoppingCartCard}`}>
                                         <div className={`col-12 col-sm-2 ${style.flexer}`}><img className={`my-2 ${style.w100}`} src={item.carImg}/></div>
                                         <div className="col-12 col-sm-7">
-                                            <h2>{`${item.make} ${item.model}`}</h2>
+                                            <h2 className="mt-2">{`${item.make} ${item.model}`}</h2>
                                             <p>{`${item.descShort}`}</p>
                                         </div>
                                         <div className={`col-8 col-sm-2 ${style.flexer}`}>
@@ -86,14 +86,14 @@ const Checkout = () => {
                                 <div>
                                     <h2 className="text-center mb-3">Delivery Options</h2>
                                     <div className="row">
-                                        <div className="col-10">
+                                        <div className="col-9">
                                             <select id="deliveryOptions" onChange={selectHandler}>
                                                 <option>Pick up at store</option>
                                                 <option>Delivery by truck</option>
                                                 <option>Delivery by helicopter</option>
                                             </select>
                                         </div>
-                                        <div className="col-2">
+                                        <div className="col-3">
                                             {selectPriceRenderer(selectStatus) /* Shows delivery price depending on selection */}
                                         </div>
                                     </div>
