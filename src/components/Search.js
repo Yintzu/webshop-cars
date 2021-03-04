@@ -25,7 +25,6 @@ const Search = () => {
 
     return (
         <div className={style.search}>
-            {/* <form onSubmit={event => filterCars(event, inputValue)}> */}
             <form onSubmit={handleSubmit}>
                 <div className={style.input}>
                     <input type="text" placeholder="Search..." value={inputValue} onChange={handleChange}/>
