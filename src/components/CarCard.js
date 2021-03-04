@@ -6,7 +6,7 @@ import style from '../css/CarCard.module.css';
 
 const CarCard = (props) => {
     const history = useHistory();
-    const { addToCart, removeFromCart,shoppingCartItems } = useContext(ShoppingCartContext);
+    const { addToCart, removeFromCart,shoppingCartItems, formatSum } = useContext(ShoppingCartContext);
     const { viewCar } = useContext(CarContext);
 
     return (
@@ -15,6 +15,7 @@ const CarCard = (props) => {
                 <img src={props.car.carImg} className="card-img-top" alt="A good affordable car" onClick={() => viewCar(props.car, history)}/>
                 <div className="card-body">
                     <h5 className="card-title">{props.car.make} {props.car.model} {props.car.year}</h5>
+                    <p className="card-text">{formatSum(props.car.price)}</p>
                     <p className="card-text">{props.car.descShort}</p>
                     <button onClick={() => addToCart(props.car) }className="btn btn-primary float-end">Add To Cart</button>
                 </div>
