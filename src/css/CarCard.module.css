@@ -3,3 +3,12 @@
     width: 80%;
     margin: auto;
 }
+.carCard img {
+    cursor: pointer;
+}
+.carCard p:first-letter {
+    text-transform: capitalize;
+}
+.carCard .desc::after {
+    content: "."
+}
