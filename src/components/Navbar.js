@@ -38,6 +38,12 @@ const Navbar = () => {
         }
     }
 
+    useEffect(() => {
+        history.listen((location) => {
+            setCartVisible(false);
+        })
+    }, [history]);
+
     // On change in cart, set onCartUpdate to true and then back to false after a short duration
     // While true, the div in render will have a css-class with animation
     useEffect(() => {
