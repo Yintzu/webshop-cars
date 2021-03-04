@@ -20,10 +20,12 @@ const Navbar = () => {
     }
 
     const mouseOverHandler = () => {
-        if (timer) {
-            clearTimeout(timer)
-        };
-        setCartVisible(true);
+        if (!matchMedia('(pointer:coarse)').matches) {
+            if (timer) {
+                clearTimeout(timer)
+            };
+            setCartVisible(true);
+        }   
     }
 
     const cartClickHandler = () => {
