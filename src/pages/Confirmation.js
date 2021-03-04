@@ -2,13 +2,16 @@ import styles from '../css/Confirmation.module.css';
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
+import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 
 const Confirmation = () => {
 
   const { boughtCars, orderInfo } = useContext(UserContext);
+  const { shoppingCartItems } = useContext(ShoppingCartContext)
 
   console.log(boughtCars);
   console.log(orderInfo);
+  console.log(shoppingCartItems)
 
   return (
     <div className="container">
@@ -19,23 +22,25 @@ const Confirmation = () => {
               col-sm
               col-md-offset-2
               `}>
-          <h3 className={styles.smallerHeading}>Order number: 1275758489</h3>
-          <p className={styles.containerText}>Delivery details</p>
-          <hr />
+          <h3 className={styles.smallerHeading}>Order number: {orderInfo[0].ordernumber}</h3>
+            <p className={styles.containerText}>Delivery details</p>
+            <hr />
           <h4 className={styles.smallHeading}>Delivery for</h4>
-          <p className={styles.containerText}>{orderInfo[0].firstName}</p>
+            <p className={styles.containerText}>{orderInfo[0].firstName} {orderInfo[0].lastName}</p>
           <h4 className={styles.smallHeading}>Delivery address</h4>
-          <p className={styles.containerText}>Storgatan 6</p>
-          <p className={styles.containerText}>217 57 Malmö</p>
+            <p className={styles.containerText}>{orderInfo[0].address}</p>
+            <p className={styles.containerText}>{orderInfo[0].postalnr} {orderInfo[0].city}</p>
           <h4 className={styles.smallHeading}>Telephone</h4>
-          <p className={styles.containerText}>+46704123456</p>
+            <p className={styles.containerText}>{orderInfo[0].phone}</p>
+          <h4 className={styles.smallHeading}>E-mail</h4>
+            <p className={styles.containerText}>{orderInfo[0].email}</p>
 
           {/* Order Info */}
           <h4 className={styles.smallHeading}>Order info</h4>
-          <p className={styles.containerText}>Order number: 1275758489</p>
-          <p className={styles.containerText}>Order date: 2021-03-02</p>
-          <p className={styles.containerText}>Payment method: VISA</p>
-          <p className={styles.containerTextLast}>Delivery method: Pick up at store</p>
+            <p className={styles.containerText}>Order number: {orderInfo[0].ordernumber}</p>
+            <p className={styles.containerText}>Order date: {orderInfo[0].orderdate}</p>
+            <p className={styles.containerText}>Payment method: {orderInfo[0].payment}</p>
+            <p className={styles.containerTextLast}>Delivery method: {orderInfo[0].delivery}</p>
 
           {/* Buttons start */}
           <NavLink exact to="/"><button type="button"
@@ -65,13 +70,11 @@ const Confirmation = () => {
           <hr />
           <div className="row">
             <div className="col">
-              <p className={styles.containerText}>Car 1</p>
-              <p className={styles.containerText}>Car 2</p>
+              <p className={styles.containerText}>{shoppingCartItems[0].make}</p>
               <hr />
             </div>
             <div className="col">
-              <p className={styles.containerText}>$200 000</p>
-              <p className={styles.containerText}>$450 000</p>
+              <p className={styles.containerText}>{shoppingCartItems[0].price}</p>
               <hr />
             </div>
           </div>
@@ -80,7 +83,7 @@ const Confirmation = () => {
               <p className={styles.containerText}>Total:</p>
             </div>
             <div className="col">
-              <p className={styles.containerText}>$650 000</p>
+              <p className={styles.containerText}>{shoppingCartItems[0].price}</p>
             </div>
           </div>
         </div>

@@ -4,7 +4,13 @@ export const ShoppingCartContext = createContext();
 
 const ShoppingCartProvider = (props) => {
 
-    const [shoppingCartItems, setShoppingCartItems] = useState([]);
+    const [shoppingCartItems, setShoppingCartItems] = useState([
+        {
+            make: "Chevrolet",
+            price: "$235 000"
+            
+        }
+    ]);
     const [cartTotal, setCartTotal] = useState(0);
 
     // Adds the price of all items in cart together on change in cart-array
