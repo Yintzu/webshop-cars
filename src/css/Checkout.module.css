@@ -8,31 +8,59 @@ input{
 
 select{
     width: 100%;
+    height: 35px;
 }
 
+.w100{
+    width: 100%;
+}
+
+.quicksand{
+    font-family: "Quicksand", sans-serif;
+}
+
+.background{
+    background: #EBF5F2;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #d2d2d2;
+}
 
 .shoppinglist{
     width: 100%;
     border: 1px solid black;
     margin: 2rem auto;
+
 }
 
 .shoppingCartCard{
+    background-color: #fcfcfc;
     border: 1px solid lightslategray;
     border-radius: 3px;
     margin: 1rem 0.5rem;
+    box-shadow: 2px 2px 2px #8d8d8d;
+}
+
+.itemPrice{
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
 .removeButton{
     color: white;
-    background-color: red;
+    background-color: rgb(255, 41, 41);
     padding: 5px 12px;
     border-radius: 3px;
 }
 
 .removeButton:hover{
     cursor: pointer;
-    background-color: tomato;
+    background-color: rgb(255, 100, 100);
+}
+
+.deliveryPrice{
+    text-align: end;
+    font-weight: bold;
+    font-size: 1.4rem;
 }
 
 .info{
@@ -61,4 +89,10 @@ select{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media only screen and (max-width: 575px) {
+    .itemPrice{
+        font-size: 1.5rem;
+    }
 }
