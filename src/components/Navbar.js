@@ -61,7 +61,7 @@ const Navbar = () => {
                     </div> 
                 </div>
                     <div className={style.iconsWrapper}>
-                    <div onMouseOver={mouseOverHandler} onMouseLeave={mouseLeaveHandler} className={style.cartIcon} onClick={cartClickHandler}>
+                    <div onMouseOver={mouseOverHandler} onMouseLeave={mouseLeaveHandler} className={style.cartIconWrapper} onClick={cartClickHandler}>
                             {/* Div with numbers will be displayed based on cart length, if 0 it won't be displayed at all */}
                             { cart.length > 0 ? <div className={`${style.cartNumber} ${onCartUpdate ? style.cartUpdate : ''}`}><span>{cart.length}</span></div> : ''}
                             <img className={style.img} src="./assets/icons/shopping-cart-web.png"/>

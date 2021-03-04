@@ -38,15 +38,15 @@
 
 .iconsWrapper {
   display: flex;
-  width: 10%;
+  align-items: center;
+  width: 70px;
   justify-content: space-between;
   margin-left: auto;
-  background-color: brown;
 }
 
-.cartIcon {
+.cartIconWrapper {
   position: relative;
-  width: 50%;
+  width: 45%;
   cursor: pointer;
 }
 
@@ -94,7 +94,6 @@
 }
 
 .leftWrapper {
-  background-color: blueviolet;
   display: flex;
   align-items: center;
 }
@@ -115,7 +114,7 @@
 
 .acctContact {
   position: relative;
-  width: 50%;
+  width: 40%;
 }
 
 .acctContactImg {
