@@ -21,7 +21,9 @@ const UserContextProvider = (props) => {
       phone: "+46730713949",
       postalnr: "22354",
       ordernumber: "1234567",
-      orderdate: "2021-03-04"
+      orderdate: "2021-03-04",
+      price: "$235 697"
+     
     }
 
     ]);

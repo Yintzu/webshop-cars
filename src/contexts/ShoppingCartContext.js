@@ -7,7 +7,6 @@ const ShoppingCartProvider = (props) => {
     const [shoppingCartItems, setShoppingCartItems] = useState([
         {
             make: "Chevrolet",
-            price: "$235 000"
             
         }
     ]);
