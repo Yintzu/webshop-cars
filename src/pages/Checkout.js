@@ -7,13 +7,11 @@ import style from '../css/Checkout.module.css';
 const Checkout = () => {
 
     const { shoppingCartItems, removeFromCart, removeAllFromCart, cartTotal, formatSum } = useContext(ShoppingCartContext)
-    const { boughtCars, setBoughtCars } = useContext(UserContext)
+    const { boughtCars, setBoughtCars, setOrderInfo, orderInfo } = useContext(UserContext)
     const history = useHistory();
 
     const [radioStatus, setRadioStatus] = useState("");
     const [selectStatus, setSelectStatus] = useState("Pick up at store");
-
-    const [orderInfo, setOrderInfo] = useState([]);
 
     const radioHandler = (e) => {
         setRadioStatus(e.target.value)
