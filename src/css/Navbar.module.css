@@ -41,6 +41,7 @@
   margin-left: auto;
   margin-right: .5rem;
   width: 35px;
+  cursor: pointer;
 }
 
 .cartIcon:active {
@@ -110,4 +111,10 @@
 
 .acctContactImg.img {
   width: 100%;
+}
+
+@media (pointer: coarse) {
+  .cartIcon {
+    background-color: red;
+  }
 }

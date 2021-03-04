@@ -27,7 +27,13 @@ const Navbar = () => {
     }
 
     const cartClickHandler = () => {
-        history.push('/checkout');
+        if (!matchMedia('(pointer:coarse)').matches) {
+            history.push('/checkout');
+        } else if (cartVisible) {
+            setCartVisible(false);
+        }  else if (!cartVisible) {
+            setCartVisible(true);
+        }
     }
 
     // On change in cart, set onCartUpdate to true and then back to false after a short duration
