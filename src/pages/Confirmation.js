@@ -74,7 +74,7 @@ const Confirmation = () => {
               <hr />
             </div>
             <div className="col">
-              <p className={styles.containerText}>{shoppingCartItems[0].price}</p>
+              <p className={styles.containerText}>{orderInfo[0].price}</p>
               <hr />
             </div>
           </div>
@@ -83,7 +83,7 @@ const Confirmation = () => {
               <p className={styles.containerText}>Total:</p>
             </div>
             <div className="col">
-              <p className={styles.containerText}>{shoppingCartItems[0].price}</p>
+              <p className={styles.containerText}>{orderInfo[0].price}</p>
             </div>
           </div>
         </div>
