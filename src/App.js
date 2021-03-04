@@ -10,8 +10,7 @@ import TestPage from './pages/TestPage';
 import ShoppingCartContext from "./contexts/ShoppingCartContext";
 import CarContextProvider from './contexts/CarContext';
 import UserContext from './contexts/UserContext';
-import CarCard from './components/CarCard';
-import CarList from './components/CarList';
+import Carousel from './components/discountCarousel';
 
 function App() {
   return (
@@ -21,15 +20,15 @@ function App() {
           <ShoppingCartContext>
             <BrowserRouter>
               <Navbar />
+              <Carousel/>
               <div className="site-container">
                 <Route exact path="/" component={Home} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/testpage" component={TestPage} />
                 <Route exact path="/checkout" component={Checkout} />
                 <Route exact path="/confirmation" component={Confirmation} />
-                <Route exact path="/:id" component={Details} />
+                <Route exact path="/details/:id" component={Details} />
               </div>
-              <CarList></CarList>
               <Footer />
             </BrowserRouter>
           </ShoppingCartContext>
