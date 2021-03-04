@@ -11,10 +11,6 @@ select{
     height: 35px;
 }
 
-.w100{
-    width: 100%;
-}
-
 .quicksand{
     font-family: "Quicksand", sans-serif;
 }
@@ -28,7 +24,7 @@ select{
 .shoppinglist{
     width: 100%;
     border: 1px solid black;
-    margin: 2rem auto;
+    margin: 1rem auto;
 
 }
 
@@ -54,7 +50,7 @@ select{
 
 .removeButton:hover{
     cursor: pointer;
-    background-color: rgb(255, 100, 100);
+    background-color: rgb(194, 0, 0);
 }
 
 .deliveryPrice{
@@ -95,8 +91,14 @@ select{
     .itemPrice{
         font-size: 1.5rem;
     }
+
+    .info{
+        margin-bottom: 1rem;
+    }
 }
 
 @media only screen and (min-width: 576px){
-    
+    .gutterFix{
+        width: 49%;
+    }
 }

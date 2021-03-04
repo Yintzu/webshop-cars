@@ -71,7 +71,7 @@ const Checkout = () => {
                             <div>
                                 {shoppingCartItems.map((item, key) => (
                                     <div key={key} className={`row ${style.shoppingCartCard}`}>
-                                        <div className={`col-12 col-sm-2 ${style.flexer}`}><img className={`my-2 ${style.w100}`} src={item.carImg}/></div>
+                                        <div className={`col-12 col-sm-2 ${style.flexer}`}><img className={`my-2 w-100 rounded`} src={item.carImg}/></div>
                                         <div className="col-12 col-sm-7">
                                             <h2 className="mt-2">{`${item.make} ${item.model}`}</h2>
                                             <p>{`${item.descShort}`}</p>
@@ -114,8 +114,8 @@ const Checkout = () => {
                 {/* Conditionally render the form if there are items in cart */}
                 {shoppingCartItems.length > 0 &&
                     <form onSubmit={submitHandler}>
-                        <div className="row">
-                            <div className={`col-12 col-sm-6 info ${style.info} ${style.background}`}>
+                        <div className="row d-flex justify-content-between">
+                            <div className={`col-12 col-sm-6 info ${style.info} ${style.background} ${style.gutterFix}`}>
                                 <h2 className="text-center mt-2">Your info</h2>
 
                                 <label htmlFor="firstName">First name</label>
@@ -145,7 +145,7 @@ const Checkout = () => {
                                 <input className="form-control" type="email" id="email" required></input>
                             </div>
 
-                            <div className={`col-12 col-sm-6 ${style.payment} ${style.background}`}>
+                            <div className={`col-12 col-sm-6 ${style.payment} ${style.background} ${style.gutterFix}`}>
                                 <div>
                                     <h2 className="text-center mt-2">Payment options</h2>
                                     <div>
