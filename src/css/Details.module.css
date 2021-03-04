@@ -1,11 +1,11 @@
 .details {
-    margin-top: 2rem;
-    padding: 2rem;
+    margin-top: 5rem;
+    /* padding: 2rem;
     border: #eee 2px solid;
-    border-radius: 5px;
+    border-radius: 5px; */
 }
 .buy {
-    background: #eee;
+    background: #EBF5F2;
     padding: 2rem;
     margin: .5rem auto;
     margin-right: 1rem;
@@ -34,6 +34,22 @@
 .details li {
     font-size: 1.2rem;
 }
+.descContainer {
+    margin: .5rem 0;
+    padding: 1em ;
+    background: #EBF5F2;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #d2d2d2;
+}
 .desc p {
     margin-top: 1rem;
+    margin-right: 2rem;
+}
+.details .removeBtn {
+    background-color:#DA6547;
+    color: white;
+}
+.details .addToCartBtn {
+    background-color: #2C7CAE;
+    color: white;
 }
