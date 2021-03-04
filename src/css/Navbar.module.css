@@ -28,30 +28,13 @@
 }
 
 .navLinks {
-  margin-left: 2rem;
+  margin-left: .5rem;
   font-weight: bold;
+  font-size: .8rem;
 }
 
 .active {
   text-decoration: underline;
-}
-
-.iconsWrapper {
-  display: flex;
-  align-items: center;
-  width: 70px;
-  justify-content: space-between;
-  margin-left: auto;
-}
-
-.cartIconWrapper {
-  position: relative;
-  width: 45%;
-  cursor: pointer;
-}
-
-.cartIcon:active {
-  transform: scale(1.05);
 }
 
 .img {
@@ -106,6 +89,24 @@
   padding: .5rem 1rem;
 }
 
+.iconsWrapper {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  justify-content: space-between;
+  margin-left: auto;
+}
+
+.cartIconWrapper {
+  position: relative;
+  width: 45%;
+  cursor: pointer;
+}
+
+.cartIcon:active {
+  transform: scale(1.05);
+}
+
 .rrrrlogoImg {
   position: relative;
   margin-right: .5rem;
@@ -119,5 +120,16 @@
 
 .acctContactImg {
   width: 100%;
+}
+
+@media screen and (min-width: 450px) {
+  .navLinks {
+    font-size: 1rem;
+    margin-left: 1.5rem;
+  }
+
+  .iconsWrapper {
+    width: 70px;
+  }
 }
 

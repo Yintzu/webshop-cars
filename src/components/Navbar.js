@@ -16,7 +16,7 @@ const Navbar = () => {
     const mouseLeaveHandler = () => {
         timer = setTimeout(() => {
             setCartVisible(false);
-        }, 1500)
+        }, 500)
     }
 
     const mouseOverHandler = () => {
