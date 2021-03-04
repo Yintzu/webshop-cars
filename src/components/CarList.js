@@ -1,15 +1,20 @@
 import { useContext, useEffect, useState } from 'react';
 import { CarContext } from "../contexts/CarContext";
 import CarCard from './CarCard';
+import style from '../css/CarList.module.css'
 
 const CarList = () => {
-    const { cars } = useContext(CarContext);
+    const { cars, renderList } = useContext(CarContext);
     return (
+        
         <div className="row">
-            {cars.map((car) =>
+            {renderList ? 
+            renderList.map((car) =>
                 <CarCard car={car} key={car.vin} data={car}></CarCard>
-            )}
+            )
+        : <div className={style.noResult}>No results...</div>}
         </div>
+        
     );
 }
 

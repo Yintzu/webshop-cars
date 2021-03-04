@@ -1,3 +1,7 @@
+.search {
+    text-align: center;
+    margin-top: 1rem;
+}
 .input {
     text-align: center;
 }
@@ -7,7 +11,7 @@
     padding: .5rem;
     width: 50%;
 }
-.search button {
+.search .searchIcon {
     background: none;
     border: none;
     height: 40px;
@@ -15,4 +19,9 @@
 }
 .search img {
     height: 35px;
+}
+.search .clearSearch {
+    margin: 1rem auto 2rem;
+    color: white;
+    background-color: #2C7CAE; 
 }
