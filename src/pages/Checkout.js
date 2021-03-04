@@ -71,15 +71,15 @@ const Checkout = () => {
                             <div>
                                 {shoppingCartItems.map((item, key) => (
                                     <div key={key} className={`row ${style.shoppingCartCard}`}>
-                                        <div className={`col-12 col-sm-2 ${style.flexer}`}><img className={`my-2 w-100 rounded`} src={item.carImg}/></div>
-                                        <div className="col-12 col-sm-7">
+                                        <div className={`col-12 col-sm-12 col-md-2 ${style.flexer}`}><img className={`my-2 w-100 rounded`} src={item.carImg}/></div>
+                                        <div className="col-12 col-sm-8 col-md-7">
                                             <h2 className="mt-2">{`${item.make} ${item.model}`}</h2>
                                             <p>{`${item.descShort}`}</p>
                                         </div>
-                                        <div className={`col-8 col-sm-2 ${style.flexer}`}>
+                                        <div className={`col-8 col-sm-2 col-md-2 ${style.flexer}`}>
                                             <p className={`my-3 ${style.itemPrice}`}><strong>{`${formatSum(item.price)}`}</strong></p>
                                         </div>
-                                        <div className={`col-4 col-sm-1 ${style.flexer}`}><span className={`my-3 ${style.removeButton}`} onClick={() => removeFromCart(item)}>X</span></div>
+                                        <div className={`col-4 col-sm-2 col-md-1 ${style.flexer}`}><span className={`my-3 ${style.removeButton}`} onClick={() => removeFromCart(item)}>X</span></div>
                                     </div>
                                 ))}
                                 <hr />
@@ -115,7 +115,7 @@ const Checkout = () => {
                 {shoppingCartItems.length > 0 &&
                     <form onSubmit={submitHandler}>
                         <div className="row d-flex justify-content-between">
-                            <div className={`col-12 col-sm-6 info ${style.info} ${style.background} ${style.gutterFix}`}>
+                            <div className={`col-12 col-md-6 info ${style.info} ${style.background} ${style.gutterFix}`}>
                                 <h2 className="text-center mt-2">Your info</h2>
 
                                 <label htmlFor="firstName">First name</label>
@@ -145,7 +145,7 @@ const Checkout = () => {
                                 <input className="form-control" type="email" id="email" required></input>
                             </div>
 
-                            <div className={`col-12 col-sm-6 ${style.payment} ${style.background} ${style.gutterFix}`}>
+                            <div className={`col-12 col-md-6 ${style.payment} ${style.background} ${style.gutterFix}`}>
                                 <div>
                                     <h2 className="text-center mt-2">Payment options</h2>
                                     <div>

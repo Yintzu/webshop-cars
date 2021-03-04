@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 h1{
     text-align: center;
 }
@@ -91,13 +95,15 @@ select{
     .itemPrice{
         font-size: 1.5rem;
     }
+}
 
+@media only screen and (max-width: 767px){
     .info{
         margin-bottom: 1rem;
     }
 }
 
-@media only screen and (min-width: 576px){
+@media only screen and (min-width: 768px){
     .gutterFix{
         width: 49%;
     }
