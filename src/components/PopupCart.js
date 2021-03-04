@@ -1,10 +1,12 @@
 import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import { CarContext } from '../contexts/CarContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import style from '../css/PopupCart.module.css';
 
 const PopupCart = () => {
   const { shoppingCartItems: cart, formatSum, removeFromCart, cartTotal } = useContext(ShoppingCartContext);
+  const { viewCar } = useContext(CarContext);
   const history = useHistory();
 
   return ( 
@@ -16,7 +18,7 @@ const PopupCart = () => {
         {
           cart.length ? 
           cart.map(car => (
-            <div className={style.cartItem} key={car.vin}>
+            <div className={style.cartItem} key={car.vin} onClick={() => viewCar(car, history)}>
               <div className={style.cartImgWrapper}>
                 <img src={car.carImg} alt={car.make}/>
               </div>
