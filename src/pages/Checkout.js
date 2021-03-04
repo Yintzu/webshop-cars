@@ -67,24 +67,24 @@ const Checkout = () => {
                 <div className="row">
                     <div className={`${style.shoppinglist} ${style.background}`}>
                         {/* Ternary operator to display "No items in cart" or loop out the items */}
-                        {shoppingCartItems.length == 0 ? <h2 className="text-center">No items in cart</h2> :
+                        {shoppingCartItems.length == 0 ? <h2 className="text-center my-3">No items in cart</h2> :
                             <div>
                                 {shoppingCartItems.map((item, key) => (
                                     <div key={key} className={`row ${style.shoppingCartCard}`}>
-                                        <div className={`col-2 ${style.flexer}`}><img className={style.w100} src={item.carImg}/></div>
-                                        <div className="col-7">
+                                        <div className={`col-12 col-sm-2 ${style.flexer}`}><img className={`my-2 ${style.w100}`} src={item.carImg}/></div>
+                                        <div className="col-12 col-sm-7">
                                             <h2>{`${item.make} ${item.model}`}</h2>
                                             <p>{`${item.descShort}`}</p>
                                         </div>
-                                        <div className={`col-2 ${style.flexer}`}>
-                                            <p className="mb-0"><strong>{`${formatSum(item.price)}`}</strong></p>
+                                        <div className={`col-8 col-sm-2 ${style.flexer}`}>
+                                            <p className={`my-3 ${style.itemPrice}`}><strong>{`${formatSum(item.price)}`}</strong></p>
                                         </div>
-                                        <div className={`col-1 ${style.flexer}`}><span className={style.removeButton} onClick={() => removeFromCart(item)}>X</span></div>
+                                        <div className={`col-4 col-sm-1 ${style.flexer}`}><span className={`my-3 ${style.removeButton}`} onClick={() => removeFromCart(item)}>X</span></div>
                                     </div>
                                 ))}
                                 <hr />
                                 <div>
-                                    <h2 className="text-center">Delivery Options</h2>
+                                    <h2 className="text-center mb-3">Delivery Options</h2>
                                     <div className="row">
                                         <div className="col-10">
                                             <select id="deliveryOptions" onChange={selectHandler}>
@@ -99,7 +99,7 @@ const Checkout = () => {
                                     </div>
                                 </div>
                                 <hr />
-                                <div className="d-flex justify-content-between">
+                                <div className="d-flex justify-content-between mb-2">
                                     <h3>
                                         {`${shoppingCartItems.length} ${itemS} in cart`}
                                     </h3>
@@ -182,7 +182,7 @@ const Checkout = () => {
                                 </div>
                                 <div className="mb-3">
                                     <hr />
-                                    <h3 className="text-center">
+                                    <h3 className="text-center mb-4">
                                         {`Price total: ${formatSum(cartTotal)}`}
                                     </h3>
                                     <button className="btn btn-success d-block mx-auto">Place order</button>
