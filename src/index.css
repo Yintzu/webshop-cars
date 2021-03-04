@@ -6,7 +6,9 @@
   box-sizing: border-box; 
 }
 
-
+html {
+  overflow-y: scroll;
+}
 
 body {
   padding-top: 120px;

@@ -9,12 +9,13 @@
   display: flex;
   flex-direction: column;
   padding: .5rem .5rem 1rem .5rem;
-  z-index: 1500;
+  z-index: 1000;
   top: 111px;
   right: 0;
   width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.178);
   background-color: rgb(235, 235, 235);
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.295);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.170), -2px 2px 3px rgba(0, 0, 0, 0.170);
 }
 
 .cartTitle {
@@ -123,8 +124,6 @@
 
 @media screen and (min-width: 450px) {
   .popupCartWrapper {
-    padding: .5rem .5rem;
-    z-index: 3000;
     top: 114px;
     right: 0;
     width: 350px;
