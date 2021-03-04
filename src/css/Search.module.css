@@ -1,9 +1,11 @@
 .search {
     text-align: center;
-    margin-top: 1rem;
+/*     margin-top: 1rem; */
+    background: #EBF5F2;
 }
 .input {
     text-align: center;
+    padding: .5rem;
 }
 .search input {
     border: solid darkgrey 2px; 
@@ -26,5 +28,8 @@
     background-color: #2C7CAE; 
 }
 .dropDown {
-    background: tomato;
+    padding: 0 2rem 2rem;
+}
+.selects select {
+    margin: auto 1.5rem;
 }

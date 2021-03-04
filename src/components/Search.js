@@ -6,7 +6,11 @@ const Search = () => {
     const [inputValue, setInputValue] = useState("");
     const { cars, filterCars, resetRenderList } = useContext(CarContext);
     const [searched, setSearched] = useState(false);
-    let [makeArray, setMakeArray] = useState([]);
+    const [makeArray, setMakeArray] = useState([]);
+    const [modelArray, setModelArray] = useState([]);
+    /* const [priceValue, setPriceValue] = useState('1000000'); */
+    const [isClicked, setIsClicked] = useState(false);
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -29,37 +33,51 @@ const Search = () => {
             if (!tempArray.includes(car.make))
             tempArray.push(car.make)
         })
-        setMakeArray(tempArray);
+        setMakeArray(tempArray.sort());
+    }
+    const createModelArray = () => {
+        let tempArray = []
+        cars.forEach(car => {
+            if (!tempArray.includes(car.model))
+            tempArray.push(car.model)
+        })
+        setModelArray(tempArray.sort());
     }
 
     useEffect(() => {
         createMakeArray();
-        
-    },[])
+        createModelArray();
+
+    },[cars])
 
     return (
         <div className={style.search}>
-            {console.log(makeArray)}
             <form onSubmit={handleSubmit}>
                 <div className={style.input}>
                     <input type="text" placeholder="Search..." value={inputValue} onChange={handleChange}/>
                     <button type="submit" className={style.searchIcon}><img src="./assets/icons/search-icon.png" alt="search"/></button>
-                    <button className="btn btn-lg dropdown-toggle" type="button">Filter</button>
+                    <button className="btn btn-lg dropdown-toggle" type="button" onClick={() => setIsClicked(isClicked ? false : true)}>Filter</button>
                 </div>
-                <div className={style.dropDown}>
-                    <select name="Make" id="" placeholder="make">
-                        {makeArray.length && makeArray.map(make => {
-                            
-                            return (<option>{make}</option>)
-                        })}
-                        
-                    </select>
-                    <input type="range" id="price" min="0" max="1000000"/>
-                    <output></output>
-                </div>
+                {isClicked && <div className={style.dropDown}>
+                    <div className={`row ${style.selects}`}>
+                        <select className="col" name="make" id="">
+                            <option value="select-make" selected disabled>Select Make</option>
+                            {makeArray.length && makeArray.map(make => {
+                                return (<option key={make}>{make}</option>)
+                            })}
+                        </select>
+                        <select className="col" name="model" id="">
+                            <option value="" selected disabled>Select Model</option>
+                            {modelArray.length && modelArray.map(model => {
+                                return (<option key={model}>{model}</option>)
+                            })}
+                        </select>
+                    </div>
+                </div>}
+                
             </form>
-            { searched ? 
-             <button onClick={handleResetSearch} className={`btn btn-sm ${style.clearSearch}`}>See all cars</button> : <div></div>}
+            { searched && 
+             <button onClick={handleResetSearch} className={`btn btn-sm ${style.clearSearch}`}>See all cars</button>}
         </div>
     );
 }
