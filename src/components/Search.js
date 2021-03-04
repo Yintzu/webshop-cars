@@ -28,11 +28,11 @@ const Search = () => {
             <form onSubmit={handleSubmit}>
                 <div className={style.input}>
                     <input type="text" placeholder="Search..." value={inputValue} onChange={handleChange}/>
-                    <button type="submit"><img src="./assets/icons/search-icon.png" alt="search"/></button>
+                    <button type="submit" className={style.searchIcon}><img src="./assets/icons/search-icon.png" alt="search"/></button>
                 </div>
             </form>
             { searched ? 
-             <button onClick={handleResetSearch} className={style.clearSearch}>See all cars</button> : <div></div>}
+             <button onClick={handleResetSearch} className={`btn btn-sm ${style.clearSearch}`}>See all cars</button> : <div></div>}
         </div>
     );
 }
