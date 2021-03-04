@@ -33,6 +33,7 @@ const Checkout = () => {
             }
         })
         orderInfoObject["delivery"] = selectStatus;
+        orderInfoObject["price"] = (cartTotal+deliveryPrice);
         setOrderInfo([orderInfoObject, ...orderInfo])
         setBoughtCars(shoppingCartItems, ...boughtCars)
         removeAllFromCart();
@@ -41,20 +42,15 @@ const Checkout = () => {
 
     let deliveryPrice = 0;
     const selectPriceRenderer = (selection) => {
-        if (selection === "Pick up at store"){
+        if (selection === "Pick up at store") {
             deliveryPrice = 0;
-        } else if (selection === "Delivery by truck"){
+        } else if (selection === "Delivery by truck") {
             deliveryPrice = 2000;
         } else if (selection === "Delivery by helicopter") {
             deliveryPrice = 10000;
         }
         return <p className={`${style.deliveryPrice}`}>{formatSum(deliveryPrice)}</p>
     }
-
-        /* useEffect(() => {
-            console.log("User info from orders:");
-            console.log(orderInfo)
-        }, [orderInfo]) */
 
     let itemS = shoppingCartItems.length === 1 ? 'item' : 'items';
 
@@ -69,7 +65,7 @@ const Checkout = () => {
                             <div>
                                 {shoppingCartItems.map((item, key) => (
                                     <div key={key} className={`row ${style.shoppingCartCard}`}>
-                                        <div className={`col-12 col-sm-12 col-md-2 ${style.flexer}`}><img className={`my-2 w-100 rounded`} src={item.carImg}/></div>
+                                        <div className={`col-12 col-sm-12 col-md-2 ${style.flexer}`}><img className={`my-2 w-100 rounded`} src={item.carImg} /></div>
                                         <div className="col-12 col-sm-8 col-md-7">
                                             <h2 className="mt-2">{`${item.make} ${item.model}`}</h2>
                                             <p>{`${item.descShort}`}</p>
@@ -102,11 +98,11 @@ const Checkout = () => {
                                         {`${shoppingCartItems.length} ${itemS} in cart`}
                                     </h3>
                                     <h3>
-                                        {`Total: ${formatSum(cartTotal+deliveryPrice)}`}
+                                        {`Total: ${formatSum(cartTotal + deliveryPrice)}`}
                                     </h3>
                                 </div>
                             </div>
-                        } {/* Ternary operator end */}
+                        } {/* Ternary operator for cart items and delivery options END*/}
                     </div>
                 </div>
                 {/* Conditionally render the form if there are items in cart */}
@@ -117,7 +113,7 @@ const Checkout = () => {
                                 <h2 className="text-center mt-2">Your info</h2>
 
                                 <label htmlFor="firstName">First name</label>
-                                <input className="form-control" type="text" id="firstName" required></input>
+                                <input className="form-control" type="text" id="firstName" pattern="[A-Za-z\s]+" required></input>
 
                                 <label htmlFor="lastName">Last name</label>
                                 <input className="form-control" type="text" id="lastName" required></input>
@@ -181,13 +177,14 @@ const Checkout = () => {
                                 <div className="mb-3">
                                     <hr />
                                     <h3 className="text-center mb-4">
-                                        {`Price total: ${formatSum(cartTotal)}`}
+                                        {`Price total: ${formatSum(cartTotal + deliveryPrice)}`}
                                     </h3>
                                     <button className="btn btn-success d-block mx-auto">Place order</button>
                                 </div>
                             </div>
                         </div>
-                    </form>/*Conditional form rendering end*/}
+                    </form>
+                }{/*Conditional form rendering end*/}
             </div>
         </div>
     );
