@@ -33,15 +33,9 @@ const Confirmation = () => {
           <h4 className={styles.smallHeading}>Telephone</h4>
             <p className={styles.containerText}>{orderInfo[0].phone}</p>
           <h4 className={styles.smallHeading}>E-mail</h4>
-            <p className={styles.containerText}>{orderInfo[0].email}</p>
+            <p className={styles.containerTextLast}>{orderInfo[0].email}</p>
 
-          {/* Order Info */}
-          <h4 className={styles.smallHeading}>Order info</h4>
-            <p className={styles.containerText}>Order number: {orderInfo[0].ordernumber}</p>
-            <p className={styles.containerText}>Order date: {orderInfo[0].orderdate}</p>
-            <p className={styles.containerText}>Payment method: {orderInfo[0].payment}</p>
-            <p className={styles.containerTextLast}>Delivery method: {orderInfo[0].delivery}</p>
-
+          
           {/* Buttons start */}
           <NavLink exact to="/"><button type="button"
             className={`
@@ -63,7 +57,7 @@ const Confirmation = () => {
                 ${styles.confirmationBox}
                 mx-md-2
                 col
-                col-lg-4
+                col-lg-5
                 col-md-offset-5
               `}>
           <h3 className={styles.smallerHeading}>Summary</h3>
@@ -85,6 +79,13 @@ const Confirmation = () => {
             <div className="col">
               <p className={styles.containerText}>{orderInfo[0].price}</p>
             </div>
+            {/* Order Info */}
+          <h4 className={styles.smallHeading}>Order info</h4>
+            <p className={styles.containerText}>Order number: {orderInfo[0].ordernumber}</p>
+            <p className={styles.containerText}>Order date: {orderInfo[0].orderdate}</p>
+            <p className={styles.containerText}>Payment method: {orderInfo[0].payment}</p>
+            <p className={styles.containerTextLast}>Delivery method: {orderInfo[0].delivery}</p>
+
           </div>
         </div>
       </div>
