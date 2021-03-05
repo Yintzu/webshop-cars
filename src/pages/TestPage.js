@@ -11,6 +11,8 @@ const TestPage = () => {
   const history = useHistory();
   const { addToCart, removeFromCart } = useContext(ShoppingCartContext);
 
+  // Check which button to render, depending on if item is already in cart or not
+  // Using vin-number to compare
   const renderButtons = (car) => {
     let inCart = false;
     shoppingCartItems.forEach(cartItem => {
@@ -40,11 +42,8 @@ const TestPage = () => {
                 <p>{car.year}</p>
               </div>
             </div>
-
-            {
-              renderButtons(car)
-            }
-            
+            {/* Render add or remove button */}
+            { renderButtons(car) }
           </div>
         ))
         
