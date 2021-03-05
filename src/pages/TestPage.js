@@ -45,11 +45,6 @@ const TestPage = () => {
               renderButtons(car)
             }
             
-            {/* { 
-              !shoppingCartItems.includes(car) ? 
-                <button onClick={() => addToCart(car)} className={`${style.addToCartBtn}`}>Add To Cart</button> :
-                <button onClick={() => removeFromCart(car)} className={`${style.addToCartBtn} ${style.removeBtn}`}>Remove</button>
-            } */}
           </div>
         ))
         

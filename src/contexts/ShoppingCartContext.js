@@ -32,7 +32,7 @@ const ShoppingCartProvider = (props) => {
     // Removes the clicked item using filter
     // Might want to use the vin-number attached to each car to compare later
     const removeFromCart = (itemToRemove) => {
-        setShoppingCartItems(shoppingCartItems.filter(item => item !== itemToRemove));
+        setShoppingCartItems(shoppingCartItems.filter(item => item.vin !== itemToRemove.vin));
     }
 
     const removeAllFromCart = () => {
