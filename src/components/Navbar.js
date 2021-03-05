@@ -12,6 +12,8 @@ const Navbar = () => {
     const [cartVisible, setCartVisible] = useState(false);
     const history = useHistory();
 
+    // Hande onMouseLeave event
+    // Set timer to hide cart when mouse leave cart-icon
     let timer;
     const mouseLeaveHandler = () => {
         timer = setTimeout(() => {
@@ -19,6 +21,8 @@ const Navbar = () => {
         }, 500)
     }
 
+    // Clear timer to close cart if mouse enters cart div
+    // Only if pointer is not coarse
     const mouseOverHandler = () => {
         if (!matchMedia('(pointer:coarse)').matches) {
             if (timer) {
@@ -28,6 +32,9 @@ const Navbar = () => {
         }   
     }
 
+    // Handle cart visibility on click of cart icon
+    // Will show cart on click on touch screen
+    // Will go to checkout on click of pointer is not coarse
     const cartClickHandler = () => {
         if (!matchMedia('(pointer:coarse)').matches) {
             history.push('/checkout');
@@ -38,8 +45,9 @@ const Navbar = () => {
         }
     }
 
+    // Hide cart if route changes
     useEffect(() => {
-        history.listen((location) => {
+        history.listen(() => {
             setCartVisible(false);
         })
     }, [history]);
