@@ -7,7 +7,7 @@ import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 const Confirmation = () => {
 
   const { boughtCars, orderInfo } = useContext(UserContext);
-  const { shoppingCartItems } = useContext(ShoppingCartContext)
+  const { shoppingCartItems, formatSum } = useContext(ShoppingCartContext)
 
   console.log(boughtCars);
   console.log(orderInfo);
@@ -57,7 +57,7 @@ const Confirmation = () => {
                 <p className={styles.containerText}>{car.make} {car.model}</p>
               </div>
               <div className="col">
-                <p className={styles.containerText}>{car.price} kr</p>
+                <p className={styles.containerText}>{formatSum(car.price)}</p>
               </div>
             </div>
           ))}
@@ -68,12 +68,12 @@ const Confirmation = () => {
             </div>
             <div className="col">
               <hr/>
-              <p className={styles.containerText}>{orderInfo[0].price}</p>
-          </div>
+              <p className={styles.containerText}>{formatSum(orderInfo[0].price)}</p>
+            </div>
             {/* Order Info */}
             <h4 className={styles.smallHeading}>Order info</h4>
-            <p className={styles.containerText}>Order number: {orderInfo[0].ordernumber}</p>
-            <p className={styles.containerText}>Order date: {orderInfo[0].orderdate}</p>
+            <p className={styles.containerText}>Order number: {orderInfo[0].orderNumber}</p>
+            <p className={styles.containerText}>Order date: {orderInfo[0].orderDate[0]} {orderInfo[0].orderDate[1]}</p>
             <p className={styles.containerText}>Payment method: {orderInfo[0].payment}</p>
             <p className={styles.containerTextLast}>Delivery method: {orderInfo[0].delivery}</p>
 

@@ -12,7 +12,7 @@ const Navbar = () => {
     const [cartVisible, setCartVisible] = useState(false);
     const history = useHistory();
 
-    // Hande onMouseLeave event
+    // Handle onMouseLeave event
     // Set timer to hide cart when mouse leave cart-icon
     let timer;
     const mouseLeaveHandler = () => {
@@ -67,7 +67,7 @@ const Navbar = () => {
         <div className={style.navContainer}>
             <nav className={style.navbar}>
                 <div className={style.leftWrapper}>
-                    <NavLink className={style.rrrrlogo} exact to="/"><img className={style.rrrrlogoImg} src="./assets/app-components/webshop-logo.png"/></NavLink>
+                    <NavLink className={style.rrrrlogo} exact to="/"><img className={style.rrrrlogoImg} src="/assets/app-components/webshop-logo.png"/></NavLink>
                     <div className={style.navLinks}>
                         <NavLink className={style.links} activeClassName={style.active} exact to="/">Home</NavLink>
                         <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
@@ -78,7 +78,7 @@ const Navbar = () => {
                     <div onMouseOver={mouseOverHandler} onMouseLeave={mouseLeaveHandler} className={style.cartIconWrapper} onClick={cartClickHandler}>
                             {/* Div with numbers will be displayed based on cart length, if 0 it won't be displayed at all */}
                             { cart.length > 0 ? <div className={`${style.cartNumber} ${onCartUpdate ? style.cartUpdate : ''}`}><span>{cart.length}</span></div> : ''}
-                            <img className={style.img} src="./assets/icons/shopping-cart-web.png"/>
+                            <img className={style.img} src="/assets/icons/shopping-cart-web.png"/>
                     </div>
                     { cartVisible ? 
                         <div className={style.popupWrapper}
@@ -88,7 +88,7 @@ const Navbar = () => {
                         </div> 
                         : ''}
                     <NavLink className={ style.acctContact} exact to="/">
-                    <img className={style.acctContactImg} src="./assets/icons/account-contact-circle.png"/>
+                    <img className={style.acctContactImg} src="/assets/icons/account-contact-circle.png"/>
                     </NavLink>
                     </div>
             </nav>
