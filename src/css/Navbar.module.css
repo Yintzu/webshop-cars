@@ -23,12 +23,6 @@
   color: #111;
 }
 
-.links {
-  margin: 1rem 0.5rem;
-  transform: translateY(-20px);
-  color: #2C7CAE !important;
-}
-
 .popupWrapper {
   animation-name: popup;
   animation-duration: .2s;
@@ -43,6 +37,46 @@
   }
 }
 
+.hamburgerLine,
+.hamburgerLine::before,
+.hamburgerLine::after {
+  position: absolute;
+  height: 3px;
+  width: 25px;
+  background-color: #2C7CAE;
+  transition: .4s;
+}
+
+.hamburgerLine::before {
+  content: '';
+  top: -7px;
+}
+
+.hamburgerLine::after {
+  content: '';
+  top: 7px;
+}
+
+.hamburgerLine.openBurger {
+  width: 0;
+}
+
+.hamburgerLine.openBurger::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.hamburgerLine.openBurger::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.links {
+  margin: 1rem 0.5rem;
+  transform: translateY(-20px);
+  color: #2C7CAE !important;
+}
+
 .links:hover {
   color: #DA6547 !important;
 }
@@ -50,6 +84,7 @@
 .navLinks {
   position: absolute;
   display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -61,7 +96,13 @@
   font-weight: bold;
   font-size: 1rem;
   z-index: 2000;
+  transform: translateX(-100%);
+  transition: .5s;
   background-color: #f4f4f4 !important;
+}
+
+.navLinks.slideIn {
+  transform: translateX(0);
 }
 
 .active {
@@ -109,6 +150,8 @@
 
 .leftWrapper {
   position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
 }
@@ -163,13 +206,15 @@
 
   .navLinks {
     display:initial;
+    background-color: initial;
     height: initial;
     width: initial;
     position: initial;
-    margin-left: .5rem;
+    transform: initial;
+    transition: initial;
     font-weight: bold;
-    font-size: .8rem;
-    background-color: initial;
+    margin-left: 1.5rem;
+    font-size: 1rem;
   }
 
   .iconsWrapper {

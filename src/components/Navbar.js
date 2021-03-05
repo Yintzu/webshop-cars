@@ -66,9 +66,12 @@ const Navbar = () => {
     return ( 
         <div className={style.navContainer}>
             <nav className={style.navbar}>
+                <div className={style.hamburgerWrapper}>
+                    <div className={`${style.hamburgerLine} ${style.openBurger}`} />
+                </div>
                 <div className={style.leftWrapper}>
                     <NavLink className={style.rrrrlogo} exact to="/"><img className={style.rrrrlogoImg} src="/assets/app-components/webshop-logo.png"/></NavLink>
-                    <div className={style.navLinks}>
+                    <div className={`${style.navLinks}`}>
                         <NavLink className={style.links} activeClassName={style.active} exact to="/">Home</NavLink>
                         <NavLink className={style.links} activeClassName={style.active} exact to="/about">About Us</NavLink>
                         <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Support</NavLink>
