@@ -6,7 +6,7 @@ import style from '../css/Checkout.module.css';
 
 const Checkout = () => {
 
-    const { shoppingCartItems, removeFromCart, removeAllFromCart, cartTotal, formatSum } = useContext(ShoppingCartContext)
+    const { shoppingCartItems, removeFromCart, removeAllFromCart, cartTotal, formatSum, createTimeStamp } = useContext(ShoppingCartContext)
     const { boughtCars, setBoughtCars, setOrderInfo, orderInfo } = useContext(UserContext)
     const history = useHistory();
 
@@ -35,6 +35,8 @@ const Checkout = () => {
         orderInfoObject["delivery"] = selectStatus;
         orderInfoObject["price"] = (cartTotal+deliveryPrice);
         orderInfoObject["boughtCars"] = shoppingCartItems;
+        orderInfoObject["orderDate"] = createTimeStamp();
+        orderInfoObject["orderNumber"] = Math.round(Math.random()*10000000);
         setOrderInfo([orderInfoObject, ...orderInfo])
         setBoughtCars(shoppingCartItems, ...boughtCars)
         removeAllFromCart();

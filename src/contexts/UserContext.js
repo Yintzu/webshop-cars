@@ -20,9 +20,10 @@ const UserContextProvider = (props) => {
       payment: "card",
       phone: "+46730713949",
       postalnr: "22354",
-      ordernumber: "1234567",
-      orderdate: "2021-03-04",
+      orderNumber: "1234567",
+      orderDate: ["2021-03-04", "19:00", "Monday"],
       price: "$235 697",
+      date: "",
       boughtCars: [{
         carImg: "../assets/car-pictures/Chevrolet-Camaro-1973.jpg",
         city: "Santa Rosa",
