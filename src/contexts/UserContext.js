@@ -20,9 +20,22 @@ const UserContextProvider = (props) => {
       payment: "card",
       phone: "+46730713949",
       postalnr: "22354",
-      ordernumber: "1234567",
-      orderdate: "2021-03-04",
-      price: "$235 697"
+      orderNumber: "1234567",
+      orderDate: ["2021-03-04", "19:00", "Monday"],
+      price: "$235 697",
+      date: "",
+      boughtCars: [{
+        carImg: "../assets/car-pictures/Chevrolet-Camaro-1973.jpg",
+        city: "Santa Rosa",
+        descLong: "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.↵↵Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.↵↵Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+        descShort: "in lectus pellentesque at nulla suspendisse potenti cras in purus eu",
+        make: "Chevrolet",
+        miles: 15432,
+        model: "Camaro",
+        price: 554963,
+        vin: "1D4PT5GK0BW487259",
+        year: 1973
+      }]
      
     }
 

@@ -6,7 +6,7 @@ import style from '../css/Checkout.module.css';
 
 const Checkout = () => {
 
-    const { shoppingCartItems, removeFromCart, removeAllFromCart, cartTotal, formatSum } = useContext(ShoppingCartContext)
+    const { shoppingCartItems, removeFromCart, removeAllFromCart, cartTotal, formatSum, createTimeStamp } = useContext(ShoppingCartContext)
     const { boughtCars, setBoughtCars, setOrderInfo, orderInfo } = useContext(UserContext)
     const history = useHistory();
 
@@ -34,6 +34,9 @@ const Checkout = () => {
         })
         orderInfoObject["delivery"] = selectStatus;
         orderInfoObject["price"] = (cartTotal+deliveryPrice);
+        orderInfoObject["boughtCars"] = shoppingCartItems;
+        orderInfoObject["orderDate"] = createTimeStamp();
+        orderInfoObject["orderNumber"] = Math.round(Math.random()*10000000);
         setOrderInfo([orderInfoObject, ...orderInfo])
         setBoughtCars(shoppingCartItems, ...boughtCars)
         removeAllFromCart();
@@ -132,8 +135,8 @@ const Checkout = () => {
                                     </div>
                                 </div>
 
-                                <label htmlFor="phone">Phone number</label>
-                                <input className="form-control" type="text" id="phone" pattern="\+?[\d]{8,14}" required></input>
+                                <label htmlFor="phone">Phone number (no spaces)</label>
+                                <input className="form-control" type="text" id="phone" pattern="\+?[\d]{2,8}-?[\d]{6,8}" required></input>
 
                                 <label htmlFor="email">E-mail</label>
                                 <input className="form-control mb-4" type="email" id="email" required></input>
