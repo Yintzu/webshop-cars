@@ -30,6 +30,28 @@
 .dropDown {
     padding: 0 2rem 2rem;
 }
+.selects {
+    text-align: left;
+}
 .selects select {
     margin: auto 1.5rem;
+    width: 80%;
+}
+.selects label {
+    margin: auto 2rem;
+}
+.arrowUp, .arrowDown{
+    border: solid #2C7CAE;
+  border-width: 0 5px 5px 0;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  padding: 3px;
+  margin-left: 1rem;
+}
+.arrowUp {
+    transform: rotate(-135deg);
+}
+.arrowDown {
+    transform: rotate(45deg);
 }
