@@ -8,13 +8,12 @@ const Search = () => {
     const { cars } = useContext(CarContext);
     const { filterCars, resetRenderList } = useContext(SearchContext);
     const [searched, setSearched] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
     const [makeArray, setMakeArray] = useState([]);
     const [modelArray, setModelArray] = useState([]);
     const [yearArray, setYearArray] = useState([]);
-    /* const [priceValue, setPriceValue] = useState('1000000'); */
-    const [isClicked, setIsClicked] = useState(false);
-    /* const [filterLists, setFilterLists] = useState([makeArray, modelArray, yearArray]); */
-    const filterLists = [makeArray, modelArray, yearArray];
+    
+    const filterLists = [{listName: "make", list: makeArray}, {listName: "model", list: modelArray}, {listName: "year", list: yearArray}];
 
 
     const handleSubmit = (e) => {
@@ -81,13 +80,13 @@ const Search = () => {
                 </div>
                 {isClicked && <div className={style.dropDown}>
                     <div className={`row ${style.selects}`}>
-                        {filterLists.map(list => {
+                        {filterLists.map(listObject => {
                                 return (
-                                <div className="col">
-                                    <label htmlFor="year">Select</label>
-                                    <select name="year" id="year" defaultValue="all">
+                                <div className="col-md" key={listObject.listName}>
+                                    <label htmlFor={listObject.listName}>Select {listObject.listName}</label>
+                                    <select name={listObject.listName} id={listObject.listName} defaultValue="all">
                                         <option value="all">All</option>
-                                        {list.length && list.map(listItem => {
+                                        {listObject.list.length && listObject.list.map(listItem => {
                                             return (
                                             <option key={listItem}>{listItem}</option>
                                             )
@@ -96,34 +95,6 @@ const Search = () => {
                                 </div>
                                 )
                             })}
-                        {/* <div className="col">
-                            <label htmlFor="make">Select make</label>
-                            <select name="make" id="make" defaultValue="all">
-                                <option value="all" >All</option>
-                                {makeArray.length && makeArray.map(make => {
-                                    return (<option key={make}>{make}</option>)
-                                })}
-                            </select>
-                        </div>
-                        <div className="col">
-                            <label htmlFor="model">Select model</label>
-                            <select name="model" id="model" defaultValue="all">
-                                <option value="all">All</option>
-                                {modelArray.length && modelArray.map(model => {
-                                    return (<option key={model}>{model}</option>)
-                                })}
-                            </select>
-                        </div>
-                        <div className="col">
-                            <label htmlFor="year">Select year</label>
-                            <select name="year" id="year" defaultValue="all">
-                                <option value="all">All</option>
-                                {yearArray.length && yearArray.map(year => {
-                                    return (<option key={year}>{year}</option>)
-                                })}
-                            </select>
-                        </div> */}
-                        
                     </div>
                     {/* <div className="row">
                         <div className="col">
