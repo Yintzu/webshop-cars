@@ -15,26 +15,39 @@ select{
     height: 35px;
 }
 
-.quicksand{
-    font-family: "Quicksand", sans-serif;
+.mainHeading {
+    font-size: 1.8rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    color: #2C7CAE !important;
+    margin-top: 20px;
+}
+
+.smallerHeading {
+    font-size: 1.4rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    color: #2C7CAE !important;
+    margin-top: 0;
+    margin-bottom: 12px;
+    
 }
 
 .background{
-    background: #EBF5F2;
+    background: #f4f4f4;
     border-radius: 5px;
     box-shadow: 2px 2px 2px #d2d2d2;
 }
 
 .shoppinglist{
     width: 100%;
-    border: 1px solid black;
     margin: 1rem auto;
 
 }
 
 .shoppingCartCard{
     background-color: #fcfcfc;
-    border: 1px solid lightslategray;
+    border: 1px solid rgb(168, 168, 168);
     border-radius: 3px;
     margin: 1rem 0.5rem;
     box-shadow: 2px 2px 2px #8d8d8d;
@@ -63,12 +76,7 @@ select{
     font-size: 1.4rem;
 }
 
-.info{
-    border: 1px solid black;
-}
-
 .payment{
-    border: 1px solid black;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -79,6 +87,18 @@ select{
     border: 1px solid black;
     border-radius: 5px;
     padding: 1rem;
+}
+
+.orderButton{
+    min-width: 50%;
+    color: white !important;
+    background: #2C7CAE !important;
+    border: none;
+}
+
+.orderButton:hover {
+    background-color:#295276 !important;
+   
 }
 
 .radioButton{

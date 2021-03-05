@@ -11,7 +11,7 @@ hr {
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
     color: #2C7CAE !important;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .smallerHeading {
@@ -38,7 +38,7 @@ hr {
 }
 
 .confirmationBox {
-    background-color: #EBF5F2 !important;
+    background-color: #f4f4f4 !important;
     padding: 30px;
     margin-top: 20px;
     border-radius: 5px;
@@ -51,13 +51,31 @@ hr {
 }
 
 .backButton{
-    margin-right: 10px !important;
+    margin-left: 10px !important;
     background: #2C7CAE !important;
     border: none;
 }
 
+.backButton:hover {
+    background-color:#295276 !important;
+   
+}
+
 .printButton {
     background: #DA6547 !important;
+    color: #ffffff !important;
+    border: none;
+    margin-left: 10px !important;
+}
+
+.printButtonFirst {
+    background: #DA6547 !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.printButton:hover {
+    background: #9b4732 !important;
     color: #ffffff !important;
     border: none;
 }
@@ -75,4 +93,10 @@ hr {
     color: #303030 !important;
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
+}
+
+@media print {
+    header, nav, footer {
+        display: none;
+    }
 }
