@@ -1,16 +1,20 @@
 import { useState, useContext, useEffect } from 'react';
 import style from '../css/Search.module.css';
 import { CarContext } from '../contexts/CarContext';
+import { SearchContext } from '../contexts/SearchContext';
 
 const Search = () => {
     const [inputValue, setInputValue] = useState("");
-    const { cars, filterCars, resetRenderList } = useContext(CarContext);
+    const { cars } = useContext(CarContext);
+    const { filterCars, resetRenderList } = useContext(SearchContext);
     const [searched, setSearched] = useState(false);
     const [makeArray, setMakeArray] = useState([]);
     const [modelArray, setModelArray] = useState([]);
     const [yearArray, setYearArray] = useState([]);
     /* const [priceValue, setPriceValue] = useState('1000000'); */
     const [isClicked, setIsClicked] = useState(false);
+    /* const [filterLists, setFilterLists] = useState([makeArray, modelArray, yearArray]); */
+    const filterLists = [makeArray, modelArray, yearArray];
 
 
     const handleSubmit = (e) => {
@@ -59,6 +63,10 @@ const Search = () => {
         createYearArray();
 
     },[cars])
+/*     useEffect(() => {
+
+    },[makeArray, modelArray, yearArray]) */
+  
 
     return (
         <div className={style.search}>
@@ -73,7 +81,22 @@ const Search = () => {
                 </div>
                 {isClicked && <div className={style.dropDown}>
                     <div className={`row ${style.selects}`}>
-                        <div className="col">
+                        {filterLists.map(list => {
+                                return (
+                                <div className="col">
+                                    <label htmlFor="year">Select</label>
+                                    <select name="year" id="year" defaultValue="all">
+                                        <option value="all">All</option>
+                                        {list.length && list.map(listItem => {
+                                            return (
+                                            <option key={listItem}>{listItem}</option>
+                                            )
+                                        })}
+                                    </select>
+                                </div>
+                                )
+                            })}
+                        {/* <div className="col">
                             <label htmlFor="make">Select make</label>
                             <select name="make" id="make" defaultValue="all">
                                 <option value="all" >All</option>
@@ -99,9 +122,10 @@ const Search = () => {
                                     return (<option key={year}>{year}</option>)
                                 })}
                             </select>
-                        </div>
+                        </div> */}
+                        
                     </div>
-                    <div className="row">
+                    {/* <div className="row">
                         <div className="col">
                             <div>
                                 <label htmlFor="min-price">Min price</label>
@@ -124,7 +148,7 @@ const Search = () => {
                             
                         </div>
                         
-                    </div>
+                    </div> */}
                 </div>}
                 
             </form>
