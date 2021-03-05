@@ -21,6 +21,7 @@ const Confirmation = () => {
               ${styles.confirmationBox}
               col-sm
               col-md-offset-2
+              toPrint
               `}>
           <h3 className={styles.smallerHeading}>Order number: {orderInfo[0].ordernumber}</h3>
             <p className={styles.containerText}>Delivery details</p>
@@ -73,6 +74,7 @@ const Confirmation = () => {
             <p className={styles.containerTextLast}>Delivery method: {orderInfo[0].delivery}</p>
 
           </div>
+          
           {/* Buttons start */}
           
           <button type="button"
@@ -81,14 +83,14 @@ const Confirmation = () => {
                      btn 
                      btn-info`}
             onClick={() => window.print()}
-          >Print page</button>
+          >Print</button>
           <button type="button"
             className={`
                      ${styles.printButton}
                      btn 
                      btn-info`}
             onClick={() => window.print()}
-          >Save as PDF</button>
+          >Download as PDF</button>
           <NavLink exact to="/"><button type="button"
             className={`
                     ${styles.backButton}
