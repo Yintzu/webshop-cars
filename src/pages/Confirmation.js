@@ -36,20 +36,6 @@ const Confirmation = () => {
           <p className={styles.containerTextLast}>{orderInfo[0].email}</p>
 
 
-          {/* Buttons start */}
-          <NavLink exact to="/"><button type="button"
-            className={`
-                    ${styles.backButton}
-                    btn 
-                    btn-dark
-                   `}>Back</button></NavLink>
-          <button type="button"
-            className={`
-                     ${styles.printButton}
-                     btn 
-                     btn-info`}
-            onClick={() => window.print()}
-          >Print</button>
         </div>
 
         {/* Box right - Summary */}
@@ -63,25 +49,25 @@ const Confirmation = () => {
           <h3 className={styles.smallerHeading}>Summary</h3>
           <hr />
 
+          {/* Map loop to show all the cars bought with this order */}
           {orderInfo[0].boughtCars.map((car) => (
-            <div className="row">
+            <div className="row" key={car.vin}>
               <div className="col">
                 <p className={styles.containerText}>{car.make} {car.model}</p>
-                <hr />
               </div>
               <div className="col">
                 <p className={styles.containerText}>{car.price}</p>
-                <hr />
               </div>
             </div>
           ))}
 
-
           <div className="row">
             <div className="col">
+              <hr />
               <p className={styles.containerText}>Total:</p>
             </div>
             <div className="col">
+              <hr/>
               <p className={styles.containerText}>{orderInfo[0].price}</p>
             </div>
             {/* Order Info */}
@@ -92,6 +78,28 @@ const Confirmation = () => {
             <p className={styles.containerTextLast}>Delivery method: {orderInfo[0].delivery}</p>
 
           </div>
+          {/* Buttons start */}
+
+          <button type="button"
+            className={`
+                     ${styles.printButtonFirst}
+                     btn 
+                     btn-info`}
+            onClick={() => window.print()}
+          >Print page</button>
+          <button type="button"
+            className={`
+                     ${styles.printButton}
+                     btn 
+                     btn-info`}
+            onClick={() => window.print()}
+          >Save as PDF</button>
+          <NavLink exact to="/"><button type="button"
+            className={`
+                    ${styles.backButton}
+                    btn 
+                    btn-dark
+                   `}>Back</button></NavLink>
         </div>
       </div>
     </div>
