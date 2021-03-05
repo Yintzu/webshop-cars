@@ -55,19 +55,19 @@ const Checkout = () => {
     let itemS = shoppingCartItems.length === 1 ? 'item' : 'items';
 
     return (
-        <div className={`checkout ${style.quicksand}`}>
+        <div className={`checkout`}>
             <div className="container">
-                <h1 className="mt-3">Your shopping cart</h1>
+                <h1 className={`mt-3 ${style.mainHeading}`}>Your shopping cart</h1>
                 <div className="row">
                     <div className={`${style.shoppinglist} ${style.background}`}>
                         {/* Ternary operator to display "No items in cart" or loop out the items */}
-                        {shoppingCartItems.length == 0 ? <h2 className="text-center my-3">No items in cart</h2> :
+                        {shoppingCartItems.length == 0 ? <h2 className={`text-center my-3`}>Cart is empty!</h2> :
                             <div>
                                 {shoppingCartItems.map((item, key) => (
                                     <div key={key} className={`row ${style.shoppingCartCard}`}>
                                         <div className={`col-12 col-sm-12 col-md-2 ${style.flexer}`}><img className={`my-2 w-100 rounded`} src={item.carImg} /></div>
                                         <div className="col-12 col-sm-8 col-md-7">
-                                            <h2 className="mt-2">{`${item.make} ${item.model}`}</h2>
+                                            <h2 className={`mt-2 ${style.smallerHeading}`}>{`${item.make} ${item.model} ${item.year}`}</h2>
                                             <p>{`${item.descShort}`}</p>
                                         </div>
                                         <div className={`col-8 col-sm-2 col-md-2 ${style.flexer}`}>
@@ -78,7 +78,7 @@ const Checkout = () => {
                                 ))}
                                 <hr />
                                 <div>
-                                    <h2 className="text-center mb-3">Delivery Options</h2>
+                                    <h2 className={`text-center mb-3 ${style.mainHeading}`}>Delivery Options</h2>
                                     <div className="row">
                                         <div className="col-9">
                                             <select id="deliveryOptions" onChange={selectHandler}>
@@ -110,7 +110,7 @@ const Checkout = () => {
                     <form onSubmit={submitHandler}>
                         <div className="row d-flex justify-content-between">
                             <div className={`col-12 col-md-6 info ${style.info} ${style.background} ${style.gutterFix}`}>
-                                <h2 className="text-center mt-2">Your info</h2>
+                                <h2 className={`text-center mt-2 ${style.mainHeading}`}>Your info</h2>
 
                                 <label htmlFor="firstName">First name</label>
                                 <input className="form-control" type="text" id="firstName" pattern="[A-Öa-ö\s]+" required></input>
@@ -136,12 +136,12 @@ const Checkout = () => {
                                 <input className="form-control" type="text" id="phone" pattern="\+?[\d]{8,14}" required></input>
 
                                 <label htmlFor="email">E-mail</label>
-                                <input className="form-control" type="email" id="email" required></input>
+                                <input className="form-control mb-4" type="email" id="email" required></input>
                             </div>
 
                             <div className={`col-12 col-md-6 ${style.payment} ${style.background} ${style.gutterFix}`}>
                                 <div>
-                                    <h2 className="text-center mt-2">Payment options</h2>
+                                    <h2 className={`text-center mt-2 ${style.mainHeading}`}>Payment options</h2>
                                     <div>
                                         <input className={style.radioButton} type="radio" id="creditCard" value="card" name="radio" checked={radioStatus == "card"} onChange={radioHandler} required></input>
                                         <label htmlFor="creditCard">Credit card</label>
@@ -179,7 +179,7 @@ const Checkout = () => {
                                     <h3 className="text-center mb-4">
                                         {`Price total: ${formatSum(cartTotal + deliveryPrice)}`}
                                     </h3>
-                                    <button className="btn btn-success d-block mx-auto">Place order</button>
+                                    <button className={`btn d-block mx-auto ${style.orderButton}`}>Place order</button>
                                 </div>
                             </div>
                         </div>
