@@ -53,7 +53,7 @@ const Details = (props) => {
         );
     }
 
-    return car ? renderCar() : <div></div>;
+    return car && renderCar();
 }
  
 export default Details;
