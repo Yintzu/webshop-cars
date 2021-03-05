@@ -53,15 +53,14 @@ const Confirmation = () => {
           {/* Map loop to show all the cars bought with this order */}
           {orderInfo[0].boughtCars.map((car) => (
             <div className="row" key={car.vin}>
-              <div className="col">
+              <div className="col-sm">
                 <p className={styles.containerText}>{car.make} {car.model}</p>
               </div>
               <div className="col">
-                <p className={styles.containerText}>{car.price}</p>
+                <p className={styles.containerText}>{car.price} kr</p>
               </div>
             </div>
           ))}
-
           <div className="row">
             <div className="col">
               <hr />
@@ -70,7 +69,7 @@ const Confirmation = () => {
             <div className="col">
               <hr/>
               <p className={styles.containerText}>{orderInfo[0].price}</p>
-            </div>
+          </div>
             {/* Order Info */}
             <h4 className={styles.smallHeading}>Order info</h4>
             <p className={styles.containerText}>Order number: {orderInfo[0].ordernumber}</p>
