@@ -11,7 +11,7 @@ hr {
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
     color: #2C7CAE !important;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .smallerHeading {
@@ -56,8 +56,19 @@ hr {
     border: none;
 }
 
+.backButton:hover {
+    background-color:#295276 !important;
+   
+}
+
 .printButton {
     background: #DA6547 !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.printButton:hover {
+    background: #9b4732 !important;
     color: #ffffff !important;
     border: none;
 }
