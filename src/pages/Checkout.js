@@ -34,6 +34,7 @@ const Checkout = () => {
         })
         orderInfoObject["delivery"] = selectStatus;
         orderInfoObject["price"] = (cartTotal+deliveryPrice);
+        orderInfoObject["boughtCars"] = shoppingCartItems;
         setOrderInfo([orderInfoObject, ...orderInfo])
         setBoughtCars(shoppingCartItems, ...boughtCars)
         removeAllFromCart();

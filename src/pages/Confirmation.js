@@ -23,19 +23,19 @@ const Confirmation = () => {
               col-md-offset-2
               `}>
           <h3 className={styles.smallerHeading}>Order number: {orderInfo[0].ordernumber}</h3>
-            <p className={styles.containerText}>Delivery details</p>
-            <hr />
+          <p className={styles.containerText}>Delivery details</p>
+          <hr />
           <h4 className={styles.smallHeading}>Delivery for</h4>
-            <p className={styles.containerText}>{orderInfo[0].firstName} {orderInfo[0].lastName}</p>
+          <p className={styles.containerText}>{orderInfo[0].firstName} {orderInfo[0].lastName}</p>
           <h4 className={styles.smallHeading}>Delivery address</h4>
-            <p className={styles.containerText}>{orderInfo[0].address}</p>
-            <p className={styles.containerText}>{orderInfo[0].postalnr} {orderInfo[0].city}</p>
+          <p className={styles.containerText}>{orderInfo[0].address}</p>
+          <p className={styles.containerText}>{orderInfo[0].postalnr} {orderInfo[0].city}</p>
           <h4 className={styles.smallHeading}>Telephone</h4>
-            <p className={styles.containerText}>{orderInfo[0].phone}</p>
+          <p className={styles.containerText}>{orderInfo[0].phone}</p>
           <h4 className={styles.smallHeading}>E-mail</h4>
-            <p className={styles.containerTextLast}>{orderInfo[0].email}</p>
+          <p className={styles.containerTextLast}>{orderInfo[0].email}</p>
 
-          
+
           {/* Buttons start */}
           <NavLink exact to="/"><button type="button"
             className={`
@@ -62,16 +62,21 @@ const Confirmation = () => {
               `}>
           <h3 className={styles.smallerHeading}>Summary</h3>
           <hr />
-          <div className="row">
-            <div className="col">
-              <p className={styles.containerText}>Volvo V70</p>
-              <hr />
+
+          {orderInfo[0].boughtCars.map((car) => (
+            <div className="row">
+              <div className="col">
+                <p className={styles.containerText}>{car.make} {car.model}</p>
+                <hr />
+              </div>
+              <div className="col">
+                <p className={styles.containerText}>{car.price}</p>
+                <hr />
+              </div>
             </div>
-            <div className="col">
-              <p className={styles.containerText}>{orderInfo[0].price}</p>
-              <hr />
-            </div>
-          </div>
+          ))}
+
+
           <div className="row">
             <div className="col">
               <p className={styles.containerText}>Total:</p>
@@ -80,7 +85,7 @@ const Confirmation = () => {
               <p className={styles.containerText}>{orderInfo[0].price}</p>
             </div>
             {/* Order Info */}
-          <h4 className={styles.smallHeading}>Order info</h4>
+            <h4 className={styles.smallHeading}>Order info</h4>
             <p className={styles.containerText}>Order number: {orderInfo[0].ordernumber}</p>
             <p className={styles.containerText}>Order date: {orderInfo[0].orderdate}</p>
             <p className={styles.containerText}>Payment method: {orderInfo[0].payment}</p>
