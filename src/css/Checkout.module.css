@@ -91,7 +91,7 @@ select{
 
 .orderButton{
     min-width: 50%;
-    color: white;
+    color: white !important;
     background: #2C7CAE !important;
     border: none;
 }
