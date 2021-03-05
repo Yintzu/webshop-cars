@@ -19,8 +19,11 @@ const PopupCart = () => {
         {
           cart.length ? 
           cart.map(car => (
-            <div className={style.cartItem} key={car.vin} onClick={() => {
-              viewCar(car, history)
+            <div className={style.cartItem} key={car.vin} onClick={(e) => {
+              if (e.target.id !== "removeBtn") {
+                viewCar(car, history);
+                console.log(e.target);
+              }
             }}>
               <div className={style.cartImgWrapper}>
                 <img src={car.carImg} alt={car.make}/>
@@ -34,7 +37,7 @@ const PopupCart = () => {
               </div>
               <div className={style.cartItemRight}>
                 <h5 className={style.carPrice}>{formatSum(car.price)}</h5>
-                <button onClick={() => removeFromCart(car)} className={style.cartRemoveBtn}>X</button>
+                <button onClick={() => removeFromCart(car)} className={style.cartRemoveBtn} id="removeBtn">X</button>
               </div>
             </div>
           )) : <h5 className={style.emptyCartMsg}>Your cart is empty :(</h5>
