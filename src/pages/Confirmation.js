@@ -36,20 +36,6 @@ const Confirmation = () => {
             <p className={styles.containerTextLast}>{orderInfo[0].email}</p>
 
           
-          {/* Buttons start */}
-          <NavLink exact to="/"><button type="button"
-            className={`
-                    ${styles.backButton}
-                    btn 
-                    btn-dark
-                   `}>Back</button></NavLink>
-          <button type="button"
-            className={`
-                     ${styles.printButton}
-                     btn 
-                     btn-info`}
-            onClick={() => window.print()}
-          >Print</button>
         </div>
 
         {/* Box right - Summary */}
@@ -87,6 +73,28 @@ const Confirmation = () => {
             <p className={styles.containerTextLast}>Delivery method: {orderInfo[0].delivery}</p>
 
           </div>
+          {/* Buttons start */}
+          
+          <button type="button"
+            className={`
+                     ${styles.printButtonFirst}
+                     btn 
+                     btn-info`}
+            onClick={() => window.print()}
+          >Print page</button>
+          <button type="button"
+            className={`
+                     ${styles.printButton}
+                     btn 
+                     btn-info`}
+            onClick={() => window.print()}
+          >Save as PDF</button>
+          <NavLink exact to="/"><button type="button"
+            className={`
+                    ${styles.backButton}
+                    btn 
+                    btn-dark
+                   `}>Back</button></NavLink>
         </div>
       </div>
     </div>
