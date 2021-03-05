@@ -20,8 +20,10 @@ const PopupCart = () => {
           cart.length ? 
           cart.map(car => (
             <div className={style.cartItem} key={car.vin} onClick={(e) => {
-              viewCar(car, history);
-              console.log(e.target);
+              if (e.target.id !== "removeBtn") {
+                viewCar(car, history);
+                console.log(e.target);
+              }
             }}>
               <div className={style.cartImgWrapper}>
                 <img src={car.carImg} alt={car.make}/>
