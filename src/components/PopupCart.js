@@ -9,6 +9,7 @@ const PopupCart = () => {
   const { viewCar } = useContext(CarContext);
   const history = useHistory();
 
+
   return ( 
     <div className={style.popupCartWrapper}>
       <div className={style.cartTitle}>
@@ -18,7 +19,9 @@ const PopupCart = () => {
         {
           cart.length ? 
           cart.map(car => (
-            <div className={style.cartItem} key={car.vin} onClick={() => viewCar(car, history)}>
+            <div className={style.cartItem} key={car.vin} onClick={() => {
+              viewCar(car, history)
+            }}>
               <div className={style.cartImgWrapper}>
                 <img src={car.carImg} alt={car.make}/>
               </div>
