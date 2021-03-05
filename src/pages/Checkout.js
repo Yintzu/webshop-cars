@@ -132,8 +132,8 @@ const Checkout = () => {
                                     </div>
                                 </div>
 
-                                <label htmlFor="phone">Phone number</label>
-                                <input className="form-control" type="text" id="phone" pattern="\+?[\d]{8,14}" required></input>
+                                <label htmlFor="phone">Phone number (no spaces)</label>
+                                <input className="form-control" type="text" id="phone" pattern="\+?[\d]{2,8}\-?[\d]{6,8}" required></input>
 
                                 <label htmlFor="email">E-mail</label>
                                 <input className="form-control mb-4" type="email" id="email" required></input>
