@@ -24,7 +24,8 @@
 }
 
 .links {
-  margin: 0 0.5rem;
+  margin: 1rem 0.5rem;
+  transform: translateY(-20px);
   color: #2C7CAE !important;
 }
 
@@ -47,9 +48,20 @@
 }
 
 .navLinks {
-  margin-left: .5rem;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: -1rem;
+  top: 95px;
+  width: 97vw;
+  height: 83vh;
+  margin-left: 0;
   font-weight: bold;
-  font-size: .8rem;
+  font-size: 1rem;
+  z-index: 2000;
+  background-color: #f4f4f4 !important;
 }
 
 .active {
@@ -96,6 +108,7 @@
 }
 
 .leftWrapper {
+  position: relative;
   display: flex;
   align-items: center;
 }
@@ -146,6 +159,17 @@
   .navLinks {
     font-size: 1rem;
     margin-left: 1.5rem;
+  }
+
+  .navLinks {
+    display:initial;
+    height: initial;
+    width: initial;
+    position: initial;
+    margin-left: .5rem;
+    font-weight: bold;
+    font-size: .8rem;
+    background-color: initial;
   }
 
   .iconsWrapper {

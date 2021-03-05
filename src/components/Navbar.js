@@ -70,8 +70,8 @@ const Navbar = () => {
                     <NavLink className={style.rrrrlogo} exact to="/"><img className={style.rrrrlogoImg} src="/assets/app-components/webshop-logo.png"/></NavLink>
                     <div className={style.navLinks}>
                         <NavLink className={style.links} activeClassName={style.active} exact to="/">Home</NavLink>
-                        <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
-                        <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Test</NavLink>
+                        <NavLink className={style.links} activeClassName={style.active} exact to="/about">About Us</NavLink>
+                        <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Support</NavLink>
                     </div> 
                 </div>
                     <div className={style.iconsWrapper}>
