@@ -131,16 +131,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: .8rem;
+  font-size: .7rem;
   font-weight: bold;
   border-radius: 50px;
   color: #eee;
-  /* color: #2C7CAE; */
   position: absolute;
-  left: 3px;
-  top: -14px;
-  width: 18px;
-  height: 17px;
+  left: 4px;
+  top: -12px;
+  width: 17px;
+  height: 16px;
   background: linear-gradient(183deg, rgb(110, 175, 212) 0%, rgb(17, 128, 192) 100%);
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.08),
               inset 1px 1px 1px rgba(255, 255, 255, 0.144);
