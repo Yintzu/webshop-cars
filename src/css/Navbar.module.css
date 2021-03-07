@@ -3,11 +3,12 @@
   width: 100%;
   position: fixed;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.200);
+  z-index: 3000;
 }
 
 .navbar {
   width: 100%;
-  background-color: rgb(190, 190, 190);
+  background-color: #f4f4f4 !important;
   display: flex;
   padding: 1rem;
   align-items: center;
@@ -23,26 +24,36 @@
 }
 
 .links {
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
+  color: #2C7CAE !important;
+}
+
+.popupWrapper {
+  animation-name: popup;
+  animation-duration: .2s;
+}
+
+@keyframes popup {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.links:hover {
+  color: #DA6547 !important;
 }
 
 .navLinks {
-  margin-left: 2rem;
+  margin-left: .5rem;
+  font-weight: bold;
+  font-size: .8rem;
 }
 
 .active {
-  text-decoration: underline;
-}
-
-.cartIcon {
-  position: relative;
-  margin-left: auto;
-  margin-right: .5rem;
-  width: 35px;
-}
-
-.cartIcon:active {
-  transform: scale(1.05);
+  color: #DA6547 !important;
 }
 
 .img {
@@ -84,10 +95,61 @@
   animation-duration: .4s;
 }
 
+.leftWrapper {
+  display: flex;
+  align-items: center;
+}
+
 .infoBar {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  background-color: rgb(221, 221, 221);
+  background-color: #2C7CAE;
   padding: .5rem 1rem;
+  color: #E9f2f4 !important;
 }
+
+.iconsWrapper {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  justify-content: space-between;
+  margin-left: auto;
+}
+
+.cartIconWrapper {
+  position: relative;
+  width: 45%;
+  cursor: pointer;
+}
+
+.cartIcon:active {
+  transform: scale(1.05);
+}
+
+.rrrrlogoImg {
+  position: relative;
+  margin-right: .5rem;
+  width: 75px;
+}
+
+.acctContact {
+  position: relative;
+  width: 40%;
+}
+
+.acctContactImg {
+  width: 100%;
+}
+
+@media screen and (min-width: 450px) {
+  .navLinks {
+    font-size: 1rem;
+    margin-left: 1.5rem;
+  }
+
+  .iconsWrapper {
+    width: 70px;
+  }
+}
+

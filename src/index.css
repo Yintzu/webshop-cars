@@ -1,16 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box; 
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   padding-top: 120px;
+  font-family: 'Quicksand', sans-serif;;
+}
+
+p {
+  color: #303030 !important;
 }
 
 .site-container {
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
 }
 
+/* .carousel {
+  margin-top: 1rem;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.527);
+}
 
+.carousel .carousel-item {
+  height: 350px;
+}
+
+.carousel-item img {
+    position: absolute;
+    object-fit: cover;
+    left: 0;
+    top: -150px;
+    min-height: 350px;
+} */

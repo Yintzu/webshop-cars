@@ -1,10 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+
+hr {
+    background-color: #ffffff;
+	border-top: 1px dotted #303030;
+    
+}
+
+.mainHeading {
+    font-size: 1.8rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    color: #2C7CAE !important;
+    margin-top: 20px;
+}
+
+.smallerHeading {
+    font-size: 1.4rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    color: #2C7CAE !important;
+    margin-top: 0;
+    margin-bottom: 12px;
+    
+}
+
+.smallHeading {
+    color: #2C7CAE !important;
+    font-size: 1.2rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    margin-bottom: 12px;
+    margin-top: 25px;
+}
+
+.container {
+    margin-left: 25% !important;
+}
 
 .confirmationBox {
-    background-color: #eeeeee !important;
+    background-color: #f4f4f4 !important;
     padding: 30px;
     margin-top: 20px;
     border-radius: 5px;
     position: relative;
+    box-shadow: 2px 2px 2px #d2d2d2;
 }
 
 .confirmationHeading {
@@ -12,5 +51,107 @@
 }
 
 .backButton{
-    margin-right: 10px !important;
+    margin-left: 10px !important;
+    background: #2C7CAE !important;
+    border: none;
 }
+
+.backButton:hover {
+    background-color:#295276 !important;
+   
+}
+
+.printButton {
+    background: #DA6547 !important;
+    color: #ffffff !important;
+    border: none;
+    margin-left: 10px !important;
+}
+
+.printButtonFirst {
+    background: #DA6547 !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.printButton:hover {
+    background: #9b4732 !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.containerText {
+    line-height: .8;
+    color: #303030 !important;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+}
+
+.containerTextLast {
+    line-height: .7;
+    margin-bottom: 50px;
+    color: #303030 !important;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+}
+
+@media print {
+    @page {
+      size: landscape;
+    }
+
+    footer * {
+        visibility: hidden !important;
+        display: none !important;
+    }
+
+    nav * {
+      visibility: hidden;
+    }
+
+    aside {
+        visibility: hidden;
+    }
+
+    .toPrint, .toPrint * {
+      visibility: visible;
+    }
+    .toPrint {
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+    }
+
+    .mainHeading {
+        font-size: 1.5rem;
+    }
+    
+    .smallerHeading {
+        font-size: 1.2rem;        
+    }
+    
+    .smallHeading {
+        font-size: 1rem;
+    }
+
+    .containerText {
+        font-size: 0.7rem;
+    }
+
+    .containerTextLast {
+        font-size: 0.7rem;
+    }
+
+    .backButton{
+      visibility: hidden;
+    }
+
+    .printButton {
+      visibility: hidden;
+    }
+
+    .printButtonFirst {
+      visibility: hidden;
+    }
+  }

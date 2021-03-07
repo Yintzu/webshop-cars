@@ -1,8 +1,8 @@
 .footer {
     margin-top: 50px;
-    background-color: lightgrey;
+    background-color: #2C7CAE;
     width: 100vw;
-    font-size: .7rem;
+    font-size: .8rem;
     padding: 1.5rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -12,13 +12,15 @@
 }
 .link, .navlink {
     text-decoration: none;
-    color: rgb(37, 37, 37);
+    color:#E9f2f4 !important;
 }
 .link:hover, .navlink:hover {
-    color:rgb(122, 122, 122);
+    color:#7ECEFD !important;
 }
 .footer p {
     margin-top: .5rem;
+    margin-bottom: 0;
+    color: #E9f2f4 !important;
 }
 .socialmedia img {
     width: 30px;
