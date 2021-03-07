@@ -10,7 +10,7 @@
   width: 100%;
   background-color: #f4f4f4 !important;
   display: flex;
-  padding: 1rem;
+  padding: .6rem 1rem;
   align-items: center;
 }
 
@@ -103,7 +103,7 @@
   align-items: center;
   opacity: 1;
   left: -110%;
-  top: 95px;
+  top: 75px;
   width: 100vw;
   height: 90vh;
   margin-left: 0;
@@ -214,6 +214,10 @@
 }
 
 @media screen and (min-width: 500px) {
+  .navbar {
+    padding: 1rem;
+  }
+
   .navLinks {
     display:initial;
     background-color: initial;

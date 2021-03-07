@@ -11,7 +11,7 @@
   padding: .5rem .5rem 1rem .5rem;
   z-index: 1000;
   border-radius: 3px;
-  top: 111px;
+  top: 75px;
   right: 0;
   width: 100%;
   border-top: 1px solid rgba(0, 0, 0, 0.178);
@@ -125,7 +125,7 @@
 
 @media screen and (min-width: 450px) {
   .popupCartWrapper {
-    top: 112px;
+    top: 87px;
     right: 0;
     width: 350px;
   }
