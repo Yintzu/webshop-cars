@@ -100,15 +100,15 @@ const Navbar = () => {
                     </NavLink>
                     </div>
             </nav>
-            <div className={style.infoBar}>
+            <aside className={style.infoBar}>
                 <div className={style.dateTime}>
-                    <span>This is only a test: </span>
-                    <span>{`${createTimeStamp()[2]} ${createTimeStamp()[0]}`}</span>
+                    {/* <span>This is only a test: </span>
+                    <span>{`${createTimeStamp()[2]} ${createTimeStamp()[0]}`}</span> */}
                 </div>
                 <span className={style.totalSum}>
-                    {`${cart.length} ${itemS} in cart: ${formatSum(cartTotal)}`}
+                    {/* {`${cart.length} ${itemS} in cart: ${formatSum(cartTotal)}`} */}
                 </span>
-            </div>
+            </aside>
         </div>
      );
 }

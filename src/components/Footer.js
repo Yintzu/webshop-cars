@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
     return ( 
-        <div className={style.footer}>
+        <footer className={style.footer}>
             <div>
                 <NavLink className={style.navlink} to="/About">About us</NavLink> 
                 <address>
@@ -18,7 +18,7 @@ const Footer = () => {
                 <a href="https://www.instagram.com/"><img src="./assets/icons/instagram.png" alt="instagram"/></a>
                 <a href="https://www.twitter.com/"><img src="./assets/icons/twitter.png" alt="twitter"/></a>
             </div>
-        </div>
+        </footer>
      );
 }
  
