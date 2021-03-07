@@ -94,6 +94,7 @@ const Navbar = () => {
                             onMouseEnter={() => clearTimeout(timer)}
                             onMouseLeave={() => setCartVisible(false)}>
                             <PopupCart />
+                            <div className={style.cartShadow} />
                         </div>}
                     <NavLink className={ style.acctContact} exact to="/">
                     <img className={style.acctContactImg} src="/assets/icons/account-contact-circle.png"/>

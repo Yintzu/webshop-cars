@@ -180,6 +180,15 @@
   color: #E9f2f4 !important;
 }
 
+.cartShadow {
+  position: absolute;
+  top: 100px;
+  left: -1rem;
+  width: 120%;
+  height: 40vh;
+  background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0, 0, 0, 0.295) 50%);
+}
+
 .iconsWrapper {
   display: flex;
   align-items: center;
@@ -216,6 +225,10 @@
 @media screen and (min-width: 500px) {
   .navbar {
     padding: 1rem;
+  }
+
+  .cartShadow {
+    display: none;
   }
 
   .navLinks {
