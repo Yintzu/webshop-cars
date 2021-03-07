@@ -136,8 +136,8 @@
   border-radius: 50px;
   color: #eee;
   position: absolute;
-  left: 4px;
-  top: -12px;
+  left: 2px;
+  top: -11px;
   width: 17px;
   height: 16px;
   background: linear-gradient(183deg, rgb(110, 175, 212) 0%, rgb(17, 128, 192) 100%);
@@ -147,13 +147,23 @@
 
 @keyframes updateAnimation {
   0% {
-    transform: scale(1);
+    /* transform: scale(1); */
+    /* top: -12px;
+    width: 17px;
+    height: 16px; */
   }
   50% {
+    -webkit-backface-visibility: hidden;
     transform: scale(1.2);
+    /* top: -13px;
+    width: 19px;
+    height: 18px; */
   }
   100% {
-    transform: scale(1);
+    /* transform: scale(1); */
+    /* top: -12px;
+    width: 17px;
+    height: 16px; */
   }
 }
 
@@ -181,6 +191,7 @@
 
 .cartShadow {
   position: absolute;
+  pointer-events: none;
   top: 100px;
   left: -1rem;
   width: 120%;
@@ -224,6 +235,11 @@
 @media screen and (min-width: 500px) {
   .navbar {
     padding: 1rem;
+  }
+
+  .cartNumber {
+    top: -13px;
+    left: 4px;
   }
 
   .cartShadow {
