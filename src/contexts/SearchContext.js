@@ -20,7 +20,7 @@ const SearchContextProvider = (props) => {
     const searchCars = (inputValue) => {
         // Split the input-string into an array
         let inputArray = inputValue.toLowerCase().split(' ');
-        console.log(inputArray);
+        // console.log(inputArray);
         let filteredCars = []
 
         // Check each item in cars-array
@@ -50,8 +50,8 @@ const SearchContextProvider = (props) => {
             }
         });
         filteredCars = [...testArray[1]];
-        console.log('testArray:', testArray);
-        console.log(filteredCars);
+        // console.log('testArray:', testArray);
+        // console.log(filteredCars);
 
         if (filteredCars.length !== 0) {
             setRenderList(filteredCars);
@@ -70,9 +70,21 @@ const SearchContextProvider = (props) => {
     const [makeArray, setMakeArray] = useState([]);
     const [modelArray, setModelArray] = useState([]);
     const [yearArray, setYearArray] = useState([]);
-    const filterLists = [{listName: "make", list: makeArray}, {listName: "model", list: modelArray}, {listName: "year", list: yearArray}];
+    const filterLists = [
+        {listName: "make", list: makeArray}, 
+        {listName: "model", list: modelArray}, 
+        {listName: "year", list: yearArray}
+    ];
 
-    const createMakeArray = () => {
+    const createFilterArrays = (value) => {
+        let tempArray = []
+        cars.forEach(car => {
+            if (!tempArray.includes(car[value]))
+            tempArray.push(car[value])
+        })
+        return tempArray.sort()
+    }
+   /*  const createMakeArray = () => {
         let tempArray = []
         cars.forEach(car => {
             if (!tempArray.includes(car.make))
@@ -95,12 +107,15 @@ const SearchContextProvider = (props) => {
             tempArray.push(car.year)
         })
         setYearArray(tempArray.sort().reverse());
-    }
+    } */
 
     useEffect(() => {
-        createMakeArray();
+        setMakeArray(createFilterArrays("make"))
+        setModelArray(createFilterArrays("model"))
+        setYearArray(createFilterArrays("year"))
+   /*   createMakeArray();
         createModelArray();
-        createYearArray();
+        createYearArray(); */
     },[cars])
 
     const [make, setMake] = useState(null);
@@ -125,7 +140,6 @@ const SearchContextProvider = (props) => {
     useEffect(() => {
         saveFilters();
     },[make, model, year])
-
   
     const values={
       searchResult,

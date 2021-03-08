@@ -58,18 +58,18 @@ const Search = () => {
                                 )
                             })}
                     </div>
-                    {/* <div className="row">
+                    <div className="row">
                         <div className="col">
                             <div>
                                 <label htmlFor="min-price">Min price</label>
-                                <input id="min-price" type="range" min="0" max="1000000" value="0"></input> 
+                                <input id="min-price" type="range" min="0" max="1000000" defaultValue="0"></input> 
                             </div>
                             <div>
                                 <label htmlFor="max-price">Max price</label>
-                                <input id="max-price" type="range" min="0" max="1000000" value="1000000"></input> 
+                                <input id="max-price" type="range" min="0" max="1000000" defaultValue="1000000"></input> 
                             </div>
                         </div>
-                        <div className="col">
+                       {/*  <div className="col">
                             <div>
                                 <label htmlFor="min-price">Min </label>
                                 <input id="min-price" type="range" min="0" max="1000000" value="0"></input> 
@@ -78,10 +78,9 @@ const Search = () => {
                                 <label htmlFor="max-price">Max price</label>
                                 <input id="max-price" type="range" min="0" max="1000000" value="1000000"></input> 
                             </div>
-                            
-                        </div>
+                        </div> */}
                         
-                    </div> */}
+                    </div>
                 </div>}
                 
             </form>
