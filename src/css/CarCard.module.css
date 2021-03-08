@@ -12,3 +12,7 @@
 .carCard .desc::after {
     content: "."
 }
+
+.carClick {
+    cursor: pointer;
+}

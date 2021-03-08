@@ -10,7 +10,8 @@
   width: 100%;
   background-color: #f4f4f4 !important;
   display: flex;
-  padding: 1rem;
+  max-height: 65px;
+  padding: .9rem 1rem;
   align-items: center;
 }
 
@@ -21,11 +22,6 @@
 
 .cartIcon:hover, .logo:hover, .links:hover {
   color: #111;
-}
-
-.links {
-  margin: 0 0.5rem;
-  color: #2C7CAE !important;
 }
 
 .popupWrapper {
@@ -42,14 +38,86 @@
   }
 }
 
+.hamburgerClickBox {
+  position: absolute;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  z-index: 10;
+}
+
+.hamburgerWrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.hamburgerLine,
+.hamburgerLine::before,
+.hamburgerLine::after {
+  cursor: pointer;
+  position: absolute;
+  height: 3px;
+  width: 25px;
+  background-color: #2C7CAE;
+  transition: .4s;
+}
+
+.hamburgerLine::before {
+  content: '';
+  top: -7px;
+}
+
+.hamburgerLine::after {
+  content: '';
+  top: 7px;
+}
+
+.hamburgerLine.openBurger {
+  width: 0;
+}
+
+.hamburgerLine.openBurger::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.hamburgerLine.openBurger::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.links {
+  margin: 1rem 0.5rem;
+  transform: translateY(-20px);
+  color: #2C7CAE !important;
+}
+
 .links:hover {
   color: #DA6547 !important;
 }
 
 .navLinks {
-  margin-left: .5rem;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  left: -110%;
+  top: 70px;
+  width: 100vw;
+  height: 90vh;
+  margin-left: 0;
   font-weight: bold;
-  font-size: .8rem;
+  font-size: 1rem;
+  z-index: 2000;
+  transition: .5s;
+  background-color: #f4f4f4 !important;
+}
+
+.navLinks.slideIn {
+  left: 0;
+  opacity: 1;
 }
 
 .active {
@@ -66,27 +134,37 @@
   align-items: center;
   font-size: .7rem;
   font-weight: bold;
-  border-radius: 4px;
+  border-radius: 50px;
   color: #eee;
   position: absolute;
-  right: -4px;
-  top: -6px;
-  width: 21px;
-  height: 20px;
-  background: linear-gradient(183deg, rgb(107, 195, 219) 0%, rgb(22, 109, 117) 100%);
+  left: 2px;
+  top: -11px;
+  width: 17px;
+  height: 16px;
+  background: linear-gradient(183deg, rgb(110, 175, 212) 0%, rgb(17, 128, 192) 100%);
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.08),
-              inset 1px 1px 1px rgba(255, 255, 255, 0.25);
+              inset 1px 1px 1px rgba(255, 255, 255, 0.144);
 }
 
 @keyframes updateAnimation {
   0% {
-    transform: scale(1);
+    /* transform: scale(1); */
+    /* top: -12px;
+    width: 17px;
+    height: 16px; */
   }
   50% {
+    -webkit-backface-visibility: hidden;
     transform: scale(1.2);
+    /* top: -13px;
+    width: 19px;
+    height: 18px; */
   }
   100% {
-    transform: scale(1);
+    /* transform: scale(1); */
+    /* top: -12px;
+    width: 17px;
+    height: 16px; */
   }
 }
 
@@ -96,6 +174,12 @@
 }
 
 .leftWrapper {
+  position: relative;
+  cursor: pointer;
+  left: 50%;
+  transform: translateX(-57%);
+  width: 50%;
+  max-width: 220px;
   display: flex;
   align-items: center;
 }
@@ -105,8 +189,18 @@
   justify-content: space-between;
   width: 100%;
   background-color: #2C7CAE;
-  padding: .5rem 1rem;
+  height: 15px;
   color: #E9f2f4 !important;
+}
+
+.cartShadow {
+  position: absolute;
+  pointer-events: none;
+  top: 100px;
+  left: -1rem;
+  width: 120%;
+  height: 40vh;
+  background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0, 0, 0, 0.295) 50%);
 }
 
 .iconsWrapper {
@@ -129,8 +223,18 @@
 
 .rrrrlogoImg {
   position: relative;
+  display: inline-block;
   margin-right: .5rem;
-  width: 75px;
+  height: 100%;
+  width: 37%;
+}
+
+.rrrrlogoText {
+  position: relative;
+  display: inline-block;
+  margin-right: .5rem;
+  height: 100%;
+  width: 60%;
 }
 
 .acctContact {
@@ -142,14 +246,75 @@
   width: 100%;
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 500px) {
+  .navbar {
+    padding: .7rem 1rem;
+    max-height: 80px;
+  }
+
+  .cartNumber {
+    top: -13px;
+    left: 4px;
+  }
+
+  .cartShadow {
+    display: none;
+  }
+
   .navLinks {
+    display:initial;
+    background-color: initial;
+    height: initial;
+    width: initial;
+    position: initial;
+    transform: initial;
+    transition: initial;
+    font-weight: bold;
+    margin-left: 1.3rem;
     font-size: 1rem;
-    margin-left: 1.5rem;
+  }
+
+  .leftWrapper {
+    width: 90px;
+    padding: 0;
+    margin: 0;
+    margin-left: .1rem;
+    left: 0;
+    transform: initial;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rrrrlogoText {
+    width: 100%;
+    margin-top: .3rem;
+    margin-right: 0;
+  }
+
+  .rrrrlogoImg {
+    width: 80%;
+  }
+  
+  .hamburgerWrapper {
+    display: none;
+  }
+
+  .hamburgerClickBox {
+    display: none;
   }
 
   .iconsWrapper {
     width: 70px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .leftWrapper {
+    width: 105px;
+  }
+
+  .navLinks {
+    margin-left: 1.5rem;
   }
 }
 
