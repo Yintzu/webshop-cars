@@ -8,6 +8,7 @@ export const CarContext = createContext()
 
 const CarContextProvider = (props) => {
     const [cars, setcars]= useState([])
+    const [boughtCars, setBoughtCars] = useState([]);
 
     const createCarList  =() =>{
         const carlist=require("../json/cars.json")
@@ -37,6 +38,8 @@ const CarContextProvider = (props) => {
     //   setSearchResult,
     //   renderList,
     //   resetRenderList,
+      boughtCars,
+      setBoughtCars
     }
 
     return (

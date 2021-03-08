@@ -2,12 +2,14 @@ import { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { ShoppingCartContext } from "../contexts/ShoppingCartContext";
 import { UserContext } from "../contexts/UserContext";
+import { CarContext } from "../contexts/CarContext";
 import style from '../css/Checkout.module.css';
 
 const Checkout = () => {
 
     const { shoppingCartItems, removeFromCart, removeAllFromCart, cartTotal, formatSum, createTimeStamp } = useContext(ShoppingCartContext)
-    const { boughtCars, setBoughtCars, setOrderInfo, orderInfo } = useContext(UserContext)
+    const { setOrderInfo, orderInfo } = useContext(UserContext)
+    const { boughtCars, setBoughtCars } = useContext(CarContext)
     const history = useHistory();
 
     const [radioStatus, setRadioStatus] = useState("");
