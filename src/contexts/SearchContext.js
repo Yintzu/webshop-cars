@@ -17,7 +17,7 @@ const SearchContextProvider = (props) => {
         setRenderList(cars);
     }, [cars]);
 
-    const filterCars = (inputValue) => {
+    const searchCars = (inputValue) => {
         // Split the input-string into an array
         let inputArray = inputValue.toLowerCase().split(' ');
         console.log(inputArray);
@@ -65,6 +65,7 @@ const SearchContextProvider = (props) => {
         setRenderList(cars);
     }
 
+
     /* Filter search arrays */
     const [makeArray, setMakeArray] = useState([]);
     const [modelArray, setModelArray] = useState([]);
@@ -100,16 +101,40 @@ const SearchContextProvider = (props) => {
         createMakeArray();
         createModelArray();
         createYearArray();
-
     },[cars])
 
+    const [make, setMake] = useState(null);
+    const [model, setModel] = useState(null);
+    const [year, setYear] = useState(null);
+
+    const saveFilters = (value) => {
+        if(value !== 'all'){
+            if(makeArray.includes(value)){
+                setMake(value)
+            }if(modelArray.includes(value)){
+                setModel(value)
+            }if(yearArray.includes(Number(value))){
+                setYear(Number(value))
+            }
+        } else {
+            setMake(null)
+            setModel(null)
+            setYear(null)
+        }
+    }
+    useEffect(() => {
+        saveFilters();
+    },[make, model, year])
+
+  
     const values={
       searchResult,
-      filterCars,
+      searchCars,
       setSearchResult,
       renderList,
       resetRenderList,
-      filterLists
+      filterLists,
+      saveFilters,
     }
 
     return (
