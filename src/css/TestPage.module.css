@@ -6,32 +6,40 @@
 }
 
 .carCard {
+  max-width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: .5rem;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.24);
   padding: .5rem;
-  background-color: rgb(224, 232, 235);
+  background-color: rgb(224, 224, 224);
 }
 
 .carCard * {
   margin: 0;
   margin-right: .4rem;  
 }
+
+.carCard h5 {
+  font-size: .9rem;
+}
+
 .imgTxtWrapper {
+  width: 60%;
   display: flex;
   align-items: center; 
   cursor: pointer;
 }
 
 .addToCartBtn {
+  width: 15%;
+  font-size: .7rem;
   cursor: pointer;
   border: none;
   background-color: rgb(146, 185, 206);
   padding: .2rem;
-  min-width: 100px;
   border-radius: 5px;
-  margin-left: auto;
 }
 
 .removeBtn {
@@ -47,7 +55,7 @@
 }
 
 .imgContainer {
-  width: 80px;
+  width: 25%;
   margin-right: .6rem;
 }
 

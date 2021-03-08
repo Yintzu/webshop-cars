@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.popupCartWrapper {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding: .5rem .5rem 1rem .5rem;
+  z-index: 1000;
+  border-radius: 3px;
+  top: 75px;
+  right: 0;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.178);
+  background-color: rgb(235, 235, 235);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.170), -2px 2px 3px rgba(0, 0, 0, 0.170);
+}
+
+.cartTitle {
+  padding-left: .2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.61);
+}
+
+.cartTitle h4 {
+  font-size: 1.2rem;
+}
+
+.cartItemsWrapper {
+  width: 100%;
+}
+
+.cartItem {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: .5rem .3rem;
+  background-color: #eee;
+  border-top: 1px solid rgba(0, 0, 0, 0.212);
+}
+
+.cartItem:hover {
+  background-color: rgb(228, 228, 228);
+}
+
+.cartItemsWrapper .cartItem:first-child {
+  border-top: none;
+}
+
+.cartImgWrapper {
+  width: 50px;
+  margin-right: .5rem;
+} 
+
+.cartImgWrapper img {
+  width: 100%;
+}
+
+.cartItemText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cartCarName, .carPrice {
+  font-size: .8rem;
+  margin: 0;
+}
+
+.cartYear {
+  font-size: .8rem;
+  margin: 0;
+}
+
+.cartItemRight {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.cartRemoveBtn {
+  font-size: .7rem;
+  color: rgb(245, 245, 245);
+  border: none;
+  border-radius: 50%;
+  background: #DA6547;
+  width: 20px;
+  height: 20px;
+  margin-left: .5rem;
+}
+
+.totalSumWrapper {
+  display: flex;
+  padding: .5rem .2rem;
+  border-top: 1px solid rgba(36, 21, 21, 0.6);
+  margin-top: .4rem;
+  justify-content: space-between;
+}
+
+.totalSumWrapper h5 {
+  font-size: 1rem;
+}
+
+.toCheckoutBtn {
+  color: white;
+  width: 100%;
+  border: none;
+  border-radius: 7px;
+  padding: .5rem 1rem;
+  background: linear-gradient(180deg, #2C7CAE 0%, #2C7CAE 100%);
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.158);
+}
+
+.toCheckoutBtn:active {
+  transform: scale(1.01);
+}
+
+.emptyCartMsg {
+  font-size: .9rem;
+  margin-left: .2rem;
+  margin-top: .7rem;
+}
+
+@media screen and (min-width: 450px) {
+  .popupCartWrapper {
+    top: 87px;
+    right: 0;
+    width: 350px;
+  }
+}
