@@ -43,6 +43,7 @@ const Navbar = () => {
             setCartVisible(false);
         } else if (!cartVisible) {
             setCartVisible(true);
+            setMobileMenuOpen(false);
         }
     }
 
