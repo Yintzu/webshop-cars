@@ -6,13 +6,28 @@ import style from '../css/CarCard.module.css';
 
 const CarCard = (props) => {
     const history = useHistory();
-    const { addToCart, removeFromCart,shoppingCartItems, formatSum } = useContext(ShoppingCartContext);
+    const { addToCart, removeFromCart, shoppingCartItems, formatSum } = useContext(ShoppingCartContext);
     const { viewCar } = useContext(CarContext);
+
+    const renderButtons = (car) => {
+        let inCart = false;
+        shoppingCartItems.forEach(cartItem => {
+          if (cartItem.vin === car.vin) {
+            inCart = true;
+          } 
+        });
+        if (inCart) {
+          return <button onClick={() => removeFromCart(car)} className="btn btn-danger float-end" id="addRemove">Remove</button>
+        } else {
+          return <button onClick={() => addToCart(car)} className="btn btn-primary float-end" id="addRemove">Add To Cart</button> 
+        }
+      }
+
 
     return (
         <div className={`col-sm-6 ${style.carCard}`}>
             <div className={`card mt-2 mx-2 ${style.carClick}`} onClick={(e) => {
-                if (e.target.id !== "addBtn") {
+                if (e.target.id !== "addRemove") {
                     viewCar(props.car, history)
                 }
             }}>
@@ -21,7 +36,7 @@ const CarCard = (props) => {
                     <h5 className="card-title">{props.car.make} {props.car.model} {props.car.year}</h5>
                     <p className="card-text">{formatSum(props.car.price)}</p>
                     <p className={`card-text ${style.desc}`}>{props.car.descShort}</p>
-                    <button onClick={() => addToCart(props.car) }className="btn btn-primary float-end" id="addBtn">Add To Cart</button>
+                    { renderButtons(props.car) }
                 </div>
             </div>
         </div>
