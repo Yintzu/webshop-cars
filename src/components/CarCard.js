@@ -36,7 +36,6 @@ const CarCard = (props) => {
         <div className={`col-sm-6 ${style.carCard}`}>
             <div className={`card mt-2 mx-2 ${style.carClick}`} onClick={(e) => {
                 if (e.target.id !== "addRemove") {
-                  console.log(e.target);
                     viewCar(props.car, history)
                 }
             }}>
