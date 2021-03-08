@@ -10,7 +10,8 @@
   width: 100%;
   background-color: #f4f4f4 !important;
   display: flex;
-  padding: .6rem 1rem;
+  max-height: 65px;
+  padding: .9rem 1rem;
   align-items: center;
 }
 
@@ -103,7 +104,7 @@
   align-items: center;
   opacity: 1;
   left: -110%;
-  top: 75px;
+  top: 70px;
   width: 100vw;
   height: 90vh;
   margin-left: 0;
@@ -127,7 +128,7 @@
   width: 100%;
 }
 
-.cartNumber {
+/* .cartNumber {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,6 +144,20 @@
   background: linear-gradient(183deg, rgb(110, 175, 212) 0%, rgb(17, 128, 192) 100%);
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.08),
               inset 1px 1px 1px rgba(255, 255, 255, 0.144);
+} */
+
+.cartNumber {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .8rem;
+  font-weight: bold;
+  color: rgb(128, 128, 128);
+  position: absolute;
+  left: 4px;
+  top: -10px;
+  width: 17px;
+  height: 16px;
 }
 
 @keyframes updateAnimation {
@@ -174,13 +189,12 @@
 
 .leftWrapper {
   position: relative;
+  cursor: pointer;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-57%);
   width: 50%;
-  max-width: 300px;
-  /* transform: initial; */
-  display: inline-flex;
-  justify-content: space-between;
+  max-width: 220px;
+  display: flex;
   align-items: center;
 }
 
@@ -228,6 +242,7 @@
   height: 100%;
   width: 37%;
 }
+
 .rrrrlogoText {
   position: relative;
   display: inline-block;
@@ -247,12 +262,12 @@
 
 @media screen and (min-width: 500px) {
   .navbar {
-    padding: 1rem;
+    padding: .7rem 1rem;
+    max-height: 80px;
   }
 
   .cartNumber {
-    top: -13px;
-    left: 4px;
+    
   }
 
   .cartShadow {
@@ -268,19 +283,31 @@
     transform: initial;
     transition: initial;
     font-weight: bold;
-    margin-left: 1.5rem;
+    margin-left: 1.3rem;
     font-size: 1rem;
   }
 
   .leftWrapper {
+    width: 90px;
+    padding: 0;
+    margin: 0;
+    margin-left: .1rem;
     left: 0;
-    width: 50%;
     transform: initial;
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
 
+  .rrrrlogoText {
+    width: 100%;
+    margin-top: .3rem;
+    margin-right: 0;
+  }
+
+  .rrrrlogoImg {
+    width: 80%;
+  }
+  
   .hamburgerWrapper {
     display: none;
   }
@@ -291,6 +318,16 @@
 
   .iconsWrapper {
     width: 70px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .leftWrapper {
+    width: 105px;
+  }
+
+  .navLinks {
+    margin-left: 1.5rem;
   }
 }
 

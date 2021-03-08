@@ -76,7 +76,7 @@ const Navbar = () => {
                 <div className={style.hamburgerWrapper}>
                     <div className={`${style.hamburgerLine} ${mobileMenuOpen && style.openBurger}`} />
                 </div>
-                <div className={style.leftWrapper}>
+                <div className={style.leftWrapper} onClick={() => history.push('/')}>
                     {/* <NavLink className={style.rrrrlogo} exact to="/"> */}
                         <img className={style.rrrrlogoImg} src="/assets/app-components/logo.gif" />
                         <img className={style.rrrrlogoText} src="/assets/app-components/logo-text.png" />
