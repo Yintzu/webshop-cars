@@ -8,6 +8,7 @@ export const CarContext = createContext()
 
 const CarContextProvider = (props) => {
     const [cars, setcars]= useState([])
+    const [boughtCars, setBoughtCars] = useState([]);
 
     const createCarList  =() =>{
         const carlist=require("../json/cars.json")
@@ -26,7 +27,7 @@ const CarContextProvider = (props) => {
     
     /* Direction to  */
     const viewCar = (clickedCar, history) => {
-        history.push(`/details/${clickedCar.vin}`) 
+        history.push(`/details/${clickedCar.vin}`)
     }
 
     /* Search function */
@@ -108,6 +109,8 @@ const CarContextProvider = (props) => {
       setSearchResult,
       renderList,
       resetRenderList,
+      boughtCars,
+      setBoughtCars
     }
 
     return (

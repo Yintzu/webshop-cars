@@ -6,34 +6,52 @@ import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 
 const Details = (props) => {
 
-    const { cars } = useContext(CarContext);
-    const [ car, setCar ] = useState(null);
+    const { cars, boughtCars } = useContext(CarContext);
+    const [car, setCar] = useState(null);
     const { addToCart, formatSum, shoppingCartItems, removeFromCart } = useContext(ShoppingCartContext);
 
     useEffect(() => {
-        if(cars) {
+        if (cars) {
             setCar(
                 cars.find((car) => props.match.params.id == car.vin)
             )
         }
-    },[car]);
+    }, [car]);
+
+    const renderButton = (car) => {
+        let inCart = false;
+        let bought = false;
+        shoppingCartItems.forEach(cartItem => {
+            if (cartItem.vin === car.vin) {
+                inCart = true;
+            }
+        });
+        boughtCars.forEach(boughtItem => {
+            if (boughtItem.vin === car.vin) {
+                bought = true;
+            }
+        });
+        if (inCart) {
+            return <button onClick={() => removeFromCart(car)} className={`btn btn-lg ${style.removeBtn}`}>Remove</button>
+        } else if (bought) {
+            return <button className={`btn btn-lg ${style.disabled}`}>Sold</button>
+        } else {
+            return <button onClick={() => addToCart(car)} className={`btn btn-lg ${style.addToCartBtn}`}>Add to cart</button>
+        }
+    }
 
     const renderCar = () => {
-        return ( 
+        return (
             <div className={style.details}>
                 <div className="row">
                     <div className={`col ${style.imageWrapper}`}>
-                        <img src={car.carImg} alt={`${car.make} ${car.model} ${car.year}`}/>
+                        <img src={car.carImg} alt={`${car.make} ${car.model} ${car.year}`} />
                     </div>
                     <div className={`col-md-4 ${style.buy}`}>
                         <h3>{car.make} {car.model} {car.year}</h3>
                         <p>{car.city}</p>
                         <h4 className={style.price}>{formatSum(car.price)}</h4>
-                        { 
-                        !shoppingCartItems.includes(car) ? 
-                        <button onClick={() => addToCart(car)} className={`btn btn-lg ${style.addToCartBtn}`}>Add to cart</button> :
-                        <button onClick={() => removeFromCart(car)} className={`btn btn-lg ${style.removeBtn}`}>Remove</button>
-                        }
+                        {renderButton(car)}
                     </div>
                 </div>
                 <div className={`row ${style.descContainer}`}>
@@ -55,5 +73,5 @@ const Details = (props) => {
 
     return car ? renderCar() : <div></div>;
 }
- 
+
 export default Details;
