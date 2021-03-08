@@ -30,8 +30,7 @@ const PopupCart = () => {
               </div>
               <div className={style.cartItemText}>
                 <h5 className={style.cartCarName}>
-                  {car.make} 
-                  {car.model} 
+                  {car.make} {car.model} 
                 </h5>
                 <p className={style.cartYear}>{car.year}</p>
               </div>
