@@ -175,7 +175,7 @@
 .leftWrapper {
   position: relative;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-55%);
   width: 50%;
   display: flex;
   align-items: center;
@@ -245,7 +245,7 @@
 
 @media screen and (min-width: 500px) {
   .navbar {
-    padding: .7rem 1rem;
+    padding: 1rem 1rem;
   }
 
   .cartNumber {
@@ -266,28 +266,30 @@
     transform: initial;
     transition: initial;
     font-weight: bold;
-    margin-left: 1rem;
+    margin-left: 1.4rem;
     font-size: 1rem;
   }
 
   .leftWrapper {
-    width: 110px;
+    width: 23%;
+    max-width: 230px;
     padding: 0;
     margin: 0;
-    margin-left: .2rem;
+    margin-left: .1rem;
     left: 0;
     transform: initial;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
   }
 
   .rrrrlogoText {
-    width: 100%;
+    width: 60%;
     margin-top: .3rem;
+    margin-right: 0;
   }
 
   .rrrrlogoImg {
-    width: 85%;
+    width: 40%;
   }
   
   .hamburgerWrapper {
