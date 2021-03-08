@@ -176,7 +176,11 @@
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
+  width: 50%;
+  max-width: 300px;
+  /* transform: initial; */
+  display: inline-flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -222,7 +226,14 @@
   display: inline-block;
   margin-right: .5rem;
   height: 100%;
-  width: 50%;
+  width: 37%;
+}
+.rrrrlogoText {
+  position: relative;
+  display: inline-block;
+  margin-right: .5rem;
+  height: 100%;
+  width: 60%;
 }
 
 .acctContact {
@@ -263,7 +274,11 @@
 
   .leftWrapper {
     left: 0;
+    width: 50%;
     transform: initial;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .hamburgerWrapper {

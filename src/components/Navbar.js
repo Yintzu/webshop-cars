@@ -79,7 +79,7 @@ const Navbar = () => {
                 <div className={style.leftWrapper}>
                     {/* <NavLink className={style.rrrrlogo} exact to="/"> */}
                         <img className={style.rrrrlogoImg} src="/assets/app-components/logo.gif" />
-                        <img className={style.rrrrlogoImg} src="/assets/app-components/logo-text.png" />
+                        <img className={style.rrrrlogoText} src="/assets/app-components/logo-text.png" />
                     {/* </NavLink> */}
                 </div>
                 <div className={`${style.navLinks} ${mobileMenuOpen && style.slideIn}`} onClick={() => setMobileMenuOpen(false)}>
