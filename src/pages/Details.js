@@ -11,12 +11,20 @@ const Details = (props) => {
     const { addToCart, formatSum, shoppingCartItems, removeFromCart } = useContext(ShoppingCartContext);
 
     useEffect(() => {
+        findCar()
+    }, [car]);
+
+    useEffect(() => {
+        findCar()
+    }, [props.match.params.id]);
+
+    const findCar = () => {
         if (cars) {
             setCar(
                 cars.find((car) => props.match.params.id == car.vin)
             )
         }
-    }, [car]);
+    }
 
     const renderButton = (car) => {
         let inCart = false;
