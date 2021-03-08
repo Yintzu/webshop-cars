@@ -6,7 +6,7 @@ import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 
 const Details = (props) => {
 
-    const { cars } = useContext(CarContext);
+    const { cars, boughtCars } = useContext(CarContext);
     const [ car, setCar ] = useState(null);
     const { addToCart, formatSum, shoppingCartItems, removeFromCart } = useContext(ShoppingCartContext);
 
@@ -17,6 +17,16 @@ const Details = (props) => {
             )
         }
     },[car]);
+
+    const renderButton = () => {
+        if (shoppingCartItems.includes(car)){
+            return <button onClick={() => removeFromCart(car)} className={`btn btn-lg ${style.removeBtn}`}>Remove</button>
+        } else if (boughtCars.includes(car)){
+            return <button className={`btn btn-lg ${style.disabled}`}>Sold</button>
+        } else {
+            return <button onClick={() => addToCart(car)} className={`btn btn-lg ${style.addToCartBtn}`}>Add to cart</button>
+        }
+    }
 
     const renderCar = () => {
         return ( 
@@ -29,10 +39,10 @@ const Details = (props) => {
                         <h3>{car.make} {car.model} {car.year}</h3>
                         <p>{car.city}</p>
                         <h4 className={style.price}>{formatSum(car.price)}</h4>
-                        { 
-                        !shoppingCartItems.includes(car) ? 
+                        { renderButton()
+/*                         !shoppingCartItems.includes(car) ? 
                         <button onClick={() => addToCart(car)} className={`btn btn-lg ${style.addToCartBtn}`}>Add to cart</button> :
-                        <button onClick={() => removeFromCart(car)} className={`btn btn-lg ${style.removeBtn}`}>Remove</button>
+                        <button onClick={() => removeFromCart(car)} className={`btn btn-lg ${style.removeBtn}`}>Remove</button> */
                         }
                     </div>
                 </div>
