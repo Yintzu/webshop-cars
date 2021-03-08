@@ -17,9 +17,15 @@ const Navbar = () => {
     // Set timer to hide cart when mouse leave cart-icon
     let timer;
     const mouseLeaveHandler = () => {
-        timer = setTimeout(() => {
-            setCartVisible(false);
-        }, 500)
+        if (!matchMedia('(pointer:coarse)').matches) {
+            timer = setTimeout(() => {
+                setCartVisible(false);
+            }, 500)
+        } else {
+            timer = setTimeout(() => {
+                setCartVisible(false);
+            }, 10)
+        }
     }
 
     // Clear timer to close cart if mouse enters cart div
