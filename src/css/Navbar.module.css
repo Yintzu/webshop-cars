@@ -154,8 +154,8 @@
   font-weight: bold;
   color: rgb(128, 128, 128);
   position: absolute;
-  left: 4px;
-  top: -10px;
+  left: 2px;
+  top: -9px;
   width: 17px;
   height: 16px;
 }
@@ -267,7 +267,8 @@
   }
 
   .cartNumber {
-    
+    left: 4px;
+    top: -10px;
   }
 
   .cartShadow {
