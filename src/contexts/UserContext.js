@@ -44,11 +44,6 @@ const UserContextProvider = (props) => {
 
   ]);
 
-  useEffect(() => {
-    console.log("Bought cars:");
-    console.log(boughtCars)
-  }, [boughtCars])
-
   const values = {
     boughtCars,
     setBoughtCars,
