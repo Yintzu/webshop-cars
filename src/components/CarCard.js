@@ -25,7 +25,7 @@ const CarCard = (props) => {
         if (inCart) {
           return <button onClick={() => removeFromCart(car)} className="btn btn-danger float-end" id="addRemove">Remove</button>
         } else if (bought){
-          return <button className="btn btn-secondary float-end" id="addRemove" disabled>Sold</button>
+          return <button className={`btn btn-secondary float-end ${style.disabled}`} id="addRemove">Sold</button>
         } else {
           return <button onClick={() => addToCart(car)} className="btn btn-primary float-end" id="addRemove">Add To Cart</button> 
         }
@@ -36,6 +36,7 @@ const CarCard = (props) => {
         <div className={`col-sm-6 ${style.carCard}`}>
             <div className={`card mt-2 mx-2 ${style.carClick}`} onClick={(e) => {
                 if (e.target.id !== "addRemove") {
+                  console.log(e.target);
                     viewCar(props.car, history)
                 }
             }}>
