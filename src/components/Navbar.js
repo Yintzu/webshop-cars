@@ -10,6 +10,7 @@ const Navbar = () => {
     const { shoppingCartItems: cart, createTimeStamp, cartTotal, formatSum } = useContext(ShoppingCartContext);
     const [onCartUpdate, setOnCartUpdate] = useState(false);
     const [cartVisible, setCartVisible] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const history = useHistory();
 
     // Handle onMouseLeave event
@@ -45,6 +46,10 @@ const Navbar = () => {
         }
     }
 
+    const handleHamburgerClick = () => {
+        setMobileMenuOpen(!mobileMenuOpen);
+    }
+
     // Hide cart if route changes
     useEffect(() => {
         history.listen(() => {
@@ -66,32 +71,33 @@ const Navbar = () => {
     return (
         <div className={style.navContainer}>
             <nav className={style.navbar}>
-                <div className={style.leftWrapper}>
-                    <NavLink className={style.rrrrlogo} exact to="/">
-                        <img className={style.rrrrlogoImg} src="/assets/app-components/logo.gif" />
-                        <img className={style.rrrrlogoImg} src="/assets/app-components/logo-text.png" />
-                    </NavLink>
-                    <div className={style.navLinks}>
-                        <NavLink className={style.links} activeClassName={style.active} exact to="/">Home</NavLink>
-                        <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
-                        <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Test</NavLink>
-                    </div>
+                <div className={style.hamburgerClickBox} onClick={handleHamburgerClick}/>
+                <div className={style.hamburgerWrapper}>
+                    <div className={`${style.hamburgerLine} ${mobileMenuOpen && style.openBurger}`} />
                 </div>
-                <div className={style.iconsWrapper}>
+                <div className={style.leftWrapper}>
+                    <NavLink className={style.rrrrlogo} exact to="/"><img className={style.rrrrlogoImg} src="/assets/app-components/webshop-logo.png"/></NavLink>
+                </div>
+                <div className={`${style.navLinks} ${mobileMenuOpen && style.slideIn}`} onClick={() => setMobileMenuOpen(false)}>
+                    <NavLink className={style.links} activeClassName={style.active} exact to="/">Home</NavLink>
+                    <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
+                    <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Support</NavLink>
+                </div> 
+                    <div className={style.iconsWrapper}>
                     <div onMouseOver={mouseOverHandler} onMouseLeave={mouseLeaveHandler} className={style.cartIconWrapper} onClick={cartClickHandler}>
-                        {/* Div with numbers will be displayed based on cart length, if 0 it won't be displayed at all */}
-                        {cart.length > 0 ? <div className={`${style.cartNumber} ${onCartUpdate ? style.cartUpdate : ''}`}><span>{cart.length}</span></div> : ''}
-                        <img className={style.img} src="/assets/icons/shopping-cart-web.png" />
+                            {/* Div with numbers will be displayed based on cart length, if 0 it won't be displayed at all */}
+                            { cart.length > 0 && <div className={`${style.cartNumber} ${onCartUpdate && style.cartUpdate}`}><span>{cart.length}</span></div>}
+                            <img className={style.img} src="/assets/icons/shopping-cart-web.png"/>
                     </div>
-                    {cartVisible ?
+                    { cartVisible && 
                         <div className={style.popupWrapper}
                             onMouseEnter={() => clearTimeout(timer)}
                             onMouseLeave={() => setCartVisible(false)}>
                             <PopupCart />
-                        </div>
-                        : ''}
-                    <NavLink className={style.acctContact} exact to="/">
-                        <img className={style.acctContactImg} src="/assets/icons/account-contact-circle.png" />
+                            <div className={style.cartShadow} />
+                        </div>}
+                    <NavLink className={ style.acctContact} exact to="/">
+                    <img className={style.acctContactImg} src="/assets/icons/account-contact-circle.png"/>
                     </NavLink>
                 </div>
             </nav>
