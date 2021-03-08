@@ -177,9 +177,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 50%;
-  max-width: 300px;
-  display: inline-flex;
-  justify-content: space-between;
+  display: flex;
   align-items: center;
 }
 
@@ -247,7 +245,7 @@
 
 @media screen and (min-width: 500px) {
   .navbar {
-    padding: 1rem;
+    padding: .7rem 1rem;
   }
 
   .cartNumber {
@@ -268,19 +266,30 @@
     transform: initial;
     transition: initial;
     font-weight: bold;
-    margin-left: 1.2rem;
+    margin-left: 1rem;
     font-size: 1rem;
   }
 
   .leftWrapper {
+    width: 110px;
+    padding: 0;
+    margin: 0;
+    margin-left: .2rem;
     left: 0;
-    width: 25%;
     transform: initial;
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
 
+  .rrrrlogoText {
+    width: 100%;
+    margin-top: .3rem;
+  }
+
+  .rrrrlogoImg {
+    width: 85%;
+  }
+  
   .hamburgerWrapper {
     display: none;
   }
