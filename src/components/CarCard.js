@@ -17,7 +17,7 @@ const CarCard = (props) => {
           } 
         });
         if (inCart) {
-          return <button onClick={() => removeFromCart(car)} className="btn btn-primary float-end" id="addRemove">Remove</button>
+          return <button onClick={() => removeFromCart(car)} className="btn btn-danger float-end" id="addRemove">Remove</button>
         } else {
           return <button onClick={() => addToCart(car)} className="btn btn-primary float-end" id="addRemove">Add To Cart</button> 
         }
@@ -37,7 +37,6 @@ const CarCard = (props) => {
                     <p className="card-text">{formatSum(props.car.price)}</p>
                     <p className={`card-text ${style.desc}`}>{props.car.descShort}</p>
                     { renderButtons(props.car) }
-                    {/* <button onClick={() => addToCart(props.car) }className="btn btn-primary float-end" id="addBtn">Add To Cart</button> */}
                 </div>
             </div>
         </div>
