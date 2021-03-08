@@ -1,11 +1,14 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
+import { CarContext } from "../contexts/CarContext";
 
 export const UserContext = createContext();
 
+
 const UserContextProvider = (props) => {
 
-    const [boughtCars, setBoughtCars] = useState([]);
-    const [orderInfo, setOrderInfo] = useState([
+  const { boughtCars, setBoughtCars } = useContext(CarContext)
+
+  const [orderInfo, setOrderInfo] = useState([
     {
       address: "Södra Esplanaden 9a",
       cardNumber: "123123",
@@ -36,26 +39,26 @@ const UserContextProvider = (props) => {
         vin: "1D4PT5GK0BW487259",
         year: 1973
       }]
-     
+
     }
 
-    ]);
+  ]);
 
-    useEffect(() => {
-        console.log("Bought cars:");
-        console.log(boughtCars)
-    }, [boughtCars])
+  useEffect(() => {
+    console.log("Bought cars:");
+    console.log(boughtCars)
+  }, [boughtCars])
 
-    const values = {
-        boughtCars,
-        setBoughtCars,
-        orderInfo,
-        setOrderInfo
-    }
-    return (
-        <UserContext.Provider value={values}>
-            {props.children}
-        </UserContext.Provider>);
+  const values = {
+    boughtCars,
+    setBoughtCars,
+    orderInfo,
+    setOrderInfo
+  }
+  return (
+    <UserContext.Provider value={values}>
+      {props.children}
+    </UserContext.Provider>);
 }
 
 export default UserContextProvider;
