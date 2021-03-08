@@ -7,17 +7,25 @@ import style from '../css/CarCard.module.css';
 const CarCard = (props) => {
     const history = useHistory();
     const { addToCart, removeFromCart, shoppingCartItems, formatSum } = useContext(ShoppingCartContext);
-    const { viewCar } = useContext(CarContext);
+    const { viewCar, boughtCars } = useContext(CarContext);
 
     const renderButtons = (car) => {
         let inCart = false;
+        let bought = false;
         shoppingCartItems.forEach(cartItem => {
           if (cartItem.vin === car.vin) {
             inCart = true;
           } 
         });
+        boughtCars.forEach(boughtItem => {
+          if (boughtItem.vin === car.vin){
+            bought = true;
+          }
+        });
         if (inCart) {
           return <button onClick={() => removeFromCart(car)} className="btn btn-danger float-end" id="addRemove">Remove</button>
+        } else if (bought){
+          return <button className="btn btn-secondary float-end" id="addRemove" disabled>Sold</button>
         } else {
           return <button onClick={() => addToCart(car)} className="btn btn-primary float-end" id="addRemove">Add To Cart</button> 
         }
