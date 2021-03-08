@@ -76,10 +76,10 @@ const Navbar = () => {
                     <div className={`${style.hamburgerLine} ${mobileMenuOpen && style.openBurger}`} />
                 </div>
                 <div className={style.leftWrapper}>
-                    <NavLink className={style.rrrrlogo} exact to="/">
+                    {/* <NavLink className={style.rrrrlogo} exact to="/"> */}
                         <img className={style.rrrrlogoImg} src="/assets/app-components/logo.gif" />
                         <img className={style.rrrrlogoImg} src="/assets/app-components/logo-text.png" />
-                    </NavLink>
+                    {/* </NavLink> */}
                 </div>
                 <div className={`${style.navLinks} ${mobileMenuOpen && style.slideIn}`} onClick={() => setMobileMenuOpen(false)}>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/">Home</NavLink>

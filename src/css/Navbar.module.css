@@ -219,8 +219,10 @@
 
 .rrrrlogoImg {
   position: relative;
+  display: inline-block;
   margin-right: .5rem;
-  width: 75px;
+  height: 100%;
+  width: 50%;
 }
 
 .acctContact {
