@@ -65,12 +65,51 @@ const SearchContextProvider = (props) => {
         setRenderList(cars);
     }
 
+    /* Filter search arrays */
+    const [makeArray, setMakeArray] = useState([]);
+    const [modelArray, setModelArray] = useState([]);
+    const [yearArray, setYearArray] = useState([]);
+    const filterLists = [{listName: "make", list: makeArray}, {listName: "model", list: modelArray}, {listName: "year", list: yearArray}];
+
+    const createMakeArray = () => {
+        let tempArray = []
+        cars.forEach(car => {
+            if (!tempArray.includes(car.make))
+            tempArray.push(car.make)
+        })
+        setMakeArray(tempArray.sort());
+    }
+    const createModelArray = () => {
+        let tempArray = []
+        cars.forEach(car => {
+            if (!tempArray.includes(car.model))
+            tempArray.push(car.model)
+        })
+        setModelArray(tempArray.sort());
+    }
+    const createYearArray = () => {
+        let tempArray = []
+        cars.forEach(car => {
+            if (!tempArray.includes(car.year))
+            tempArray.push(car.year)
+        })
+        setYearArray(tempArray.sort().reverse());
+    }
+
+    useEffect(() => {
+        createMakeArray();
+        createModelArray();
+        createYearArray();
+
+    },[cars])
+
     const values={
       searchResult,
       filterCars,
       setSearchResult,
       renderList,
       resetRenderList,
+      filterLists
     }
 
     return (

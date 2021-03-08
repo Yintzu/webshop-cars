@@ -6,15 +6,9 @@ import { SearchContext } from '../contexts/SearchContext';
 const Search = () => {
     const [inputValue, setInputValue] = useState("");
     const { cars } = useContext(CarContext);
-    const { filterCars, resetRenderList } = useContext(SearchContext);
+    const { filterCars, resetRenderList, filterLists } = useContext(SearchContext);
     const [searched, setSearched] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
-    const [makeArray, setMakeArray] = useState([]);
-    const [modelArray, setModelArray] = useState([]);
-    const [yearArray, setYearArray] = useState([]);
-    
-    const filterLists = [{listName: "make", list: makeArray}, {listName: "model", list: modelArray}, {listName: "year", list: yearArray}];
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -31,41 +25,6 @@ const Search = () => {
         setSearched(false);
         resetRenderList();
     }
-    const createMakeArray = () => {
-        let tempArray = []
-        cars.forEach(car => {
-            if (!tempArray.includes(car.make))
-            tempArray.push(car.make)
-        })
-        setMakeArray(tempArray.sort());
-    }
-    const createModelArray = () => {
-        let tempArray = []
-        cars.forEach(car => {
-            if (!tempArray.includes(car.model))
-            tempArray.push(car.model)
-        })
-        setModelArray(tempArray.sort());
-    }
-    const createYearArray = () => {
-        let tempArray = []
-        cars.forEach(car => {
-            if (!tempArray.includes(car.year))
-            tempArray.push(car.year)
-        })
-        setYearArray(tempArray.sort().reverse());
-    }
-
-    useEffect(() => {
-        createMakeArray();
-        createModelArray();
-        createYearArray();
-
-    },[cars])
-/*     useEffect(() => {
-
-    },[makeArray, modelArray, yearArray]) */
-  
 
     return (
         <div className={style.search}>
