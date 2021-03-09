@@ -65,8 +65,6 @@ outline: none;
 /*   New styling to Select  */
 .customSelect {
   width: 100%;
-  min-width: 15ch;
-  max-width: 30ch;
   border-radius: 0.25em;
   cursor: pointer;
   background-color: #fff;

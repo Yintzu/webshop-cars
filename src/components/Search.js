@@ -44,9 +44,9 @@ const Search = () => {
                     <div className={`row ${style.selects}`}>
                         {filterLists.map(listObject => {
                                 return (
-                                <div className="col-md" key={listObject.listName}>
+                                <div className={`col-md ${style.selectWrapper}`} key={listObject.listName}>
                                     <label htmlFor={listObject.listName}>Select {listObject.listName}</label>
-                                    <div className="customSelect">
+                                    <div className={`customSelect ${style.customSelect}`}>
                                         <select name={listObject.listName} id={listObject.listName} defaultValue="all" onChange={handleSelect}>
                                             <option value="all">All</option>
                                             {listObject.list.length && listObject.list.map(listItem => {

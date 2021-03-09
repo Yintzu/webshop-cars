@@ -55,6 +55,15 @@
     border-right: .5rem solid transparent;
     border-top: .5rem solid #303030;
  }
+ /* Custom selects */
  .selects label {
     margin: 1rem .5rem .3rem;
   }
+  .selects .customSelect {
+    min-width: 15ch;
+    width: 100%;
+  }
+.selectWrapper {
+    width: 40ch;
+    margin: auto;
+}
