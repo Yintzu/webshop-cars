@@ -52,7 +52,7 @@ const Details = (props) => {
         return (
             <div className={style.details}>
                 <h1 className={`mt-0 ${style.mainHeading}`}>Car details</h1>
-                <div className="row">
+                <div className="row g-0">
                     <div className={`col ${style.imageWrapper}`}>
                         <img src={car.carImg} alt={`${car.make} ${car.model} ${car.year}`} />
                     </div>
