@@ -224,6 +224,15 @@ hr {
         margin-top: 25px;
         margin-bottom: 5px;
     }
+
+    .printButton {
+        visibility: hidden;
+    }
+
+    .backButton{
+        position: relative;
+        left: 0;
+    }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -238,6 +247,7 @@ hr {
         background-color: #f4f4f4 !important;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
+        position: relative !important;
     }
 
     .containerText {
@@ -262,6 +272,15 @@ hr {
         font-size: 1.1rem;
         margin-top: 25px;
         margin-bottom: 5px;
+    }
+
+    .printButton {
+        visibility: hidden;
+    }
+    .backButton{
+        position: relative;
+        top: calc(50% - XYpx);
+left: calc(50% - XYpx);
     }
 }
 
