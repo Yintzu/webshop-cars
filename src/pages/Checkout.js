@@ -54,7 +54,7 @@ const Checkout = () => {
         } else if (selection === "Delivery by helicopter") {
             deliveryPrice = 10000;
         }
-        return <p className={`${style.deliveryPrice}`}>{formatSum(deliveryPrice)}</p>
+        return <h3 className={`${style.deliveryPrice}`}>{formatSum(deliveryPrice)}</h3>
     }
 
     let itemS = shoppingCartItems.length === 1 ? 'item' : 'items';
@@ -62,48 +62,49 @@ const Checkout = () => {
     return (
         <div className={`checkout`}>
             <div className="container">
-                <h1 className={`mt-3 ${style.mainHeading}`}>Your shopping cart</h1>
+                <h1 className={`mt-0 ${style.mainHeading}`}>Your shopping cart</h1>
                 <div className="row">
-                    <div className={`${style.shoppinglist} ${style.background}`}>
+                    <div className={`shoppinglist ${style.shoppinglist} ${style.background}`}>
                         {/* Ternary operator to display "No items in cart" or loop out the items */}
                         {shoppingCartItems.length == 0 ? <h2 className={`text-center my-3`}>Cart is empty!</h2> :
                             <div>
                                 {shoppingCartItems.map((item, key) => (
-                                    <div key={key} className={`row ${style.shoppingCartCard}`} onClick={(e)=> e.target.tagName!=="SPAN" && viewCar(item, history)}>
-                                        <div className={`col-12 col-sm-12 col-md-2 ${style.flexer}`}><img className={`my-2 w-100 rounded`} src={item.carImg} /></div>
-                                        <div className="col-12 col-sm-8 col-md-7">
-                                            <h2 className={`mt-2 ${style.smallerHeading}`}>{`${item.make} ${item.model} ${item.year}`}</h2>
+                                    <div key={key} className={`row position-relative ${style.shoppingCartCard}`} onClick={(e) => e.target.tagName !== "SPAN" && viewCar(item, history)}>
+                                        <div className={`col-12 col-sm-12 col-md-3 ${style.flexer}`}><img className={`my-2 w-100 rounded`} src={item.carImg} /></div>
+                                        <div className={`col-12 col-sm-7 col-md-6 ${style.paddingFix}`}>
+                                            <h2 className={`${style.smallerHeading}`}>{`${item.make} ${item.model} ${item.year}`}</h2>
                                             <p>{`${item.descShort}`}</p>
                                         </div>
-                                        <div className={`col-8 col-sm-2 col-md-2 ${style.flexer}`}>
-                                            <p className={`my-3 ${style.itemPrice}`}><strong>{`${formatSum(item.price)}`}</strong></p>
+                                        <div className={`col-12 col-sm-3 col-md-2 px-0 ${style.flexer}`}>
+                                            <h3 className={`${style.itemPrice}`}>{`${formatSum(item.price)}`}</h3>
                                         </div>
-                                        <div className={`col-4 col-sm-2 col-md-1 ${style.flexer}`}><span className={`my-3 ${style.removeButton}`} onClick={() => removeFromCart(item)}>X</span></div>
+                                        <div className={`col-0 col-sm-2 col-md-1 ${style.flexer}`}><span className={`${style.removeButton} ${style.positionFix}`} onClick={() => removeFromCart(item)}>X</span></div>
                                     </div>
                                 ))}
                                 <hr />
                                 <div>
-                                    <h2 className={`text-center mb-3 ${style.mainHeading}`}>Delivery Options</h2>
-                                    <div className="row">
-                                        <div className="col-9">
+                                    <h2 className={`text-center mb-4 ${style.mainHeading}`}>Delivery Options</h2>
+                                    <div className={`row ${style.flexer} ${style.deliveryDiv}`}>
+                                        <div className="col-12 col-sm-9">
                                             <select id="deliveryOptions" onChange={selectHandler}>
                                                 <option>Pick up at store</option>
                                                 <option>Delivery by truck</option>
                                                 <option>Delivery by helicopter</option>
                                             </select>
                                         </div>
-                                        <div className="col-3">
+                                        <div className="col-12 col-sm-3">
                                             {selectPriceRenderer(selectStatus) /* Shows delivery price depending on selection */}
                                         </div>
                                     </div>
                                 </div>
                                 <hr />
-                                <div className="d-flex justify-content-between mb-2">
+                                <div className={`${style.itemTotalDiv}`}>
                                     <h3>
                                         {`${shoppingCartItems.length} ${itemS} in cart`}
                                     </h3>
+                                    <hr className={style.ithr}/>
                                     <h3>
-                                        {`Total: ${formatSum(cartTotal + deliveryPrice)}`}
+                                        {`Price total: ${formatSum(cartTotal + deliveryPrice)}`}
                                     </h3>
                                 </div>
                             </div>
@@ -152,7 +153,7 @@ const Checkout = () => {
                                         <label htmlFor="creditCard">Credit card</label>
                                     </div>
                                     {radioStatus === "card" &&
-                                        <div className={style.cardInfo}>
+                                        <div className={`${style.cardInfo} mb-3`}>
                                             <label htmlFor="cardOwner">Name of card owner</label>
                                             <input className="form-control" type="text" id="cardOwner" pattern="[A-Öa-ö\s]+" required></input>
                                             <label htmlFor="cardNumber">Card number</label>

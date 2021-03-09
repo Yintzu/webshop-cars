@@ -3,7 +3,7 @@
     font-family: 'Quicksand';
 }
 .buy {
-    background: #EBF5F2;
+    background: #f4f4f4;
     padding: 2rem;
     margin: .5rem auto;
     margin-right: 1rem;
@@ -35,7 +35,7 @@
 .descContainer {
     margin: .5rem 0;
     padding: 1em ;
-    background: #EBF5F2;
+    background: #f4f4f4;
     border-radius: 5px;
     box-shadow: 2px 2px 2px #d2d2d2;
 }
