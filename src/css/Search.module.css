@@ -59,10 +59,6 @@
  .selects label {
     margin: 1rem .5rem .3rem;
   }
-  .selects .customSelect {
-    min-width: 15ch;
-    width: 100%;
-  }
 .selectWrapper {
     width: 40ch;
     margin: auto;
