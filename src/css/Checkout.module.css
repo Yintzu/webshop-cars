@@ -44,7 +44,9 @@ input{
     background-color: #fcfcfc;
     border: 1px solid rgb(168, 168, 168);
     border-radius: 3px;
-    margin: 1rem 0rem;
+    margin: 0rem 0rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
     box-shadow: 2px 2px 2px #8d8d8d;
     cursor: pointer;
 }

@@ -180,7 +180,7 @@ const Checkout = () => {
                                     </div>
                                     {radioStatus === "swish" && <div className="alert alert-primary">You will be prompted to open your Swish app to make a payment after you place your order.</div>}
                                 </div>
-                                <div className="mb-3">
+                                <div className="mb-4">
                                     <hr />
                                     <h3 className="text-center mb-4">
                                         {`Price total: ${formatSum(cartTotal + deliveryPrice)}`}
