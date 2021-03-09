@@ -7,13 +7,17 @@
 }
 .search input {
     border: none; 
-    /* border: solid darkgrey 2px;  */
-    border-radius: 1rem;
+    border: solid darkgrey 1px; 
+    border-radius: .25em;
     padding: .5rem;
     padding-left: 1rem;
     width: 50%;
-    box-shadow: 2px 2px 2px #c0c0c0;
-/*     outline: none; */
+    outline: none;
+}
+.search input:focus {
+    outline: 1.5px solid #2C7CAE;
+    -moz-outline-radius: .3em;
+
 }
 .search .searchIcon {
     background: none;
@@ -80,7 +84,7 @@
     border-radius: 0.25em;
     cursor: pointer;
     background-color: #fff;
-    box-shadow: 2px 2px 2px #c0c0c0;
+    border: solid darkgrey 1px; 
     display: grid;
     grid-template-areas: "select";
     align-items: center;
