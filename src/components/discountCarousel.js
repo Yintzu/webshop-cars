@@ -54,7 +54,7 @@ const Carousel = (props) => {
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-  <div className="carousel-inner rounded-3">
+  <div className="carousel-inner rounded-top">
     <div className="carousel-item active">
       <img src={discountedCars[0].carImg} className="d-block w-100 carouselImg" alt="Discounted Carousel"/>
       <div className="carousel-caption d-none d-md-block">

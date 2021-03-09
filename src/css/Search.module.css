@@ -1,15 +1,24 @@
 .search {
-    text-align: center;
-    margin-top: 1rem;
+    background: #f4f4f4;
+    border-radius: 0 0 5px 5px;
 }
 .input {
     text-align: center;
+    padding: .5rem;
 }
 .search input {
-    border: solid darkgrey 2px; 
-    border-radius: 1rem;
+    border: none; 
+    border: solid darkgrey 1px; 
+    border-radius: .25em;
     padding: .5rem;
+    padding-left: 1rem;
     width: 50%;
+    outline: none;
+}
+.search input:focus {
+    outline: 1.5px solid #2C7CAE;
+    -moz-outline-radius: .3em;
+
 }
 .search .searchIcon {
     background: none;
@@ -25,3 +34,27 @@
     color: white;
     background-color: #2C7CAE; 
 }
+.dropDown {
+    padding: 0 2rem 2rem;
+}
+
+/*  Filter button arrow */
+ .arrowUp, .arrowDown {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .7rem;
+ }
+ .arrowUp {
+    border-left: .5rem solid transparent;
+    border-right: .5rem solid transparent;
+    border-bottom: .5rem solid #303030;
+ }
+ .arrowDown {
+    border-left: .5rem solid transparent;
+    border-right: .5rem solid transparent;
+    border-top: .5rem solid #303030;
+ }
+ .selects label {
+    margin: 1rem .5rem .3rem;
+  }
