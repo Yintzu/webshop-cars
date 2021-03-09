@@ -8,7 +8,7 @@ const Search = () => {
     /* const { cars } = useContext(CarContext); */
     const { searchCars, resetRenderList, filterLists, saveFilters } = useContext(SearchContext);
     const [searched, setSearched] = useState(false);
-    const [isClicked, setIsClicked] = useState(true);
+    const [isClicked, setIsClicked] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();

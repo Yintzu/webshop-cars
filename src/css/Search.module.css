@@ -1,5 +1,6 @@
 .search {
     background: #f4f4f4;
+    border-radius: 0 0 5px 5px;
 }
 .input {
     text-align: center;
