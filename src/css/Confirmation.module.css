@@ -59,8 +59,8 @@ hr {
 }
 
 .boldSummary {
-    font-weight: 500;
-    color: #303030 !important;
+    font-weight: bold;
+    color: #4b4b4b !important;
     
 }
 
@@ -89,7 +89,7 @@ hr {
 }
 
 .printButton:hover {
-    background: #beb1ae !important;
+    background: #9b4732 !important;
     color: #ffffff !important;
     border: none;
 }
@@ -111,7 +111,6 @@ hr {
 
 .textOrderNumber {
     color: #303030;
-    font-weight: 500;
 }
 
 @media print {
