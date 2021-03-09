@@ -28,7 +28,7 @@ select{
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
     color: #2C7CAE !important;
-    margin-top: 0;
+    margin-top: 0.7rem;
     margin-bottom: 12px;
     
 }
@@ -57,6 +57,7 @@ select{
 .itemPrice{
     font-weight: bold;
     font-size: 1.1rem;
+    margin: 1rem 0;
 }
 
 .removeButton{
@@ -73,8 +74,20 @@ select{
 
 .deliveryPrice{
     text-align: end;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 1.4rem;
+    margin: 0.7rem 0;
+}
+
+.itemTotalDiv{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.itemTotalDiv h3{
+    margin-bottom: 0;
 }
 
 .payment{
@@ -115,12 +128,45 @@ select{
 @media only screen and (max-width: 575px) {
     .itemPrice{
         font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .positionFix{
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
+@media only screen and (min-width: 576px){
+    .itemTotalDiv{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .ithr{
+        display: none;
+    }
+
+    .deliveryDiv{
+        margin-bottom: 1.8rem;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px){
+    .paddingFix{
+        padding-right: 0;
     }
 }
 
 @media only screen and (max-width: 767px){
     .info{
         margin-bottom: 1rem;
+    }
+
+    .itemPrice{
+        font-size: 1.5rem;
     }
 }
 
