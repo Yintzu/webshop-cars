@@ -87,7 +87,7 @@ hr {
 }
 
 .containerTextLast {
-    line-height: .7;
+    line-height: .8;
     margin-bottom: 50px;
     color: #303030 !important;
     font-family: 'Quicksand', sans-serif;
@@ -154,3 +154,69 @@ hr {
       visibility: hidden;
     }
   }
+
+  @media only screen and (min-width: 320px) and (max-width: 575px) {
+    body {
+        padding-top: 105px;
+      }
+    
+    .mainHeading {
+        font-size: 1.5rem;
+    }  
+
+    .confirmationBox {
+        background-color: palegoldenrod !important;
+        padding: 30px;
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .confirmationBox {
+        background-color: palegreen !important;
+        padding: 30px;
+        margin-top: 20px;
+    }
+
+    .containerText {
+        line-height: 1.5;
+        font-size: 1rem;
+    }
+    
+    .containerTextLast {
+        line-height: 1.5;
+        font-size: 1rem;
+    }
+
+    .smallerHeading {
+        font-size: 1.2rem;
+        margin-top: 0;
+        margin-bottom: 5px;
+        
+    }
+    
+    .smallHeading {
+        color: #2C7CAE !important;
+        font-size: 1.1rem;
+        margin-top: 25px;
+        margin-bottom: -5px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        padding-top: 115px;
+      }
+
+      .containerText {
+        line-height: 1.7;
+        font-size: 1rem;
+    }
+    
+    .containerTextLast {
+        line-height: 1.7;
+        font-size: 1rem;
+    }
+    
+}

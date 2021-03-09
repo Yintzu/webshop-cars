@@ -20,7 +20,7 @@ const UserContextProvider = (props) => {
       expiration: "13221",
       firstName: "Victor",
       lastName: "Werngren",
-      payment: "card",
+      payment: "Card",
       phone: "+46730713949",
       postalnr: "22354",
       orderNumber: "1234567",
