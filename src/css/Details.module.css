@@ -1,14 +1,22 @@
 .details {
-    margin-top: 5rem;
     /* padding: 2rem;
     border: #eee 2px solid;
     border-radius: 5px; */
     font-family: 'Quicksand';
 }
+
+.mainHeading {
+    font-size: 1.8rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    color: #2C7CAE !important;
+    margin-top: 20px;
+}
+
 .buy {
     background: #f4f4f4;
     padding: 2rem;
-    margin: .5rem auto;
+    margin: 1rem auto;
     margin-right: 1rem;
     border-radius: 5px;
     box-shadow: 2px 2px 2px #d2d2d2;
