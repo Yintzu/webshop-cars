@@ -104,7 +104,7 @@
   align-items: center;
   opacity: 1;
   left: -110%;
-  top: 70px;
+  top: 68px;
   width: 100vw;
   height: 90vh;
   margin-left: 0;
@@ -222,6 +222,7 @@
   left: -1rem;
   width: 120%;
   height: 40vh;
+  opacity: .5;
   background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0, 0, 0, 0.295) 50%);
 }
 
