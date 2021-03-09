@@ -224,15 +224,6 @@ hr {
         margin-top: 25px;
         margin-bottom: 5px;
     }
-
-    .printButton {
-        visibility: hidden;
-    }
-
-    .backButton{
-        position: relative;
-        left: 0;
-    }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -272,15 +263,6 @@ hr {
         font-size: 1.1rem;
         margin-top: 25px;
         margin-bottom: 5px;
-    }
-
-    .printButton {
-        visibility: hidden;
-    }
-    .backButton{
-        position: relative;
-        top: calc(50% - XYpx);
-left: calc(50% - XYpx);
     }
 }
 
