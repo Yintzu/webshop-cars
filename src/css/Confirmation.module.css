@@ -60,36 +60,30 @@ hr {
 
 .boldSummary {
     font-weight: 500;
-    color: #303030 !important;
+    color: #4b4b4b !important;
     
 }
 
 .backButton{
     margin-left: 10px !important;
-    background: #2C7CAE !important;
+    background: #DA6547 !important;
     border: none;
 }
 
 .backButton:hover {
-    background-color:#295276 !important;
+    background-color:#a04832 !important;
+    border: none;
    
 }
 
 .printButton {
-    background: #DA6547 !important;
-    color: #ffffff !important;
-    border: none;
-    margin-left: 10px !important;
-}
-
-.printButtonFirst {
-    background: #DA6547 !important;
+    background: #2C7CAE !important;
     color: #ffffff !important;
     border: none;
 }
 
 .printButton:hover {
-    background: #beb1ae !important;
+    background: #295276 !important;
     color: #ffffff !important;
     border: none;
 }
@@ -111,7 +105,6 @@ hr {
 
 .textOrderNumber {
     color: #303030;
-    font-weight: 500;
 }
 
 @media print {
@@ -245,6 +238,7 @@ hr {
         background-color: #f4f4f4 !important;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
+        position: relative !important;
     }
 
     .containerText {

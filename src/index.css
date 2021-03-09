@@ -87,6 +87,7 @@ outline: none;
   justify-self: end;
   margin-right: 1rem;
 }
+
 select,
 .customSelect:after {
     grid-area: select;
