@@ -85,16 +85,15 @@ const Checkout = () => {
                                 <div>
                                     <h2 className={`text-center mb-4 ${style.mainHeading}`}>Delivery Options</h2>
                                     <div className={`${style.deliveryDiv}`}>
-                                        {/* <div className="col-12 col-sm-9"> */}
-                                            <select className={`${style.deliveryOptions}`} id={`deliveryOptions`} onChange={selectHandler}>
+                                        <div className={`customSelect ${style.customSelect}`}>
+                                            <select className={`${style.select}`} id={`deliveryOptions`} onChange={selectHandler}>
                                                 <option>Pick up at store</option>
                                                 <option>Delivery by truck</option>
                                                 <option>Delivery by helicopter</option>
                                             </select>
-                                        {/* </div> */}
-                                        {/* <div className="col-12 col-sm-3"> */}
-                                            {selectPriceRenderer(selectStatus) /* Shows delivery price depending on selection */}
-                                        {/* </div> */}
+                                            <span className="focus"></span>
+                                        </div>
+                                        {selectPriceRenderer(selectStatus) /* Shows delivery price depending on selection */}
                                     </div>
                                 </div>
                                 <hr />
@@ -102,7 +101,7 @@ const Checkout = () => {
                                     <h3>
                                         {`${shoppingCartItems.length} ${itemS} in cart`}
                                     </h3>
-                                    <hr className={style.ithr}/>
+                                    <hr className={style.ithr} />
                                     <h3>
                                         {`Price total: ${formatSum(cartTotal + deliveryPrice)}`}
                                     </h3>

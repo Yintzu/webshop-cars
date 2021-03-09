@@ -75,8 +75,7 @@ input{
     justify-content: space-between;
 }
 
-.deliveryOptions{
-    width: 100%;
+div.customSelect, .select {
     height: 35px;
 }
 
@@ -138,8 +137,8 @@ input{
         flex-direction: row;
         align-items: center;
     }
-    .deliveryOptions{
-        width: calc(45% + 16vw);
+    div.customSelect {
+        width: calc(45% + 16vw) !important;
     }
 }
 
