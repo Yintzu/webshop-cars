@@ -24,7 +24,9 @@ const Confirmation = () => {
               toPrint
               `}>
           <h3 className={styles.smallerHeading}>Order number: {orderInfo[0].ordernumber}</h3>
-          <p className={styles.containerText}>Delivery details</p>
+          <hr />
+          <h3 className={styles.smallerHeading}>Delivery details</h3>
+          <p className={styles.containerText}>We are currently processing your order and will email you with confirmation shortly. For your convenience you may want to save or print this order confirmation.</p>
           <hr />
           <h4 className={styles.smallHeading}>Delivery for</h4>
           <p className={styles.containerText}>{orderInfo[0].firstName} {orderInfo[0].lastName}</p>
@@ -72,10 +74,10 @@ const Confirmation = () => {
             </div>
             {/* Order Info */}
             <h4 className={styles.smallHeading}>Order info</h4>
-            <p className={styles.containerText}>Order number: {orderInfo[0].orderNumber}</p>
-            <p className={styles.containerText}>Order date: {orderInfo[0].orderDate[0]} {orderInfo[0].orderDate[1]}</p>
-            <p className={styles.containerText}>Payment method: {orderInfo[0].payment}</p>
-            <p className={styles.containerTextLast}>Delivery method: {orderInfo[0].delivery}</p>
+            <p className={styles.containerText}>Order number: <br></br>{orderInfo[0].orderNumber}</p>
+            <p className={styles.containerText}>Order date: <br></br>{orderInfo[0].orderDate[0]} {orderInfo[0].orderDate[1]}</p>
+            <p className={styles.containerText}>Payment method: <br></br>{orderInfo[0].payment}</p>
+            <p className={styles.containerTextLast}>Delivery method: <br></br>{orderInfo[0].delivery}</p>
 
           </div>
           
