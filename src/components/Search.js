@@ -8,7 +8,7 @@ const Search = () => {
     /* const { cars } = useContext(CarContext); */
     const { searchCars, resetRenderList, filterLists, saveFilters } = useContext(SearchContext);
     const [searched, setSearched] = useState(false);
-    const [isClicked, setIsClicked] = useState(true);
+    const [isClicked, setIsClicked] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -46,7 +46,7 @@ const Search = () => {
                                 return (
                                 <div className="col-md" key={listObject.listName}>
                                     <label htmlFor={listObject.listName}>Select {listObject.listName}</label>
-                                    <div className={style.customSelect}>
+                                    <div className="customSelect">
                                         <select name={listObject.listName} id={listObject.listName} defaultValue="all" onChange={handleSelect}>
                                             <option value="all">All</option>
                                             {listObject.list.length && listObject.list.map(listItem => {
@@ -55,7 +55,7 @@ const Search = () => {
                                                 )
                                             })}
                                         </select>
-                                        <span className={style.focus}></span>
+                                        <span className="focus"></span>
                                     </div>
                                 </div>
                                 )

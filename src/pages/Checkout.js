@@ -84,17 +84,16 @@ const Checkout = () => {
                                 <hr />
                                 <div>
                                     <h2 className={`text-center mb-4 ${style.mainHeading}`}>Delivery Options</h2>
-                                    <div className={`row ${style.flexer} ${style.deliveryDiv}`}>
-                                        <div className="col-12 col-sm-9">
-                                            <select id="deliveryOptions" onChange={selectHandler}>
+                                    <div className={`${style.deliveryDiv}`}>
+                                        <div className={`customSelect ${style.customSelect}`}>
+                                            <select className={`${style.select}`} id={`deliveryOptions`} onChange={selectHandler}>
                                                 <option>Pick up at store</option>
                                                 <option>Delivery by truck</option>
                                                 <option>Delivery by helicopter</option>
                                             </select>
+                                            <span className="focus"></span>
                                         </div>
-                                        <div className="col-12 col-sm-3">
-                                            {selectPriceRenderer(selectStatus) /* Shows delivery price depending on selection */}
-                                        </div>
+                                        {selectPriceRenderer(selectStatus) /* Shows delivery price depending on selection */}
                                     </div>
                                 </div>
                                 <hr />
@@ -102,7 +101,7 @@ const Checkout = () => {
                                     <h3>
                                         {`${shoppingCartItems.length} ${itemS} in cart`}
                                     </h3>
-                                    <hr className={style.ithr}/>
+                                    <hr className={style.ithr} />
                                     <h3>
                                         {`Price total: ${formatSum(cartTotal + deliveryPrice)}`}
                                     </h3>
@@ -116,7 +115,7 @@ const Checkout = () => {
                     <form onSubmit={submitHandler}>
                         <div className="row d-flex justify-content-between">
                             <div className={`col-12 col-md-6 info ${style.info} ${style.background} ${style.gutterFix}`}>
-                                <h2 className={`text-center mt-2 ${style.mainHeading}`}>Your info</h2>
+                                <h2 className={`text-center my-3 ${style.mainHeading}`}>Your info</h2>
 
                                 <label htmlFor="firstName">First name</label>
                                 <input className="form-control" type="text" id="firstName" pattern="[A-Öa-ö\s]+" required></input>
@@ -147,7 +146,7 @@ const Checkout = () => {
 
                             <div className={`col-12 col-md-6 ${style.payment} ${style.background} ${style.gutterFix}`}>
                                 <div>
-                                    <h2 className={`text-center mt-2 ${style.mainHeading}`}>Payment options</h2>
+                                    <h2 className={`text-center my-3 ${style.mainHeading}`}>Payment options</h2>
                                     <div>
                                         <input className={style.radioButton} type="radio" id="creditCard" value="card" name="radio" checked={radioStatus == "card"} onChange={radioHandler} required></input>
                                         <label htmlFor="creditCard">Credit card</label>
@@ -180,7 +179,7 @@ const Checkout = () => {
                                     </div>
                                     {radioStatus === "swish" && <div className="alert alert-primary">You will be prompted to open your Swish app to make a payment after you place your order.</div>}
                                 </div>
-                                <div className="mb-3">
+                                <div className="mb-4">
                                     <hr />
                                     <h3 className="text-center mb-4">
                                         {`Price total: ${formatSum(cartTotal + deliveryPrice)}`}
