@@ -17,9 +17,15 @@ const Navbar = () => {
     // Set timer to hide cart when mouse leave cart-icon
     let timer;
     const mouseLeaveHandler = () => {
-        timer = setTimeout(() => {
-            setCartVisible(false);
-        }, 500)
+        if (!matchMedia('(pointer:coarse)').matches) {
+            timer = setTimeout(() => {
+                setCartVisible(false);
+            }, 500)
+        } else {
+            timer = setTimeout(() => {
+                setCartVisible(false);
+            }, 10)
+        }
     }
 
     // Clear timer to close cart if mouse enters cart div
@@ -50,6 +56,16 @@ const Navbar = () => {
     const handleHamburgerClick = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     }
+
+    useEffect(() => {
+        if (mobileMenuOpen) {
+            let x=window.scrollX;
+            let y=window.scrollY;
+            window.onscroll=function(){window.scrollTo(x, y);};
+        } else {
+            window.onscroll=function(){};
+        }
+    }, [mobileMenuOpen])
 
     // Hide cart if route changes
     useEffect(() => {
@@ -85,13 +101,13 @@ const Navbar = () => {
                 <div className={`${style.navLinks} ${mobileMenuOpen && style.slideIn}`} onClick={() => setMobileMenuOpen(false)}>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/">Home</NavLink>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
-                    <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Support</NavLink>
+                    {/* <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Support</NavLink> */}
                 </div>
                 <div className={style.iconsWrapper}>
-                    <div onMouseOver={mouseOverHandler} onMouseLeave={mouseLeaveHandler} className={style.cartIconWrapper} onClick={cartClickHandler}>
+                    <div onMouseOver={mouseOverHandler} onMouseLeave={mouseLeaveHandler} className={`${style.cartIconWrapper} ${cart.length && style.cartMoveDown}`} onClick={cartClickHandler}>
                         {/* Div with numbers will be displayed based on cart length, if 0 it won't be displayed at all */}
-                        {cart.length > 0 && <div className={`${style.cartNumber} ${onCartUpdate && style.cartUpdate}`}><span>{cart.length}</span></div>}
-                        <img className={style.img} src="/assets/icons/shopping-cart-web.png" />
+                        {cart.length > 0 && <div className={`${style.cartNumber} ${onCartUpdate && style.cartUpdate}`}><span className={style.cartNumSpan}>{cart.length}</span></div>}
+                        <img className={style.img} src="/assets/icons/shopping-cart-web-empty.png" />
                     </div>
                     {cartVisible &&
                         <div className={style.popupWrapper}

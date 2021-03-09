@@ -128,25 +128,33 @@
   width: 100%;
 }
 
-/* .cartNumber {
+.cartNumber {
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-size: .7rem;
+  /* align-items: center; */
+  font-size: .6rem;
   font-weight: bold;
-  border-radius: 50px;
+  border-radius: 50%;
+  border: 1px solid #f4f4f4;
   color: #eee;
   position: absolute;
-  left: 2px;
-  top: -11px;
-  width: 17px;
-  height: 16px;
-  background: linear-gradient(183deg, rgb(110, 175, 212) 0%, rgb(17, 128, 192) 100%);
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.08),
-              inset 1px 1px 1px rgba(255, 255, 255, 0.144);
-} */
+  left: -6px;
+  top: -6px;
+  width: 19px;
+  height: 19px;
+  background-color: #337aa7;
+  /* background-color: #8b8b8b; */
+  /* background: linear-gradient(183deg, rgb(110, 175, 212) 0%, rgb(17, 128, 192) 100%); */
+  /* box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.08),
+              inset 1px 1px 1px rgba(255, 255, 255, 0.144); */
+}
 
-.cartNumber {
+.cartNumSpan {
+  position: relative;
+  top: 1px;
+}
+
+/* .cartNumber {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,11 +162,11 @@
   font-weight: bold;
   color: rgb(128, 128, 128);
   position: absolute;
-  left: 4px;
-  top: -10px;
+  left: 2px;
+  top: -9px;
   width: 17px;
   height: 16px;
-}
+} */
 
 @keyframes updateAnimation {
   0% {
@@ -227,9 +235,14 @@
 
 .cartIconWrapper {
   position: relative;
-  width: 45%;
+  width: 47%;
   cursor: pointer;
 }
+
+/* .cartMoveDown {
+  transition: .5s;
+  transform: translateY(3px);
+} */
 
 .cartIcon:active {
   transform: scale(1.05);
@@ -253,7 +266,7 @@
 
 .acctContact {
   position: relative;
-  width: 40%;
+  width: 39%;
 }
 
 .acctContactImg {
@@ -267,7 +280,11 @@
   }
 
   .cartNumber {
-    
+    font-size: .7rem;
+    left: -6px;
+    top: -8px;
+    width: 20px;
+    height: 20px;
   }
 
   .cartShadow {
@@ -318,6 +335,7 @@
 
   .iconsWrapper {
     width: 70px;
+    /* width: 35px; */
   }
 }
 

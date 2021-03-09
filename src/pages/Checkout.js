@@ -69,7 +69,7 @@ const Checkout = () => {
                         {shoppingCartItems.length == 0 ? <h2 className={`text-center my-3`}>Cart is empty!</h2> :
                             <div>
                                 {shoppingCartItems.map((item, key) => (
-                                    <div key={key} className={`row ${style.shoppingCartCard}`} onClick={(e)=> e.target.tagName!=="BUTTON" && viewCar(item, history)}>
+                                    <div key={key} className={`row ${style.shoppingCartCard}`} onClick={(e)=> e.target.tagName!=="SPAN" && viewCar(item, history)}>
                                         <div className={`col-12 col-sm-12 col-md-2 ${style.flexer}`}><img className={`my-2 w-100 rounded`} src={item.carImg} /></div>
                                         <div className="col-12 col-sm-8 col-md-7">
                                             <h2 className={`mt-2 ${style.smallerHeading}`}>{`${item.make} ${item.model} ${item.year}`}</h2>
