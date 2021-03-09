@@ -82,7 +82,11 @@ const SearchContextProvider = (props) => {
             if (!tempArray.includes(car[value]))
             tempArray.push(car[value])
         })
+        if(typeof value == 'number') {
+            return tempArray.sort().reverse()
+        } else {
         return tempArray.sort()
+    }
     }
    /*  const createMakeArray = () => {
         let tempArray = []
