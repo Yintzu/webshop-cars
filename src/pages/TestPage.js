@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { CarContext } from '../contexts/CarContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
@@ -10,6 +10,10 @@ const TestPage = () => {
   const { viewCar, renderList } = useContext(CarContext);
   const history = useHistory();
   const { addToCart, removeFromCart } = useContext(ShoppingCartContext);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Check which button to render, depending on if item is already in cart or not
   // Using vin-number to compare

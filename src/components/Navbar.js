@@ -17,9 +17,15 @@ const Navbar = () => {
     // Set timer to hide cart when mouse leave cart-icon
     let timer;
     const mouseLeaveHandler = () => {
-        timer = setTimeout(() => {
-            setCartVisible(false);
-        }, 500)
+        if (!matchMedia('(pointer:coarse)').matches) {
+            timer = setTimeout(() => {
+                setCartVisible(false);
+            }, 500)
+        } else {
+            timer = setTimeout(() => {
+                setCartVisible(false);
+            }, 10)
+        }
     }
 
     // Clear timer to close cart if mouse enters cart div
@@ -50,6 +56,16 @@ const Navbar = () => {
     const handleHamburgerClick = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     }
+
+    useEffect(() => {
+        if (mobileMenuOpen) {
+            let x=window.scrollX;
+            let y=window.scrollY;
+            window.onscroll=function(){window.scrollTo(x, y);};
+        } else {
+            window.onscroll=function(){};
+        }
+    }, [mobileMenuOpen])
 
     // Hide cart if route changes
     useEffect(() => {

@@ -123,7 +123,7 @@
   margin-top: .7rem;
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 500px) {
   .popupCartWrapper {
     top: 80px;
     right: 0;
