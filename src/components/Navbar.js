@@ -116,9 +116,9 @@ const Navbar = () => {
                             <PopupCart />
                             <div className={style.cartShadow} />
                         </div>}
-                    <NavLink className={style.acctContact} exact to="/">
+                    {/* <NavLink className={style.acctContact} exact to="/">
                         <img className={style.acctContactImg} src="/assets/icons/account-contact-circle.png" />
-                    </NavLink>
+                    </NavLink> */}
                 </div>
             </nav>
             <aside className={style.infoBar}>
