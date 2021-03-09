@@ -91,7 +91,7 @@ const Confirmation = () => {
 
           <button type="button"
             className={`
-                     ${styles.printButtonFirst}
+                     ${styles.printButton}
                      btn 
                      btn-info`}
             onClick={() => window.print()}

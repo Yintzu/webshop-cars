@@ -59,37 +59,31 @@ hr {
 }
 
 .boldSummary {
-    font-weight: bold;
+    font-weight: 500;
     color: #4b4b4b !important;
     
 }
 
 .backButton{
     margin-left: 10px !important;
-    background: #2C7CAE !important;
+    background: #DA6547 !important;
     border: none;
 }
 
 .backButton:hover {
-    background-color:#295276 !important;
+    background-color:#a04832 !important;
+    border: none;
    
 }
 
 .printButton {
-    background: #DA6547 !important;
-    color: #ffffff !important;
-    border: none;
-    margin-left: 10px !important;
-}
-
-.printButtonFirst {
-    background: #DA6547 !important;
+    background: #2C7CAE !important;
     color: #ffffff !important;
     border: none;
 }
 
 .printButton:hover {
-    background: #9b4732 !important;
+    background: #295276 !important;
     color: #ffffff !important;
     border: none;
 }
