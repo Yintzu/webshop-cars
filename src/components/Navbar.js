@@ -101,13 +101,13 @@ const Navbar = () => {
                 <div className={`${style.navLinks} ${mobileMenuOpen && style.slideIn}`} onClick={() => setMobileMenuOpen(false)}>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/">Home</NavLink>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
-                    <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Support</NavLink>
+                    {/* <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Support</NavLink> */}
                 </div>
                 <div className={style.iconsWrapper}>
-                    <div onMouseOver={mouseOverHandler} onMouseLeave={mouseLeaveHandler} className={style.cartIconWrapper} onClick={cartClickHandler}>
+                    <div onMouseOver={mouseOverHandler} onMouseLeave={mouseLeaveHandler} className={`${style.cartIconWrapper} ${cart.length && style.cartMoveDown}`} onClick={cartClickHandler}>
                         {/* Div with numbers will be displayed based on cart length, if 0 it won't be displayed at all */}
-                        {cart.length > 0 && <div className={`${style.cartNumber} ${onCartUpdate && style.cartUpdate}`}><span>{cart.length}</span></div>}
-                        <img className={style.img} src="/assets/icons/shopping-cart-web.png" />
+                        {cart.length > 0 && <div className={`${style.cartNumber} ${onCartUpdate && style.cartUpdate}`}><span className={style.cartNumSpan}>{cart.length}</span></div>}
+                        <img className={style.img} src="/assets/icons/shopping-cart-web-empty.png" />
                     </div>
                     {cartVisible &&
                         <div className={style.popupWrapper}
