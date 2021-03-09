@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  padding-top: 120px;
+  padding-top: 85px;
   font-family: 'Quicksand', sans-serif;;
 }
 
@@ -102,3 +102,16 @@ select:focus + .focus {
   border: 2px solid #2C7CAE;
   border-radius: inherit;
 }
+
+@media screen and (min-width: 500px) {
+  body {
+    padding-top: 100px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  body {
+    padding-top: 110px;
+  }
+}
+
