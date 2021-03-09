@@ -37,7 +37,7 @@ const Search = () => {
                     <button type="submit" className={style.searchIcon}><img src="./assets/icons/search-icon.png" alt="search"/></button>
                     <button className="btn btn-lg" type="button" onClick={() => setIsClicked(isClicked ? false : true)}>
                         Filter
-                        {isClicked ? <i className={style.arrowUp}></i> : <i className={style.arrowDown}></i>} 
+                        {isClicked ? <div className={style.arrowUp}></div> : <div className={style.arrowDown}></div>}
                     </button>
                 </div>
                 {isClicked && <div className={style.dropDown}>
@@ -46,14 +46,17 @@ const Search = () => {
                                 return (
                                 <div className="col-md" key={listObject.listName}>
                                     <label htmlFor={listObject.listName}>Select {listObject.listName}</label>
-                                    <select name={listObject.listName} id={listObject.listName} defaultValue="all" onChange={handleSelect}>
-                                        <option value="all">All</option>
-                                        {listObject.list.length && listObject.list.map(listItem => {
-                                            return (
-                                            <option key={listItem}>{listItem}</option>
-                                            )
-                                        })}
-                                    </select>
+                                    <div className={style.customSelect}>
+                                        <select name={listObject.listName} id={listObject.listName} defaultValue="all" onChange={handleSelect}>
+                                            <option value="all">All</option>
+                                            {listObject.list.length && listObject.list.map(listItem => {
+                                                return (
+                                                <option key={listItem}>{listItem}</option>
+                                                )
+                                            })}
+                                        </select>
+                                        <span className={style.focus}></span>
+                                    </div>
                                 </div>
                                 )
                             })}
