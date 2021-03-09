@@ -51,6 +51,7 @@ const Details = (props) => {
     const renderCar = () => {
         return (
             <div className={style.details}>
+                <h1 className={`mt-0 ${style.mainHeading}`}>Car details</h1>
                 <div className="row">
                     <div className={`col ${style.imageWrapper}`}>
                         <img src={car.carImg} alt={`${car.make} ${car.model} ${car.year}`} />
