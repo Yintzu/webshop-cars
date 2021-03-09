@@ -104,7 +104,7 @@
   align-items: center;
   opacity: 1;
   left: -110%;
-  top: 70px;
+  top: 68px;
   width: 100vw;
   height: 90vh;
   margin-left: 0;
@@ -222,20 +222,24 @@
   left: -1rem;
   width: 120%;
   height: 40vh;
+  opacity: .5;
   background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0, 0, 0, 0.295) 50%);
 }
 
 .iconsWrapper {
   display: flex;
   align-items: center;
-  width: 60px;
+  /* width: 60px; */
+  width: 30px;
   justify-content: space-between;
   margin-left: auto;
 }
 
 .cartIconWrapper {
   position: relative;
-  width: 47%;
+  /* Change back to 47% when member page icon is added again */
+  /* width: 47%; */
+  width: 100%;
   cursor: pointer;
 }
 
@@ -334,8 +338,9 @@
   }
 
   .iconsWrapper {
-    width: 70px;
-    /* width: 35px; */
+    /* Bring back to 70 with member icon */
+    /* width: 70px; */
+    width: 37px;
   }
 }
 
