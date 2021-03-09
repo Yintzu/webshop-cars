@@ -33,11 +33,11 @@ const Search = () => {
 
     // Reset render list on route change
     // Might want to change this so that result stays put when we have the "reset search"-button in a more permanent place
-    useEffect(() => {
-        history.listen(() => {
-            resetRenderList();
-        })
-    }, [history]);
+    // useEffect(() => {
+    //     history.listen(() => {
+    //         resetRenderList();
+    //     })
+    // }, [history]);
 
     return (
         <div className={style.search}>
