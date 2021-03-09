@@ -9,28 +9,30 @@ const Confirmation = () => {
   const { boughtCars, orderInfo } = useContext(UserContext);
   const { shoppingCartItems, formatSum } = useContext(ShoppingCartContext)
 
-  console.log(boughtCars);
-  console.log(orderInfo);
-  console.log(shoppingCartItems)
+  // console.log(boughtCars);
+  // console.log(orderInfo);
+  // console.log(shoppingCartItems)
 
   return (
     <div className="container">
       <h1 className={styles.mainHeading}>Thank you for your order</h1>
       <div className="row">
         <div className={`
-              ${styles.confirmationBox}
+              ${styles.confirmationBoxLeft}
               col-sm
-              col-md-offset-2
+              col-md-offset-5
               toPrint
               `}>
-          <h3 className={styles.smallerHeading}>Order number: {orderInfo[0].ordernumber}</h3>
-          <p className={styles.containerText}>Delivery details</p>
+          <h3 className={styles.smallerHeading}>Order number: <span className={styles.textOrderNumber}>{orderInfo[0].orderNumber}</span> </h3>
+          <hr />
+          <h3 className={styles.smallerHeading}>Delivery details</h3>
+          <p className={styles.containerText}>We are currently processing your order and will email you with confirmation shortly. For your convenience you may want to save or print this order confirmation.</p>
           <hr />
           <h4 className={styles.smallHeading}>Delivery for</h4>
           <p className={styles.containerText}>{orderInfo[0].firstName} {orderInfo[0].lastName}</p>
           <h4 className={styles.smallHeading}>Delivery address</h4>
-          <p className={styles.containerText}>{orderInfo[0].address}</p>
-          <p className={styles.containerText}>{orderInfo[0].postalnr} {orderInfo[0].city}</p>
+          <p className={styles.containerText}>{orderInfo[0].address}, {orderInfo[0].postalnr}, {orderInfo[0].city}</p>
+          {/* <p className={styles.containerText}>{orderInfo[0].postalnr} {orderInfo[0].city}</p> */}
           <h4 className={styles.smallHeading}>Telephone</h4>
           <p className={styles.containerText}>{orderInfo[0].phone}</p>
           <h4 className={styles.smallHeading}>E-mail</h4>
@@ -41,11 +43,11 @@ const Confirmation = () => {
 
         {/* Box right - Summary */}
         <div className={`
-                ${styles.confirmationBox}
-                mx-md-2
+                ${styles.confirmationBoxRight}
                 col
                 col-lg-5
                 col-md-offset-5
+                col-mr-6
               `}>
           <h3 className={styles.smallerHeading}>Summary</h3>
           <hr />
@@ -53,10 +55,16 @@ const Confirmation = () => {
           {/* Map loop to show all the cars bought with this order */}
           {orderInfo[0].boughtCars.map((car) => (
             <div className="row" key={car.vin}>
-              <div className="col-sm">
+              <div className={`
+              ${styles.boldSummary}
+              col
+              `}>Item:
                 <p className={styles.containerText}>{car.make} {car.model}</p>
               </div>
-              <div className="col">
+              <div className={`
+              ${styles.boldSummary}
+              col
+              `}>Price:
                 <p className={styles.containerText}>{formatSum(car.price)}</p>
               </div>
             </div>
@@ -64,7 +72,7 @@ const Confirmation = () => {
           <div className="row">
             <div className="col">
               <hr />
-              <p className={styles.containerText}>Total:</p>
+              <p className={styles.boldSummary}>Total:</p>
             </div>
             <div className="col">
               <hr/>
@@ -72,10 +80,10 @@ const Confirmation = () => {
             </div>
             {/* Order Info */}
             <h4 className={styles.smallHeading}>Order info</h4>
-            <p className={styles.containerText}>Order number: {orderInfo[0].orderNumber}</p>
-            <p className={styles.containerText}>Order date: {orderInfo[0].orderDate[0]} {orderInfo[0].orderDate[1]}</p>
-            <p className={styles.containerText}>Payment method: {orderInfo[0].payment}</p>
-            <p className={styles.containerTextLast}>Delivery method: {orderInfo[0].delivery}</p>
+            <p className={styles.boldSummary}>Order number: <br/> <span className={styles.containerText}>{orderInfo[0].orderNumber}</span> </p>
+            <p className={styles.boldSummary}>Order date:<br/><span className={styles.containerText}>{orderInfo[0].orderDate[0]} {orderInfo[0].orderDate[1]}</span></p>
+            <p className={styles.boldSummary}>Payment method: <br/><span className={styles.containerText}>{orderInfo[0].payment}</span></p>
+            <p className={styles.boldSummary}>Delivery method: <br/><span className={styles.containerTextLast}>{orderInfo[0].delivery}</span></p>
 
           </div>
           
