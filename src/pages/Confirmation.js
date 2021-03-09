@@ -9,9 +9,9 @@ const Confirmation = () => {
   const { boughtCars, orderInfo } = useContext(UserContext);
   const { shoppingCartItems, formatSum } = useContext(ShoppingCartContext)
 
-  console.log(boughtCars);
-  console.log(orderInfo);
-  console.log(shoppingCartItems)
+  // console.log(boughtCars);
+  // console.log(orderInfo);
+  // console.log(shoppingCartItems)
 
   return (
     <div className="container">
