@@ -220,14 +220,14 @@
 .iconsWrapper {
   display: flex;
   align-items: center;
-  width: 60px;
-  justify-content: space-between;
+  width: 30px;
+  /* justify-content: space-between; */
   margin-left: auto;
 }
 
 .cartIconWrapper {
   position: relative;
-  width: 45%;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -318,7 +318,8 @@
   }
 
   .iconsWrapper {
-    width: 70px;
+    /* width: 70px; */
+    width: 35px;
   }
 }
 
