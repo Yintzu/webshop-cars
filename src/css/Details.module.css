@@ -51,3 +51,11 @@
     background-color: #2C7CAE;
     color: white;
 }
+.disabled, .disabled:hover, .disabled:active, .disabled:focus, .disabled:hover:active {
+    background-color: #878f96;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: initial;
+    box-shadow: none;
+}

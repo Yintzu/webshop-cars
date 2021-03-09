@@ -146,6 +146,20 @@
               inset 1px 1px 1px rgba(255, 255, 255, 0.144);
 }
 
+/* .cartNumber {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .8rem;
+  font-weight: bold;
+  color: rgb(128, 128, 128);
+  position: absolute;
+  left: 2px;
+  top: -9px;
+  width: 17px;
+  height: 16px;
+} */
+
 @keyframes updateAnimation {
   0% {
     /* transform: scale(1); */
@@ -253,8 +267,8 @@
   }
 
   .cartNumber {
-    top: -13px;
     left: 4px;
+    top: -12px;
   }
 
   .cartShadow {

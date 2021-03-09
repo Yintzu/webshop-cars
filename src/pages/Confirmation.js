@@ -88,13 +88,6 @@ const Confirmation = () => {
                      btn-info`}
             onClick={() => window.print()}
           >Print</button>
-          <button type="button"
-            className={`
-                     ${styles.printButton}
-                     btn 
-                     btn-info`}
-            onClick={() => window.print()}
-          >Download as PDF</button>
           <NavLink exact to="/"><button type="button"
             className={`
                     ${styles.backButton}

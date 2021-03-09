@@ -27,7 +27,7 @@ const CarContextProvider = (props) => {
     
     /* Direction to  details page */
     const viewCar = (clickedCar, history) => {
-        history.push(`/details/${clickedCar.vin}`) 
+        history.push(`/details/${clickedCar.vin}`)
     }
 
     const values={
