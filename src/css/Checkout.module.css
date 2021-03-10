@@ -132,6 +132,22 @@ input{
     align-items: center;
 }
 
+.emptyCartWrapper {
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.cartDealsButton {
+    color: white;
+    background-color: #2C7CAE;
+    padding: 1.2rem 1.4rem;
+    margin-top: 1rem;
+}
+
+.cartDealsButton:hover {
+    background-color:#295276;
+}
+
 @media only screen and (min-width: 400px){
     .deliveryDiv{
         flex-direction: row;
