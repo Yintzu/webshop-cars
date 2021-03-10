@@ -43,7 +43,7 @@ const CarCard = (props) => {
     return (
         <div className="container">
           <div className="row">
-            <div class="col-sm-6">
+            <div className="col-sm-6">
 
                <div className={`${style.carCard}`} onClick={(e) => {
                 if (e.target.id !== "addRemove") {
