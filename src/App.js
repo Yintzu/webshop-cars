@@ -12,6 +12,7 @@ import CarContextProvider from './contexts/CarContext';
 import UserContext from './contexts/UserContext';
 import SearchContext from './contexts/SearchContext';
 import ScrollToTop from './components/ScrollToTop';
+import Hero from './components/Hero';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <BrowserRouter>
                 <ScrollToTop />
                 <Navbar />
+                <Hero />
                 <div className="site-container">
                   <Route exact path="/" component={Home} />
                   <Route exact path="/about" component={About} />
