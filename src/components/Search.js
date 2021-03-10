@@ -56,12 +56,17 @@ const Search = () => {
                 <div className={style.input}>
                     <input className={style.searchInput} type="text" placeholder="Search..." value={inputValue} onChange={handleChange}/>
                     <button type="submit" className={style.searchIcon}><img src="./assets/icons/search-icon.png" alt="search"/></button>
+                    {/* Fiter button */}
                     <button className="btn btn-lg" type="button" onClick={() => setIsClicked(isClicked ? false : true)}>
                         Filter
                         {isClicked ? <div className={style.arrowUp}></div> : <div className={style.arrowDown}></div>}
                     </button>
+
+                    {/* Reset list button */}
                     <div onClick={handleResetSearch} className={`btn btn-sm ${style.clearSearch} ${!searched && style.disabledBtn}`}>Reset list</div>
                 </div>
+
+                {/* Drop down */}
                 {isClicked && <div className={style.dropDown}>
 
                     {/* Select lists */}
