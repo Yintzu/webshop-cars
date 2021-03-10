@@ -28,6 +28,25 @@ const Search = () => {
     const handleSelect = (e) => {
         saveFilters(e.target.value)
     }
+ const [maxPrice, setMaxPrice] = useState("10")
+    const [minPrice, setMinPrice] = useState("0")
+    const [maxMiles, setMaxMiles] = useState("10")
+    const [minMiles, setMinMiles] = useState("0")
+
+    const priceSlides = [
+        {name: "min", value: minPrice},
+        {name: "max", value: maxPrice},
+    ]
+    const milesSlides = [
+        {name: "min", value: minMiles},
+        {name: "max", value: maxMiles}
+    ]
+
+   
+    const handleSlide = (e) => {
+        setMinPrice(e.target.value)
+        console.log(minPrice)
+    }
 
     return (
         <div className={style.search}>
@@ -41,6 +60,8 @@ const Search = () => {
                     </button>
                 </div>
                 {isClicked && <div className={style.dropDown}>
+
+                    {/* Select lists */}
                     <div className={`row ${style.selects}`}>
                         {filterLists.map(listObject => {
                                 return (
@@ -61,57 +82,42 @@ const Search = () => {
                                 )
                             })}
                     </div>
-                    <div className="row justify-content-around">
-                    <div className={`col-5 ${style.sliderColumn}`}>
-                            <div>
-                                <label htmlFor="min-price">Min price</label>
-                                <div className={style.slideContainer}>
-                                    <input className={style.slider} id="min-price" type="range" min="0" max="1000000" defaultValue="0"></input> 
+
+                    {/* Range sliders */}
+                    <div className="row justify-content-around mt-3">
+                        <div className={`col-md-5 ${style.sliderColumn}`}>
+                            {priceSlides.map(listObject => {
+                            return (
+                                <div key={listObject.name} className={style.slideWrapper}>
+                                    <div className={style.labels}>
+                                        <label htmlFor={listObject.name}>{listObject.name} price</label>
+                                        <label htmlFor={listObject.name}>{listObject.value}</label>
+                                    </div>
+                                    <div className={style.slideContainer}>
+                                        <input className={style.slider} id={listObject.name} type="range" min="0" max="10" value={listObject.value} onChange={handleSlide}></input> 
+                                    </div>
                                 </div>
-                            </div>
-                            <div>
-                                <label htmlFor="max-price">Max price</label>
-                                <div className={style.slideContainer}>
-                                    <input className={style.slider} id="min-price" type="range" min="0" max="1000000" defaultValue="1000000"></input> 
-                                </div> 
-                            </div>
+                            )
+                        })}
                         </div>
-                    <div className={`col-5 ${style.sliderColumn}`}>
-                            <div>
-                                <label htmlFor="min-price">Min miles</label>
-                                <div className={style.slideContainer}>
-                                    <input className={style.slider} id="min-price" type="range" min="0" max="1000000" defaultValue="0"></input> 
+                        <div className={`col-md-5 ${style.sliderColumn}`}>
+                            {milesSlides.map(listObject => {
+                            return (
+                                <div key={listObject.name} className={style.slideWrapper}>
+                                    <div className={style.labels}>
+                                        <label htmlFor={listObject.name}>{listObject.name} miles</label>
+                                        <label htmlFor={listObject.name}>{listObject.value}</label>
+                                    </div>
+                                    <div className={style.slideContainer}>
+                                        <input className={style.slider} id={listObject.name} type="range" min="0" max="10" value={listObject.value} onChange={handleSlide}></input> 
+                                    </div>
                                 </div>
-                            </div>
-                            <div>
-                                <label htmlFor="max-price">Max miles</label>
-                                <div className={style.slideContainer}>
-                                    <input className={style.slider} id="min-price" type="range" min="0" max="1000000" defaultValue="1000000"></input> 
-                                </div> 
-                            </div>
+                            )
+                        })}
                         </div>
-                        {/* <div className="col">
-                            <div>
-                                <label htmlFor="min-price">Min price</label>
-                                <input id="min-price" type="range" min="0" max="1000000" defaultValue="0"></input> 
-                            </div>
-                            <div>
-                                <label htmlFor="max-price">Max price</label>
-                                <input id="max-price" type="range" min="0" max="1000000" defaultValue="1000000"></input> 
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div>
-                                <label htmlFor="min-price">Min </label>
-                                <input id="min-price" type="range" min="0" max="1000000" value="0"></input> 
-                            </div>
-                            <div>
-                                <label htmlFor="max-price">Max price</label>
-                                <input id="max-price" type="range" min="0" max="1000000" value="1000000"></input> 
-                            </div>
-                        </div>
-                         */}
+
                     </div>
+
                 </div>}
                 
             </form>

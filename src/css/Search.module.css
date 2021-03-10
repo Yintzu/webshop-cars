@@ -65,14 +65,17 @@
 }
 
 .sliderColumn {
-    padding: 1rem;
+    padding: .5rem 1rem 0;
 }
 
 .sliderColumn label {
-    margin-bottom: .5rem;
+    margin: 0 0 .5rem;
   }
 
 /*  custom range slider  */
+.sliders{
+    margin-top: 1.5rem;
+}
 .slideContainer {
     width: 100%;
 }
@@ -97,7 +100,7 @@
     background: #2C7CAE;
     cursor: pointer;
     border: #f4f4f4 2px solid;
-    box-shadow: -180px 0 0 175px #2c7cae7a;
+    box-shadow: -200px 0 0 195px #2c7cae7a;
     
   }
   
@@ -108,6 +111,14 @@
     background: #fff;
     cursor: pointer;
     border: #2C7CAE 2px solid;
-    box-shadow: -180px 0 0 175px #2c7cae;
+    box-shadow: -200px 0 0 195px #2c7cae;
     
   }
+.labels {
+    display: flex;
+    justify-content: space-between;
+}
+.slideWrapper {
+    max-width: 40ch;
+    margin: 0 auto;
+}
