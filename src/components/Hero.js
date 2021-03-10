@@ -12,8 +12,7 @@ const Hero = () => {
                     </div>
                     <div className="col-7">
                         <div className={`${style.gradient}`}>
-
-                        <Carousel />
+                            <Carousel/>
                         </div>
                     </div>
                 </div>
