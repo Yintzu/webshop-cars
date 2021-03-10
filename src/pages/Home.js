@@ -5,8 +5,7 @@ import Search from '../components/Search';
 
 const Home = () => {
     return ( 
-        <div>
-            <Carousel/>
+        <div className="homepage">
             <Search />
             <CarList />
         </div>
