@@ -8,7 +8,7 @@ const Search = () => {
     /* const { cars } = useContext(CarContext); */
     const { searchCars, resetRenderList, filterLists, saveFilters } = useContext(SearchContext);
     const [searched, setSearched] = useState(false);
-    const [isClicked, setIsClicked] = useState(false);
+    const [isClicked, setIsClicked] = useState(true);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -33,7 +33,7 @@ const Search = () => {
         <div className={style.search}>
             <form onSubmit={handleSubmit}>
                 <div className={style.input}>
-                    <input type="text" placeholder="Search..." value={inputValue} onChange={handleChange}/>
+                    <input className={style.searchInput} type="text" placeholder="Search..." value={inputValue} onChange={handleChange}/>
                     <button type="submit" className={style.searchIcon}><img src="./assets/icons/search-icon.png" alt="search"/></button>
                     <button className="btn btn-lg" type="button" onClick={() => setIsClicked(isClicked ? false : true)}>
                         Filter
@@ -61,7 +61,35 @@ const Search = () => {
                                 )
                             })}
                     </div>
-                    <div className="row">
+                    <div className="row justify-content-around">
+                    <div className={`col-5 ${style.sliderColumn}`}>
+                            <div>
+                                <label htmlFor="min-price">Min price</label>
+                                <div className={style.slideContainer}>
+                                    <input className={style.slider} id="min-price" type="range" min="0" max="1000000" defaultValue="0"></input> 
+                                </div>
+                            </div>
+                            <div>
+                                <label htmlFor="max-price">Max price</label>
+                                <div className={style.slideContainer}>
+                                    <input className={style.slider} id="min-price" type="range" min="0" max="1000000" defaultValue="1000000"></input> 
+                                </div> 
+                            </div>
+                        </div>
+                    <div className={`col-5 ${style.sliderColumn}`}>
+                            <div>
+                                <label htmlFor="min-price">Min miles</label>
+                                <div className={style.slideContainer}>
+                                    <input className={style.slider} id="min-price" type="range" min="0" max="1000000" defaultValue="0"></input> 
+                                </div>
+                            </div>
+                            <div>
+                                <label htmlFor="max-price">Max miles</label>
+                                <div className={style.slideContainer}>
+                                    <input className={style.slider} id="min-price" type="range" min="0" max="1000000" defaultValue="1000000"></input> 
+                                </div> 
+                            </div>
+                        </div>
                         {/* <div className="col">
                             <div>
                                 <label htmlFor="min-price">Min price</label>
