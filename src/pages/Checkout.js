@@ -75,7 +75,7 @@ const Checkout = () => {
                                             <h2 className={`${style.smallerHeading}`}>{`${item.make} ${item.model} ${item.year}`}</h2>
                                             <p>{`${item.descShort}`}</p>
                                         </div>
-                                        <div className={`col-12 col-sm-3 col-md-2 px-0 ${style.flexer}`}>
+                                        <div className={`col-12 col-sm-3 col-md-2 px-0 ${style.flexer} ${style.itemPriceDiv}`}>
                                             <h3 className={`${style.itemPrice}`}>{`${formatSum(item.price)}`}</h3>
                                         </div>
                                         <div className={`col-0 col-sm-2 col-md-1 ${style.flexer}`}><span className={`${style.removeButton} ${style.positionFix}`} onClick={() => removeFromCart(item)}>X</span></div>
@@ -158,11 +158,11 @@ const Checkout = () => {
                                             <label htmlFor="cardNumber">Card number</label>
                                             <input className="form-control" type="text" id="cardNumber" pattern="[\d]{4}\s?[\d]{4}\s?[\d]{4}\s?[\d]{4}" required></input>
                                             <div className="row">
-                                                <div className="col-8">
-                                                    <label htmlFor="expiration">Expiration date (mm-yy)</label>
+                                                <div className="col-8 col-sm-8">
+                                                    <label className={style.expirationDate} htmlFor="expiration">Expiration date (mm-yy)</label>
                                                     <input className="form-control" type="text" id="expiration" pattern="[\d]{2}-[\d]{2}" required></input>
                                                 </div>
-                                                <div className="col-4">
+                                                <div className="col-4 col-sm-4">
                                                     <label htmlFor="cvv">CVV</label>
                                                     <input className="form-control" type="text" id="cvv" pattern="[\d]{3}" required></input>
                                                 </div>
