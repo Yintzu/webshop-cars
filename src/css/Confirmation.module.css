@@ -186,9 +186,9 @@ hr {
         padding-top: 0 !important;
     }
 
-    body {
+    /* body {
         padding-top: 105px;
-      }
+      } */
     
     .mainHeading {
         font-size: 1.5rem;
@@ -272,9 +272,9 @@ hr {
 }
 
 @media only screen and (min-width: 768px) {
-    body {
+    /* body {
         padding-top: 115px;
-      }
+      } */
 
     .confirmationBoxRight {
         border-top-right-radius: 5px;

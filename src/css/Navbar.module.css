@@ -1,13 +1,17 @@
 .navContainer {
   top: 0;
   width: 100%;
+  background-color: #f4f4f4 !important;
   position: fixed;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.200);
   z-index: 3000;
 }
 
 .navbar {
+  position: relative;
   width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
   background-color: #f4f4f4 !important;
   display: flex;
   max-height: 65px;
@@ -26,7 +30,7 @@
 
 .popupWrapper {
   animation-name: popup;
-  animation-duration: .2s;
+  animation-duration: .2s; 
 }
 
 @keyframes popup {

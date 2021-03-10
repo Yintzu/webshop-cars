@@ -6,12 +6,14 @@ import {
 } from "react";
 import { CarContext } from './CarContext';
 
+
 export const SearchContext = createContext();
 
 const SearchContextProvider = (props) => {
     const [searchResult, setSearchResult] = useState([]);
     const [renderList, setRenderList] = useState([]);
     const { cars } = useContext(CarContext);
+    
 
     useEffect(() => {
         setRenderList(cars);
@@ -76,12 +78,15 @@ const SearchContextProvider = (props) => {
         {listName: "year", list: yearArray}
     ];
 
-    const createFilterArrays = (value) => {
+    const createFilterArrays = (list) => {
         let tempArray = []
         cars.forEach(car => {
-            if (!tempArray.includes(car[value]))
-            tempArray.push(car[value])
+            if (!tempArray.includes(car[list]))
+            tempArray.push(car[list])
         })
+        if(list === 'year') {
+            return tempArray.sort().reverse()
+        }
         return tempArray.sort()
     }
    /*  const createMakeArray = () => {

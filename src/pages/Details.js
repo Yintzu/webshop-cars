@@ -40,11 +40,11 @@ const Details = (props) => {
             }
         });
         if (inCart) {
-            return <button onClick={() => removeFromCart(car)} className={`btn btn-lg ${style.removeBtn}`}>Remove</button>
+            return <button onClick={() => removeFromCart(car)} className={`btn btn-lg ${style.removeBtn} ${style.btnWidth}`}>Remove</button>
         } else if (bought) {
-            return <button className={`btn btn-lg ${style.disabled}`}>Sold</button>
+            return <button className={`btn btn-lg ${style.disabled} ${style.btnWidth}`}>Sold</button>
         } else {
-            return <button onClick={() => addToCart(car)} className={`btn btn-lg ${style.addToCartBtn}`}>Add to cart</button>
+            return <button onClick={() => addToCart(car)} className={`btn btn-lg ${style.addToCartBtn} ${style.btnWidth}`}>Add to cart</button>
         }
     }
 
@@ -52,7 +52,7 @@ const Details = (props) => {
         return (
             <div className={style.details}>
                 <h1 className={`mt-0 ${style.mainHeading}`}>Car details</h1>
-                <div className="row">
+                <div className="row g-0">
                     <div className={`col ${style.imageWrapper}`}>
                         <img src={car.carImg} alt={`${car.make} ${car.model} ${car.year}`} />
                     </div>
@@ -65,6 +65,7 @@ const Details = (props) => {
                 </div>
                 <div className={`row ${style.descContainer}`}>
                     <div className={`col ${style.desc}`}>
+                        <h5>Description</h5>
                         <p>{car.descLong}</p>
                     </div>
                     <div className="col-md-4">
