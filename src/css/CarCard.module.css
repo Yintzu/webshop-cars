@@ -63,21 +63,22 @@
 
 
 /* ------------ susanne test --------------- */
-
 .carCard {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-right: 25px;
+    margin-left: 0px;
     border: solid rgb(220, 220, 220) 1px;
     border-radius: .25em;
-    width: 290px;
+    width: 270px;
     box-shadow: 2px 2px 2px #d2d2d2;
-    padding-bottom: 10px;
+    padding:0;
 }
 
 .carImg {
-    max-width: 290px;
+    width: 270px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -88,7 +89,7 @@
     margin-top: 20px;
     margin-bottom: 15px;
     color: #2C7CAE!important;
-    font-size: 1.3rem;
+    font-size: 1.09rem;
 }
 
 .carCard img {
