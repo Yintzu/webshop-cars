@@ -65,6 +65,7 @@ const Details = (props) => {
                 </div>
                 <div className={`row ${style.descContainer}`}>
                     <div className={`col ${style.desc}`}>
+                        <h5>Description</h5>
                         <p>{car.descLong}</p>
                     </div>
                     <div className="col-md-4">
