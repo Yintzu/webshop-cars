@@ -33,17 +33,17 @@ const CarCard = (props) => {
 
 
     return (
-        <div className={`col-sm-6 ${style.carCard}`}>
-            <div className={`card mt-2 mx-2 ${style.carClick}`} onClick={(e) => {
+        <div className={`${style.carCards}`}>
+            <div className={`${style.carCard}`} onClick={(e) => {
                 if (e.target.id !== "addRemove") {
                     viewCar(props.car, history)
                 }
             }}>
-                <img src={props.car.carImg} className="card-img-top" alt="A good affordable car" />
-                <div className="card-body">
-                    <h5 className="card-title">{props.car.make} {props.car.model} {props.car.year}</h5>
-                    <p className="card-text">{formatSum(props.car.price)}</p>
-                    <p className={`card-text ${style.desc}`}>{props.car.descShort}</p>
+                <img src={props.car.carImg} className={`${style.carImg}`}alt="A good affordable car" />
+                <div className={`${style.desc}`}>
+                    <h5 className={`${style.desc}`}>{props.car.make} {props.car.model} {props.car.year}</h5>
+                    <p className={`${style.desc}`}>{formatSum(props.car.price)}</p>
+                    <p className={`${style.desc}`}>{props.car.descShort}</p>
                     { renderButtons(props.car) }
                 </div>
             </div>
