@@ -61,12 +61,12 @@ input{
     color: white;
     background-color: #DA6547;
     padding: 5px 12px;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .removeButton:hover{
     cursor: pointer;
-    background-color: #a74730;
+    background-color: #be5b42;
 }
 
 .deliveryDiv{
@@ -132,23 +132,6 @@ input{
     align-items: center;
 }
 
-.emptyCartWrapper {
-    text-align: center;
-    margin: 5rem;
-}
-
-.cartDealsButton {
-    font-size: 1rem;
-    background-color: #2C7CAE;
-    padding: .7rem 1.3rem;
-    margin-top: .7rem;
-    margin-bottom: 2rem;
-}
-
-.cartDealsButton:hover {
-    background-color: #295276;
-}
-
 @media only screen and (min-width: 400px){
     .deliveryDiv{
         flex-direction: row;
@@ -156,9 +139,6 @@ input{
     }
     div.customSelect {
         width: calc(45% + 16vw) !important;
-    }
-    .cartDealsButton {
-        font-size: 1.2rem;
     }
 }
 
