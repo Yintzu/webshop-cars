@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
 
-hr {
+.hrConfirmation {
     background-color: #ffffff;
 	border-top: 1px solid #656565;
     
@@ -128,6 +128,7 @@ hr {
     .toPrint, .toPrint * {
       visibility: visible;
     }
+
     .toPrint {
       position: absolute;
       display: block;
@@ -153,18 +154,6 @@ hr {
 
     .containerTextLast {
         font-size: 0.7rem;
-    }
-
-    .backButton{
-      visibility: hidden;
-    }
-
-    .printButton {
-      visibility: hidden;
-    }
-
-    .printButtonFirst {
-      visibility: hidden;
     }
   }
 
