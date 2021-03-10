@@ -23,11 +23,11 @@ const CarCard = (props) => {
           }
         });
         if (inCart) {
-          return <button onClick={() => removeFromCart(car)} className="btn btn-danger float-end" id="addRemove">Remove</button>
+          return <button onClick={() => removeFromCart(car)} className={`btn btn-danger ${style.btnCustom}`} id="addRemove">Remove</button>
         } else if (bought){
-          return <button className={`btn btn-secondary float-end ${style.disabled}`} id="addRemove">Sold</button>
+          return <button className={`btn btn-secondary ${style.disabled} ${style.btnCustom}`} id="addRemove">Sold</button>
         } else {
-          return <button onClick={() => addToCart(car)} className="btn btn-primary float-end" id="addRemove">Add To Cart</button> 
+          return <button onClick={() => addToCart(car)} className={`btn btn-primary ${style.btnCustom}`} id="addRemove">Add To Cart</button> 
         }
       }
 
@@ -39,12 +39,20 @@ const CarCard = (props) => {
                     viewCar(props.car, history)
                 }
             }}>
-                <img src={props.car.carImg} className={`${style.carImg}`}alt="A good affordable car" />
+                <div className={style.imgWrapper}>
+                  <img src={props.car.carImg} className={`${style.carImg}`}alt="A good affordable car" />
+                  <h5 className={`${style.cardPrice}`}>{formatSum(props.car.price)}</h5>
+                </div>
                 <div className={`${style.desc}`}>
-                    <h5 className={`${style.desc}`}>{props.car.make} {props.car.model} {props.car.year}</h5>
-                    <p className={`${style.desc}`}>{formatSum(props.car.price)}</p>
-                    <p className={`${style.desc}`}>{props.car.descShort}</p>
-                    { renderButtons(props.car) }
+                    <div className={style.infoRow}>
+                      <h5 className={`${style.cardTitle}`}>{props.car.make} {props.car.model} {props.car.year}</h5>
+                      <p className={`${style.cardDesc}`}>{props.car.descShort}</p>
+                    </div>
+                    <div className={style.buyRow}>
+                      
+                      <button className={`btn btn-secondary ${style.btnCustom}`}>Read more</button>
+                      { renderButtons(props.car) }
+                    </div>
                 </div>
             </div>
         </div>

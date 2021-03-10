@@ -3,3 +3,13 @@
     font-size: 1.2rem;
     
 }
+
+.carsContainer {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    gap: .4rem;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
+}
