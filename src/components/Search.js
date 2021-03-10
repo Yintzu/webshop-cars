@@ -2,7 +2,6 @@ import { useState, useContext, useEffect } from 'react';
 import style from '../css/Search.module.css';
 /* import { CarContext } from '../contexts/CarContext'; */
 import { SearchContext } from '../contexts/SearchContext';
-import { useHistory } from 'react-router-dom';
 
 const Search = () => {
     const [inputValue, setInputValue] = useState("");
@@ -10,7 +9,6 @@ const Search = () => {
     const { searchCars, resetRenderList, filterLists, saveFilters } = useContext(SearchContext);
     const [searched, setSearched] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
-    const history = useHistory();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -30,14 +28,6 @@ const Search = () => {
     const handleSelect = (e) => {
         saveFilters(e.target.value)
     }
-
-    // Reset render list on route change
-    // Might want to change this so that result stays put when we have the "reset search"-button in a more permanent place
-    useEffect(() => {
-        history.listen(() => {
-            resetRenderList();
-        })
-    }, [history]);
 
     return (
         <div className={style.search}>
