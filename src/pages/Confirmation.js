@@ -24,10 +24,10 @@ const Confirmation = () => {
               toPrint
               `}>
           <h3 className={styles.smallerHeading}>Order number: <span className={styles.textOrderNumber}>{orderInfo[0].orderNumber}</span> </h3>
-          <hr />
+          <hr className={styles.hrConfirmation}/>
           <h3 className={styles.smallerHeading}>Delivery details</h3>
           <p className={styles.containerText}>We are currently processing your order and will email you with confirmation shortly. For your convenience you may want to save or print this order confirmation.</p>
-          <hr />
+          <hr className={styles.hrConfirmation}/>
           <h4 className={styles.smallHeading}>Delivery for</h4>
           <p className={styles.containerText}>{orderInfo[0].firstName} {orderInfo[0].lastName}</p>
           <h4 className={styles.smallHeading}>Delivery address</h4>
@@ -37,8 +37,6 @@ const Confirmation = () => {
           <p className={styles.containerText}>{orderInfo[0].phone}</p>
           <h4 className={styles.smallHeading}>E-mail</h4>
           <p className={styles.containerTextLast}>{orderInfo[0].email}</p>
-
-
         </div>
 
         {/* Box right - Summary */}
@@ -50,7 +48,7 @@ const Confirmation = () => {
                 col-mr-6
               `}>
           <h3 className={styles.smallerHeading}>Summary</h3>
-          <hr />
+          <hr className={styles.hrConfirmation}/>
 
           {/* Map loop to show all the cars bought with this order */}
           {orderInfo[0].boughtCars.map((car) => (
@@ -59,24 +57,24 @@ const Confirmation = () => {
               ${styles.boldSummary}
               col
               `}>Item:
-                <p className={styles.containerText}>{car.make} {car.model}</p>
+              <p className={styles.containerText}>{car.make} {car.model}</p>
               </div>
               <div className={`
               ${styles.boldSummary}
               col
               `}>Price:
-                <p className={styles.containerText}>{formatSum(car.price)}</p>
+              <p className={styles.containerText}>{formatSum(car.price)}</p>
               </div>
             </div>
           ))}
           <div className="row">
             <div className="col">
-              <hr />
-              <p className={styles.boldSummary}>Total:</p>
+            <hr className={styles.hrConfirmation}/>
+            <p className={styles.boldSummary}>Total:</p>
             </div>
             <div className="col">
-              <hr/>
-              <p className={styles.containerText}>{formatSum(orderInfo[0].price)}</p>
+            <hr className={styles.hrConfirmation}/>
+            <p className={styles.containerText}>{formatSum(orderInfo[0].price)}</p>
             </div>
             {/* Order Info */}
             <h4 className={styles.smallHeading}>Order info</h4>
@@ -88,7 +86,6 @@ const Confirmation = () => {
           </div>
           
           {/* Buttons start */}
-
           <button type="button"
             className={`
                      ${styles.printButton}
@@ -96,12 +93,14 @@ const Confirmation = () => {
                      btn-info`}
             onClick={() => window.print()}
           >Print</button>
+
           <NavLink exact to="/"><button type="button"
             className={`
                     ${styles.backButton}
                     btn 
                     btn-dark
-                   `}>Back</button></NavLink>
+                   `}>Back</button>
+          </NavLink>
         </div>
       </div>
     </div>

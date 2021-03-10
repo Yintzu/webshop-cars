@@ -1,4 +1,4 @@
-.carCard {
+/* .carCard {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
@@ -29,6 +29,12 @@
     right: 16px;
 }
 
+.addButton {
+    background: #2C7CAE !important;
+    color: #ffffff !important;
+    border: none;
+} */
+
 @media screen and (min-width: 500px) {
     .carCard {
       flex-direction: row;
@@ -36,13 +42,11 @@
     }
 }
 
-
-
 .carCard p:first-letter {
     text-transform: capitalize;
 }
 .carCard .desc::after {
-    content: "."
+    content: ""
 }
 
 .carClick {
@@ -55,4 +59,92 @@
     outline: none;
     cursor: initial;
     box-shadow: none;
+}
+
+
+/* ------------ susanne test --------------- */
+
+.carCard {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: solid rgb(220, 220, 220) 1px;
+    border-radius: .25em;
+    width: 290px;
+    box-shadow: 2px 2px 2px #d2d2d2;
+    padding-bottom: 10px;
+}
+
+.carImg {
+    max-width: 290px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.carHeading {
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: #2C7CAE!important;
+    font-size: 1.3rem;
+}
+
+.carCard img {
+    cursor: pointer;
+}
+
+.desc {
+    align-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.bottomRight {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+.addButton {
+    background: #2C7CAE !important;
+    color: #ffffff !important;
+    border: none;
+    margin-right: 10px;
+    margin-top: 10px;;
+}
+
+.addButton:hover {
+    background: #295276 !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.removeButton {
+    background: #DA6547 !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.removeButton:hover {
+    background: #a04832 !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+
+.boldText {
+    font-weight: 600;
+    color: #1f1f1f !important;
+}
+
+.hrCard {
+    background-color: #ffffff;
+	border-top: 1px solid #656565;
+    width: 245px;
+    text-align: center;
+    margin-left: 10px;
 }
