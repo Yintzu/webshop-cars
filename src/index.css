@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  padding-top: 85px;
+  padding-top: 95px;
   font-family: 'Quicksand', sans-serif;;
 }
 
@@ -30,7 +30,7 @@ p {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 .5rem;
-  min-height: 50vh;
+  min-height: 60vh;
 }
 
 /* .carousel {
@@ -119,7 +119,7 @@ select:focus + .focus {
 
 @media screen and (min-width: 650px) {
   body {
-    padding-top: 110px;
+    padding-top: 100px;
   }
 }
 
