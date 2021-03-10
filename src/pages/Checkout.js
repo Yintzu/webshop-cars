@@ -66,7 +66,7 @@ const Checkout = () => {
                 <div className="row">
                     <div className={`shoppinglist ${style.shoppinglist} ${style.background}`}>
                         {/* Ternary operator to display "No items in cart" or loop out the items */}
-                        {shoppingCartItems.length == 0 ? <div className={style.emptyCartWrapper}><h2 className={`text-center my-3`}>Cart is empty!</h2><NavLink exact to="/" className={`btn btn-primary ${style.cartDealsButton}`}>See our great deals!</NavLink></div> :
+                        {shoppingCartItems.length == 0 ? <div className={style.emptyCartWrapper}><h2 className={`text-center my-3`}>Your cart is empty</h2><NavLink exact to="/" className={`btn btn-primary ${style.cartDealsButton}`}>See our great deals!</NavLink></div> :
                             <div>
                                 {shoppingCartItems.map((item, key) => (
                                     <div key={key} className={`row position-relative ${style.shoppingCartCard}`} onClick={(e) => e.target.tagName !== "SPAN" && viewCar(item, history)}>
