@@ -1,11 +1,43 @@
-.carCards{
+.carCard {
     display: flex;
-    width: 80%;
-    margin: auto;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: solid darkgrey 1px;
+    border-radius: .25em;
 }
+
+.carImg {
+    max-width: 400px;
+}
+
+.desc {
+    align-content: space-between;
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 .carCard img {
     cursor: pointer;
 }
+
+.bottomRight {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+@media screen and (min-width: 500px) {
+    .carCard {
+      flex-direction: row;
+      margin-bottom: 0px;
+    }
+}
+
+
+
 .carCard p:first-letter {
     text-transform: capitalize;
 }
