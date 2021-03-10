@@ -2,6 +2,7 @@ import { useState, useContext, useEffect } from 'react';
 import style from '../css/Search.module.css';
 /* import { CarContext } from '../contexts/CarContext'; */
 import { SearchContext } from '../contexts/SearchContext';
+import { useHistory } from 'react-router-dom';
 
 const Search = () => {
     const [inputValue, setInputValue] = useState("");
@@ -9,6 +10,7 @@ const Search = () => {
     const { searchCars, resetRenderList, filterLists, saveFilters } = useContext(SearchContext);
     const [searched, setSearched] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
+    const history = useHistory();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -29,6 +31,14 @@ const Search = () => {
         saveFilters(e.target.value)
     }
 
+    // Reset render list on route change
+    // Might want to change this so that result stays put when we have the "reset search"-button in a more permanent place
+    useEffect(() => {
+        history.listen(() => {
+            resetRenderList();
+        })
+    }, [history]);
+
     return (
         <div className={style.search}>
             <form onSubmit={handleSubmit}>
@@ -44,9 +54,9 @@ const Search = () => {
                     <div className={`row ${style.selects}`}>
                         {filterLists.map(listObject => {
                                 return (
-                                <div className="col-md" key={listObject.listName}>
+                                <div className={`col-md ${style.selectWrapper}`} key={listObject.listName}>
                                     <label htmlFor={listObject.listName}>Select {listObject.listName}</label>
-                                    <div className="customSelect">
+                                    <div className={`customSelect ${style.customSelect}`}>
                                         <select name={listObject.listName} id={listObject.listName} defaultValue="all" onChange={handleSelect}>
                                             <option value="all">All</option>
                                             {listObject.list.length && listObject.list.map(listItem => {
