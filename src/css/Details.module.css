@@ -71,6 +71,10 @@
     box-shadow: none;
 }
 
+.btnWidth {
+    min-width: 140px !important;
+}
+
 @media screen and (min-width: 768px) {
     .imageWrapper {
         margin: 1rem 0rem;
