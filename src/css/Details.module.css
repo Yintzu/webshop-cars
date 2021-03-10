@@ -1,19 +1,28 @@
 .details {
-    margin-top: 2rem;
-    padding: 2rem;
+    /* padding: 2rem;
     border: #eee 2px solid;
-    border-radius: 5px;
+    border-radius: 5px; */
+    font-family: 'Quicksand';
 }
+
+.mainHeading {
+    font-size: 1.8rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    color: #2C7CAE !important;
+    margin-top: 20px;
+}
+
 .buy {
-    background: #eee;
+    background: #f4f4f4;
     padding: 2rem;
-    margin: .5rem auto;
+    margin: 1rem auto;
     margin-right: 1rem;
     border-radius: 5px;
     box-shadow: 2px 2px 2px #d2d2d2;
 }
 .imageWrapper {
-    margin: .5rem 1rem;
+    margin: 1rem 0rem .5rem 0rem;
     border-radius: 5px;
     padding: 0;
     box-shadow: 2px 2px 2px #d2d2d2;
@@ -34,6 +43,46 @@
 .details li {
     font-size: 1.2rem;
 }
+.descContainer {
+    margin: .5rem 0;
+    padding: 1em ;
+    background: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #d2d2d2;
+}
 .desc p {
     margin-top: 1rem;
+    margin-right: 2rem;
+}
+.details .removeBtn {
+    background-color:#DA6547;
+    color: white;
+}
+.details .addToCartBtn {
+    background-color: #2C7CAE;
+    color: white;
+}
+.disabled, .disabled:hover, .disabled:active, .disabled:focus, .disabled:hover:active {
+    background-color: #878f96;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: initial;
+    box-shadow: none;
+}
+
+.btnWidth {
+    min-width: 140px !important;
+}
+
+@media screen and (min-width: 768px) {
+    .imageWrapper {
+        margin: 1rem 0rem;
+        margin-right: .5rem;
+    }
+
+
+    .buy {
+        margin-right: 0;
+    }
 }

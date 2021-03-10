@@ -3,3 +3,24 @@
     width: 80%;
     margin: auto;
 }
+.carCard img {
+    cursor: pointer;
+}
+.carCard p:first-letter {
+    text-transform: capitalize;
+}
+.carCard .desc::after {
+    content: "."
+}
+
+.carClick {
+    cursor: pointer;
+}
+
+.disabled, .disabled:hover, .disabled:active, .disabled:focus, .disabled:hover:active {
+    background-color: #878f96;
+    border: none;
+    outline: none;
+    cursor: initial;
+    box-shadow: none;
+}

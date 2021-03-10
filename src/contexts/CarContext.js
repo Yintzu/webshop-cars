@@ -8,6 +8,7 @@ export const CarContext = createContext()
 
 const CarContextProvider = (props) => {
     const [cars, setcars]= useState([])
+    const [boughtCars, setBoughtCars] = useState([]);
 
     const createCarList  =() =>{
         const carlist=require("../json/cars.json")
@@ -17,42 +18,33 @@ const CarContextProvider = (props) => {
                 carImg:`../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`
             }
         })
-        console.log(carlists);
+        // console.log(carlists);
         setcars(carlists)
     }
     useEffect(()=>{
         createCarList();
     },[])
     
-    /* Direction to  */
+    /* Direction to  details page */
     const viewCar = (clickedCar, history) => {
-        history.push(`/details/${clickedCar.vin}`) 
+        history.push(`/details/${clickedCar.vin}`)
     }
-
-    const [searchResult, setSearchResult] = useState([]);
-    const filterCars = (event, inputValue) => {
-        event.preventDefault();
-        let filteredCars = []
-        filteredCars = cars.filter(car => {
-            if (car.carImg.toLowerCase().includes(inputValue.toLowerCase())) {
-                return true
-            }
-        })
-        setSearchResult(filteredCars)
-        console.log(filteredCars)
-    }
-
 
     const values={
       cars,
       viewCar,
-      searchResult,
-      filterCars,
+    //   searchResult,
+    //   filterCars,
+    //   setSearchResult,
+    //   renderList,
+    //   resetRenderList,
+      boughtCars,
+      setBoughtCars
     }
+
     return (
         <CarContext.Provider value={values}>
             {props.children}
-
         </CarContext.Provider>
     );
 }
