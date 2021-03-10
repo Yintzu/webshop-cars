@@ -7,11 +7,13 @@ const Hero = () => {
             <div className={`${style.heroCenterDiv} ${style.flexCenter}`}>
                 <div className={`row ${style.flexCenter}`}>
                     <div className="col-4">
-                        <h1 className={`${style.textWhite}`}>Welcome to the most reliable</h1>
-                        <p className={`${style.textWhite}`}>You probably haven't heard of them sriracha hoodie authentic kogi, banh mi lo-fi af heirloom la croix disrupt meditation roof party. Cold-pressed thundercats yuccie, swag VHS pop-up everyday carry intelligentsia lyft iceland.</p>
+                        <h1 className={`${style.h1}`}>Congratulations. You found what you were looking for.</h1>
+                        <p className={`${style.p}`}>A car is special. It reflects who you are. Here on Richard Ryan's Reliable Rides we offer you realiable vessels that will last many years and accompany you through life's many adventures.</p>
                     </div>
                     <div className="col-8">
-                        <Carousel/>
+                        <div className={`${style.gradient}`}>
+                            <Carousel />
+                        </div>
                     </div>
                 </div>
             </div>
