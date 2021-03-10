@@ -73,7 +73,7 @@ const Details = (props) => {
                             <li>Make: {car.make}</li>
                             <li>Model: {car.model}</li>
                             <li>Year: {car.year}</li>
-                            <li>Miles: {car.miles} miles</li>
+                            <li>Miles: {car.miles}</li>
                         </ul>
                     </div>
                 </div>
