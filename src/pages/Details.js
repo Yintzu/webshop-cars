@@ -40,11 +40,11 @@ const Details = (props) => {
             }
         });
         if (inCart) {
-            return <button onClick={() => removeFromCart(car)} className={`btn btn-lg ${style.removeBtn}`}>Remove</button>
+            return <button onClick={() => removeFromCart(car)} className={`btn btn-lg ${style.removeBtn} ${style.btnWidth}`}>Remove</button>
         } else if (bought) {
-            return <button className={`btn btn-lg ${style.disabled}`}>Sold</button>
+            return <button className={`btn btn-lg ${style.disabled} ${style.btnWidth}`}>Sold</button>
         } else {
-            return <button onClick={() => addToCart(car)} className={`btn btn-lg ${style.addToCartBtn}`}>Add to cart</button>
+            return <button onClick={() => addToCart(car)} className={`btn btn-lg ${style.addToCartBtn} ${style.btnWidth}`}>Add to cart</button>
         }
     }
 
@@ -65,6 +65,7 @@ const Details = (props) => {
                 </div>
                 <div className={`row ${style.descContainer}`}>
                     <div className={`col ${style.desc}`}>
+                        <h5>Description</h5>
                         <p>{car.descLong}</p>
                     </div>
                     <div className="col-md-4">

@@ -1,0 +1,40 @@
+.hero{
+    background-color: lightgrey;
+    background-image: url(https://images.unsplash.com/photo-1524345591067-da3f166c0e42?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    width: 100%;
+    margin-top: -25px;
+}
+
+.heroCenterDiv{
+    background-color: rgba(0, 0, 0, 0.705);
+    height: 100%;
+    max-width: calc(900px - 1rem);
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.h1{
+    color: white !important;
+    text-align: left;
+    font-size: 2.1rem;
+}
+
+.p{
+    color: white !important;
+}
+
+.gradient{
+    background: linear-gradient(0deg, rgba(0,0,0,0.8) 25%, rgba(255,255,255,0) 100%);
+    z-index: 5000;
+    height: 100%;
+    width: 100%;
+}
+
+.flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

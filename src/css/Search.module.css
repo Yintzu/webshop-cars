@@ -1,4 +1,5 @@
 .search {
+    position: relative;
     background: #f4f4f4;
     border-radius: 0 0 5px 5px;
 }
@@ -29,11 +30,19 @@
 .search img {
     height: 35px;
 }
+
 .search .clearSearch {
-    margin: 1rem auto 2rem;
+    padding: .5rem;
     color: white;
-    background-color: #2C7CAE; 
+    background-color: #2C7CAE;
+    transform: translateY(-50%) 
 }
+
+.clearSearch.disabledBtn {
+    opacity: .5;
+    pointer-events: none;
+}
+
 .dropDown {
     padding: 0 3rem 1rem;
 }
