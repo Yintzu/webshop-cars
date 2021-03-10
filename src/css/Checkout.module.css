@@ -134,19 +134,18 @@ input{
 
 .emptyCartWrapper {
     text-align: center;
-    margin: 5rem;
+    margin: 4rem 0;
 }
 
 .cartDealsButton {
-    font-size: 1rem;
+    color: white;
     background-color: #2C7CAE;
-    padding: .7rem 1.3rem;
-    margin-top: .7rem;
-    margin-bottom: 2rem;
+    padding: 1.2rem 1.4rem;
+    margin-top: 1rem;
 }
 
 .cartDealsButton:hover {
-    background-color: #295276;
+    background-color:#295276;
 }
 
 @media only screen and (min-width: 400px){
@@ -156,9 +155,6 @@ input{
     }
     div.customSelect {
         width: calc(45% + 16vw) !important;
-    }
-    .cartDealsButton {
-        font-size: 1.2rem;
     }
 }
 
