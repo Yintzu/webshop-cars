@@ -23,11 +23,11 @@ const CarCard = (props) => {
           }
         });
         if (inCart) {
-          return <button onClick={() => removeFromCart(car)} className="btn btn-danger float-end" id="addRemove">Remove</button>
+          return <button onClick={() => removeFromCart(car)} className={`btn float-end ${style.customRemoveBtn}`} id="addRemove">Remove</button>
         } else if (bought){
           return <button className={`btn btn-secondary float-end ${style.disabled}`} id="addRemove">Sold</button>
         } else {
-          return <button onClick={() => addToCart(car)} className="btn btn-primary float-end" id="addRemove">Add To Cart</button> 
+          return <button onClick={() => addToCart(car)} className={`btn float-end ${style.customAddBtn}`} id="addRemove">Add To Cart</button> 
         }
       }
 
