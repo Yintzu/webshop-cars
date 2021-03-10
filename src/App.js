@@ -11,6 +11,8 @@ import ShoppingCartContext from "./contexts/ShoppingCartContext";
 import CarContextProvider from './contexts/CarContext';
 import UserContext from './contexts/UserContext';
 import SearchContext from './contexts/SearchContext';
+import ScrollToTop from './components/ScrollToTop';
+import Hero from './components/Hero';
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
           <ShoppingCartContext>
             <SearchContext>
               <BrowserRouter>
+                <ScrollToTop />
                 <Navbar />
+                <Route exact path="/" component={Hero}/>
                 <div className="site-container">
                   <Route exact path="/" component={Home} />
                   <Route exact path="/about" component={About} />

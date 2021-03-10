@@ -6,12 +6,14 @@ import {
 } from "react";
 import { CarContext } from './CarContext';
 
+
 export const SearchContext = createContext();
 
 const SearchContextProvider = (props) => {
     const [searchResult, setSearchResult] = useState([]);
     const [renderList, setRenderList] = useState([]);
     const { cars } = useContext(CarContext);
+    
 
     useEffect(() => {
         setRenderList(cars);
