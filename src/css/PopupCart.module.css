@@ -126,7 +126,7 @@
 
 @media screen and (min-width: 500px) {
   .popupCartWrapper {
-    top: 80px;
+    top: 77px;
     right: 0;
     width: 350px;
   }
@@ -134,6 +134,6 @@
 
 @media screen and (min-width: 650px) {
   .popupCartWrapper {
-    top: 85px;
+    top: 78px;
   }
 }
