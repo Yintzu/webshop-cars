@@ -61,12 +61,12 @@ input{
     color: white;
     background-color: #DA6547;
     padding: 5px 12px;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .removeButton:hover{
     cursor: pointer;
-    background-color: #a74730;
+    background-color: #c56148;
 }
 
 .deliveryDiv{
