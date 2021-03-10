@@ -85,11 +85,15 @@
   font-size: .7rem;
   color: rgb(245, 245, 245);
   border: none;
-  border-radius: 50%;
+  border-radius: 5px;
   background: #DA6547;
   width: 20px;
   height: 20px;
   margin-left: .5rem;
+}
+
+.cartRemoveBtn:hover {
+  background-color: #be5b42;
 }
 
 .totalSumWrapper {
