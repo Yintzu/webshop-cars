@@ -69,16 +69,15 @@
     margin-top: 10px;
     margin-bottom: 10px;
     margin-right: 25px;
-    margin-left: 0px;
     border: solid rgb(220, 220, 220) 1px;
     border-radius: .25em;
-    width: 270px;
+    width: 275px;
     box-shadow: 2px 2px 2px #d2d2d2;
     padding:0;
 }
 
 .carImg {
-    width: 270px;
+    width: 275px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }

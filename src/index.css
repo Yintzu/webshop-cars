@@ -25,11 +25,6 @@ p {
   color: #303030 !important;
 }
 
-.row {
-  padding-left: 21px !important;
-  padding-right: 0 !important;
-}
-
 .site-container {
   width: 100%;
   max-width: 900px;

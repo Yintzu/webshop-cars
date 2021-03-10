@@ -38,7 +38,7 @@
 
 .confirmationBoxLeft {
     background-color: #f4f4f4 !important;
-    padding: 30px;
+    padding: 30px 30px 30px 30px;
     margin-top: 20px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -48,7 +48,7 @@
 
 .confirmationBoxRight {
     background-color: #f4f4f4 !important;
-    padding: 30px;
+    padding: 30px 30px 30px 21px;
     margin-top: 20px;
     position: relative;
     box-shadow: 2px 2px 2px #d2d2d2;
