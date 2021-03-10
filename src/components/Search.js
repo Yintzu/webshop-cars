@@ -9,6 +9,7 @@ const Search = () => {
     const { searchCars, resetRenderList, filterLists, saveFilters } = useContext(SearchContext);
     const [searched, setSearched] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
+    const [btnDisable, setBtnDisable] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,6 +26,7 @@ const Search = () => {
         setSearched(false);
         resetRenderList();
     }
+
     const handleSelect = (e) => {
         saveFilters(e.target.value)
     }
@@ -39,6 +41,7 @@ const Search = () => {
                         Filter
                         {isClicked ? <div className={style.arrowUp}></div> : <div className={style.arrowDown}></div>}
                     </button>
+                    <div onClick={handleResetSearch} className={`btn btn-sm ${style.clearSearch} ${!searched && style.disabledBtn}`}>Reset list</div>
                 </div>
                 {isClicked && <div className={style.dropDown}>
                     <div className={`row ${style.selects}`}>
@@ -87,8 +90,6 @@ const Search = () => {
                 </div>}
                 
             </form>
-            { searched && 
-             <button onClick={handleResetSearch} className={`btn btn-sm ${style.clearSearch}`}>See all cars</button>}
 
 
         </div>
