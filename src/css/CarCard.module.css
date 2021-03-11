@@ -75,6 +75,28 @@
     right: 16px;
 } */
 
+.customAddBtn {
+    min-width: 115px;
+    color: white;
+    background-color: #2C7CAE;
+}
+
+.customAddBtn:hover {
+    color: white;
+    background-color: #295276;
+}
+
+.customRemoveBtn {
+    min-width: 115px;
+    background-color:#DA6547;
+    color: white;
+}
+
+.customRemoveBtn:hover {
+    color: white;
+    background-color: #c56148;
+}
+
 @media screen and (min-width: 500px) {
     .carCard {
       flex-direction: row;
@@ -96,6 +118,7 @@
 }
 
 .disabled, .disabled:hover, .disabled:active, .disabled:focus, .disabled:hover:active {
+    min-width: 115px;
     background-color: #878f96;
     border: none;
     outline: none;
