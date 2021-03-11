@@ -9,8 +9,9 @@ const Footer = () => {
                 <NavLink className={style.navlink} to="/About">About us</NavLink> 
                 <address>
                     <p>Contact us:</p>
-                    <a href="mailto:example@email.com" className={style.link}>example@email.com</a> 
-                    <p>Drottninggatan 4B <br/> 212 11 <br/> Malmö </p>
+                    <a href="mailto:richard.ryans@email.com" className={style.link}>richard.ryans@email.com</a> 
+                    <p>Drottninggatan 4B <br/> 212 11 Malmö </p>
+                    <p>0707-12 34 56</p>
                 </address>
             </div>
             <div className={style.socialmedia}>
