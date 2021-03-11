@@ -8,7 +8,7 @@ const Search = () => {
     /* const { cars } = useContext(CarContext); */
     const { searchCars, resetRenderList, filterLists, saveFilters } = useContext(SearchContext);
     const [searched, setSearched] = useState(false);
-    const [isClicked, setIsClicked] = useState(false);
+    const [isClicked, setIsClicked] = useState(true);
 /*     const [btnDisable, setBtnDisable] = useState(false); */
 
     const handleSubmit = (e) => {
@@ -35,7 +35,7 @@ const Search = () => {
     const [maxMiles, setMaxMiles] = useState("10")
     const [minMiles, setMinMiles] = useState("0")
 
-    const priceSlides = [
+    /* const priceSlides = [
         {name: "min", value: minPrice},
         {name: "max", value: maxPrice},
     ]
@@ -43,7 +43,17 @@ const Search = () => {
         {name: "min", value: minMiles},
         {name: "max", value: maxMiles}
     ]
-
+ */
+    const sliders = [
+        [
+            {name: "min price", value: minPrice},
+            {name: "max price", value: maxPrice},
+        ],
+        [
+            {name: "min miles", value: minMiles},
+            {name: "max miles", value: maxMiles}
+    ]
+]
    
     const handleSlide = (e) => {
         setMinPrice(e.target.value)
@@ -57,11 +67,11 @@ const Search = () => {
                     <input className={style.searchInput} type="text" placeholder="Search..." value={inputValue} onChange={handleChange}/>
                     <button type="submit" className={style.searchIcon}><img src="./assets/icons/search-icon.png" alt="search"/></button>
                     {/* Fiter button */}
-                    {/* <button className="btn btn-lg" type="button" onClick={() => setIsClicked(isClicked ? false : true)}>
+                    <button className="btn btn-lg" type="button" onClick={() => setIsClicked(isClicked ? false : true)}>
                         Filter
                         {isClicked ? <div className={style.arrowUp}></div> : <div className={style.arrowDown}></div>}
                     </button>
- */}
+
                     {/* Reset list button */}
                     <div onClick={handleResetSearch} className={`btn btn-sm ${style.clearSearch} ${!searched && style.disabledBtn}`}>Clear search</div>
                 </div>
@@ -93,44 +103,28 @@ const Search = () => {
 
                     {/* Range sliders */}
                     <div className="row justify-content-around mt-3">
-                        <div className={`col-md-5 ${style.sliderColumn}`}>
-                            {priceSlides.map(listObject => {
+                        {sliders.map(list => {
                             return (
-                                <div key={listObject.name} className={style.slideWrapper}>
-                                    <div className={style.labels}>
-                                        <label className={style.label} htmlFor={listObject.name}>{listObject.name} price</label>
-                                        <label htmlFor={listObject.name}>{listObject.value}</label>
-                                    </div>
-                                    <div className={style.slideContainer}>
-                                        <input className={style.slider} id={listObject.name} type="range" min="0" max="10" value={listObject.value} onChange={handleSlide}></input> 
-                                    </div>
+                                <div className={`col-md-5 ${style.sliderColumn}`}>
+                                    {list.map(listObject => {
+                                        return (
+                                            <div key={listObject.name} className={style.slideWrapper}>
+                                                <div className={style.labels}>
+                                                    <label className={style.label} htmlFor={listObject.name}>{listObject.name}</label>
+                                                    <label htmlFor={listObject.name}>{listObject.value}</label>
+                                                </div>
+                                                <div className={style.slideContainer}>
+                                                    <input className={style.slider} id={listObject.name} type="range" min="0" max="10" value={listObject.value} onChange={handleSlide}></input> 
+                                                </div>
+                                            </div>
+                                        )
+                                    })}   
                                 </div>
                             )
                         })}
-                        </div>
-                        <div className={`col-md-5 ${style.sliderColumn}`}>
-                            {milesSlides.map(listObject => {
-                            return (
-                                <div key={listObject.name} className={style.slideWrapper}>
-                                    <div className={style.labels}>
-                                        <label className={style.label} htmlFor={listObject.name}>{listObject.name} miles</label>
-                                        <label htmlFor={listObject.name}>{listObject.value}</label>
-                                    </div>
-                                    <div className={style.slideContainer}>
-                                        <input className={style.slider} id={listObject.name} type="range" min="0" max="10" value={listObject.value} onChange={handleSlide}></input> 
-                                    </div>
-                                </div>
-                            )
-                        })}
-                        </div>
-
                     </div>
-
                 </div>}
-                
             </form>
-
-
         </div>
     );
 }
