@@ -63,7 +63,7 @@ const Carousel = (props) => {
           </div>
         </div>
         <div className="carousel-item">
-          <div className={style.overlay}></div>
+          <div className={style.overlayGradient}></div>
           <img src={discountedCars[1].carImg} className="d-block w-100 carouselImg" alt="Discounted Carousel" />
           <div className={`carousel-caption d-none d-md-block ${style.captionWrapper}`}>
             <h5>{discountedCars[1].make} {discountedCars[1].model} {discountedCars[1].year}</h5>
