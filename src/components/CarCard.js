@@ -27,7 +27,7 @@ const CarCard = (props) => {
         } else if (bought){
           return <button className={`btn btn-secondary ${style.disabled} ${style.btnCustom}`} id="addRemove">Sold</button>
         } else {
-          return <button onClick={() => addToCart(car)} className={`btn btn-primary ${style.addButton}`} id="addRemove">Add To Cart</button> 
+          return <button onClick={() => addToCart(car)} className={`btn btn-primary ${style.addButton}`} id="addRemove">Add to cart</button> 
         }
       }
 
