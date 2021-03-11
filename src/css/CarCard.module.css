@@ -6,6 +6,7 @@
     border-radius: .25em;
     border: solid rgb(227, 227, 227) 1px !important;
     box-shadow: 2px 2px 2px #d2d2d2;
+    cursor: pointer;
     /* background-color: #fcfbfb !important; */
 }
 
@@ -59,9 +60,15 @@
 }
 
 .btnCustom {
-    background: #2C7CAE !important;
-    color: #ffffff !important;
+    background-color: #878f96;
+    pointer-events: none;
+    cursor: none;
+    color: white;
     border: none;
+    width: 120px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .addButton {

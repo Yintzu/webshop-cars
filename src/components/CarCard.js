@@ -33,7 +33,11 @@ const CarCard = (props) => {
 
 
     return (
-        <div className={`${style.carCard}`}>
+        <div className={`${style.carCard}`} onClick={(e) => {
+          if (e.target.id !== 'addRemove') {
+            viewCar(props.car, history);
+          }
+        }}>
             <div className={style.topRow}>
                 <div className={style.imgWrapper}>
                   <img src={props.car.carImg} className={`${style.carImg}`}alt="A good affordable car" />
