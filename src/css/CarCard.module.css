@@ -80,6 +80,22 @@
     border: none;
 }
 
+.removeButton {
+    background: #DA6547 !important;
+    color: #ffffff !important;
+    border: none;
+    width: 120px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.removeButton:hover {
+    background: #a04832 !important;
+    color: #ffffff !important;
+    border: none;
+}
+
 .btnReadMore {
     background: none;
     color: #333;
