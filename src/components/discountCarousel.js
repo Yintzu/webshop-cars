@@ -1,11 +1,6 @@
-import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
-import { CarContext } from "../contexts/CarContext";
-import { useContext } from 'react';
-import style from "../css/discountCarousel.css";
+import style from "../css/DiscountCarousel.module.css";
 
-const Carousel = (props) => {
-  const { addToCart, removeFromCart, shoppingCartItems, formatSum } = useContext(ShoppingCartContext);
-  const { viewCar } = useContext(CarContext);
+const Carousel = () => {
 
   let discountedCars = [
     {
@@ -53,24 +48,28 @@ const Carousel = (props) => {
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
-      <div className="carousel-inner">
-        <div className="carousel-item active">
+      <div className={`carousel-inner rounded-top ${style.carouselWrapper}`}>
+        <div className={`carousel-item active`}>
+          <div className={style.overlay}></div>
           <img src={"../assets/carousel/PanozCarousel.jpg"} className="d-block w-100 carouselImg" alt="Discounted Carousel" />
-{/*           <div className="carousel-caption d-none d-md-block">
+          <div className={`carousel-caption d-none d-md-block ${style.captionWrapper}`}>
             <h5>{discountedCars[0].make} {discountedCars[0].model} {discountedCars[0].year}</h5>
             <p>{discountedCars[0].descShort}</p>
           </div> */}
         </div>
         <div className="carousel-item">
+          <div className={style.overlay}></div>
           <img src={"../assets/carousel/ChevroletCarousel.jpg"} className="d-block w-100 carouselImg" alt="Discounted Carousel" />
-{/*           <div className="carousel-caption d-none d-md-block">
+          <div className={`carousel-caption d-none d-md-block ${style.captionWrapper}`}>
             <h5>{discountedCars[1].make} {discountedCars[1].model} {discountedCars[1].year}</h5>
             <p>{discountedCars[1].descShort}</p>
           </div> */}
         </div>
         <div className="carousel-item">
+          <div className={style.overlay}></div>
           <img src={"../assets/carousel/OldsmobileCarousel.jpg"} className="d-block w-100 carouselImg" alt="Discounted Carousel" />
-{/*           <div className="carousel-caption d-none d-md-block">
+          <img src={discountedCars[2].carImg} className="d-block w-100 carouselImg" alt="Discounted Carousel" />
+          <div className={`carousel-caption d-none d-md-block ${style.captionWrapper}`}>
             <h5>{discountedCars[2].make} {discountedCars[2].model} {discountedCars[2].year}</h5>
             <p>{discountedCars[2].descShort}</p>
           </div> */}
