@@ -67,7 +67,7 @@
 .addButton {
     background: #2C7CAE !important;
     color: #ffffff !important;
-    border: none;
+    border: 1px solid #2C7CAE;
     width: 120px;
     margin-top: 10px;
     margin-right: 10px;
@@ -77,13 +77,13 @@
 .addButton:hover {
     background: #295276 !important;
     color: #ffffff !important;
-    border: none;
+    border: 1px solid #295276;
 }
 
 .removeButton {
     background: #DA6547 !important;
     color: #ffffff !important;
-    border: none;
+    border: 1px solid #DA6547;
     width: 120px;
     margin-top: 10px;
     margin-right: 10px;
@@ -91,15 +91,19 @@
 }
 
 .removeButton:hover {
-    background: #a04832 !important;
+    background: #DA6547 !important;
     color: #ffffff !important;
-    border: none;
+    border: 1px solid #DA6547;
 }
 
 .btnReadMore {
     background: none;
-    color: #333;
-    border: 1px solid #333;
+    color: #2C7CAE !important;;
+    border: 1px solid #2C7CAE !important;;
+    width: 120px;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 10px;
 }
 
 .topRow {
