@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect, cloneElement } from "react";
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { ShoppingCartContext } from "../contexts/ShoppingCartContext";
 import { UserContext } from "../contexts/UserContext";
 import { CarContext } from "../contexts/CarContext";
@@ -66,7 +66,7 @@ const Checkout = () => {
                 <div className="row">
                     <div className={`shoppinglist ${style.shoppinglist} ${style.background}`}>
                         {/* Ternary operator to display "No items in cart" or loop out the items */}
-                        {shoppingCartItems.length == 0 ? <h2 className={`text-center my-3`}>Cart is empty!</h2> :
+                        {shoppingCartItems.length == 0 ? <div className={style.emptyCartWrapper}><h2 className={`text-center my-3`}>Your cart is empty</h2><NavLink exact to="/" className={`btn btn-primary ${style.cartDealsButton}`}>See our great deals!</NavLink></div> :
                             <div>
                                 {shoppingCartItems.map((item, key) => (
                                     <div key={key} className={`row position-relative ${style.shoppingCartCard}`} onClick={(e) => e.target.tagName !== "SPAN" && viewCar(item, history)}>

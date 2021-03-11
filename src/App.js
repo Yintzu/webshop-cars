@@ -24,7 +24,7 @@ function App() {
               <BrowserRouter>
                 <ScrollToTop />
                 <Navbar />
-                <Hero />
+                <Route exact path="/" component={Hero}/>
                 <div className="site-container">
                   <Route exact path="/" component={Home} />
                   <Route exact path="/about" component={About} />
