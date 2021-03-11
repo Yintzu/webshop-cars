@@ -8,15 +8,14 @@ const CarList = () => {
     const { cars } = useContext(CarContext);
     const { renderList } = useContext(SearchContext);
     return (
-        <div className="row">
+        
+        <div className={style.carsContainer}>
             {renderList ? 
             renderList.map((car) =>
                 <CarCard car={car} key={car.vin} data={car}></CarCard>
             )
         : <div className={style.noResult}>No results...</div>}
-        
         </div>
-       
         
     );
 }
