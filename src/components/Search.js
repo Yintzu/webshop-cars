@@ -8,8 +8,8 @@ const Search = () => {
     /* const { cars } = useContext(CarContext); */
     const { searchCars, resetRenderList, filterLists, saveFilters } = useContext(SearchContext);
     const [searched, setSearched] = useState(false);
-    const [isClicked, setIsClicked] = useState(true);
-    const [btnDisable, setBtnDisable] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
+/*     const [btnDisable, setBtnDisable] = useState(false); */
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -57,11 +57,11 @@ const Search = () => {
                     <input className={style.searchInput} type="text" placeholder="Search..." value={inputValue} onChange={handleChange}/>
                     <button type="submit" className={style.searchIcon}><img src="./assets/icons/search-icon.png" alt="search"/></button>
                     {/* Fiter button */}
-                    <button className="btn btn-lg" type="button" onClick={() => setIsClicked(isClicked ? false : true)}>
+                    {/* <button className="btn btn-lg" type="button" onClick={() => setIsClicked(isClicked ? false : true)}>
                         Filter
                         {isClicked ? <div className={style.arrowUp}></div> : <div className={style.arrowDown}></div>}
                     </button>
-
+ */}
                     {/* Reset list button */}
                     <div onClick={handleResetSearch} className={`btn btn-sm ${style.clearSearch} ${!searched && style.disabledBtn}`}>Clear search</div>
                 </div>
