@@ -1,15 +1,12 @@
 import { useState, useContext, useEffect } from 'react';
 import style from '../css/Search.module.css';
-/* import { CarContext } from '../contexts/CarContext'; */
 import { SearchContext } from '../contexts/SearchContext';
 
 const Search = () => {
     const [inputValue, setInputValue] = useState("");
-    /* const { cars } = useContext(CarContext); */
-    const { searchCars, resetRenderList, filterLists, saveFilters } = useContext(SearchContext);
+    const { searchCars, resetRenderList, filterLists, saveFilters, saveSliders, sliders } = useContext(SearchContext);
     const [searched, setSearched] = useState(false);
     const [isClicked, setIsClicked] = useState(true);
-/*     const [btnDisable, setBtnDisable] = useState(false); */
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -29,35 +26,10 @@ const Search = () => {
 
     const handleSelect = (e) => {
         saveFilters(e.target.value)
-    }
- const [maxPrice, setMaxPrice] = useState("10")
-    const [minPrice, setMinPrice] = useState("0")
-    const [maxMiles, setMaxMiles] = useState("10")
-    const [minMiles, setMinMiles] = useState("0")
-
-    /* const priceSlides = [
-        {name: "min", value: minPrice},
-        {name: "max", value: maxPrice},
-    ]
-    const milesSlides = [
-        {name: "min", value: minMiles},
-        {name: "max", value: maxMiles}
-    ]
- */
-    const sliders = [
-        [
-            {name: "min price", value: minPrice},
-            {name: "max price", value: maxPrice},
-        ],
-        [
-            {name: "min miles", value: minMiles},
-            {name: "max miles", value: maxMiles}
-    ]
-]
+    }  
    
     const handleSlide = (e) => {
-        setMinPrice(e.target.value)
-        console.log(minPrice)
+        saveSliders(e)
     }
 
     return (
