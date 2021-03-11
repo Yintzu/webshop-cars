@@ -1,7 +1,7 @@
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import { CarContext } from "../contexts/CarContext";
 import { useContext } from 'react';
-import style from "../css/DiscountCarousel.module.css";
+import style from "../css/discountCarousel.module.css";
 
 const Carousel = (props) => {
   const { addToCart, removeFromCart, shoppingCartItems, formatSum } = useContext(ShoppingCartContext);
