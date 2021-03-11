@@ -31,7 +31,7 @@ const Confirmation = () => {
           <h4 className={styles.smallHeading}>Delivery for</h4>
           <p className={styles.containerText}>{orderInfo[0].firstName} {orderInfo[0].lastName}</p>
           <h4 className={styles.smallHeading}>Delivery address</h4>
-          <p className={styles.containerText}>{orderInfo[0].address}, {orderInfo[0].postalnr}, {orderInfo[0].city}</p>
+          <p className={styles.containerText}>{orderInfo[0].address}, {orderInfo[0].postalnr} {orderInfo[0].city}</p>
           {/* <p className={styles.containerText}>{orderInfo[0].postalnr} {orderInfo[0].city}</p> */}
           <h4 className={styles.smallHeading}>Telephone</h4>
           <p className={styles.containerText}>{orderInfo[0].phone}</p>
@@ -91,7 +91,7 @@ const Confirmation = () => {
 
           <button type="button"
             className={`
-                     ${styles.printButtonFirst}
+                     ${styles.printButton}
                      btn 
                      btn-info`}
             onClick={() => window.print()}
