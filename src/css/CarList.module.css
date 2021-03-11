@@ -9,7 +9,13 @@
     max-width: 900px;
     display: grid;
     gap: .4rem;
-    grid-auto-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
+    /* grid-auto-rows: 1fr; */
+    grid-template-columns: 1fr;
     flex-wrap: wrap;
+}
+
+@media screen and (min-width: 600px) {
+    .carsContainer {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }

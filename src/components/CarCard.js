@@ -33,27 +33,23 @@ const CarCard = (props) => {
 
 
     return (
-        <div className={`${style.carCards}`}>
-            <div className={`${style.carCard}`} onClick={(e) => {
-                if (e.target.id !== "addRemove") {
-                    viewCar(props.car, history)
-                }
-            }}>
+        <div className={`${style.carCard}`}>
+            <div className={style.topRow}>
                 <div className={style.imgWrapper}>
                   <img src={props.car.carImg} className={`${style.carImg}`}alt="A good affordable car" />
-                  <h5 className={`${style.cardPrice}`}>{formatSum(props.car.price)}</h5>
                 </div>
-                <div className={`${style.desc}`}>
-                    <div className={style.infoRow}>
-                      <h5 className={`${style.cardTitle}`}>{props.car.make} {props.car.model} {props.car.year}</h5>
-                      <p className={`${style.cardDesc}`}>{props.car.descShort}</p>
-                    </div>
-                    <div className={style.buyRow}>
-                      
-                      <button className={`btn btn-secondary ${style.btnCustom}`}>Read more</button>
-                      { renderButtons(props.car) }
-                    </div>
+                <div className={style.infoRow}>
+                  <h5 className={`${style.cardTitle}`}>{props.car.make} {props.car.model} {props.car.year}</h5>
+                  <p className={`${style.cardDesc}`}>{props.car.descShort}</p>
                 </div>
+            </div>
+            <div className={style.buyRow}>
+            
+              <div className={style.priceWrapper}>
+                <h5 className={`${style.cardPrice}`}>{formatSum(props.car.price)}</h5>
+              </div>
+              <button className={`btn btn-secondary ${style.btnCustom} ${style.btnReadMore}`}>Read more</button>
+              { renderButtons(props.car) }
             </div>
         </div>
     );
