@@ -1,6 +1,5 @@
 import style from '../css/About.module.css';
 
-
 const About = () => {
   
   const link1 = 'Who are we?';
@@ -10,13 +9,12 @@ const About = () => {
 
     return ( 
     <div>
-      <div className="about-menu">
+      <div className="menu-container">
 
         <div className="link1">
           <p>{ link1 }</p>
         </div>
   
-
         <div className="link2">
           <p>{ link2 }</p>
         </div>
@@ -26,21 +24,23 @@ const About = () => {
         </div>
       </div>
  
+      <div className="content">
 
-      <div className="page-title">
-        <h1>{ title }</h1>
-      </div>
-    
-      <div className="info">
-        <p>Quality car retailer of Sweden</p>
+        <div className="page-title">
+          <h1>{ title }</h1>
+      
+          <p>Quality car retailer of Sweden</p>
+        
 
-        <p>With an extensive range of approved used cars featuring all makes and models, Richard Ryan's Reliable Rides can provide the right car at the right price. With so much choice why go anywhere else? Get the best prices and widest choice on quality used cars in Sweden, contact us today!</p>
+          <p>With an extensive range of approved used cars featuring all makes and models, Richard Ryan's Reliable Rides can provide the right car at the right price. With so much choice why go anywhere else? Get the best prices and widest choice on quality used cars in Sweden, contact us today!</p>
 
-        <p>Who are we?</p>
-        <p>How we deliver</p>
-        <p>Our environmental impact.</p>
-            
-        <p>Find your dream car today!</p>
+          <p>Who are we?</p>
+          <p>How we deliver</p>
+          <p>Our environmental impact.</p>
+              
+          <p>Find your dream car today!</p>
+
+        </div>
       </div>
     </div>
    );
