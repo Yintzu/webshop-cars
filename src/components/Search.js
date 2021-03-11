@@ -98,7 +98,7 @@ const Search = () => {
                             return (
                                 <div key={listObject.name} className={style.slideWrapper}>
                                     <div className={style.labels}>
-                                        <label htmlFor={listObject.name}>{listObject.name} price</label>
+                                        <label className={style.label} htmlFor={listObject.name}>{listObject.name} price</label>
                                         <label htmlFor={listObject.name}>{listObject.value}</label>
                                     </div>
                                     <div className={style.slideContainer}>
@@ -113,7 +113,7 @@ const Search = () => {
                             return (
                                 <div key={listObject.name} className={style.slideWrapper}>
                                     <div className={style.labels}>
-                                        <label htmlFor={listObject.name}>{listObject.name} miles</label>
+                                        <label className={style.label} htmlFor={listObject.name}>{listObject.name} miles</label>
                                         <label htmlFor={listObject.name}>{listObject.value}</label>
                                     </div>
                                     <div className={style.slideContainer}>
