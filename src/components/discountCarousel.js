@@ -1,6 +1,8 @@
+import { useHistory } from "react-router-dom";
 import style from "../css/DiscountCarousel.module.css";
 
 const Carousel = () => {
+  const history = useHistory();
 
   let discountedCars = [
     {
@@ -51,7 +53,7 @@ const Carousel = () => {
       <div className={`carousel-inner ${style.carouselWrapper}`}>
         <div className={`carousel-item active`}>
           {/* <div className={style.overlay}></div> */}
-          <img src={"../assets/carousel/PanozCarousel.jpg"} className="d-block w-100 carouselImg" alt="Discounted Carousel" />
+          <img src={"../assets/carousel/PanozCarousel.jpg"} className={`d-block w-100 ${style.carouselImg}`} alt="Discounted Carousel" onClick={()=>history.push("/details/WAUKF98E25A286122")}/>
           <div className={`carousel-caption d-none d-md-block ${style.captionWrapper}`}>
             {/* <h5>{discountedCars[0].make} {discountedCars[0].model} {discountedCars[0].year}</h5>
             <p>{discountedCars[0].descShort}</p> */}
@@ -59,7 +61,7 @@ const Carousel = () => {
         </div>
         <div className="carousel-item">
           {/* <div className={style.overlay}></div> */}
-          <img src={"../assets/carousel/ChevroletCarousel.jpg"} className="d-block w-100 carouselImg" alt="Discounted Carousel" />
+          <img src={"../assets/carousel/ChevroletCarousel.jpg"} className={`d-block w-100 ${style.carouselImg}`} alt="Discounted Carousel" onClick={()=>history.push("/details/1D4PT5GK0BW487259")}/>
           <div className={`carousel-caption d-none d-md-block ${style.captionWrapper}`}>
             {/* <h5>{discountedCars[1].make} {discountedCars[1].model} {discountedCars[1].year}</h5>
             <p>{discountedCars[1].descShort}</p> */}
@@ -67,7 +69,7 @@ const Carousel = () => {
         </div>
         <div className="carousel-item">
           {/* <div className={style.overlay}></div> */}
-          <img src={"../assets/carousel/OldsmobileCarousel.jpg"} className="d-block w-100 carouselImg" alt="Discounted Carousel" />
+          <img src={"../assets/carousel/OldsmobileCarousel.jpg"} className={`d-block w-100 ${style.carouselImg}`} alt="Discounted Carousel" onClick={()=>history.push("/details/WAUVT68E95A768929")}/>
           <div className={`carousel-caption d-none d-md-block ${style.captionWrapper}`}>
             {/* <h5>{discountedCars[2].make} {discountedCars[2].model} {discountedCars[2].year}</h5>
             <p>{discountedCars[2].descShort}</p> */}
