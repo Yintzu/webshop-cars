@@ -5,18 +5,18 @@
 }
 .input {
     text-align: center;
-    padding: .5rem;
+    padding: 1rem .5rem;
 }
-.search input {
-    border: none; 
+.search .searchInput {
     border: solid darkgrey 1px; 
     border-radius: .25em;
     padding: .5rem;
     padding-left: 1rem;
     width: 50%;
+    min-width: 250px;
     outline: none;
 }
-.search input:focus {
+.search .searchInput:focus {
     outline: 1.5px solid #2C7CAE;
     -moz-outline-radius: .3em;
 
@@ -25,17 +25,18 @@
     background: none;
     border: none;
     height: 40px;
-    margin: 1rem;
+    margin: 0 1rem;
 }
 .search img {
-    height: 35px;
+    height: 30px;
 }
 
 .search .clearSearch {
-    padding: .5rem;
+    /* padding: .5rem; */
     color: white;
     background-color: #2C7CAE;
-    transform: translateY(-50%) 
+    transform: translateY(-50%);
+    margin: 2rem 1rem 0;
 }
 
 .clearSearch.disabledBtn {
@@ -44,7 +45,7 @@
 }
 
 .dropDown {
-    padding: 0 2rem 2rem;
+    padding: 0 3rem 1rem;
 }
 
 /*  Filter button arrow */
@@ -64,11 +65,70 @@
     border-right: .5rem solid transparent;
     border-top: .5rem solid #303030;
  }
- /* Custom selects */
- .selects label {
+ /* Custom selects (more css in index.css) */
+ .search label {
     margin: 1rem .5rem .3rem;
   }
 .selectWrapper {
     width: 40ch;
     margin: auto;
+}
+
+
+/*  custom range slider  */
+.sliderColumn {
+    padding: .5rem 1rem 0;
+}
+
+.sliderColumn label {
+    margin: 0 0 .5rem;
+  }
+
+.slideContainer {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 1rem;
+    background: #2c7cae7a;
+    border-radius: 3px;   
+    outline: none;
+    overflow: hidden;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: .75rem;
+    height: .75rem;
+    border-radius: 3px; 
+    background: #2C7CAE;
+    cursor: pointer;
+    border: #f4f4f4 2px solid;
+    box-shadow: -200px 0 0 195px #2c7cae7a;
+    
+  }
+  
+  .slider::-moz-range-thumb {
+    width: .75rem;
+    height: .75rem;
+    border-radius: 3px;
+    background: #fff;
+    cursor: pointer;
+    border: #2C7CAE 2px solid;
+    box-shadow: -200px 0 0 195px #2c7cae;
+    
+  }
+.labels {
+    display: flex;
+    justify-content: space-between;
+}
+.label:first-letter{
+    text-transform: capitalize;
+}
+.slideWrapper {
+    max-width: 40ch;
+    margin: 0 auto;
 }
