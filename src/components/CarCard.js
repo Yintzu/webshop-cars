@@ -23,7 +23,7 @@ const CarCard = (props) => {
           }
         });
         if (inCart) {
-          return <button onClick={() => removeFromCart(car)} className={`btn btn-danger ${style.btnCustom}`} id="addRemove">Remove</button>
+          return <button onClick={() => removeFromCart(car)} className={`btn btn-danger ${style.removeButton}`} id="addRemove">Remove</button>
         } else if (bought){
           return <button className={`btn btn-secondary ${style.disabled} ${style.btnCustom}`} id="addRemove">Sold</button>
         } else {
