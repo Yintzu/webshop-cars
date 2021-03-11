@@ -39,6 +39,11 @@
     margin: 2rem 1rem 0;
 }
 
+.search .clearSearch:hover {
+    background: #295276 !important;
+    color: #ffffff !important;
+}
+
 .clearSearch.disabledBtn {
     opacity: .5;
     pointer-events: none;
