@@ -19,11 +19,12 @@
 .h1{
     color: white !important;
     text-align: left;
-    font-size: 2.1rem;
+    font-size: 1.5rem
 }
 
 .p{
     color: white !important;
+    font-size: 0.8rem;
 }
 
 .gradient{
@@ -34,4 +35,74 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.carousel{
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 400px){
+    .carousel{
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 480px){
+    .carousel{
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 550px){
+    .carousel{
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    .h1{
+        font-size: calc(1rem + 1vw);
+    }
+
+    .p{
+        font-size: calc(0.5rem + 1vw);
+    }
+
+    .flexCenter{
+        flex-direction: row !important;
+    }
+
+    .carousel{
+        width: 56%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .carousel{
+        width: 100%;
+    }
+
+    .h1{
+        font-size: 1.8rem;
+    }
+
+    .p{
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 840px) {
+    .h1{
+        font-size: 2.1rem;
+    }
+
+    .p{
+        font-size: 1rem;
+    }
+
+    .carousel{
+        width: 100%;
+    }
 }
