@@ -39,7 +39,7 @@ const PopupCart = () => {
                 <button onClick={() => removeFromCart(car)} className={style.cartRemoveBtn} id="removeBtn">X</button>
               </div>
             </div>
-          )) : <h5 className={style.emptyCartMsg}>Your cart is empty :(</h5>
+          )) : <h5 className={style.emptyCartMsg}>Your cart is empty</h5>
         }
       </div>
       <div className={style.totalSumWrapper}>

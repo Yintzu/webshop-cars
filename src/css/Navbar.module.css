@@ -9,8 +9,9 @@
 
 .navbar {
   position: relative;
+  display: flex;
   width: 100%;
-  max-width: 1150px;
+  max-width: 900px;
   margin: 0 auto;
   background-color: #f4f4f4 !important;
   display: flex;
@@ -93,7 +94,9 @@
 .links {
   margin: 1rem 0.5rem;
   transform: translateY(-20px);
-  color: #2C7CAE !important;
+  position: relative;
+  top: -15px;
+  color: #707070 !important;
 }
 
 .links:hover {
@@ -113,7 +116,7 @@
   height: 90vh;
   margin-left: 0;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.1rem;
   z-index: 2000;
   transition: .5s;
   background-color: #f4f4f4 !important;
@@ -283,8 +286,12 @@
 
 @media screen and (min-width: 500px) {
   .navbar {
-    padding: .7rem 1rem;
-    max-height: 80px;
+    max-height: initial;
+    padding: 1.1rem 1rem;
+  }
+  
+  .links {
+    top: 0;
   }
 
   .cartNumber {
@@ -300,6 +307,7 @@
   }
 
   .navLinks {
+    order: -1;
     display:initial;
     background-color: initial;
     height: initial;
@@ -308,29 +316,32 @@
     transform: initial;
     transition: initial;
     font-weight: bold;
-    margin-left: 1.3rem;
-    font-size: 1rem;
+    /* margin-left: 1.3rem; */
+    font-size: 1.1rem;
   }
 
   .leftWrapper {
-    width: 90px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 140px;
     padding: 0;
     margin: 0;
     margin-left: .1rem;
-    left: 0;
-    transform: initial;
-    display: flex;
-    flex-direction: column;
+    left: 50%;
   }
 
   .rrrrlogoText {
     width: 100%;
     margin-top: .3rem;
-    margin-right: 0;
+    margin-right: .5rem;
   }
 
   .rrrrlogoImg {
-    width: 80%;
+    position: relative;
+    top: 2px;
+    width: 55%;
+    order: 2;
   }
   
   .hamburgerWrapper {
@@ -349,12 +360,41 @@
 }
 
 @media screen and (min-width: 650px) {
-  .leftWrapper {
-    width: 105px;
+  .navbar {
+    padding: 1.1rem .5rem;
   }
 
   .navLinks {
-    margin-left: 1.5rem;
+    font-size: 1.2rem;
+    /* margin-left: 1.5rem; */
+  }
+
+  .leftWrapper {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 170px;
+    margin-left: .1rem;
+    left: 50%;
+  }
+
+  .rrrrlogoText {
+    width: 100%;
+    margin-top: .3rem;
+    margin-right: .5rem;
+  }
+
+  .rrrrlogoImg {
+    position: relative;
+    top: 2px;
+    width: 55%;
+    order: 2;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .navbar {
+    padding: 1.1rem 0rem;
   }
 }
 
