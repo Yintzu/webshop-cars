@@ -26,6 +26,25 @@
     margin-bottom: 15px;
 }
 
+.boldText{ 
+    font-weight: 600;
+    color: #1f1f1f !important;
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+
+.carDetailText {
+    margin-bottom: 0;
+}
+
+.hrCard {
+    background-color: #ffffff;
+	border-top: 1px solid #656565;
+    width: 245px;
+    text-align: center;
+    margin-left: 10px;
+}
+
 .priceWrapper {
     width: 35%;
     display: flex;
@@ -40,7 +59,25 @@
 }
 
 .btnCustom {
+    background: #2C7CAE !important;
+    color: #ffffff !important;
+    border: none;
+}
 
+.addButton {
+    background: #2C7CAE !important;
+    color: #ffffff !important;
+    border: none;
+    width: 120px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.addButton:hover {
+    background: #295276 !important;
+    color: #ffffff !important;
+    border: none;
 }
 
 .btnReadMore {
@@ -58,7 +95,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: rgb(235, 235, 235);
+    /* background-color: rgb(235, 235, 235); */
 }
 
 .cardDesc {
@@ -94,4 +131,13 @@
     .imgWrapper {
         width: 100%;
     }
+
+    .buyRow {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        /* background-color: rgb(235, 235, 235); */
+    }
+    
 }
