@@ -27,13 +27,17 @@ const CarCard = (props) => {
         } else if (bought){
           return <button className={`btn btn-secondary ${style.disabled} ${style.btnCustom}`} id="addRemove">Sold</button>
         } else {
-          return <button onClick={() => addToCart(car)} className={`btn btn-primary ${style.addButton}`} id="addRemove">Add To Cart</button> 
+          return <button onClick={() => addToCart(car)} className={`btn btn-primary ${style.addButton}`} id="addRemove">Add to cart</button> 
         }
       }
 
 
     return (
-        <div className={`${style.carCard}`}>
+        <div className={`${style.carCard}`} onClick={(e) => {
+          if (e.target.id !== 'addRemove') {
+            viewCar(props.car, history);
+          }
+        }}>
             <div className={style.topRow}>
                 <div className={style.imgWrapper}>
                   <img src={props.car.carImg} className={`${style.carImg}`}alt="A good affordable car" />
