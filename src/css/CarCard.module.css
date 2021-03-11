@@ -5,6 +5,8 @@
     flex-direction: column;
     border: solid darkgrey 1px;
     border-radius: .25em;
+    border: solid rgb(220, 220, 220) 1px;
+    box-shadow: 2px 2px 2px #d2d2d2;
 }
 
 .infoRow {
@@ -15,7 +17,9 @@
 }
 
 .cardTitle {
-    font-size: 1rem;;
+    font-size: 1rem;
+    color: #2C7CAE!important;
+    font-size: 1.09rem;
 }
 
 .priceWrapper {
