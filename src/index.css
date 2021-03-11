@@ -11,8 +11,14 @@ html {
 }
 
 body {
-  padding-top: 85px;
+  padding-top: 95px;
   font-family: 'Quicksand', sans-serif;;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #2C7CAE !important;
 }
 
 p {
@@ -24,7 +30,7 @@ p {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 .5rem;
-  min-height: 50vh;
+  min-height: 60vh;
 }
 
 /* .carousel {
@@ -88,6 +94,7 @@ outline: none;
   justify-self: end;
   margin-right: 1rem;
 }
+
 select,
 .customSelect:after {
     grid-area: select;
@@ -112,7 +119,7 @@ select:focus + .focus {
 
 @media screen and (min-width: 650px) {
   body {
-    padding-top: 110px;
+    padding-top: 100px;
   }
 }
 

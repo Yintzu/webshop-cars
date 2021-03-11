@@ -1,0 +1,30 @@
+.carouselImg{
+    cursor: pointer;
+}
+
+/* @media screen and (max-width: 425px) {
+    .carouselImg{
+        height: auto;
+    }
+  }
+ */
+
+/* .gradient{
+    background: linear-gradient(0deg, rgba(0,0,0,0.8) 25%, rgba(255,255,255,0) 100%);
+} */
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.836) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.captionWrapper {
+    z-index: 2;
+}
+
+
