@@ -62,7 +62,7 @@
 }
 
 /* ------------ susanne test --------------- */
-/* .carCard {
+.carCard {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
@@ -146,4 +146,4 @@
     width: 245px;
     text-align: center;
     margin-left: 10px;
-} */
+}
