@@ -43,6 +43,15 @@
 .carousel{
     width: 90%;
     margin: 0 auto;
+    position: relative;
+}
+
+.saleSign{
+    width: 120px;
+    position: absolute;
+    top: -22px;
+    left: -25px;
+    transform: rotate(349deg);
 }
 
 @media only screen and (min-width: 400px){
