@@ -3,11 +3,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    border: solid darkgrey 1px;
+    border: solid rgb(113, 33, 33) 1px;
     border-radius: .25em;
     border: solid rgb(220, 220, 220) 1px;
     box-shadow: 2px 2px 2px #d2d2d2;
-    background-color: #f4f4f4 !important;
+    /* background-color: #f4f4f4 !important; */
 }
 
 .infoRow {
