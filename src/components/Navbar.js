@@ -99,8 +99,8 @@ const Navbar = () => {
                     {/* </NavLink> */}
                 </div>
                 <div className={`${style.navLinks} ${mobileMenuOpen && style.slideIn}`} onClick={() => setMobileMenuOpen(false)}>
-                    <NavLink className={style.links} activeClassName={style.active} exact to="/">Cars</NavLink>
-                    <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
+                    <NavLink className={style.links} activeClassName={style.active} exact to="/">Cars for sale</NavLink>
+                    {/* <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink> */}
                     {/* <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Support</NavLink> */}
                 </div>
                 <div className={style.iconsWrapper}>
