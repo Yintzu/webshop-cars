@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
 
 * {
-  margin: 0;
+ 
   font-family: "Quicksand";
   color: rgb(112, 112, 112)
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -15,22 +19,21 @@
 
 .menu {
   display: flex;
+  flex-wrap: wrap;
+  flex-shrink: initial;
+  justify-content: space-around;
+  width: 100%;
 }
 
-h1 {
-  display: flex;
-  text-align: left;
-  font-weight: bold;
-}
-
-.row {
-  display: initial;
-  position: relative;
+.menu .links {
   margin-left: auto;
-  max-width: 600px;
+  margin-top: 3px;
 }
 
 a {
+  margin-top: 15px;
+  padding: 0 5px;
+  display: inline-block; 
   color: rgb(218, 101, 71);
   font-weight: bold;
   text-decoration: none;
@@ -38,6 +41,12 @@ a {
 
 a:hover {
   color: rgb(136, 136, 136);
+}
+
+h1 {
+  display: flex;
+  text-align: left;
+  font-weight: bold;
 }
 
 .menu .row .page-title h1 {

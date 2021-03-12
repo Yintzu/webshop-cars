@@ -1,31 +1,39 @@
+import { useLocation } from 'react-router';
 import style from '../css/About.module.css';
+// import Search from '../src/components/Search.js';
+
 
 const About = () => {
-  
+
   const link1 = 'Who are we?';
-  const link2 = 'How we deliver';
+  const link2 = 'How do we deliver?';
   const link3 = 'Environmental Impact?';
   const title = 'About us';
   const title1 = 'Who are we?';
-  const title2 = 'How we deliver';
+  const title2 = 'How do we deliver?';
   const title3 = 'Environmental Impact';
 
     return ( 
    
       <div className="container">
-        
+              
         <div className="menu">
           <div className="row">
-            <a href="/">{link1}</a>
-          
-            <a href="/">{link2}</a>
-          
-            <a href="/">{link3}</a>
+            <div className="links">
+              <div>
+                <a href="#section1">{link1}</a>
+
+                <a href="#section2">{link2}</a>
+
+                <a href="#section3">{link3}</a>
+
+              </div>
+            </div>
           </div>
         </div>
         
-        <div className="page-title">
-          <h1>{ title }</h1>
+        <div>
+          <h1 className="section">{ title }</h1>
         </div>
 
         <div className="text">
@@ -35,7 +43,7 @@ const About = () => {
           <p>With an extensive range of approved used cars featuring all makes and models, Richard Ryan's Reliable Rides can provide the right car at the right price. With so much choice why go anywhere else? Get the best prices and widest choice on quality used cars in Sweden, contact us today!</p>
         </div>
 
-          <div className="page-title">
+          <div className="section1">
             <h1>{ title1 }</h1>
           </div>
 
@@ -43,7 +51,7 @@ const About = () => {
             <p>Nulla facilisi. Aenean rutrum tortor nec sem commodo faucibus. Vestibulum nunc erat, vestibulum vitae eros et, mollis placerat purus. Quisque consectetur pellentesque metus, non dictum elit placerat vel. Aenean iaculis tincidunt orci, in scelerisque velit porta vitae. Vivamus et malesuada mauris. Proin ligula magna, lacinia quis euismod in, vehicula nec turpis. Aenean tempus fermentum felis nec interdum. Praesent eu accumsan ex, sed pulvinar urna. Mauris sit amet lectus a nulla egestas feugiat eu nec justo. </p>
           </div>
 
-          <div className="page-title">
+          <div className="section2">
             <h1>{ title2 }</h1>
           </div>
 
@@ -51,7 +59,7 @@ const About = () => {
             <p>Proin nec urna sed tellus fringilla mattis. Aenean scelerisque tortor ut felis imperdiet elementum. Nunc a euismod dolor. Aliquam gravida erat nec feugiat vulputate. Donec in nunc sollicitudin, tempor nibh eu, ultricies magna. Mauris massa justo, hendrerit a accumsan a, convallis eleifend felis. Praesent elit ipsum, lacinia et justo nec, tincidunt maximus risus. Duis ligula nibh, eleifend ornare iaculis nec, pretium et nunc. In facilisis, nulla sed ullamcorper tempor, orci augue interdum sapien, vel fringilla sem turpis vitae lacus. Sed eget iaculis mi, vitae suscipit lorem. </p>
           </div>
 
-          <div className="page-title">
+          <div className="section3">
             <h1>{ title3 }</h1>
           </div>
 
