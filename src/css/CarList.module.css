@@ -9,9 +9,13 @@
 
 
 .noResult {
+    position: absolute;
     text-align: center;
     font-size: 1.2rem;
-    
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.4rem;
+    margin-top: 2rem;
 }
 
 .carsContainer {
@@ -24,8 +28,8 @@
     flex-wrap: wrap;
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 600px) {
     .carsContainer {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
