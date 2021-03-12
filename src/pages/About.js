@@ -21,11 +21,11 @@ const About = () => {
           <div className="row">
             <div className="links">
               <div>
-                <a href="#section1">{link1}</a>
+                <a href="#section1">{ link1 }</a>
 
-                <a href="#section2">{link2}</a>
+                <a href="#section2">{ link2 }</a>
 
-                <a href="#section3">{link3}</a>
+                <a href="#section3">{ link3 }</a>
 
               </div>
             </div>
