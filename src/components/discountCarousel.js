@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import style from "../css/discountCarousel.module.css";
+import style from "../css/DiscountCarousel.module.css";
 
 const Carousel = () => {
   const history = useHistory();
