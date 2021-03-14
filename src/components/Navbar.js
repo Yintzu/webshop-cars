@@ -131,7 +131,7 @@ const Navbar = () => {
                             <div className={style.cartShadow} />
                         </div>}
                     <NavLink className={style.acctContact} exact to="/">
-                        <img className={style.acctContactImg} onClick={() => loginClickHandler()} src="/assets/icons/account-contact-circle.png" />
+                        <img className={style.acctContactImg} onClick={loginClickHandler} src="/assets/icons/account-contact-circle.png" />
                     </NavLink>
                 </div>
             </nav>

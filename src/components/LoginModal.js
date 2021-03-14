@@ -30,6 +30,10 @@ const LoginModal = (props) => {
     return (
         <div className={`${style.cover}`} id="modalBackground" onClick={closeModal}>
             <div className={`${style.loginDiv}`}>
+                <div className={`${style.closeButton}`}>
+                    <div className={`${style.xbar1}`}></div>
+                    <div className={`${style.xbar2}`}></div>
+                </div>
                 <h2 className={style.h2}>Log in</h2>
                 <form onSubmit={loginHandler}>
                     <div className={`${style.inputDiv}`}>
