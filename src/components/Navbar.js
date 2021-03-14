@@ -3,6 +3,7 @@ import { NavLink, useHistory } from 'react-router-dom';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import { UserContext } from '../contexts/UserContext';
 import style from '../css/Navbar.module.css';
+import LoginModal from './LoginModal';
 import PopupCart from './PopupCart';
 
 const Navbar = () => {
@@ -98,7 +99,7 @@ const Navbar = () => {
 
     return (
         <div className={style.navContainer}>
-            {showLoginModal && <h1 onClick={()=>setShowLoginModal(false)}>THIS IS MODAL</h1>}
+            {showLoginModal && <LoginModal setShowLoginModal={setShowLoginModal}></LoginModal>}
             <nav className={style.navbar}>
                 <div className={style.hamburgerClickBox} onClick={handleHamburgerClick} />
                 <div className={style.hamburgerWrapper}>
