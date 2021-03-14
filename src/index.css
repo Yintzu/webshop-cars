@@ -10,12 +10,12 @@ html {
   overflow-y: scroll;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-weight: 400;
 }
 
 body {
   padding-top: 95px;
   font-family: 'Quicksand', sans-serif;;
+  font-weight: 500;
 }
 
 h1 {
