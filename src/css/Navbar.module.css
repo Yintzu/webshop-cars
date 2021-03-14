@@ -177,23 +177,12 @@
 
 @keyframes updateAnimation {
   0% {
-    /* transform: scale(1); */
-    /* top: -12px;
-    width: 17px;
-    height: 16px; */
   }
   50% {
     -webkit-backface-visibility: hidden;
     transform: scale(1.2);
-    /* top: -13px;
-    width: 19px;
-    height: 18px; */
   }
   100% {
-    /* transform: scale(1); */
-    /* top: -12px;
-    width: 17px;
-    height: 16px; */
   }
 }
 
@@ -207,7 +196,7 @@
   cursor: pointer;
   left: 50%;
   transform: translateX(-50%);
-  width: 200px;
+  width: 170px;
   display: flex;
   align-items: center;
 }
@@ -263,6 +252,8 @@
   display: inline-block;
   height: 100%;
   width: 37%;
+  order: 2;
+  margin-left: .3rem;
 }
 
 .rrrrlogoText {
@@ -281,7 +272,13 @@
   width: 100%;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 450px) {
+  .leftWrapper {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 550px) {
   .navbar {
     max-height: initial;
     padding: 1.1rem 1rem;
@@ -319,32 +316,8 @@
 
   .leftWrapper {
     position: absolute;
-    width: 250px;
+    width: 35%;
   }
-
-  /* .leftWrapper {
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    width: 200px;
-    padding: 0;
-    margin: 0;
-    margin-left: .1rem;
-    left: 50%;
-  }
-
-  .rrrrlogoText {
-    width: 60%;
-    margin-top: .3rem;
-    margin-right: .5rem;
-  }
-
-  .rrrrlogoImg {
-    position: relative;
-    top: 2px;
-    width: 40%;
-    order: 2;
-  } */
   
   .hamburgerWrapper {
     display: none;
@@ -374,25 +347,6 @@
   .leftWrapper {
     width: 270px;
   }
-
-  /* .leftWrapper {
-    width: 250px;
-    margin-left: .1rem;
-    left: 50%;
-  }
-
-  .rrrrlogoText {
-    width: 60%;
-    margin-top: .3rem;
-    margin-right: .5rem;
-  }
-
-  .rrrrlogoImg {
-    position: relative;
-    top: 2px;
-    width: 40%;
-    order: 2;
-  } */
 }
 
 @media screen and (min-width: 900px) {
