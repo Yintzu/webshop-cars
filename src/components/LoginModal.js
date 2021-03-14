@@ -1,8 +1,14 @@
 import style from "../css/LoginModal.module.css"
 
 const LoginModal = (props) => {
+    const closeModal = (e) =>{
+        if (e.target.id === "modalBackground"){
+            props.setShowLoginModal(false)
+        }
+    }
+
     return (
-        <div className={`${style.cover}`} onClick={() => props.setShowLoginModal(false)}>
+        <div className={`${style.cover}`} id="modalBackground" onClick={closeModal}>
             <div className={`${style.loginDiv}`}>
                 <h2 className={style.h2}>Log in</h2>
                 <form>
