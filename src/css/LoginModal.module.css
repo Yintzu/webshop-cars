@@ -1,8 +1,56 @@
+.h2{
+    color: #2C7CAE;
+    text-align: center;
+    margin-top: 1rem;
+}
+
 .cover{
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background-color: black;
-    opacity: 60%;
+    background-color: rgba(0, 0, 0, 0.658);
     z-index: 2001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginDiv{
+    background-color: white;
+    padding: 1rem;
+    min-width: 300px;
+    max-width: 600px;
+    width: 50%;
+    min-height: 30%;
+    border-radius: 3px;
+}
+
+.inputDiv{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.input{
+    display: block;
+}
+
+.button{
+    display: block;
+    min-width: 60px;
+    margin: 2rem auto 2rem auto;
+    background-color: #2C7CAE;
+    color: white;
+}
+
+.button:hover {
+    background-color: #295276;
+    color: white;
+
+}
+
+.p{
+    color: #2C7CAE !important;
+    cursor: pointer;
+    text-align: center;
+    margin: 1rem 0;
 }
