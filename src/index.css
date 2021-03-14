@@ -33,7 +33,7 @@ p {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 .5rem;
-  min-height: calc(100vh - 250px);
+  min-height: calc(100vh - 250px - 93px);
 }
 
 /* .carousel {
@@ -118,11 +118,15 @@ select:focus + .focus {
   body {
     padding-top: 100px;
   }
+
+  .site-container {
+    min-height: calc(100vh - 250px - 100px);
+  }
 }
 
-@media screen and (min-width: 650px) {
+/* @media screen and (min-width: 650px) {
   body {
     padding-top: 100px;
   }
-}
+} */
 
