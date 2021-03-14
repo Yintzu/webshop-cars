@@ -6,8 +6,8 @@ import { SearchContext } from '../contexts/SearchContext';
 const Search = () => {
     const [inputValue, setInputValue] = useState("");
     /* const { cars } = useContext(CarContext); */
-    const { searchCars, resetRenderList, filterLists, saveFilters } = useContext(SearchContext);
-    const [searched, setSearched] = useState(false);
+    const { searchCars, resetRenderList, filterLists, saveFilters, searched, setSearched } = useContext(SearchContext);
+    // const [searched, setSearched] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
 /*     const [btnDisable, setBtnDisable] = useState(false); */
 
