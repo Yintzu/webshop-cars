@@ -113,8 +113,8 @@ const Navbar = () => {
                     {/* </NavLink> */}
                 </div>
                 <div className={`${style.navLinks} ${mobileMenuOpen && style.slideIn}`} onClick={() => setMobileMenuOpen(false)}>
-                    <NavLink className={style.links} activeClassName={style.active} exact to="/">Cars for sale</NavLink>
-                    {/* <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink> */}
+                    <NavLink className={style.links} activeClassName={style.active} exact to="/">Cars</NavLink>
+                    <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
                     {/* <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Support</NavLink> */}
                 </div>
                 <div className={style.iconsWrapper}>
@@ -130,9 +130,10 @@ const Navbar = () => {
                             <PopupCart />
                             <div className={style.cartShadow} />
                         </div>}
-                    <NavLink className={style.acctContact} exact to="/">
-                        <img className={style.acctContactImg} onClick={loginClickHandler} src="/assets/icons/account-contact-circle.png" />
-                    </NavLink>
+                    {!loggedInUser ? <span className={`${style.loginSpan}`} onClick={loginClickHandler}>Log in</span> : 
+                    <div className={style.acctContact}>
+                        <img className={style.acctContactImg} src="/assets/icons/account-contact-circle.png" />
+                    </div>}
                 </div>
             </nav>
             <aside className={style.infoBar}>
