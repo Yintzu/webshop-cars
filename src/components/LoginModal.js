@@ -6,7 +6,7 @@ const LoginModal = (props) => {
     const { users, setLoggedInUser } = useContext(UserContext);
 
     const closeModal = (e) => {
-        if (e.target.id === "modalBackground") {
+        if (e.target.id === "modalBackground" || e.target.classList.contains("closeButton")) {
             props.setShowLoginModal(false)
         }
     }
@@ -30,9 +30,9 @@ const LoginModal = (props) => {
     return (
         <div className={`${style.cover}`} id="modalBackground" onClick={closeModal}>
             <div className={`${style.loginDiv}`}>
-                <div className={`${style.closeButton}`}>
-                    <div className={`${style.xbar1}`}></div>
-                    <div className={`${style.xbar2}`}></div>
+                <div className={`${style.closeButton} closeButton`}>
+                    <div className={`${style.xbar1} closeButton`}></div>
+                    <div className={`${style.xbar2} closeButton`}></div>
                 </div>
                 <h2 className={style.h2}>Log in</h2>
                 <form onSubmit={loginHandler}>
