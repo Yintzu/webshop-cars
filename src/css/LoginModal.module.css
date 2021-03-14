@@ -27,34 +27,28 @@
 }
 
 .closeButton{
-    width: 40px;
-    height: 35px;
+    width: 34px;
+    height: 32px;
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
-    background-color: blanchedalmond;
 }
 
 .closeButton:hover div{
     background-color:  #DA6547;
 }
 
-.xbar1{
+.xbar1, .xbar2{
     position: absolute;
     top: 13px;
-    background: black;
-    width: 40px;
-    height: 5px;
+    background-color: #1f1f1f;
+    width: 36px;
+    height: 4px;
     transform: rotate(45deg);
 }
 
 .xbar2{
-    position: absolute;
-    top: 13px;
-    background: black;
-    width: 40px;
-    height: 5px;
     transform: rotate(-45deg);
 }
 
