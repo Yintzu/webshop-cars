@@ -33,7 +33,7 @@ p {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 .5rem;
-  min-height: 60vh;
+  min-height: calc(100vh - 250px);
 }
 
 /* .carousel {
