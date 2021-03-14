@@ -33,6 +33,7 @@
 
 .search .clearSearch {
     /* padding: .5rem; */
+    font-weight: 500;
     color: white;
     background-color: #2C7CAE;
     transform: translateY(-50%);
