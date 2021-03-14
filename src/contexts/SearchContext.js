@@ -12,6 +12,7 @@ export const SearchContext = createContext();
 const SearchContextProvider = (props) => {
     const [searchResult, setSearchResult] = useState([]);
     const [renderList, setRenderList] = useState([]);
+    const [searched, setSearched] = useState(false);
     const { cars } = useContext(CarContext);
     
 
@@ -154,6 +155,8 @@ const SearchContextProvider = (props) => {
       resetRenderList,
       filterLists,
       saveFilters,
+      searched,
+      setSearched,
     }
 
     return (
