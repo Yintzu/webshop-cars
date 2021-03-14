@@ -63,8 +63,8 @@ const Search = () => {
                     </button>
  */}
                     {/* Reset list button */}
-                    <div onClick={handleResetSearch} className={`btn btn-sm ${style.clearSearch}`}>Clear search</div>
-                    {/* <div onClick={handleResetSearch} className={`btn btn-sm ${style.clearSearch} ${!searched && style.disabledBtn}`}>Clear search</div> */}
+                    {/* <div onClick={handleResetSearch} className={`btn btn-sm ${style.clearSearch}`}>Clear search</div> */}
+                    <div onClick={handleResetSearch} className={`btn btn-sm ${style.clearSearch} ${!searched && style.disabledBtn}`}>Clear search</div>
                 </div>
 
                 {/* Drop down */}
