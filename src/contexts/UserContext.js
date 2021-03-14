@@ -8,7 +8,16 @@ const UserContextProvider = (props) => {
   const { boughtCars, setBoughtCars } = useContext(CarContext)
 
   const [loggedInUser, setLoggedInUser] = useState(null);
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([
+    {
+      email: "test",
+      password: "123"
+    },
+    {
+      email: "admin",
+      password: "123"
+    }
+  ]);
 
   const [orderInfo, setOrderInfo] = useState([
     {

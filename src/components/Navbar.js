@@ -60,8 +60,9 @@ const Navbar = () => {
 
     const loginClickHandler = () => {
         if (!loggedInUser){
-            console.log("not logged in");
             setShowLoginModal(true);
+        } else {
+            console.log("you are already logged in");
         }
     }
 
@@ -99,7 +100,7 @@ const Navbar = () => {
 
     return (
         <div className={style.navContainer}>
-            {showLoginModal && <LoginModal setShowLoginModal={setShowLoginModal}></LoginModal>}
+            {showLoginModal && <LoginModal setShowLoginModal={setShowLoginModal}/>}
             <nav className={style.navbar}>
                 <div className={style.hamburgerClickBox} onClick={handleHamburgerClick} />
                 <div className={style.hamburgerWrapper}>
