@@ -7,7 +7,6 @@ const Search = () => {
     const [inputValue, setInputValue] = useState("");
     /* const { cars } = useContext(CarContext); */
     const { searchCars, resetRenderList, filterLists, saveFilters, searched, setSearched } = useContext(SearchContext);
-    // const [searched, setSearched] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
 /*     const [btnDisable, setBtnDisable] = useState(false); */
 
@@ -63,7 +62,6 @@ const Search = () => {
                     </button>
  */}
                     {/* Reset list button */}
-                    {/* <div onClick={handleResetSearch} className={`btn btn-sm ${style.clearSearch}`}>Clear search</div> */}
                     <div onClick={handleResetSearch} className={`btn btn-sm ${style.clearSearch} ${!searched && style.disabledBtn}`}>Clear search</div>
                 </div>
 
