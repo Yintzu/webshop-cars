@@ -255,9 +255,15 @@
   width: 100%;
 }
 
+@media screen and (min-width: 400px) {
+  .leftWrapper {
+    width: 185px;
+  }
+}
+
 @media screen and (min-width: 450px) {
   .leftWrapper {
-    width: 200px;
+    width: 210px;
   }
 }
 
