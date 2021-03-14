@@ -206,9 +206,8 @@
   position: relative;
   cursor: pointer;
   left: 50%;
-  transform: translateX(-57%);
-  width: 50%;
-  max-width: 220px;
+  transform: translateX(-50%);
+  width: 200px;
   display: flex;
   align-items: center;
 }
@@ -262,7 +261,6 @@
 .rrrrlogoImg {
   position: relative;
   display: inline-block;
-  margin-right: .5rem;
   height: 100%;
   width: 37%;
 }
@@ -270,9 +268,8 @@
 .rrrrlogoText {
   position: relative;
   display: inline-block;
-  margin-right: .5rem;
   height: 100%;
-  width: 60%;
+  width: 63%;
 }
 
 .acctContact {
@@ -322,9 +319,14 @@
 
   .leftWrapper {
     position: absolute;
+    width: 250px;
+  }
+
+  /* .leftWrapper {
+    position: absolute;
     display: flex;
     justify-content: space-between;
-    width: 140px;
+    width: 200px;
     padding: 0;
     margin: 0;
     margin-left: .1rem;
@@ -332,7 +334,7 @@
   }
 
   .rrrrlogoText {
-    width: 100%;
+    width: 60%;
     margin-top: .3rem;
     margin-right: .5rem;
   }
@@ -340,9 +342,9 @@
   .rrrrlogoImg {
     position: relative;
     top: 2px;
-    width: 55%;
+    width: 40%;
     order: 2;
-  }
+  } */
   
   .hamburgerWrapper {
     display: none;
@@ -370,16 +372,17 @@
   }
 
   .leftWrapper {
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    width: 170px;
+    width: 270px;
+  }
+
+  /* .leftWrapper {
+    width: 250px;
     margin-left: .1rem;
     left: 50%;
   }
 
   .rrrrlogoText {
-    width: 100%;
+    width: 60%;
     margin-top: .3rem;
     margin-right: .5rem;
   }
@@ -387,9 +390,9 @@
   .rrrrlogoImg {
     position: relative;
     top: 2px;
-    width: 55%;
+    width: 40%;
     order: 2;
-  }
+  } */
 }
 
 @media screen and (min-width: 900px) {
