@@ -261,7 +261,7 @@
   }
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 500px) {
   .navbar {
     max-height: initial;
     padding: 1.1rem 1rem;
@@ -291,7 +291,7 @@
 
   .leftWrapper {
     position: absolute;
-    width: 35%;
+    width: 38%;
   }
   
   .hamburgerWrapper {
