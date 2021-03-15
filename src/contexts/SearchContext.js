@@ -12,6 +12,7 @@ export const SearchContext = createContext();
 const SearchContextProvider = (props) => {
     const [searchResult, setSearchResult] = useState([]);
     const [renderList, setRenderList] = useState([]);
+    const [searched, setSearched] = useState(false);
     const { cars } = useContext(CarContext);
     
 
@@ -160,6 +161,8 @@ const saveSliders = (e) => {
       saveFilters,
       sliders,
       saveSliders
+      searched,
+      setSearched,
     }
 
     return (

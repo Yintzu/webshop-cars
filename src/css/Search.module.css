@@ -32,10 +32,16 @@
 }
 
 .search .clearSearch {
+    font-weight: 500;
     color: white;
     background-color: #2C7CAE;
     transform: translateY(-50%);
     margin: 2rem 0 0 1rem;
+}
+
+.search .clearSearch:hover {
+    background: #295276 !important;
+    color: #ffffff !important;
 }
 
 .clearSearch.disabledBtn {

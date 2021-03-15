@@ -4,8 +4,7 @@ import { SearchContext } from '../contexts/SearchContext';
 
 const Search = () => {
     const [inputValue, setInputValue] = useState("");
-    const { searchCars, resetRenderList, filterLists, saveFilters, saveSliders, sliders } = useContext(SearchContext);
-    const [searched, setSearched] = useState(false);
+    const { searchCars, resetRenderList, filterLists, saveFilters, searched, setSearched, saveSliders, sliders } = useContext(SearchContext);
     const [isClicked, setIsClicked] = useState(true);
 
     const handleSubmit = (e) => {
