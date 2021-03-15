@@ -74,9 +74,9 @@ const Search = () => {
 
                     {/* Range sliders */}
                     <div className="row justify-content-around mt-3">
-                        {sliders.map(list => {
+                        {sliders.map((list, index) => {
                             return (
-                                <div className={`col-md-5 ${style.sliderColumn}`}>
+                                <div key={index} className={`col-md-5 ${style.sliderColumn}`}>
                                     {list.map(listObject => {
                                         return (
                                             <div key={listObject.name} className={style.slideWrapper}>
