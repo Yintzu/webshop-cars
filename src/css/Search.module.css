@@ -32,12 +32,11 @@
 }
 
 .search .clearSearch {
-    /* padding: .5rem; */
     font-weight: 500;
     color: white;
     background-color: #2C7CAE;
     transform: translateY(-50%);
-    margin: 2rem 1rem 0;
+    margin: 2rem 0 0 1rem;
 }
 
 .search .clearSearch:hover {
@@ -133,6 +132,9 @@
 }
 .label:first-letter{
     text-transform: capitalize;
+}
+.label {
+    width: 100%;
 }
 .slideWrapper {
     max-width: 40ch;
