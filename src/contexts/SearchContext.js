@@ -65,7 +65,7 @@ const SearchContextProvider = (props) => {
 
     // Filter search function
     const filterSearch = () => {
-        let carsArray = [...cars];
+        let filterCarsArray = [...cars];
 
         // Clear free text search, if there is input in it
         
@@ -161,11 +161,11 @@ const SearchContextProvider = (props) => {
         ]
     ]
    
-const saveSliders = (e) => {
-        if(e.target.id === "min price") {
+    const saveSliders = (e) => {
+        if(e.target.id === "min price" && e.target.value <= maxPrice) {
             setMinPrice(e.target.value)
         }
-        if(e.target.id === "max price"){
+        if(e.target.id === "max price" && e.target.value >= minPrice){
             setMaxPrice(e.target.value)
         }
         if(e.target.id === "min miles"){
