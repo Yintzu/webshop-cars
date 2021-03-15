@@ -19,7 +19,6 @@
 .search .searchInput:focus {
     outline: 1.5px solid #2C7CAE;
     -moz-outline-radius: .3em;
-
 }
 .search .searchIcon {
     background: none;
@@ -106,8 +105,8 @@
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: .75rem;
-    height: .75rem;
+    width: 1rem;
+    height: 1rem;
     border-radius: 3px;
     background: #fff;
     cursor: pointer;
@@ -116,6 +115,7 @@
   }
   
   .slider::-moz-range-thumb {
+    appearance: none;
     width: .75rem;
     height: .75rem;
     border-radius: 3px;
