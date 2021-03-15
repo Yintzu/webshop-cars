@@ -63,6 +63,31 @@ const SearchContextProvider = (props) => {
         }
     }
 
+    // Filter search function
+    const filterSearch = () => {
+        let carsArray = [...cars];
+
+        // Clear free text search, if there is input in it
+        
+        // 1, check if make is selected select-input
+        // Filter array based on make
+        
+        // 2, check if model is selected
+        // Filter array based on model
+
+        // 3, check if range is set for year
+        // Filter array range in year (if car.year is higher than min && lower than max)
+
+        // 4, check if range is set for price
+        // Filter 
+
+        // 5, check if range is set for miles
+        // Filter
+
+        // set renderList with the filtered cars array
+
+    }
+
     // Resets the rendered list to all cars
     const resetRenderList = () => {
         setRenderList(cars);
