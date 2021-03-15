@@ -13,6 +13,12 @@ const About = () => {
   const title2 = 'How do we deliver?';
   const title3 = 'Environmental Impact';
 
+  const scrollHandler = (e, section) =>{
+    e.preventDefault();
+    let sectionEl = document.querySelector(section)
+    sectionEl.scrollIntoView();
+  }
+
     return ( 
    
       <div className="container">
@@ -21,11 +27,11 @@ const About = () => {
           <div className="row">
             <div className="links">
               <div>
-                <a href="#section1">{ link1 }</a>
+                <a href="#section1" onClick={(e)=>scrollHandler(e, ".section1")}>{ link1 }</a>
 
-                <a href="#section2">{ link2 }</a>
+                <a href="#section2" onClick={(e)=>scrollHandler(e, ".section2")}>{ link2 }</a>
 
-                <a href="#section3">{ link3 }</a>
+                <a href="#section3" onClick={(e)=>scrollHandler(e, ".section3")}>{ link3 }</a>
 
               </div>
             </div>
