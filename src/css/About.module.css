@@ -30,7 +30,7 @@ html {
   margin-top: 3px;
 }
 
-a {
+.a {
   margin-top: 15px;
   padding: 0 5px;
   display: inline-block; 
@@ -39,11 +39,11 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+.a:hover {
   color: rgb(136, 136, 136);
 }
 
-h1 {
+.h1 {
   display: flex;
   text-align: left;
   font-weight: bold;

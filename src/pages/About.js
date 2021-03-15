@@ -27,11 +27,11 @@ const About = () => {
           <div className="row">
             <div className="links">
               <div>
-                <a href="#section1" onClick={(e)=>scrollHandler(e, ".section1")}>{ link1 }</a>
+                <a className={`${style.a}`} href="#section1" onClick={(e)=>scrollHandler(e, ".section1")}>{ link1 }</a>
 
-                <a href="#section2" onClick={(e)=>scrollHandler(e, ".section2")}>{ link2 }</a>
+                <a className={`${style.a}`} href="#section2" onClick={(e)=>scrollHandler(e, ".section2")}>{ link2 }</a>
 
-                <a href="#section3" onClick={(e)=>scrollHandler(e, ".section3")}>{ link3 }</a>
+                <a className={`${style.a}`} href="#section3" onClick={(e)=>scrollHandler(e, ".section3")}>{ link3 }</a>
 
               </div>
             </div>
@@ -39,7 +39,7 @@ const About = () => {
         </div>
         
         <div>
-          <h1 className="section">{ title }</h1>
+          <h1 className={`section ${style.h1}`}>{ title }</h1>
         </div>
 
         <div className="text">
@@ -50,7 +50,7 @@ const About = () => {
         </div>
 
           <div className="section1">
-            <h1>{ title1 }</h1>
+            <h1 className={`section ${style.h1}`}>{ title1 }</h1>
           </div>
 
           <div className="text">
@@ -58,7 +58,7 @@ const About = () => {
           </div>
 
           <div className="section2">
-            <h1>{ title2 }</h1>
+            <h1 className={`section ${style.h1}`}>{ title2 }</h1>
           </div>
 
           <div className="text">
@@ -66,7 +66,7 @@ const About = () => {
           </div>
 
           <div className="section3">
-            <h1>{ title3 }</h1>
+            <h1 className={`section ${style.h1}`}>{ title3 }</h1>
           </div>
 
           <div className="text">
