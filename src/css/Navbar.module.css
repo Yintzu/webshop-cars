@@ -132,7 +132,8 @@
 }
 
 .img {
-  width: 100%;
+  height: 100%;
+  /* width: 100%; */
 }
 
 .cartNumber {
@@ -207,8 +208,9 @@
 .iconsWrapper {
   display: flex;
   align-items: center;
+  width: 106px;
   /* width: 60px; */
-  width: 30px;
+  height: 30px;
   justify-content: space-between;
   margin-left: auto;
 }
@@ -216,8 +218,9 @@
 .cartIconWrapper {
   position: relative;
   /* Change back to 47% when member page icon is added again */
-  /* width: 47%; */
-  width: 100%;
+  width: 47%;
+  /* width: 100%; */
+  height: 100%;
   cursor: pointer;
 }
 
@@ -248,11 +251,24 @@
 
 .acctContact {
   position: relative;
-  width: 39%;
+  height: 100%;
+  /* width: 39%; */
 }
 
 .acctContactImg {
-  width: 100%;
+  /* width: 100%; */
+  height: 100%;
+}
+
+.loginSpan{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2C7CAE;
+}
+
+.loginSpan:hover{
+  color: #DA6547;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 400px) {
@@ -310,8 +326,9 @@
 
   .iconsWrapper {
     /* Bring back to 70 with member icon */
-    /* width: 70px; */
-    width: 37px;
+    min-width: 70px;
+    /* width: 37px; */
+    height: 28px;
   }
 }
 
