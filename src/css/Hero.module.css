@@ -47,9 +47,9 @@
 }
 
 .saleSign{
-    width: 120px;
+    width: 80px;
     position: absolute;
-    top: -22px;
+    top: -12px;
     left: -25px;
     transform: rotate(349deg);
 }
@@ -63,6 +63,10 @@
 @media only screen and (min-width: 480px){
     .carousel{
         width: 70%;
+    }
+    .saleSign {
+        width: 100px;
+        top: -15px;
     }
 }
 
@@ -79,6 +83,10 @@
 
     .p{
         font-size: calc(0.5rem + 1vw);
+    }
+
+    .saleSign {
+        width: 120px;
     }
 
     .flexCenter{
