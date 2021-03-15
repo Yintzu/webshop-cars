@@ -178,7 +178,7 @@
 .leftWrapper {
   position: relative;
   cursor: pointer;
-  left: 50%;
+  left: 51%;
   transform: translateX(-50%);
   width: 170px;
   display: flex;
@@ -211,8 +211,9 @@
   width: 106px;
   /* width: 60px; */
   height: 30px;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-left: auto;
+  margin-right: -4px;
 }
 
 .cartIconWrapper {
@@ -235,11 +236,12 @@
 
 .rrrrlogoImg {
   position: relative;
-  display: inline-block;
+  display: none;
   height: 100%;
   width: 37%;
   order: 2;
-  margin-left: .3rem;
+  margin: 0 auto;
+  /* margin-left: .3rem; */
 }
 
 .rrrrlogoText {
@@ -311,6 +313,10 @@
     font-size: 1.1rem;
   }
 
+  .rrrrlogoImg{
+    display: inline-block;
+  }
+
   .leftWrapper {
     position: absolute;
     width: 38%;
@@ -345,11 +351,19 @@
   .leftWrapper {
     width: 270px;
   }
+
+  .iconsWrapper{
+    margin-right: 5px;
+  }
 }
 
 @media screen and (min-width: 900px) {
   .navbar {
     padding: 1.1rem .2rem;
+  }
+
+  .iconsWrapper{
+    margin-right: 8px;
   }
 }
 
