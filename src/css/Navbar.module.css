@@ -211,8 +211,9 @@
   width: 106px;
   /* width: 60px; */
   height: 30px;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-left: auto;
+  margin-right: -4px;
 }
 
 .cartIconWrapper {
@@ -239,7 +240,8 @@
   height: 100%;
   width: 37%;
   order: 2;
-  margin-left: .3rem;
+  margin: 0 auto;
+  /* margin-left: .3rem; */
 }
 
 .rrrrlogoText {
@@ -345,11 +347,19 @@
   .leftWrapper {
     width: 270px;
   }
+
+  .iconsWrapper{
+    margin-right: 5px;
+  }
 }
 
 @media screen and (min-width: 900px) {
   .navbar {
     padding: 1.1rem .2rem;
+  }
+
+  .iconsWrapper{
+    margin-right: 8px;
   }
 }
 
