@@ -76,7 +76,7 @@ const SearchContextProvider = (props) => {
     const filterLists = [
         {listName: "make", list: makeArray}, 
         {listName: "model", list: modelArray}, 
-        {listName: "year", list: yearArray}
+       /*  {listName: "year", list: yearArray} */
     ];
 
     const createFilterArrays = (list) => {
@@ -85,16 +85,16 @@ const SearchContextProvider = (props) => {
             if (!tempArray.includes(car[list]))
             tempArray.push(car[list])
         })
-        if(list === 'year') {
+        /* if(list === 'year') {
             return tempArray.sort().reverse()
-        }
+        } */
         return tempArray.sort()
     }
 
     useEffect(() => {
         setMakeArray(createFilterArrays("make"))
         setModelArray(createFilterArrays("model"))
-        setYearArray(createFilterArrays("year"))
+        /* setYearArray(createFilterArrays("year")) */
     },[cars])
 
     const [make, setMake] = useState(null);

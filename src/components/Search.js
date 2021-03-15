@@ -46,37 +46,37 @@ const Search = () => {
                     {/* Reset list button */}
                     <div onClick={handleResetSearch} className={`btn btn-sm ${style.clearSearch} ${!searched && style.disabledBtn}`}>Clear search</div>
                 </div>
-
+            </form>
                 {/* Drop down */}
                 {isClicked && <div className={style.dropDown}>
-
-                    {/* Select lists */}
-                    <div className={`row ${style.selects}`}>
-                        {filterLists.map(listObject => {
-                                return (
-                                <div className={`col-md ${style.selectWrapper}`} key={listObject.listName}>
-                                    <label htmlFor={listObject.listName}>Select {listObject.listName}</label>
-                                    <div className={`customSelect ${style.customSelect}`}>
-                                        <select name={listObject.listName} id={listObject.listName} defaultValue="all" onChange={handleSelect}>
-                                            <option value="all">All</option>
-                                            {listObject.list.length && listObject.list.map(listItem => {
-                                                return (
-                                                <option key={listItem}>{listItem}</option>
-                                                )
-                                            })}
-                                        </select>
-                                        <span className="focus"></span>
+                    <form>
+                        {/* Select lists */}
+                        <div className={`row ${style.selects}`}>
+                            {filterLists.map(listObject => {
+                                    return (
+                                    <div className={`col-md ${style.selectWrapper}`} key={listObject.listName}>
+                                        <label htmlFor={listObject.listName}>Select {listObject.listName}</label>
+                                        <div className={`customSelect ${style.customSelect}`}>
+                                            <select name={listObject.listName} id={listObject.listName} defaultValue="all" onChange={handleSelect}>
+                                                <option value="all">All</option>
+                                                {listObject.list.length && listObject.list.map(listItem => {
+                                                    return (
+                                                    <option key={listItem}>{listItem}</option>
+                                                    )
+                                                })}
+                                            </select>
+                                            <span className="focus"></span>
+                                        </div>
                                     </div>
-                                </div>
-                                )
-                            })}
-                    </div>
+                                    )
+                                })}
+                        </div>
 
-                    {/* Range sliders */}
-                    <div className="row justify-content-around mt-3">
+                        {/* Range sliders */}
+                        <div className="row justify-content-between mt-3">
                         {sliders.map(list => {
                             return (
-                                <div className={`col-md-5 ${style.sliderColumn}`}>
+                                <div className={`col-md-4 ${style.sliderColumn}`}>
                                     {list.map(listObject => {
                                         return (
                                             <div key={listObject.name} className={style.slideWrapper}>
@@ -93,9 +93,34 @@ const Search = () => {
                                 </div>
                             )
                         })}
+                        <div className={`col-md-4 ${style.sliderColumn}`}>
+                            <div className={style.slideWrapper}>
+                                <div className={style.labels}>
+                                    <label className={style.label} htmlFor="">Min Year</label>
+                                    <label htmlFor="">1990</label>
+                                </div>
+                                <div className={style.slideContainer}>
+                                    <input className={style.slider} id="" type="range" min="1990" max="2021"  onChange={handleSlide}></input> 
+                                </div>
+                            </div>
+
+                            <div className={style.slideWrapper}>
+                                <div className={style.labels}>
+                                    <label className={style.label} htmlFor="">Max Year</label>
+                                    <label htmlFor="">2021</label>
+                                </div>
+                                <div className={style.slideContainer}>
+                                    <input className={style.slider} id="" type="range" min="1990" max="2021" defaultValue="2021"onChange={handleSlide}></input> 
+                                </div>
+                            </div>
+
+                        </div>
+
+
                     </div>
+                    </form>
                 </div>}
-            </form>
+            
         </div>
     );
 }
