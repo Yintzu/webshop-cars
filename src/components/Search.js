@@ -85,7 +85,7 @@ const Search = () => {
                                                     <label htmlFor={listObject.name}>{listObject.value}</label>
                                                 </div>
                                                 <div className={style.slideContainer}>
-                                                    <input className={style.slider} id={listObject.name} type="range" min="0" max="10" value={listObject.value} onChange={handleSlide}></input> 
+                                                    <input className={style.slider} id={listObject.name} type="range" min="0" max="1000000" step="50000" value={listObject.value} onChange={handleSlide}></input> 
                                                 </div>
                                             </div>
                                         )

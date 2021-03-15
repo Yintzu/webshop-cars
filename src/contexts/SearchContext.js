@@ -122,9 +122,9 @@ const SearchContextProvider = (props) => {
 
     /*  Filter sliders */
     const [minPrice, setMinPrice] = useState("0")
-    const [maxPrice, setMaxPrice] = useState("10")
+    const [maxPrice, setMaxPrice] = useState("1000000")
     const [minMiles, setMinMiles] = useState("0")
-    const [maxMiles, setMaxMiles] = useState("10")
+    const [maxMiles, setMaxMiles] = useState("1000000")
 
     const sliders = [
         [
@@ -160,7 +160,7 @@ const saveSliders = (e) => {
       filterLists,
       saveFilters,
       sliders,
-      saveSliders
+      saveSliders,
       searched,
       setSearched,
     }
