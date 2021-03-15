@@ -13,6 +13,24 @@ const About = () => {
   const title2 = 'How do we deliver?';
   const title3 = 'Environmental Impact';
 
+  const scrollHandler1 = (e) =>{
+    e.preventDefault();
+    let sectionEl = document.querySelector(".section1")
+    sectionEl.scrollIntoView();
+  }
+
+  const scrollHandler2 = (e) =>{
+    e.preventDefault();
+    let sectionEl = document.querySelector(".section2")
+    sectionEl.scrollIntoView();
+  }
+
+  const scrollHandler3 = (e) =>{
+    e.preventDefault();
+    let sectionEl = document.querySelector(".section3")
+    sectionEl.scrollIntoView();
+  }
+
     return ( 
    
       <div className="container">
@@ -21,11 +39,11 @@ const About = () => {
           <div className="row">
             <div className="links">
               <div>
-                <a href="#section1">{ link1 }</a>
+                <a href="#section1" onClick={scrollHandler1}>{ link1 }</a>
 
-                <a href="#section2">{ link2 }</a>
+                <a href="#section2" onClick={scrollHandler2}>{ link2 }</a>
 
-                <a href="#section3">{ link3 }</a>
+                <a href="#section3" onClick={scrollHandler3}>{ link3 }</a>
 
               </div>
             </div>
@@ -49,6 +67,8 @@ const About = () => {
 
           <div className="text">
             <p>Nulla facilisi. Aenean rutrum tortor nec sem commodo faucibus. Vestibulum nunc erat, vestibulum vitae eros et, mollis placerat purus. Quisque consectetur pellentesque metus, non dictum elit placerat vel. Aenean iaculis tincidunt orci, in scelerisque velit porta vitae. Vivamus et malesuada mauris. Proin ligula magna, lacinia quis euismod in, vehicula nec turpis. Aenean tempus fermentum felis nec interdum. Praesent eu accumsan ex, sed pulvinar urna. Mauris sit amet lectus a nulla egestas feugiat eu nec justo. </p>
+            <p>Nulla facilisi. Aenean rutrum tortor nec sem commodo faucibus. Vestibulum nunc erat, vestibulum vitae eros et, mollis placerat purus. Quisque consectetur pellentesque metus, non dictum elit placerat vel. Aenean iaculis tincidunt orci, in scelerisque velit porta vitae. Vivamus et malesuada mauris. Proin ligula magna, lacinia quis euismod in, vehicula nec turpis. Aenean tempus fermentum felis nec interdum. Praesent eu accumsan ex, sed pulvinar urna. Mauris sit amet lectus a nulla egestas feugiat eu nec justo. </p>
+            <p>Nulla facilisi. Aenean rutrum tortor nec sem commodo faucibus. Vestibulum nunc erat, vestibulum vitae eros et, mollis placerat purus. Quisque consectetur pellentesque metus, non dictum elit placerat vel. Aenean iaculis tincidunt orci, in scelerisque velit porta vitae. Vivamus et malesuada mauris. Proin ligula magna, lacinia quis euismod in, vehicula nec turpis. Aenean tempus fermentum felis nec interdum. Praesent eu accumsan ex, sed pulvinar urna. Mauris sit amet lectus a nulla egestas feugiat eu nec justo. </p>
           </div>
 
           <div className="section2">
@@ -56,6 +76,8 @@ const About = () => {
           </div>
 
           <div className="text">
+            <p>Proin nec urna sed tellus fringilla mattis. Aenean scelerisque tortor ut felis imperdiet elementum. Nunc a euismod dolor. Aliquam gravida erat nec feugiat vulputate. Donec in nunc sollicitudin, tempor nibh eu, ultricies magna. Mauris massa justo, hendrerit a accumsan a, convallis eleifend felis. Praesent elit ipsum, lacinia et justo nec, tincidunt maximus risus. Duis ligula nibh, eleifend ornare iaculis nec, pretium et nunc. In facilisis, nulla sed ullamcorper tempor, orci augue interdum sapien, vel fringilla sem turpis vitae lacus. Sed eget iaculis mi, vitae suscipit lorem. </p>
+            <p>Proin nec urna sed tellus fringilla mattis. Aenean scelerisque tortor ut felis imperdiet elementum. Nunc a euismod dolor. Aliquam gravida erat nec feugiat vulputate. Donec in nunc sollicitudin, tempor nibh eu, ultricies magna. Mauris massa justo, hendrerit a accumsan a, convallis eleifend felis. Praesent elit ipsum, lacinia et justo nec, tincidunt maximus risus. Duis ligula nibh, eleifend ornare iaculis nec, pretium et nunc. In facilisis, nulla sed ullamcorper tempor, orci augue interdum sapien, vel fringilla sem turpis vitae lacus. Sed eget iaculis mi, vitae suscipit lorem. </p>
             <p>Proin nec urna sed tellus fringilla mattis. Aenean scelerisque tortor ut felis imperdiet elementum. Nunc a euismod dolor. Aliquam gravida erat nec feugiat vulputate. Donec in nunc sollicitudin, tempor nibh eu, ultricies magna. Mauris massa justo, hendrerit a accumsan a, convallis eleifend felis. Praesent elit ipsum, lacinia et justo nec, tincidunt maximus risus. Duis ligula nibh, eleifend ornare iaculis nec, pretium et nunc. In facilisis, nulla sed ullamcorper tempor, orci augue interdum sapien, vel fringilla sem turpis vitae lacus. Sed eget iaculis mi, vitae suscipit lorem. </p>
           </div>
 
@@ -66,6 +88,10 @@ const About = () => {
           <div className="text">
             <p>Nullam pulvinar tellus rhoncus sapien dignissim, quis mattis dui vestibulum. Pellentesque auctor massa efficitur est tincidunt aliquam. In tincidunt leo non enim faucibus lacinia. Maecenas suscipit malesuada consectetur. Pellentesque posuere, sem in volutpat vulputate, metus purus venenatis sem, ac imperdiet turpis nibh in diam. Phasellus eget consequat nunc, quis ornare sem. Aenean quis velit sed sapien tempus auctor. Nunc ac libero risus. Vivamus condimentum lectus in est semper, id suscipit nunc mollis. </p>
 
+            <p>Sed non suscipit tellus, non viverra dolor. Vivamus varius mi convallis, ornare ex vel, egestas ligula. Pellentesque ac risus at arcu feugiat luctus a a ligula. Nunc commodo pulvinar ante id pulvinar. Nulla venenatis aliquam neque. Vestibulum eu erat varius, dignissim magna porta, iaculis augue. Sed aliquet sit amet sem id aliquet. Donec sed suscipit velit. Pellentesque vel varius dui, quis suscipit velit. Mauris scelerisque, velit et feugiat rhoncus, urna sapien convallis ante, sit amet imperdiet tellus metus ac enim. Nunc sed facilisis mi. 
+          </p>
+            <p>Sed non suscipit tellus, non viverra dolor. Vivamus varius mi convallis, ornare ex vel, egestas ligula. Pellentesque ac risus at arcu feugiat luctus a a ligula. Nunc commodo pulvinar ante id pulvinar. Nulla venenatis aliquam neque. Vestibulum eu erat varius, dignissim magna porta, iaculis augue. Sed aliquet sit amet sem id aliquet. Donec sed suscipit velit. Pellentesque vel varius dui, quis suscipit velit. Mauris scelerisque, velit et feugiat rhoncus, urna sapien convallis ante, sit amet imperdiet tellus metus ac enim. Nunc sed facilisis mi. 
+          </p>
             <p>Sed non suscipit tellus, non viverra dolor. Vivamus varius mi convallis, ornare ex vel, egestas ligula. Pellentesque ac risus at arcu feugiat luctus a a ligula. Nunc commodo pulvinar ante id pulvinar. Nulla venenatis aliquam neque. Vestibulum eu erat varius, dignissim magna porta, iaculis augue. Sed aliquet sit amet sem id aliquet. Donec sed suscipit velit. Pellentesque vel varius dui, quis suscipit velit. Mauris scelerisque, velit et feugiat rhoncus, urna sapien convallis ante, sit amet imperdiet tellus metus ac enim. Nunc sed facilisis mi. 
           </p>
             
