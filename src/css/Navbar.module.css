@@ -132,7 +132,8 @@
 }
 
 .img {
-  width: 100%;
+  height: 100%;
+  /* width: 100%; */
 }
 
 .cartNumber {
@@ -177,7 +178,7 @@
 .leftWrapper {
   position: relative;
   cursor: pointer;
-  left: 50%;
+  left: 51%;
   transform: translateX(-50%);
   width: 170px;
   display: flex;
@@ -207,17 +208,20 @@
 .iconsWrapper {
   display: flex;
   align-items: center;
+  width: 106px;
   /* width: 60px; */
-  width: 30px;
-  justify-content: space-between;
+  height: 30px;
+  justify-content: flex-end;
   margin-left: auto;
+  margin-right: -4px;
 }
 
 .cartIconWrapper {
   position: relative;
   /* Change back to 47% when member page icon is added again */
-  /* width: 47%; */
-  width: 100%;
+  width: 47%;
+  /* width: 100%; */
+  height: 100%;
   cursor: pointer;
 }
 
@@ -232,11 +236,12 @@
 
 .rrrrlogoImg {
   position: relative;
-  display: inline-block;
+  display: none;
   height: 100%;
   width: 37%;
   order: 2;
-  margin-left: .3rem;
+  margin: 0 auto;
+  /* margin-left: .3rem; */
 }
 
 .rrrrlogoText {
@@ -248,11 +253,24 @@
 
 .acctContact {
   position: relative;
-  width: 39%;
+  height: 100%;
+  /* width: 39%; */
 }
 
 .acctContactImg {
-  width: 100%;
+  /* width: 100%; */
+  height: 100%;
+}
+
+.loginSpan{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2C7CAE;
+}
+
+.loginSpan:hover{
+  color: #DA6547;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 400px) {
@@ -295,6 +313,10 @@
     font-size: 1.1rem;
   }
 
+  .rrrrlogoImg{
+    display: inline-block;
+  }
+
   .leftWrapper {
     position: absolute;
     width: 38%;
@@ -310,8 +332,9 @@
 
   .iconsWrapper {
     /* Bring back to 70 with member icon */
-    /* width: 70px; */
-    width: 37px;
+    min-width: 70px;
+    /* width: 37px; */
+    height: 28px;
   }
 }
 
@@ -328,11 +351,19 @@
   .leftWrapper {
     width: 270px;
   }
+
+  .iconsWrapper{
+    margin-right: 5px;
+  }
 }
 
 @media screen and (min-width: 900px) {
   .navbar {
     padding: 1.1rem .2rem;
+  }
+
+  .iconsWrapper{
+    margin-right: 8px;
   }
 }
 
