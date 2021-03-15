@@ -108,12 +108,11 @@
     appearance: none;
     width: .75rem;
     height: .75rem;
-    border-radius: 3px; 
-    background: #2C7CAE;
+    border-radius: 3px;
+    background: #fff;
     cursor: pointer;
-    border: #f4f4f4 2px solid;
-    box-shadow: -200px 0 0 195px #2c7cae7a;
-    
+    border: #2C7CAE 2px solid;
+    box-shadow: -200px 0 0 195px #2c7cae;
   }
   
   .slider::-moz-range-thumb {
@@ -124,7 +123,6 @@
     cursor: pointer;
     border: #2C7CAE 2px solid;
     box-shadow: -200px 0 0 195px #2c7cae;
-    
   }
 .labels {
     display: flex;
