@@ -60,6 +60,10 @@
     top: 5px;
 }
 
+.addButton, .removeButton, .btnCustom {
+    font-weight: 500;
+  }
+
 .btnCustom {
     background-color: #878f96;
     pointer-events: none;

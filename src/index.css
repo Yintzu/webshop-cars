@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -8,11 +8,14 @@
 
 html {
   overflow-y: scroll;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  padding-top: 95px;
+  padding-top: 93px;
   font-family: 'Quicksand', sans-serif;;
+  font-weight: 500;
 }
 
 h1 {
@@ -30,7 +33,7 @@ p {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 .5rem;
-  min-height: 60vh;
+  min-height: calc(100vh - 250px - 93px);
 }
 
 /* .carousel {
@@ -111,15 +114,19 @@ select:focus + .focus {
   border-radius: inherit;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 550px) {
   body {
     padding-top: 100px;
+  }
+
+  .site-container {
+    min-height: calc(100vh - 250px - 100px);
   }
 }
 
-@media screen and (min-width: 650px) {
+/* @media screen and (min-width: 650px) {
   body {
     padding-top: 100px;
   }
-}
+} */
 
