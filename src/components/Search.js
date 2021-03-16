@@ -44,14 +44,26 @@ const Search = () => {
    
     const handleSlide = (e) => {
         let number = Number(e.target.value);
-        if(e.target.id === "min price" && number <= maxPrice){
-            setMinPrice(number)
-            if (number >= maxPrice && maxPrice !== 1000000) {
-                setMaxPrice(number + 50000);
-            }
+        let array;
+        if (e.target.id.includes('price')) {
+            array = [maxPrice, minPrice, setMaxPrice, setMinPrice];
+        } else {
+            array = [maxMiles, minMiles, setMaxMiles, setMinMiles];
         }
-        if(e.target.id === "max price" && number >= minPrice){
+
+        if(e.target.id === "min price"){
+            if (number <= array[0] && number !== 1000000) {
+                array[3](number)
+                if (number >= array[0] && array[0] !== 1000000) {
+                    array[2](number + 50000);
+                }
+            }     
+        }
+        if(e.target.id === "max price" && number >= minPrice && number !== 0){
             setMaxPrice(number)
+            if (number <= minPrice && number !== 0) {
+                setMinPrice(number - 50000)
+            }
         }
         if(e.target.id === "min miles"){
             setMinMiles(number)
