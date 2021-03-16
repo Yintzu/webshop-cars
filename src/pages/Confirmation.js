@@ -17,7 +17,7 @@ const Confirmation = () => {
 
   return (
     <div className="container">
-    <ProfileCar /><ProfileInfo /> 
+    <ProfileCar />
       <h1 className={styles.mainHeading}>Thank you for your order</h1>
       <div className="row">
         <div className={`
