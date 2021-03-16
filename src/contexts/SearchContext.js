@@ -70,13 +70,16 @@ const SearchContextProvider = (props) => {
 
 
     /* Filter search arrays */
+
+    const [make, setMake] = useState('all');
+    const [model, setModel] = useState('all');
+  
     const [makeArray, setMakeArray] = useState([]);
     const [modelArray, setModelArray] = useState([]);
-    const [yearArray, setYearArray] = useState([]);
+
     const filterLists = [
-        {listName: "make", list: makeArray}, 
-        {listName: "model", list: modelArray}, 
-        {listName: "year", list: yearArray}
+        {listName: "make", list: makeArray, value: make}, 
+        {listName: "model", list: modelArray, value: model}
     ];
 
     const createFilterArrays = (list) => {
@@ -85,21 +88,14 @@ const SearchContextProvider = (props) => {
             if (!tempArray.includes(car[list]))
             tempArray.push(car[list])
         })
-        if(list === 'year') {
-            return tempArray.sort().reverse()
-        }
         return tempArray.sort()
     }
 
     useEffect(() => {
         setMakeArray(createFilterArrays("make"))
         setModelArray(createFilterArrays("model"))
-        setYearArray(createFilterArrays("year"))
-    },[cars])
 
-    const [make, setMake] = useState(null);
-    const [model, setModel] = useState(null);
-    const [year, setYear] = useState(null);
+    },[cars])
 
     const saveFilters = (value) => {
         if(value !== 'all'){
@@ -107,26 +103,23 @@ const SearchContextProvider = (props) => {
                 setMake(value)
             }if(modelArray.includes(value)){
                 setModel(value)
-            }if(yearArray.includes(Number(value))){
-                setYear(Number(value))
             }
         } else {
-            setMake(null)
-            setModel(null)
-            setYear(null)
+            setMake('all')
+            setModel('all')
         }
     }
     useEffect(() => {
         saveFilters();
-    },[make, model, year])
+    },[make, model])
 
     /*  Filter sliders */
-    const [minPrice, setMinPrice] = useState("0")
-    const [maxPrice, setMaxPrice] = useState("1000000")
+    const [minPrice, setMinPrice] = useState(0)
+    const [maxPrice, setMaxPrice] = useState(1000000)
     const [minMiles, setMinMiles] = useState("0")
     const [maxMiles, setMaxMiles] = useState("1000000")
 
-    const sliders = [
+    const [sliders, setSliders] = useState([
         [
             {name: "min price", value: minPrice},
             {name: "max price", value: maxPrice},
@@ -134,22 +127,61 @@ const SearchContextProvider = (props) => {
             {name: "min miles", value: minMiles},
             {name: "max miles", value: maxMiles}
         ]
-    ]
-   
+    ])
+
+    useEffect(() => {
+        setSliders([
+            [
+                {name: "min price", value: minPrice},
+                {name: "max price", value: maxPrice},
+            ],[
+                {name: "min miles", value: minMiles},
+                {name: "max miles", value: maxMiles}
+            ]
+        ])
+
+    }, [minPrice, maxPrice, minMiles, maxMiles])
+    
+    
 const saveSliders = (e) => {
-        if(e.target.id === "min price") {
-            setMinPrice(e.target.value)
+        let value = Number(e.target.value);
+
+        if(e.target.id === "min price" && value !== 1000000) {
+            setMinPrice(value)
+            if(value >= maxPrice){
+                setMaxPrice(value + 50000)
+            }
         }
-        if(e.target.id === "max price"){
+        if(e.target.id === "max price" && value !== 0){
             setMaxPrice(e.target.value)
+            if(value <= minPrice){
+                setMinPrice(value - 50000) 
+            }
         }
-        if(e.target.id === "min miles"){
+        if(e.target.id === "min miles" && value !== 1000000){
             setMinMiles(e.target.value)
+            if(value >= maxMiles){
+                setMaxMiles(value + 50000)
+            }
         }
-        if(e.target.id === "max miles"){
+        if(e.target.id === "max miles" && value !== 0){
             setMaxMiles(e.target.value)
+            if(value <= minMiles){
+                setMinMiles(value - 50000)
+            }
         }
     }
+        
+    const removeFilters = () => {
+        setMinPrice(0)
+        setMaxPrice(1000000)
+        setMinMiles(0)
+        setMaxMiles(1000000)
+        setMake('all')
+        setModel('all')
+    }
+    const [filtered, setFiltered] = useState(false)
+
   
     const values={
       searchResult,
@@ -163,6 +195,9 @@ const saveSliders = (e) => {
       saveSliders,
       searched,
       setSearched,
+      removeFilters,
+      filtered,
+      setFiltered
     }
 
     return (
