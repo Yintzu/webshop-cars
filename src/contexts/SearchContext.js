@@ -162,10 +162,10 @@ const SearchContextProvider = (props) => {
     ]
    
     const saveSliders = (e) => {
-        if(e.target.id === "min price" && e.target.value <= maxPrice) {
+        if(e.target.id === "min price"){
             setMinPrice(e.target.value)
         }
-        if(e.target.id === "max price" && e.target.value >= minPrice){
+        if(e.target.id === "max price"){
             setMaxPrice(e.target.value)
         }
         if(e.target.id === "min miles"){
