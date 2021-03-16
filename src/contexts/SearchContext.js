@@ -91,17 +91,22 @@ const SearchContextProvider = (props) => {
     // Resets the rendered list to all cars
     const resetRenderList = () => {
         setRenderList(cars);
+        setMake('all');
+        setModel('all');
     }
 
+    const [make, setMake] = useState('all');
+    const [model, setModel] = useState('all');
+    // const [year, setYear] = useState(null);
 
     /* Filter search arrays */
     const [makeArray, setMakeArray] = useState([]);
     const [modelArray, setModelArray] = useState([]);
-    const [yearArray, setYearArray] = useState([]);
+    // const [yearArray, setYearArray] = useState([]);
     const filterLists = [
-        {listName: "make", list: makeArray}, 
-        {listName: "model", list: modelArray}, 
-        {listName: "year", list: yearArray}
+        {listName: "make", list: makeArray, value: make}, 
+        {listName: "model", list: modelArray, value: model}, 
+        // {listName: "year", list: yearArray}
     ];
 
     const createFilterArrays = (list) => {
@@ -110,21 +115,19 @@ const SearchContextProvider = (props) => {
             if (!tempArray.includes(car[list]))
             tempArray.push(car[list])
         })
-        if(list === 'year') {
-            return tempArray.sort().reverse()
-        }
+        // if(list === 'year') {
+        //     return tempArray.sort().reverse()
+        // }
         return tempArray.sort()
     }
 
     useEffect(() => {
         setMakeArray(createFilterArrays("make"))
         setModelArray(createFilterArrays("model"))
-        setYearArray(createFilterArrays("year"))
+        // setYearArray(createFilterArrays("year"))
     },[cars])
 
-    const [make, setMake] = useState(null);
-    const [model, setModel] = useState(null);
-    const [year, setYear] = useState(null);
+    
 
     const saveFilters = (value) => {
         if(value !== 'all'){
@@ -132,18 +135,19 @@ const SearchContextProvider = (props) => {
                 setMake(value)
             }if(modelArray.includes(value)){
                 setModel(value)
-            }if(yearArray.includes(Number(value))){
-                setYear(Number(value))
             }
+            // if(yearArray.includes(Number(value))){
+            //     setYear(Number(value))
+            // }
         } else {
             setMake(null)
             setModel(null)
-            setYear(null)
+            // setYear(null)
         }
     }
     useEffect(() => {
         saveFilters();
-    },[make, model, year])
+    },[make, model])
 
     /*  Filter sliders */
     const [minPrice, setMinPrice] = useState("0")

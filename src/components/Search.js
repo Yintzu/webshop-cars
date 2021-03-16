@@ -109,7 +109,7 @@ const Search = () => {
                                 <div className={`col-md ${style.selectWrapper}`} key={listObject.listName}>
                                     <label htmlFor={listObject.listName}>Select {listObject.listName}</label>
                                     <div className={`customSelect ${style.customSelect}`}>
-                                        <select name={listObject.listName} id={listObject.listName} defaultValue="all" onChange={handleSelect}>
+                                        <select name={listObject.listName} id={listObject.listName} onChange={handleSelect} value={listObject.value}>
                                             <option value="all">All</option>
                                             {listObject.list.length && listObject.list.map(listItem => {
                                                 return (
