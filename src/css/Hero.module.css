@@ -25,6 +25,7 @@
 .p{
     color: white !important;
     font-size: 0.9rem;
+    margin-bottom: 1.5rem;
 }
 
 .gradient{
@@ -60,7 +61,7 @@
 
 @media only screen and (min-width: 400px){
     .hero{
-        height: 480px;
+        height: 490px;
     }
 }
 
@@ -71,18 +72,18 @@
     }
 
     .hero{
-        height: 520px;
+        height: 530px;
     }
 }
 @media only screen and (min-width: 600px){
     .hero{
-        height: 560px;
+        height: 580px;
     }
 }
 
 @media only screen and (min-width: 720px) {
     .hero{
-        height: 600px;
+        height: 610px;
     }
     .saleSign {
         width: 120px;
@@ -99,7 +100,10 @@
     }
 
     .h1{
-        font-size: 1.8rem;
+        /* font-size: 2rem; */
+    }
+    .p{
+        font-size: 1rem;
     }
 }
 
