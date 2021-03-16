@@ -4,8 +4,23 @@ import { SearchContext } from '../contexts/SearchContext';
 
 const Search = () => {
     const [inputValue, setInputValue] = useState("");
-    const { searchCars, resetRenderList, filterLists, saveFilters, searched, setSearched, saveSliders, sliders } = useContext(SearchContext);
+    const { searchCars, resetRenderList, filterLists, saveFilters, searched, setSearched, saveSliders } = useContext(SearchContext);
     const [isClicked, setIsClicked] = useState(false);
+
+    const [minPrice, setMinPrice] = useState(0)
+    const [maxPrice, setMaxPrice] = useState(1000000)
+    const [minMiles, setMinMiles] = useState("0")
+    const [maxMiles, setMaxMiles] = useState("1000000")
+
+    const [sliders, setSliders] = useState([
+        [
+            {name: "min price", value: minPrice},
+            {name: "max price", value: maxPrice},
+        ],[
+            {name: "min miles", value: minMiles},
+            {name: "max miles", value: maxMiles}
+        ]
+    ])
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -28,8 +43,35 @@ const Search = () => {
     }  
    
     const handleSlide = (e) => {
-        saveSliders(e)
+        let number = Number(e.target.value);
+        if(e.target.id === "min price" && number <= maxPrice){
+            setMinPrice(number)
+            if (number >= maxPrice && maxPrice !== 1000000) {
+                setMaxPrice(number + 50000);
+            }
+        }
+        if(e.target.id === "max price" && number >= minPrice){
+            setMaxPrice(number)
+        }
+        if(e.target.id === "min miles"){
+            setMinMiles(number)
+        }
+        if(e.target.id === "max miles"){
+            setMaxMiles(number)
+        }
     }
+
+    useEffect(() => {
+        setSliders(([
+            [
+                {name: "min price", value: minPrice},
+                {name: "max price", value: maxPrice},
+            ],[
+                {name: "min miles", value: minMiles},
+                {name: "max miles", value: maxMiles}
+            ]
+        ]))
+    }, [maxPrice, minPrice, maxMiles, minMiles])
 
     return (
         <div className={style.search}>
@@ -74,7 +116,7 @@ const Search = () => {
 
                     {/* Range sliders */}
                     <div className="row justify-content-around mt-3">
-                        {sliders.map((list, index) => {
+                        {sliders && sliders.map((list, index) => {
                             return (
                                 <div key={index} className={`col-md-5 ${style.sliderColumn}`}>
                                     {list.map(listObject => {
