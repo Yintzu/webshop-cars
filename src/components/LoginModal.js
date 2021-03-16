@@ -47,7 +47,7 @@ const LoginModal = (props) => {
                     </div>
                     <button className={`btn ${style.button}`}>Log in</button>
                 </form>
-                <NavLink exact to="/register" className={`${style.p}`}>Click here to register a new account</NavLink>
+                <NavLink exact to="/register" className={`${style.a}`} onClick={()=>props.setShowLoginModal(false)}>Click here to register a new account</NavLink>
             </div>
         </div>
     );
