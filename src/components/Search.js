@@ -119,12 +119,9 @@ const Search = () => {
                                     <input className={style.slider} id="maxYear" type="range" min="1990" max="2021" defaultValue="2021"onChange={handleSlide}></input> 
                                 </div>
                             </div>
-
                         </div>
-
-
                     </div>
-                        <div onClick={handleRemoveFilter} className={`btn btn-sm ${style.clearSearch} ${!filtered && style.disabledBtn}`}>Remove filters</div>
+                        <div className={style.removeFilterBtn}><div onClick={handleRemoveFilter} className={`btn btn-sm ${style.clearSearch} ${!filtered && style.disabledBtn} ${style.btn}`}>Remove filters</div></div>
                     </form>
                 </div>}
             

@@ -73,16 +73,13 @@ const SearchContextProvider = (props) => {
 
     const [make, setMake] = useState('all');
     const [model, setModel] = useState('all');
-    /* const [year, setYear] = useState(null); */
-
-
+  
     const [makeArray, setMakeArray] = useState([]);
     const [modelArray, setModelArray] = useState([]);
-    /* const [yearArray, setYearArray] = useState([]); */
+
     const filterLists = [
         {listName: "make", list: makeArray, value: make}, 
-        {listName: "model", list: modelArray, value: model}, 
-       /*  {listName: "year", list: yearArray} */
+        {listName: "model", list: modelArray, value: model}
     ];
 
     const createFilterArrays = (list) => {
@@ -91,16 +88,13 @@ const SearchContextProvider = (props) => {
             if (!tempArray.includes(car[list]))
             tempArray.push(car[list])
         })
-        /* if(list === 'year') {
-            return tempArray.sort().reverse()
-        } */
         return tempArray.sort()
     }
 
     useEffect(() => {
         setMakeArray(createFilterArrays("make"))
         setModelArray(createFilterArrays("model"))
-        /* setYearArray(createFilterArrays("year")) */
+
     },[cars])
 
     const saveFilters = (value) => {
@@ -110,18 +104,14 @@ const SearchContextProvider = (props) => {
             }if(modelArray.includes(value)){
                 setModel(value)
             }
-            /* if(yearArray.includes(Number(value))){
-                setYear(Number(value))
-            } */
         } else {
             setMake('all')
             setModel('all')
-            /* setYear(null) */
         }
     }
     useEffect(() => {
         saveFilters();
-    },[make, model/* , year */])
+    },[make, model])
 
     /*  Filter sliders */
     const [minPrice, setMinPrice] = useState(0)
@@ -139,16 +129,6 @@ const SearchContextProvider = (props) => {
         ]
     ])
 
-    /* const sliders = [
-        [
-            {name: "min price", value: minPrice},
-            {name: "max price", value: maxPrice},
-        ],[
-            {name: "min miles", value: minMiles},
-            {name: "max miles", value: maxMiles}
-        ]
-    ]
-     */
     useEffect(() => {
         setSliders([
             [
@@ -161,17 +141,7 @@ const SearchContextProvider = (props) => {
         ])
 
     }, [minPrice, maxPrice, minMiles, maxMiles])
-        
-    const removeFilters = () => {
-        setMinPrice(0)
-        setMaxPrice(1000000)
-        setMinMiles(0)
-        setMaxMiles(1000000)
-        setMake('all')
-        setModel('all')
-    }
-    const [filtered, setFiltered] = useState(false)
-
+    
     
 const saveSliders = (e) => {
         let value = Number(e.target.value);
@@ -201,6 +171,17 @@ const saveSliders = (e) => {
             }
         }
     }
+        
+    const removeFilters = () => {
+        setMinPrice(0)
+        setMaxPrice(1000000)
+        setMinMiles(0)
+        setMaxMiles(1000000)
+        setMake('all')
+        setModel('all')
+    }
+    const [filtered, setFiltered] = useState(false)
+
   
     const values={
       searchResult,
