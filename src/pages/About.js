@@ -13,42 +13,42 @@ const About = () => {
   const title2 = 'How do we deliver?';
   const title3 = 'Environmental Impact';
 
-  const scrollHandler = (e, section) =>{
+  const scrollHandler = (e, section) => {
     e.preventDefault();
     let sectionEl = document.querySelector(section)
     sectionEl.scrollIntoView();
   }
 
-    return (
-      <div className="container-page">
-        <div clasName="row">
-          <div className="sidebar col-4">
-              <div className="links">
-               <div>
-                <a className={`${style.a}`} href="#section1" id="bar-item" onClick={(e)=>scrollHandler(e, ".section1")}>{ link1 }</a>
+  return (
+    <div className="container-page">
+      <div className="row">
+        <div className={`${style.sidebar} col-12 col-sm-3`}>
+          <div className="links">
+            <div>
+              <a className={`${style.a}`} href="#section1" id="bar-item" onClick={(e) => scrollHandler(e, ".section1")}>{link1}</a>
 
-                <a className={`${style.a}`} href="#section2" id="bar-item" onClick={(e)=>scrollHandler(e, ".section2")}>{ link2 }</a>
+              <a className={`${style.a}`} href="#section2" id="bar-item" onClick={(e) => scrollHandler(e, ".section2")}>{link2}</a>
 
-                <a className={`${style.a}`} href="#section3" id="bar-item" onClick={(e)=>scrollHandler(e, ".section3")}>{ link3 }</a>
-              </div>
+              <a className={`${style.a}`} href="#section3" id="bar-item" onClick={(e) => scrollHandler(e, ".section3")}>{link3}</a>
             </div>
           </div>
-          
-          
-      <div className="container-content col-8">
-        <div>
-          <h1 className={`section ${style.h1}`}>{ title }</h1>
         </div>
 
-        <div className="text">
-          <p>Quality car retailer of Sweden</p>
-        
 
-          <p>With an extensive range of approved used cars featuring all makes and models, Richard Ryan's Reliable Rides can provide the right car at the right price. With so much choice why go anywhere else? Get the best prices and widest choice on quality used cars in Sweden, contact us today!</p>
-        </div>
+        <div className="container-content col-12 col-sm-9">
+          <div>
+            <h1 className={`section ${style.h1}`}>{title}</h1>
+          </div>
+
+          <div className="text">
+            <p>Quality car retailer of Sweden</p>
+
+
+            <p>With an extensive range of approved used cars featuring all makes and models, Richard Ryan's Reliable Rides can provide the right car at the right price. With so much choice why go anywhere else? Get the best prices and widest choice on quality used cars in Sweden, contact us today!</p>
+          </div>
 
           <div className="section1">
-            <h1 className={`section ${style.h1}`}>{ title1 }</h1>
+            <h1 className={`section ${style.h1}`}>{title1}</h1>
           </div>
 
           <div className="text">
@@ -56,7 +56,7 @@ const About = () => {
           </div>
 
           <div className="section2">
-            <h1 className={`section ${style.h1}`}>{ title2 }</h1>
+            <h1 className={`section ${style.h1}`}>{title2}</h1>
           </div>
 
           <div className="text">
@@ -64,22 +64,22 @@ const About = () => {
           </div>
 
           <div className="section3">
-            <h1 className={`section ${style.h1}`}>{ title3 }</h1>
+            <h1 className={`section ${style.h1}`}>{title3}</h1>
           </div>
 
           <div className="text">
             <p>Nullam pulvinar tellus rhoncus sapien dignissim, quis mattis dui vestibulum. Pellentesque auctor massa efficitur est tincidunt aliquam. In tincidunt leo non enim faucibus lacinia. Maecenas suscipit malesuada consectetur. Pellentesque posuere, sem in volutpat vulputate, metus purus venenatis sem, ac imperdiet turpis nibh in diam. Phasellus eget consequat nunc, quis ornare sem. Aenean quis velit sed sapien tempus auctor. Nunc ac libero risus. Vivamus condimentum lectus in est semper, id suscipit nunc mollis. </p>
 
-            <p>Sed non suscipit tellus, non viverra dolor. Vivamus varius mi convallis, ornare ex vel, egestas ligula. Pellentesque ac risus at arcu feugiat luctus a a ligula. Nunc commodo pulvinar ante id pulvinar. Nulla venenatis aliquam neque. Vestibulum eu erat varius, dignissim magna porta, iaculis augue. Sed aliquet sit amet sem id aliquet. Donec sed suscipit velit. Pellentesque vel varius dui, quis suscipit velit. Mauris scelerisque, velit et feugiat rhoncus, urna sapien convallis ante, sit amet imperdiet tellus metus ac enim. Nunc sed facilisis mi. 
+            <p>Sed non suscipit tellus, non viverra dolor. Vivamus varius mi convallis, ornare ex vel, egestas ligula. Pellentesque ac risus at arcu feugiat luctus a a ligula. Nunc commodo pulvinar ante id pulvinar. Nulla venenatis aliquam neque. Vestibulum eu erat varius, dignissim magna porta, iaculis augue. Sed aliquet sit amet sem id aliquet. Donec sed suscipit velit. Pellentesque vel varius dui, quis suscipit velit. Mauris scelerisque, velit et feugiat rhoncus, urna sapien convallis ante, sit amet imperdiet tellus metus ac enim. Nunc sed facilisis mi.
           </p>
-            
+
             <p>Find your dream car today!</p>
 
+          </div>
         </div>
       </div>
-    </div>  
-  </div>   
-   );
-  }
+    </div>
+  );
+}
 
 export default About;

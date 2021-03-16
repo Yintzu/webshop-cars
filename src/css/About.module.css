@@ -29,7 +29,7 @@ html {
   padding-top: 40px;
 } */
 
-div .sidebar {
+/* div .sidebar {
   padding: 8px;
   font-size: 24px;
   display: block;
@@ -42,6 +42,11 @@ div .sidebar {
   margin-left: 25%;
   background-color: #f5f5dc;
   padding-top: 40px;
+} */
+
+.sidebar{
+  background-color: #f5f5dc;
+  margin-bottom: 1rem;
 }
 
 
