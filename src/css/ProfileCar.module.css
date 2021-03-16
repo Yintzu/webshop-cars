@@ -1,0 +1,12 @@
+.containerWrapper {
+    /* background-color: powderblue; */
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.profileWrapper {
+    max-width: 300px;
+    /* background-color: pink; */
+    margin: 0 auto;
+    text-align: center;
+}
