@@ -22,6 +22,9 @@ const Search = () => {
         setSearched(false);
         resetRenderList();
     }
+    const handleRemoveFilter = () => {
+        
+    }
 
     const handleSelect = (e) => {
         saveFilters(e.target.value)
@@ -118,7 +121,7 @@ const Search = () => {
 
 
                     </div>
-                        <button className="btn btn-sm">Remove filters</button>
+                        <div onClick={handleRemoveFilter} className={`btn btn-sm ${style.clearSearch} ${!searched && style.disabledBtn}`}>Remove filters</div>
                     </form>
                 </div>}
             
