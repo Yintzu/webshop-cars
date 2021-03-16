@@ -19,25 +19,23 @@ const About = () => {
     sectionEl.scrollIntoView();
   }
 
-    return ( 
-   
-      <div className="container">
-              
-        <div className="menu">
-          <div className="row">
-            <div className="links">
-              <div>
-                <a className={`${style.a}`} href="#section1" onClick={(e)=>scrollHandler(e, ".section1")}>{ link1 }</a>
+    return (
+      <div className="container-page">
+        <div clasName="row">
+          <div className="sidebar col-4">
+              <div className="links">
+               <div>
+                <a className={`${style.a}`} href="#section1" id="bar-item" onClick={(e)=>scrollHandler(e, ".section1")}>{ link1 }</a>
 
-                <a className={`${style.a}`} href="#section2" onClick={(e)=>scrollHandler(e, ".section2")}>{ link2 }</a>
+                <a className={`${style.a}`} href="#section2" id="bar-item" onClick={(e)=>scrollHandler(e, ".section2")}>{ link2 }</a>
 
-                <a className={`${style.a}`} href="#section3" onClick={(e)=>scrollHandler(e, ".section3")}>{ link3 }</a>
-
+                <a className={`${style.a}`} href="#section3" id="bar-item" onClick={(e)=>scrollHandler(e, ".section3")}>{ link3 }</a>
               </div>
             </div>
           </div>
-        </div>
-        
+          
+          
+      <div className="container-content col-8">
         <div>
           <h1 className={`section ${style.h1}`}>{ title }</h1>
         </div>
@@ -79,7 +77,8 @@ const About = () => {
 
         </div>
       </div>
-  
+    </div>  
+  </div>   
    );
   }
 
