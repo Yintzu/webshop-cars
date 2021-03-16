@@ -51,17 +51,15 @@ const Search = () => {
             array = [maxMiles, minMiles, setMaxMiles, setMinMiles];
         }
 
-        if(e.target.id === "min price"){
-            if (number <= array[0] && number !== 1000000) {
-                array[3](number)
-                if (number >= array[0] && array[0] !== 1000000) {
-                    array[2](number + 50000);
-                }
-            }     
+        if(e.target.id === "min price" && number <= maxPrice && number !== 1000000){
+            setMinPrice(number)
+            if (number >= maxPrice) {
+                setMaxPrice(number + 50000);
+            }
         }
         if(e.target.id === "max price" && number >= minPrice && number !== 0){
             setMaxPrice(number)
-            if (number <= minPrice && number !== 0) {
+            if (number <= minPrice) {
                 setMinPrice(number - 50000)
             }
         }
