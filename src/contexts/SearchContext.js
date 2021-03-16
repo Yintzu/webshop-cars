@@ -24,7 +24,7 @@ const SearchContextProvider = (props) => {
         let inputArray = inputValue.toLowerCase().split(' ');
 
         // Check each item in cars-array
-        // Check each word in the inputArray to see if one or more matches the matchString and push into new array
+        // Check each word in the inputArray to see if one or more matches the matchString created for each car
         let freeSearchResults = [0, []];
         cars.forEach(car => {
             let matchString = `${car.make} ${car.model} ${car.year}`.
@@ -36,15 +36,13 @@ const SearchContextProvider = (props) => {
                 }
             })
 
-            // Check how many matches and determine if car is added to array
             if (matches === 0) {
                 return;
-            }
-            if (matches === freeSearchResults[0]) {
+            } else if (matches === freeSearchResults[0]) {
                 // If this car matches the same amount of words as before, add this to current array
                 freeSearchResults[1].push(car);
             } else if (matches > freeSearchResults[0]) {
-                // If this car matches more than previous cars pushed to array, reset list and push this one instead
+                // If this car matches more words than previous cars, start new list and push this car first
                 freeSearchResults[0] = matches;
                 freeSearchResults[1] = [];
                 freeSearchResults[1].push(car);
