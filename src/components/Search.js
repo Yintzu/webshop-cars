@@ -1,11 +1,11 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import style from '../css/Search.module.css';
 import { SearchContext } from '../contexts/SearchContext';
 
 const Search = () => {
     const [inputValue, setInputValue] = useState("");
     const { searchCars, resetRenderList, filterLists, saveFilters, searched, setSearched, saveSliders, sliders } = useContext(SearchContext);
-    const [isClicked, setIsClicked] = useState(false);
+    const [isClicked, setIsClicked] = useState(true);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -74,9 +74,9 @@ const Search = () => {
 
                         {/* Range sliders */}
                         <div className="row justify-content-between mt-3">
-                        {sliders.map(list => {
+                        {sliders && sliders.map((list, index) => {
                             return (
-                                <div className={`col-md-4 ${style.sliderColumn}`}>
+                                <div className={`col-md-4 ${style.sliderColumn}`} key={index}>
                                     {list.map(listObject => {
                                         return (
                                             <div key={listObject.name} className={style.slideWrapper}>
@@ -96,21 +96,21 @@ const Search = () => {
                         <div className={`col-md-4 ${style.sliderColumn}`}>
                             <div className={style.slideWrapper}>
                                 <div className={style.labels}>
-                                    <label className={style.label} htmlFor="">Min Year</label>
-                                    <label htmlFor="">1990</label>
+                                    <label className={style.label} htmlFor="minYear">Min Year</label>
+                                    <label htmlFor="minYear">1990</label>
                                 </div>
                                 <div className={style.slideContainer}>
-                                    <input className={style.slider} id="" type="range" min="1990" max="2021"  onChange={handleSlide}></input> 
+                                    <input className={style.slider} id="minYear" type="range" min="1990" max="2021"  onChange={handleSlide}></input> 
                                 </div>
                             </div>
 
                             <div className={style.slideWrapper}>
                                 <div className={style.labels}>
-                                    <label className={style.label} htmlFor="">Max Year</label>
-                                    <label htmlFor="">2021</label>
+                                    <label className={style.label} htmlFor="maxYear">Max Year</label>
+                                    <label htmlFor="maxYear">2021</label>
                                 </div>
                                 <div className={style.slideContainer}>
-                                    <input className={style.slider} id="" type="range" min="1990" max="2021" defaultValue="2021"onChange={handleSlide}></input> 
+                                    <input className={style.slider} id="maxYear" type="range" min="1990" max="2021" defaultValue="2021"onChange={handleSlide}></input> 
                                 </div>
                             </div>
 
@@ -118,6 +118,7 @@ const Search = () => {
 
 
                     </div>
+                        <button className="btn btn-sm">Remove filters</button>
                     </form>
                 </div>}
             

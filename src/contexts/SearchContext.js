@@ -121,12 +121,22 @@ const SearchContextProvider = (props) => {
     },[make, model, year])
 
     /*  Filter sliders */
-    const [minPrice, setMinPrice] = useState("0")
-    const [maxPrice, setMaxPrice] = useState("1000000")
+    const [minPrice, setMinPrice] = useState(0)
+    const [maxPrice, setMaxPrice] = useState(1000000)
     const [minMiles, setMinMiles] = useState("0")
     const [maxMiles, setMaxMiles] = useState("1000000")
 
-    const sliders = [
+    const [sliders, setSliders] = useState([
+        [
+            {name: "min price", value: minPrice},
+            {name: "max price", value: maxPrice},
+        ],[
+            {name: "min miles", value: minMiles},
+            {name: "max miles", value: maxMiles}
+        ]
+    ])
+
+    /* const sliders = [
         [
             {name: "min price", value: minPrice},
             {name: "max price", value: maxPrice},
@@ -135,13 +145,36 @@ const SearchContextProvider = (props) => {
             {name: "max miles", value: maxMiles}
         ]
     ]
-   
+     */
+    useEffect(() => {
+        setSliders([
+            [
+                {name: "min price", value: minPrice},
+                {name: "max price", value: maxPrice},
+            ],[
+                {name: "min miles", value: minMiles},
+                {name: "max miles", value: maxMiles}
+            ]
+        ])
+
+    }, [minPrice, maxPrice, minMiles, maxMiles])
+        
+
+    
 const saveSliders = (e) => {
+        let value = Number(e.target.value);
+
         if(e.target.id === "min price") {
-            setMinPrice(e.target.value)
+            setMinPrice(value)
+            if(value >= maxPrice && maxPrice !== 1000000){
+                setMaxPrice(value + 50000)
+            }
         }
         if(e.target.id === "max price"){
             setMaxPrice(e.target.value)
+            if(value <= minPrice && minPrice !== 0){
+                setMinPrice(value - 50000) 
+            }
         }
         if(e.target.id === "min miles"){
             setMinMiles(e.target.value)
