@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Checkout from './pages/Checkout';
 import Confirmation from './pages/Confirmation';
+import Profile from './pages/Profile';
 import Details from './pages/Details';
 import Footer from './components/Footer';
 import TestPage from './pages/TestPage';
@@ -32,6 +33,7 @@ function App() {
                   {/* <Route exact path="/testpage" component={TestPage} /> */}
                   <Route exact path="/checkout" component={Checkout} />
                   <Route exact path="/confirmation" component={Confirmation} />
+                  <Route exact path="/profile" component={Profile} />
                   <Route exact path="/details/:id" component={Details} />
                   <Route exact path="/register" component={CreateAccount}/>
                 </div>
