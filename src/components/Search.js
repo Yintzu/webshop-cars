@@ -5,7 +5,7 @@ import { SearchContext } from '../contexts/SearchContext';
 const Search = () => {
     const [inputValue, setInputValue] = useState("");
     const { searchCars, resetRenderList, filterLists, saveFilters, searched, setSearched, saveSliders, sliders, removeFilters, setFiltered, filtered } = useContext(SearchContext);
-    const [isClicked, setIsClicked] = useState(true);
+    const [isClicked, setIsClicked] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
