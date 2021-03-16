@@ -15,7 +15,6 @@ const SearchContextProvider = (props) => {
     const [searched, setSearched] = useState(false);
     const { cars } = useContext(CarContext);
     
-
     useEffect(() => {
         setRenderList(cars);
     }, [cars]);
@@ -23,42 +22,38 @@ const SearchContextProvider = (props) => {
     const searchCars = (inputValue) => {
         // Split the input-string into an array
         let inputArray = inputValue.toLowerCase().split(' ');
-        // console.log(inputArray);
-        let filteredCars = []
 
         // Check each item in cars-array
-        // Check each word in the inputArray to see if one or more matches the matchString
-        let testArray = [0, []];
+        // Check each word in the inputArray to see if one or more matches the matchString and push into new array
+        let freeSearchResults = [0, []];
         cars.forEach(car => {
             let matchString = `${car.make} ${car.model} ${car.year}`.
             toLowerCase();
-            let counter = 0;
+            let matches = 0;
             inputArray.forEach(word => {
                 if (matchString.includes(word)) {
-                    counter++;
-                    if (!filteredCars.includes(car)) {
-                        filteredCars.push(car);
-                    }
+                    matches++;
                 }
             })
-            if (counter === 0) {
+
+            // Check how many matches and determine if car is added to array
+            if (matches === 0) {
                 return;
             }
-            if (counter === testArray[0]) {
-                testArray[1].push(car);
-            } else if (counter > testArray[0]) {
-                testArray[0] = counter;
-                testArray[1] = [];
-                testArray[1].push(car);
+            if (matches === freeSearchResults[0]) {
+                // If this car matches the same amount of words as before, add this to current array
+                freeSearchResults[1].push(car);
+            } else if (matches > freeSearchResults[0]) {
+                // If this car matches more than previous cars pushed to array, reset list and push this one instead
+                freeSearchResults[0] = matches;
+                freeSearchResults[1] = [];
+                freeSearchResults[1].push(car);
             }
         });
-        filteredCars = [...testArray[1]];
-        // console.log('testArray:', testArray);
-        // console.log(filteredCars);
 
-        if (filteredCars.length !== 0) {
-            setRenderList(filteredCars);
-        } else if (inputValue !== '' && filteredCars.length === 0) {
+        if (freeSearchResults[1].length !== 0) {
+            setRenderList(freeSearchResults[1]);
+        } else if (inputValue !== '' && freeSearchResults[1].length === 0) {
             setRenderList(null);
         }
     }
