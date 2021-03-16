@@ -5,8 +5,19 @@ export const UserContext = createContext();
 
 
 const UserContextProvider = (props) => {
-
   const { boughtCars, setBoughtCars } = useContext(CarContext)
+
+  const [loggedInUser, setLoggedInUser] = useState(null);
+  const [users, setUsers] = useState([
+    {
+      email: "test",
+      password: "123"
+    },
+    {
+      email: "admin",
+      password: "123"
+    }
+  ]);
 
   const [orderInfo, setOrderInfo] = useState([
     {
@@ -20,7 +31,7 @@ const UserContextProvider = (props) => {
       expiration: "13221",
       firstName: "Victor",
       lastName: "Werngren",
-      payment: "card",
+      payment: "Card",
       phone: "+46730713949",
       postalnr: "22354",
       orderNumber: "1234567",
@@ -39,16 +50,18 @@ const UserContextProvider = (props) => {
         vin: "1D4PT5GK0BW487259",
         year: 1973
       }]
-
     }
-
   ]);
 
   const values = {
     boughtCars,
     setBoughtCars,
     orderInfo,
-    setOrderInfo
+    setOrderInfo,
+    loggedInUser,
+    setLoggedInUser,
+    users,
+    setUsers
   }
   return (
     <UserContext.Provider value={values}>

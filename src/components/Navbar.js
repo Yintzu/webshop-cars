@@ -1,16 +1,21 @@
 import { useContext, useEffect, useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
+import { UserContext } from '../contexts/UserContext';
 import style from '../css/Navbar.module.css';
+import LoginModal from './LoginModal';
 import PopupCart from './PopupCart';
 
 const Navbar = () => {
     // Importing cart from ShoppingCartContext
     // Using its length in render of cart icon
     const { shoppingCartItems: cart, createTimeStamp, cartTotal, formatSum } = useContext(ShoppingCartContext);
+    const {loggedInUser} = useContext(UserContext);
+
     const [onCartUpdate, setOnCartUpdate] = useState(false);
     const [cartVisible, setCartVisible] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [showLoginModal, setShowLoginModal] = useState(false);
     const history = useHistory();
 
     // Handle onMouseLeave event
@@ -53,17 +58,25 @@ const Navbar = () => {
         }
     }
 
+    const loginClickHandler = () => {
+        if (!loggedInUser){
+            setShowLoginModal(true);
+        } else {
+            console.log("you are already logged in");
+        }
+    }
+
     const handleHamburgerClick = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     }
 
     useEffect(() => {
         if (mobileMenuOpen) {
-            let x=window.scrollX;
-            let y=window.scrollY;
-            window.onscroll=function(){window.scrollTo(x, y);};
+            let x = window.scrollX;
+            let y = window.scrollY;
+            window.onscroll = function () { window.scrollTo(x, y); };
         } else {
-            window.onscroll=function(){};
+            window.onscroll = function () { };
         }
     }, [mobileMenuOpen])
 
@@ -87,6 +100,7 @@ const Navbar = () => {
 
     return (
         <div className={style.navContainer}>
+            {showLoginModal && <LoginModal setShowLoginModal={setShowLoginModal}/>}
             <nav className={style.navbar}>
                 <div className={style.hamburgerClickBox} onClick={handleHamburgerClick} />
                 <div className={style.hamburgerWrapper}>
@@ -94,12 +108,12 @@ const Navbar = () => {
                 </div>
                 <div className={style.leftWrapper} onClick={() => history.push('/')}>
                     {/* <NavLink className={style.rrrrlogo} exact to="/"> */}
-                        <img className={style.rrrrlogoImg} src="/assets/app-components/logo.gif" />
-                        <img className={style.rrrrlogoText} src="/assets/app-components/logo-text.png" />
+                    <img className={style.rrrrlogoImg} src="/assets/app-components/logo.gif" />
+                    <img className={style.rrrrlogoText} src="/assets/app-components/logo-text.png" />
                     {/* </NavLink> */}
                 </div>
                 <div className={`${style.navLinks} ${mobileMenuOpen && style.slideIn}`} onClick={() => setMobileMenuOpen(false)}>
-                    <NavLink className={style.links} activeClassName={style.active} exact to="/">Home</NavLink>
+                    <NavLink className={style.links} activeClassName={style.active} exact to="/">Cars</NavLink>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
                     {/* <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Support</NavLink> */}
                 </div>
@@ -116,9 +130,10 @@ const Navbar = () => {
                             <PopupCart />
                             <div className={style.cartShadow} />
                         </div>}
-                    {/* <NavLink className={style.acctContact} exact to="/">
+                    {!loggedInUser ? <span className={`${style.loginSpan}`} onClick={loginClickHandler}>Log in</span> : 
+                    <div className={style.acctContact}>
                         <img className={style.acctContactImg} src="/assets/icons/account-contact-circle.png" />
-                    </NavLink> */}
+                    </div>}
                 </div>
             </nav>
             <aside className={style.infoBar}>

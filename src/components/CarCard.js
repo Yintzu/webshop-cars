@@ -23,29 +23,39 @@ const CarCard = (props) => {
           }
         });
         if (inCart) {
-          return <button onClick={() => removeFromCart(car)} className="btn btn-danger float-end" id="addRemove">Remove</button>
+          return <button onClick={() => removeFromCart(car)} className={`btn btn-danger ${style.removeButton}`} id="addRemove">Remove</button>
         } else if (bought){
-          return <button className={`btn btn-secondary float-end ${style.disabled}`} id="addRemove">Sold</button>
+          return <button className={`btn btn-secondary ${style.disabled} ${style.btnCustom}`} id="addRemove">Sold</button>
         } else {
-          return <button onClick={() => addToCart(car)} className="btn btn-primary float-end" id="addRemove">Add To Cart</button> 
+          return <button onClick={() => addToCart(car)} className={`btn btn-primary ${style.addButton}`} id="addRemove">Add to cart</button> 
         }
       }
 
 
     return (
-        <div className={`col-sm-6 ${style.carCard}`}>
-            <div className={`card mt-2 mx-2 ${style.carClick}`} onClick={(e) => {
-                if (e.target.id !== "addRemove") {
-                    viewCar(props.car, history)
-                }
-            }}>
-                <img src={props.car.carImg} className="card-img-top" alt="A good affordable car" />
-                <div className="card-body">
-                    <h5 className="card-title">{props.car.make} {props.car.model} {props.car.year}</h5>
-                    <p className="card-text">{formatSum(props.car.price)}</p>
-                    <p className={`card-text ${style.desc}`}>{props.car.descShort}</p>
-                    { renderButtons(props.car) }
+        <div className={`${style.carCard}`} onClick={(e) => {
+          if (e.target.id !== 'addRemove') {
+            viewCar(props.car, history);
+          }
+        }}>
+            <div className={style.topRow}>
+                <div className={style.imgWrapper}>
+                  <img src={props.car.carImg} className={`${style.carImg}`}alt="A good affordable car" />
                 </div>
+                <div className={style.infoRow}>
+                  <h5 className={`${style.cardTitle}`}>{props.car.make} {props.car.model} </h5>
+                  <p className={style.carDetailText}><span className={style.boldText}>Price:</span> {formatSum(props.car.price)} <span className={style.boldText}>Year:</span> {props.car.year}</p>
+                  <hr className={style.hrCard}/>
+                  <p className={`${style.cardDesc}`}>{props.car.descShort}</p>
+                </div>
+            </div>
+            <div className={style.buyRow}>
+            
+              <div className={style.priceWrapper}>
+                {/* <h5 className={`${style.cardPrice}`}>{formatSum(props.car.price)} </h5> */}
+              </div>
+              {/* <button className={`btn btn-secondary ${style.readMore} ${style.btnReadMore}`}>Read more</button> */}
+              { renderButtons(props.car) }
             </div>
         </div>
     );

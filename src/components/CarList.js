@@ -1,13 +1,15 @@
 import { useContext, useEffect, useState } from 'react';
 import { CarContext } from "../contexts/CarContext";
+import { SearchContext } from "../contexts/SearchContext";
 import CarCard from './CarCard';
 import style from '../css/CarList.module.css'
 
 const CarList = () => {
-    const { cars, renderList } = useContext(CarContext);
+    const { cars } = useContext(CarContext);
+    const { renderList } = useContext(SearchContext);
     return (
         
-        <div className="row">
+        <div className={style.carsContainer}>
             {renderList ? 
             renderList.map((car) =>
                 <CarCard car={car} key={car.vin} data={car}></CarCard>
