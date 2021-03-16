@@ -79,7 +79,7 @@ const Search = () => {
                         </div>
 
                         {/* Range sliders */}
-                        <div className="row justify-content-between mt-3">
+                        <div className="row justify-content-around mt-3">
                         {sliders && sliders.map((list, index) => {
                             return (
                                 <div className={`col-md-4 ${style.sliderColumn}`} key={index}>
@@ -99,7 +99,7 @@ const Search = () => {
                                 </div>
                             )
                         })}
-                        <div className={`col-md-4 ${style.sliderColumn}`}>
+                        {/* <div className={`col-md-4 ${style.sliderColumn}`}>
                             <div className={style.slideWrapper}>
                                 <div className={style.labels}>
                                     <label className={style.label} htmlFor="minYear">Min Year</label>
@@ -119,7 +119,7 @@ const Search = () => {
                                     <input className={style.slider} id="maxYear" type="range" min="1990" max="2021" defaultValue="2021"onChange={handleSlide}></input> 
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                         <div className={style.removeFilterBtn}><div onClick={handleRemoveFilter} className={`btn btn-sm ${style.clearSearch} ${!filtered && style.disabledBtn} ${style.btn}`}>Remove filters</div></div>
                     </form>
