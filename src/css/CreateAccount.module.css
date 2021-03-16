@@ -1,0 +1,17 @@
+.h1{
+    margin-bottom: 2rem;
+}
+
+.registerButton{
+    display: block;
+    color: white !important;
+    background: #2C7CAE !important;
+    border: none;
+    margin: 1.8rem auto;
+    min-width: 120px;
+}
+
+.registerButton:hover {
+    background-color:#295276 !important;
+   
+}
