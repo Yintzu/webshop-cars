@@ -1,12 +1,28 @@
-.containerWrapper {
+.containerCarWrapper {
     /* background-color: powderblue; */
     width: 400px;
     margin-bottom: 20px;
 }
 
-.profileWrapper {
+.profileCarWrapper {
     max-width: 300px;
     /* background-color: pink; */
     margin: 0 auto;
     text-align: center;
+}
+
+.profileCarHeading {
+    color: #2C7CAE;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.profileCarSubHeading {
+    color: #2C7CAE;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: 20px;
 }
