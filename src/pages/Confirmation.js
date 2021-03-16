@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import ProfileInfo from '../components/ProfileInfo';
+import ProfileCar from '../components/ProfileCar';
 
 const Confirmation = () => {
 
@@ -16,7 +17,7 @@ const Confirmation = () => {
 
   return (
     <div className="container">
-    <ProfileInfo /> 
+    <ProfileInfo /> <ProfileCar />
       <h1 className={styles.mainHeading}>Thank you for your order</h1>
       <div className="row">
         <div className={`

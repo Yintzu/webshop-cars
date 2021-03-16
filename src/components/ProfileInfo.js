@@ -20,6 +20,10 @@ const ProfileInfo = () => {
                ${styles.profileButton}
                btn
                `} type="submit">Edit profile</button>
+               <button className={`
+               ${styles.logOutButton}
+               btn
+               `} type="submit">Log out</button>
              </div>
              
              </div>

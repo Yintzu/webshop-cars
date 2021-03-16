@@ -63,3 +63,16 @@
 .profileButton:hover {
     background: #295276 !important;
 }
+
+.logOutButton {
+    margin-left: 10px !important;
+    background: #DA6547 !important;
+    color: #ffffff !important;
+    margin: 25px 0 10px 0;
+    border: none;
+}
+
+.logOutButton:hover {
+    background-color:#a04832 !important;
+    border: none;
+}
