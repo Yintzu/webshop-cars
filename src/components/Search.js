@@ -4,7 +4,7 @@ import { SearchContext } from '../contexts/SearchContext';
 
 const Search = () => {
     const [inputValue, setInputValue] = useState("");
-    const { searchCars, resetRenderList, filterLists, saveFilters, searched, setSearched, saveSliders, sliders } = useContext(SearchContext);
+    const { searchCars, resetRenderList, filterLists, saveFilters, searched, setSearched, saveSliders, sliders, removeFilters, setFiltered, filtered } = useContext(SearchContext);
     const [isClicked, setIsClicked] = useState(true);
 
     const handleSubmit = (e) => {
@@ -23,15 +23,18 @@ const Search = () => {
         resetRenderList();
     }
     const handleRemoveFilter = () => {
-        
+        removeFilters()
+        setFiltered(false);
     }
 
     const handleSelect = (e) => {
         saveFilters(e.target.value)
+        setFiltered(true)
     }  
    
     const handleSlide = (e) => {
         saveSliders(e)
+        setFiltered(true)
     }
 
     return (
@@ -60,7 +63,7 @@ const Search = () => {
                                     <div className={`col-md ${style.selectWrapper}`} key={listObject.listName}>
                                         <label htmlFor={listObject.listName}>Select {listObject.listName}</label>
                                         <div className={`customSelect ${style.customSelect}`}>
-                                            <select name={listObject.listName} id={listObject.listName} defaultValue="all" onChange={handleSelect}>
+                                            <select name={listObject.listName} id={listObject.listName} onChange={handleSelect} value={listObject.value}>
                                                 <option value="all">All</option>
                                                 {listObject.list.length && listObject.list.map(listItem => {
                                                     return (
@@ -121,7 +124,7 @@ const Search = () => {
 
 
                     </div>
-                        <div onClick={handleRemoveFilter} className={`btn btn-sm ${style.clearSearch} ${!searched && style.disabledBtn}`}>Remove filters</div>
+                        <div onClick={handleRemoveFilter} className={`btn btn-sm ${style.clearSearch} ${!filtered && style.disabledBtn}`}>Remove filters</div>
                     </form>
                 </div>}
             

@@ -70,12 +70,18 @@ const SearchContextProvider = (props) => {
 
 
     /* Filter search arrays */
+
+    const [make, setMake] = useState('all');
+    const [model, setModel] = useState('all');
+    /* const [year, setYear] = useState(null); */
+
+
     const [makeArray, setMakeArray] = useState([]);
     const [modelArray, setModelArray] = useState([]);
-    const [yearArray, setYearArray] = useState([]);
+    /* const [yearArray, setYearArray] = useState([]); */
     const filterLists = [
-        {listName: "make", list: makeArray}, 
-        {listName: "model", list: modelArray}, 
+        {listName: "make", list: makeArray, value: make}, 
+        {listName: "model", list: modelArray, value: model}, 
        /*  {listName: "year", list: yearArray} */
     ];
 
@@ -97,28 +103,25 @@ const SearchContextProvider = (props) => {
         /* setYearArray(createFilterArrays("year")) */
     },[cars])
 
-    const [make, setMake] = useState(null);
-    const [model, setModel] = useState(null);
-    const [year, setYear] = useState(null);
-
     const saveFilters = (value) => {
         if(value !== 'all'){
             if(makeArray.includes(value)){
                 setMake(value)
             }if(modelArray.includes(value)){
                 setModel(value)
-            }if(yearArray.includes(Number(value))){
-                setYear(Number(value))
             }
+            /* if(yearArray.includes(Number(value))){
+                setYear(Number(value))
+            } */
         } else {
-            setMake(null)
-            setModel(null)
-            setYear(null)
+            setMake('all')
+            setModel('all')
+            /* setYear(null) */
         }
     }
     useEffect(() => {
         saveFilters();
-    },[make, model, year])
+    },[make, model/* , year */])
 
     /*  Filter sliders */
     const [minPrice, setMinPrice] = useState(0)
@@ -159,6 +162,15 @@ const SearchContextProvider = (props) => {
 
     }, [minPrice, maxPrice, minMiles, maxMiles])
         
+    const removeFilters = () => {
+        setMinPrice(0)
+        setMaxPrice(1000000)
+        setMinMiles(0)
+        setMaxMiles(1000000)
+        setMake('all')
+        setModel('all')
+    }
+    const [filtered, setFiltered] = useState(false)
 
     
 const saveSliders = (e) => {
@@ -202,6 +214,9 @@ const saveSliders = (e) => {
       saveSliders,
       searched,
       setSearched,
+      removeFilters,
+      filtered,
+      setFiltered
     }
 
     return (
