@@ -32,10 +32,12 @@ const Search = () => {
     const handleSelect = (e) => {
         saveFilters(e.target.value)
         setFiltered(true)
+        setSearched(false);
         // filterSearch();
     }  
    
     const handleSlide = (e) => {
+        setSearched(false);
         saveSliders(e)
         setFiltered(true)
     }

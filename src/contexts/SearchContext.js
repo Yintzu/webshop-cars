@@ -97,6 +97,7 @@ const SearchContextProvider = (props) => {
                 if (!tempArray.includes(car.model))
                 tempArray.push(car.model)
             })
+            setModel('all');
             setModelArray(tempArray);
         } else {
             setModelArray(createFilterArrays("model"));
@@ -207,10 +208,10 @@ const saveSliders = (e) => {
     const filterSearch = () => {
         let filterCarsArray = [...cars];
 
-        resetRenderList();
+        // resetRenderList();
         
         // Filter based on make
-        if (make !== 'all') {
+        if (make !== 'all' && model === 'all') {
             filterCarsArray = filterCarsArray.filter(car => car.make === make);
         }
         
@@ -234,8 +235,11 @@ const saveSliders = (e) => {
     }
 
     useEffect(() => {
-        filterSearch();
-    }, [make, model, minPrice, maxPrice, minMiles, maxMiles, minYears, maxYears])
+        if (!searched) {
+            filterSearch();
+        }
+        
+    }, [make, model, minPrice, maxPrice, minMiles, maxMiles, minYears, maxYears, searched])
 
         
     const removeFilters = () => {
@@ -248,6 +252,7 @@ const saveSliders = (e) => {
         setMake('all')
         setModel('all')
     }
+    
     const [filtered, setFiltered] = useState(false)
 
   
