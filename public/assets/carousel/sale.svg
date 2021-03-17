@@ -1,14 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.53 60.53">
+<svg class="shadow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.53 60.53">
     <defs>
-        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <linearGradient id="grad" x1="0%" y1="0%" x2="200%" y2="0%">
             <stop offset="0%" style="stop-color:#da6540;stop-opacity:1">
-                <animate attributeName="offset" values="0%;50%;0%" dur="2s" repeatCount="indefinite"  /> 
+                <!-- <animate attributeName="offset" values="0%;1;0%" dur="4s" repeatCount="indefinite"  />  -->
             </stop>
-            <stop offset="100%" style="stop-color:#8b2f14;stop-opacity:1">
-                <animate attributeName="offset" values="1;50%;1" dur="2s" repeatCount="indefinite"  /> 
+            <stop offset="100%" style="stop-color:#742710;stop-opacity:1">
+                <animate attributeName="offset" values="1;0.5;1" dur="6s" repeatCount="indefinite"  /> 
             </stop>
         </linearGradient>
         <style>
+            .shadow{
+                filter: drop-shadow( 2px 2px 2px black);
+            }
+
             .cls-1 {
                 fill: url(#grad);
             }
