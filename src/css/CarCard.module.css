@@ -149,6 +149,9 @@
     border-top-right-radius: 5px;
 }
 
+.soldOverlay{
+}
+
 @media screen and (min-width: 600px) {
     .carCard {
         flex-direction: column;
