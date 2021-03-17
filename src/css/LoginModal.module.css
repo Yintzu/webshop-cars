@@ -76,9 +76,11 @@
     color: white;
 }
 
-.p{
+.a{
+    text-decoration: none;
     color: #2C7CAE !important;
     cursor: pointer;
     text-align: center;
-    margin: 1rem 0;
+    display: block;
+    margin: 0.8rem auto 0.8rem auto;
 }

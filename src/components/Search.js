@@ -1,10 +1,10 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import style from '../css/Search.module.css';
 import { SearchContext } from '../contexts/SearchContext';
 
 const Search = () => {
     const [inputValue, setInputValue] = useState("");
-    const { searchCars, resetRenderList, filterLists, saveFilters, searched, setSearched, saveSliders } = useContext(SearchContext);
+    const { searchCars, resetRenderList, filterLists, saveFilters, searched, setSearched, saveSliders, sliders, removeFilters, setFiltered, filtered, filterSearch } = useContext(SearchContext);
     const [isClicked, setIsClicked] = useState(false);
 
     const [minPrice, setMinPrice] = useState(0)
@@ -24,9 +24,11 @@ const Search = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setFiltered(false);
+        removeFilters();
         searchCars(inputValue);
         setInputValue('');
-        setSearched(true);
+        setSearched(true);   
     }
 
     const handleChange = (e) => {
@@ -37,38 +39,22 @@ const Search = () => {
         setSearched(false);
         resetRenderList();
     }
+    const handleRemoveFilter = () => {
+        removeFilters()
+        setFiltered(false);
+    }
 
     const handleSelect = (e) => {
         saveFilters(e.target.value)
+        setFiltered(true)
+        setSearched(false);
+        // filterSearch();
     }  
    
     const handleSlide = (e) => {
-        let number = Number(e.target.value);
-        let array;
-        if (e.target.id.includes('price')) {
-            array = [maxPrice, minPrice, setMaxPrice, setMinPrice];
-        } else {
-            array = [maxMiles, minMiles, setMaxMiles, setMinMiles];
-        }
-
-        if(e.target.id === "min price" && number <= maxPrice && number !== 1000000){
-            setMinPrice(number)
-            if (number >= maxPrice) {
-                setMaxPrice(number + 50000);
-            }
-        }
-        if(e.target.id === "max price" && number >= minPrice && number !== 0){
-            setMaxPrice(number)
-            if (number <= minPrice) {
-                setMinPrice(number - 50000)
-            }
-        }
-        if(e.target.id === "min miles"){
-            setMinMiles(number)
-        }
-        if(e.target.id === "max miles"){
-            setMaxMiles(number)
-        }
+        setSearched(false);
+        saveSliders(e)
+        setFiltered(true)
     }
 
     useEffect(() => {
@@ -98,37 +84,37 @@ const Search = () => {
                     {/* Reset list button */}
                     <div onClick={handleResetSearch} className={`btn btn-sm ${style.clearSearch} ${!searched && style.disabledBtn}`}>Clear search</div>
                 </div>
-
+            </form>
                 {/* Drop down */}
                 {isClicked && <div className={style.dropDown}>
-
-                    {/* Select lists */}
-                    <div className={`row ${style.selects}`}>
-                        {filterLists.map(listObject => {
-                                return (
-                                <div className={`col-md ${style.selectWrapper}`} key={listObject.listName}>
-                                    <label htmlFor={listObject.listName}>Select {listObject.listName}</label>
-                                    <div className={`customSelect ${style.customSelect}`}>
-                                        <select name={listObject.listName} id={listObject.listName} onChange={handleSelect} value={listObject.value}>
-                                            <option value="all">All</option>
-                                            {listObject.list.length && listObject.list.map(listItem => {
-                                                return (
-                                                <option key={listItem}>{listItem}</option>
-                                                )
-                                            })}
-                                        </select>
-                                        <span className="focus"></span>
+                    <form>
+                        {/* Select lists */}
+                        <div className={`row ${style.selects}`}>
+                            {filterLists.map(listObject => {
+                                    return (
+                                    <div className={`col-md ${style.selectWrapper}`} key={listObject.listName}>
+                                        <label htmlFor={listObject.listName}>Select {listObject.listName}</label>
+                                        <div className={`customSelect ${style.customSelect}`}>
+                                            <select name={listObject.listName} id={listObject.listName} onChange={handleSelect} value={listObject.value}>
+                                                <option value="all">All</option>
+                                                {listObject.list.length && listObject.list.map(listItem => {
+                                                    return (
+                                                    <option key={listItem}>{listItem}</option>
+                                                    )
+                                                })}
+                                            </select>
+                                            <span className="focus"></span>
+                                        </div>
                                     </div>
-                                </div>
-                                )
-                            })}
-                    </div>
+                                    )
+                                })}
+                        </div>
 
-                    {/* Range sliders */}
-                    <div className="row justify-content-around mt-3">
+                        {/* Range sliders */}
+                        <div className="row justify-content-between mt-3">
                         {sliders && sliders.map((list, index) => {
                             return (
-                                <div key={index} className={`col-md-5 ${style.sliderColumn}`}>
+                                <div className={`col-md-4 ${style.sliderColumn}`} key={index}>
                                     {list.map(listObject => {
                                         return (
                                             <div key={listObject.name} className={style.slideWrapper}>
@@ -137,7 +123,7 @@ const Search = () => {
                                                     <label htmlFor={listObject.name}>{listObject.value}</label>
                                                 </div>
                                                 <div className={style.slideContainer}>
-                                                    <input className={style.slider} id={listObject.name} type="range" min="0" max="1000000" step="50000" value={listObject.value} onChange={handleSlide}></input> 
+                                                    <input className={style.slider} id={listObject.name} type="range" min={listObject.minValue} max={listObject.maxValue} step={listObject.steps} value={listObject.value} onChange={handleSlide}></input> 
                                                 </div>
                                             </div>
                                         )
@@ -145,9 +131,12 @@ const Search = () => {
                                 </div>
                             )
                         })}
+                        
                     </div>
+                        <div className={style.removeFilterBtn}><div onClick={handleRemoveFilter} className={`btn btn-sm ${style.clearSearch} ${!filtered && style.disabledBtn} ${style.btn}`}>Remove filters</div></div>
+                    </form>
                 </div>}
-            </form>
+            
         </div>
     );
 }
