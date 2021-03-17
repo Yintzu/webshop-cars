@@ -7,21 +7,6 @@ const Search = () => {
     const { searchCars, resetRenderList, filterLists, saveFilters, searched, setSearched, saveSliders, sliders, removeFilters, setFiltered, filtered, filterSearch } = useContext(SearchContext);
     const [isClicked, setIsClicked] = useState(false);
 
-    const [minPrice, setMinPrice] = useState(0)
-    const [maxPrice, setMaxPrice] = useState(1000000)
-    const [minMiles, setMinMiles] = useState("0")
-    const [maxMiles, setMaxMiles] = useState("1000000")
-
-    const [sliders, setSliders] = useState([
-        [
-            {name: "min price", value: minPrice},
-            {name: "max price", value: maxPrice},
-        ],[
-            {name: "min miles", value: minMiles},
-            {name: "max miles", value: maxMiles}
-        ]
-    ])
-
     const handleSubmit = (e) => {
         e.preventDefault();
         setFiltered(false);
@@ -57,17 +42,6 @@ const Search = () => {
         setFiltered(true)
     }
 
-    useEffect(() => {
-        setSliders(([
-            [
-                {name: "min price", value: minPrice},
-                {name: "max price", value: maxPrice},
-            ],[
-                {name: "min miles", value: minMiles},
-                {name: "max miles", value: maxMiles}
-            ]
-        ]))
-    }, [maxPrice, minPrice, maxMiles, minMiles])
 
     return (
         <div className={style.search}>
