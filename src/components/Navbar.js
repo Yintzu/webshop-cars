@@ -52,7 +52,7 @@ const Navbar = () => {
             history.push('/checkout');
         } else if (cartVisible) {
             setCartVisible(false);
-        } else if (!cartVisible) {
+        } else {
             setCartVisible(true);
             setMobileMenuOpen(false);
         }
