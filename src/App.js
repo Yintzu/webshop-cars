@@ -14,6 +14,7 @@ import SearchContext from './contexts/SearchContext';
 import ScrollToTop from './components/ScrollToTop';
 import Hero from './components/Hero';
 import CreateAccount from './pages/CreateAccount';
+import UserPage from './pages/UserPage';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
                   <Route exact path="/confirmation" component={Confirmation} />
                   <Route exact path="/details/:id" component={Details} />
                   <Route exact path="/register" component={CreateAccount}/>
+                  <Route exact path="/userpage" component={UserPage} />
                 </div>
                 <Footer />
               </BrowserRouter>

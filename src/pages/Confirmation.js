@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
+import ProfileInfo from '../components/ProfileInfo';
 
 const Confirmation = () => {
 
@@ -15,6 +16,7 @@ const Confirmation = () => {
 
   return (
     <div className="container">
+    <ProfileInfo /> 
       <h1 className={styles.mainHeading}>Thank you for your order</h1>
       <div className="row">
         <div className={`
