@@ -111,29 +111,39 @@ const SearchContextProvider = (props) => {
     const [maxPrice, setMaxPrice] = useState(1000000)
     const [minMiles, setMinMiles] = useState("0")
     const [maxMiles, setMaxMiles] = useState("1000000")
+    const [minYears, setMinYears] = useState(1990)
+    const [maxYears, setMaxYears] = useState(2021)
 
     const [sliders, setSliders] = useState([
         [
-            {name: "min price", value: minPrice},
-            {name: "max price", value: maxPrice},
+            {name: "min price", value: minPrice, minValue: "0", maxValue: "1000000", steps: "50000"},
+            {name: "max price", value: maxPrice, minValue: "0", maxValue: "1000000", steps: "50000"},
         ],[
-            {name: "min miles", value: minMiles},
-            {name: "max miles", value: maxMiles}
+            {name: "min miles", value: minMiles, minValue: "0", maxValue: "1000000", steps: "50000"},
+            {name: "max miles", value: maxMiles, minValue: "0", maxValue: "1000000", steps: "50000"}
+        ],[
+            {name: "min years", value: minYears, minValue: "1990", maxValue: "2021", steps: "1"},
+            {name: "max years", value: maxYears, minValue: "1990", maxValue: "2021", steps: "1"}
         ]
     ])
+    
+
 
     useEffect(() => {
         setSliders([
             [
-                {name: "min price", value: minPrice},
-                {name: "max price", value: maxPrice},
+                {name: "min price", value: minPrice, minValue: "0", maxValue: "1000000", steps: "50000"},
+                {name: "max price", value: maxPrice, minValue: "0", maxValue: "1000000", steps: "50000"},
             ],[
-                {name: "min miles", value: minMiles},
-                {name: "max miles", value: maxMiles}
+                {name: "min miles", value: minMiles, minValue: "0", maxValue: "1000000", steps: "50000"},
+                {name: "max miles", value: maxMiles, minValue: "0", maxValue: "1000000", steps: "50000"}
+            ],[
+                {name: "min year", value: minYears, minValue: "1990", maxValue: "2021", steps: "1"},
+                {name: "max year", value: maxYears, minValue: "1990", maxValue: "2021", steps: "1"}
             ]
         ])
 
-    }, [minPrice, maxPrice, minMiles, maxMiles])
+    }, [minPrice, maxPrice, minMiles, maxMiles, minYears, maxYears])
     
     
 const saveSliders = (e) => {
@@ -161,6 +171,18 @@ const saveSliders = (e) => {
             setMaxMiles(e.target.value)
             if(value <= minMiles){
                 setMinMiles(value - 50000)
+            }
+        }
+        if(e.target.id === "min year" && value !== 2021) {
+            setMinYears(value)
+            if(value >= maxYears){
+                setMaxYears(value + 1)
+            }
+        }
+        if(e.target.id === "max year" && value !== 1990){
+            setMaxYears(e.target.value)
+            if(value <= minYears){
+                setMinYears(value - 1) 
             }
         }
     }
