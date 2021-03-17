@@ -22,6 +22,19 @@ const Navbar = () => {
     // Set timer to hide cart when mouse leave cart-icon
     let timer;
     const mouseLeaveHandler = () => {
+        // let isMounted = true;
+        // if (isMounted) {
+        //     if (!matchMedia('(pointer:coarse)').matches) {
+        //         timer = setTimeout(() => {
+        //             setCartVisible(false);
+        //         }, 500)
+        //     } else {
+        //         timer = setTimeout(() => {
+        //             setCartVisible(false);
+        //         }, 10)
+        //     }
+        // }
+        // return () => { isMounted = false };
         if (!matchMedia('(pointer:coarse)').matches) {
             timer = setTimeout(() => {
                 setCartVisible(false);

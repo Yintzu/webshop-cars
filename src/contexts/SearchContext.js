@@ -159,42 +159,32 @@ const SearchContextProvider = (props) => {
 const saveSliders = (e) => {
         let value = Number(e.target.value);
 
-        if(e.target.id === "min price" && value !== 1000000) {
-            setMinPrice(value)
-            if(value >= maxPrice){
-                setMaxPrice(value + 50000)
+        const sliderCheckMin = (id, maxCheck, setMin, setMax, stopValue, step) => {
+            if(e.target.id === id && value !== stopValue) {
+                setMin(value)
+                if(value >= maxCheck){
+                    setMax(value + step)
+                }
             }
         }
-        if(e.target.id === "max price" && value !== 0){
-            setMaxPrice(e.target.value)
-            if(value <= minPrice){
-                setMinPrice(value - 50000) 
+
+        const sliderCheckMax = (id, minCheck, setMax, setMin, stopValue, step) => {
+            if(e.target.id === id && value !== stopValue) {
+                setMax(value)
+                if(value <= minCheck){
+                    setMin(value - step)
+                }
             }
         }
-        if(e.target.id === "min miles" && value !== 100000){
-            setMinMiles(e.target.value)
-            if(value >= maxMiles){
-                setMaxMiles(value + 5000)
-            }
-        }
-        if(e.target.id === "max miles" && value !== 0){
-            setMaxMiles(e.target.value)
-            if(value <= minMiles){
-                setMinMiles(value - 5000)
-            }
-        }
-        if(e.target.id === "min year" && value !== 2021) {
-            setMinYears(value)
-            if(value >= maxYears){
-                setMaxYears(value + 1)
-            }
-        }
-        if(e.target.id === "max year" && value !== 1960){
-            setMaxYears(e.target.value)
-            if(value <= minYears){
-                setMinYears(value - 1) 
-            }
-        }
+
+        sliderCheckMin('min price', maxPrice, setMinPrice, setMaxPrice, 1000000, 50000);
+        sliderCheckMax('max price', minPrice, setMaxPrice, setMinPrice, 0, 50000);
+
+        sliderCheckMin('min miles', maxMiles, setMinMiles, setMaxMiles, 100000, 5000);
+        sliderCheckMax('max miles', minMiles, setMaxMiles, setMinMiles, 0, 5000);
+
+        sliderCheckMin('min year', maxYears, setMinYears, setMaxYears, 2021, 1);
+        sliderCheckMax('max year', minYears, setMaxYears, setMinYears, 1960, 1);
     }
 
 
