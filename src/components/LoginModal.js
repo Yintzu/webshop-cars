@@ -1,4 +1,5 @@
 import { useContext } from "react"
+import { NavLink } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext"
 import style from "../css/LoginModal.module.css"
 
@@ -46,7 +47,7 @@ const LoginModal = (props) => {
                     </div>
                     <button className={`btn ${style.button}`}>Log in</button>
                 </form>
-                <p className={`${style.p}`}>Click here to register a new account</p>
+                <NavLink exact to="/register" className={`${style.a}`} onClick={()=>props.setShowLoginModal(false)}>Click here to register a new account</NavLink>
             </div>
         </div>
     );
