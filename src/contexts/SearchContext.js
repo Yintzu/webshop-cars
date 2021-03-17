@@ -87,8 +87,21 @@ const SearchContextProvider = (props) => {
     useEffect(() => {
         setMakeArray(createFilterArrays("make"))
         setModelArray(createFilterArrays("model"))
-
     },[cars])
+
+    useEffect(() => {
+        let modelArrayFilter = cars.filter(car => car.make === make);
+        let tempArray = []
+        if (make !== 'all') {
+            modelArrayFilter.forEach(car => {
+                if (!tempArray.includes(car.model))
+                tempArray.push(car.model)
+            })
+            setModelArray(tempArray);
+        } else {
+            setModelArray(createFilterArrays("model"));
+        }
+    }, [make]);
 
     const saveFilters = (value) => {
         if(value !== 'all'){
