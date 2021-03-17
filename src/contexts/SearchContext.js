@@ -87,8 +87,21 @@ const SearchContextProvider = (props) => {
     useEffect(() => {
         setMakeArray(createFilterArrays("make"))
         setModelArray(createFilterArrays("model"))
-
     },[cars])
+
+    useEffect(() => {
+        let modelArrayFilter = cars.filter(car => car.make === make);
+        let tempArray = []
+        if (make !== 'all') {
+            modelArrayFilter.forEach(car => {
+                if (!tempArray.includes(car.model))
+                tempArray.push(car.model)
+            })
+            setModelArray(tempArray);
+        } else {
+            setModelArray(createFilterArrays("model"));
+        }
+    }, [make]);
 
     const saveFilters = (value) => {
         if(value !== 'all'){
@@ -111,29 +124,39 @@ const SearchContextProvider = (props) => {
     const [maxPrice, setMaxPrice] = useState(1000000)
     const [minMiles, setMinMiles] = useState("0")
     const [maxMiles, setMaxMiles] = useState("1000000")
+    const [minYears, setMinYears] = useState(1990)
+    const [maxYears, setMaxYears] = useState(2021)
 
     const [sliders, setSliders] = useState([
         [
-            {name: "min price", value: minPrice},
-            {name: "max price", value: maxPrice},
+            {name: "min price", value: minPrice, minValue: "0", maxValue: "1000000", steps: "50000"},
+            {name: "max price", value: maxPrice, minValue: "0", maxValue: "1000000", steps: "50000"},
         ],[
-            {name: "min miles", value: minMiles},
-            {name: "max miles", value: maxMiles}
+            {name: "min miles", value: minMiles, minValue: "0", maxValue: "1000000", steps: "50000"},
+            {name: "max miles", value: maxMiles, minValue: "0", maxValue: "1000000", steps: "50000"}
+        ],[
+            {name: "min years", value: minYears, minValue: "1990", maxValue: "2021", steps: "1"},
+            {name: "max years", value: maxYears, minValue: "1990", maxValue: "2021", steps: "1"}
         ]
     ])
+    
+
 
     useEffect(() => {
         setSliders([
             [
-                {name: "min price", value: minPrice},
-                {name: "max price", value: maxPrice},
+                {name: "min price", value: minPrice, minValue: "0", maxValue: "1000000", steps: "50000"},
+                {name: "max price", value: maxPrice, minValue: "0", maxValue: "1000000", steps: "50000"},
             ],[
-                {name: "min miles", value: minMiles},
-                {name: "max miles", value: maxMiles}
+                {name: "min miles", value: minMiles, minValue: "0", maxValue: "1000000", steps: "50000"},
+                {name: "max miles", value: maxMiles, minValue: "0", maxValue: "1000000", steps: "50000"}
+            ],[
+                {name: "min year", value: minYears, minValue: "1990", maxValue: "2021", steps: "1"},
+                {name: "max year", value: maxYears, minValue: "1990", maxValue: "2021", steps: "1"}
             ]
         ])
 
-    }, [minPrice, maxPrice, minMiles, maxMiles])
+    }, [minPrice, maxPrice, minMiles, maxMiles, minYears, maxYears])
     
     
 const saveSliders = (e) => {
@@ -163,6 +186,18 @@ const saveSliders = (e) => {
                 setMinMiles(value - 50000)
             }
         }
+        if(e.target.id === "min year" && value !== 2021) {
+            setMinYears(value)
+            if(value >= maxYears){
+                setMaxYears(value + 1)
+            }
+        }
+        if(e.target.id === "max year" && value !== 1990){
+            setMaxYears(e.target.value)
+            if(value <= minYears){
+                setMinYears(value - 1) 
+            }
+        }
     }
         
     const removeFilters = () => {
@@ -170,6 +205,8 @@ const saveSliders = (e) => {
         setMaxPrice(1000000)
         setMinMiles(0)
         setMaxMiles(1000000)
+        setMinYears(1990)
+        setMaxYears(2021)
         setMake('all')
         setModel('all')
     }
