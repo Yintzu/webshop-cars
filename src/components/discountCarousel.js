@@ -20,7 +20,7 @@ const Carousel = () => {
           <img src={discountedCars[0].carImg} className={`d-block w-100 ${style.carouselImg}`} alt="Discounted Carousel" onClick={()=>history.push("/details/WAUKF98E25A286122")}/>
           <div className={`carousel-caption  ${style.captionWrapper}`}>
             <h5>{discountedCars[0].make} {discountedCars[0].model} {discountedCars[0].year}</h5>
-            <p className="text-white" >{discountedCars[0].discountedprice()}kr</p>
+            <p className="text-danger" >{discountedCars[0].discountedprice()}kr</p>
           </div>
         </div>
         <div className="carousel-item">
@@ -28,7 +28,7 @@ const Carousel = () => {
           <img src={discountedCars[1].carImg} className={`d-block w-100 ${style.carouselImg}`} alt="Discounted Carousel" onClick={()=>history.push("/details/1D4PT5GK0BW487259")}/>
           <div className={`carousel-caption  ${style.captionWrapper}`}>
           <h5>{discountedCars[1].make} {discountedCars[1].model} {discountedCars[1].year}</h5>
-            <p className="text-white">{discountedCars[1].discountedprice()}kr</p>
+            <p className="text-danger">{discountedCars[1].discountedprice()}kr</p>
           </div>
         </div>
         <div className="carousel-item">
@@ -36,7 +36,7 @@ const Carousel = () => {
           <img src={discountedCars[2].carImg} className={`d-block w-100 ${style.carouselImg}`} alt="Discounted Carousel" onClick={()=>history.push("/details/WAUVT68E95A768929")}/>
           <div className={`carousel-caption  ${style.captionWrapper}`}>
           <h5>{discountedCars[2].make} {discountedCars[2].model} {discountedCars[2].year}</h5>
-            <p className="text-white" >{discountedCars[2].discountedprice()}kr</p>
+            <p className="text-danger" >{discountedCars[2].discountedprice()}kr</p>
           </div>
         </div>
       </div>
