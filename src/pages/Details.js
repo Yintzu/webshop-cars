@@ -2,7 +2,9 @@ import style from '../css/Details.module.css';
 import { useContext, useEffect, useState } from 'react';
 import { CarContext } from '../contexts/CarContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
-import Modal from './components/discountDetails.js'
+import Modal from '../components/Modal.js'
+
+    
 
 
 const Details = (props) => {
@@ -87,3 +89,4 @@ const Details = (props) => {
 }
 
 export default Details;
+
