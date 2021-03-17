@@ -41,7 +41,7 @@ const CarCard = (props) => {
       <div className={style.topRow}>
         <div className={style.imgWrapper}>
           <img src={props.car.carImg} className={`${style.carImg}`} alt="A good affordable car" />
-          <img src="/assets/app-components/soldout.png" className={`${style.soldOverlay}`} />
+          {/* <img src="/assets/app-components/soldout.png" className={`${style.soldOverlay}`} /> */}
         </div>
         <div className={style.infoRow}>
           <h5 className={`${style.cardTitle}`}>{props.car.make} {props.car.model} </h5>
