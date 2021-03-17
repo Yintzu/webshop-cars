@@ -5,7 +5,7 @@
 }
 
 .profileCarWrapper {
-    width: 600px;
+    min-width: 70%;
     margin: 0 auto;
     background-color: #f4f4f4 !important;
     border-radius: 5px;
@@ -20,6 +20,7 @@
     margin-top: 15px;
     margin-bottom: 20px;
     font-weight: 400;
+    text-align: center;
 }
 
 .profileCarSubHeading {
