@@ -131,7 +131,7 @@ const Navbar = () => {
                             <div className={style.cartShadow} />
                         </div>}
                     {!loggedInUser ? <span className={`${style.loginSpan}`} onClick={loginClickHandler}>Log in</span> : 
-                    <div className={style.acctContact}>
+                    <div className={style.acctContact} onClick={()=>history.push("/profile")}>
                         <img className={style.acctContactImg} src="/assets/icons/account-contact-circle.png" />
                     </div>}
                 </div>
