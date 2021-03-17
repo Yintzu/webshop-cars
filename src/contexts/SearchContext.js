@@ -67,7 +67,6 @@ const SearchContextProvider = (props) => {
         setRenderList(cars);
     }
 
-
     /* Filter search arrays */
 
     const [make, setMake] = useState('all');
@@ -122,6 +121,7 @@ const SearchContextProvider = (props) => {
             setModel('all')
         }
     }
+
     useEffect(() => {
         saveFilters();
     },[make, model])
@@ -134,22 +134,10 @@ const SearchContextProvider = (props) => {
     const [minYears, setMinYears] = useState(1960)
     const [maxYears, setMaxYears] = useState(2021)
 
-    const [sliders, setSliders] = useState([
-        [
-            {name: "min years", value: minYears, minValue: "1960", maxValue: "2021", steps: "1"},
-            {name: "max years", value: maxYears, minValue: "1960", maxValue: "2021", steps: "1"}
-        ],
-        [
-            {name: "min price", value: minPrice, minValue: "0", maxValue: "1000000", steps: "50000"},
-            {name: "max price", value: maxPrice, minValue: "0", maxValue: "1000000", steps: "50000"},
-        ],[
-            {name: "min miles", value: minMiles, minValue: "0", maxValue: "1000000", steps: "5000"},
-            {name: "max miles", value: maxMiles, minValue: "0", maxValue: "1000000", steps: "5000"}
-        ],
-    ])
+    const [sliders, setSliders] = useState(null);
+
+    const filterWatch = [minPrice, maxPrice, minMiles, maxMiles, minYears, maxYears];
     
-
-
     useEffect(() => {
         setSliders([
             [
@@ -165,7 +153,7 @@ const SearchContextProvider = (props) => {
             ],
         ])
 
-    }, [minPrice, maxPrice, minMiles, maxMiles, minYears, maxYears])
+    }, [...filterWatch]);
     
     
 const saveSliders = (e) => {
@@ -213,8 +201,6 @@ const saveSliders = (e) => {
     // Filter search function
     const filterSearch = () => {
         let filterCarsArray = [...cars];
-
-        // resetRenderList();
         
         // Filter based on make
         if (make !== 'all' && model === 'all') {
@@ -226,28 +212,24 @@ const saveSliders = (e) => {
             filterCarsArray = filterCarsArray.filter(car => car.model === model);
         }
 
-        // Year
-        filterCarsArray = filterCarsArray.filter(car => car.year >= minYears && car.year <= maxYears);
+        const sliderFilter = (slider, min, max) => {
+            filterCarsArray = filterCarsArray.filter(car => car[slider] >= min && car[slider] <= max);
+        }
 
-        // Price
-        filterCarsArray = filterCarsArray.filter(car => car.price >= minPrice && car.price <= maxPrice);
-
-        // Miles
-        filterCarsArray = filterCarsArray.filter(car => car.miles >= minMiles && car.miles <= maxMiles);
+        sliderFilter('year', minYears, maxYears);
+        sliderFilter('price', minPrice, maxPrice);
+        sliderFilter('miles', minMiles, maxMiles);
 
         // set renderList with the filtered cars array
         setRenderList(filterCarsArray);
-
     }
 
     useEffect(() => {
         if (!searched) {
             filterSearch();
-        }
-        
-    }, [make, model, minPrice, maxPrice, minMiles, maxMiles, minYears, maxYears, searched])
-
-        
+        }   
+    }, [make, model, searched, ...filterWatch]);
+   
     const removeFilters = () => {
         setMinPrice(0)
         setMaxPrice(1000000)
@@ -261,7 +243,6 @@ const saveSliders = (e) => {
     
     const [filtered, setFiltered] = useState(false)
 
-  
     const values={
       searchResult,
       searchCars,
