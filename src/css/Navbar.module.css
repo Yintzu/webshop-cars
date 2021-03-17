@@ -257,6 +257,10 @@
   /* width: 39%; */
 }
 
+.acctContact:hover {
+  cursor: pointer;
+}
+
 .acctContactImg {
   /* width: 100%; */
   height: 100%;
