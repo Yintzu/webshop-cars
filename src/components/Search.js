@@ -79,7 +79,7 @@ const Search = () => {
                         </div>
 
                         {/* Range sliders */}
-                        <div className="row justify-content-around mt-3">
+                        <div className="row justify-content-between mt-3">
                         {sliders && sliders.map((list, index) => {
                             return (
                                 <div className={`col-md-4 ${style.sliderColumn}`} key={index}>
@@ -91,7 +91,7 @@ const Search = () => {
                                                     <label htmlFor={listObject.name}>{listObject.value}</label>
                                                 </div>
                                                 <div className={style.slideContainer}>
-                                                    <input className={style.slider} id={listObject.name} type="range" min="0" max="1000000" step="50000" value={listObject.value} onChange={handleSlide}></input> 
+                                                    <input className={style.slider} id={listObject.name} type="range" min={listObject.minValue} max={listObject.maxValue} step={listObject.steps} value={listObject.value} onChange={handleSlide}></input> 
                                                 </div>
                                             </div>
                                         )
@@ -99,27 +99,7 @@ const Search = () => {
                                 </div>
                             )
                         })}
-                        {/* <div className={`col-md-4 ${style.sliderColumn}`}>
-                            <div className={style.slideWrapper}>
-                                <div className={style.labels}>
-                                    <label className={style.label} htmlFor="minYear">Min Year</label>
-                                    <label htmlFor="minYear">1990</label>
-                                </div>
-                                <div className={style.slideContainer}>
-                                    <input className={style.slider} id="minYear" type="range" min="1990" max="2021"  onChange={handleSlide}></input> 
-                                </div>
-                            </div>
-
-                            <div className={style.slideWrapper}>
-                                <div className={style.labels}>
-                                    <label className={style.label} htmlFor="maxYear">Max Year</label>
-                                    <label htmlFor="maxYear">2021</label>
-                                </div>
-                                <div className={style.slideContainer}>
-                                    <input className={style.slider} id="maxYear" type="range" min="1990" max="2021" defaultValue="2021"onChange={handleSlide}></input> 
-                                </div>
-                            </div>
-                        </div> */}
+                        
                     </div>
                         <div className={style.removeFilterBtn}><div onClick={handleRemoveFilter} className={`btn btn-sm ${style.clearSearch} ${!filtered && style.disabledBtn} ${style.btn}`}>Remove filters</div></div>
                     </form>
