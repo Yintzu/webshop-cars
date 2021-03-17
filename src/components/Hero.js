@@ -1,5 +1,5 @@
 import style from '../css/Hero.module.css';
-import Carousel from './DiscountCarousel';
+import Carousel from './DiscountCarousel.js';
 
 const Hero = () => {
     return (
