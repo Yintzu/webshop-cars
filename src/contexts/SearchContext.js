@@ -144,8 +144,11 @@ const SearchContextProvider = (props) => {
 
     const [sliders, setSliders] = useState(null);
 
+    // This array contains some of the states that are used in useEffect
     const filterWatch = [minPrice, maxPrice, minMiles, maxMiles, minYears, maxYears];
     
+    // This data is used to render the sliders in the JSX
+    // Is updated when value connected to the sliders is updated
     useEffect(() => {
         setSliders([
             [
@@ -163,10 +166,11 @@ const SearchContextProvider = (props) => {
 
     }, [...filterWatch]);
     
-    
-const saveSliders = (e) => {
+    // Check which slider is pulled and update the value
+    const saveSliders = (e) => {
         let value = Number(e.target.value);
 
+        // Reusable functions to set min/max sliders depnding on make, model or year
         const sliderCheckMin = (id, maxCheck, setMin, setMax, stopValue, step) => {
             if(e.target.id === id && value !== stopValue) {
                 setMin(value)
@@ -185,6 +189,7 @@ const saveSliders = (e) => {
             }
         }
 
+        // Using function for each slider
         sliderCheckMin('min price', maxPrice, setMinPrice, setMaxPrice, 1000000, 50000);
         sliderCheckMax('max price', minPrice, setMaxPrice, setMinPrice, 0, 50000);
 
@@ -210,6 +215,7 @@ const saveSliders = (e) => {
             filterCarsArray = filterCarsArray.filter(car => car.model === model);
         }
 
+        // Reusable function for each slider
         const sliderFilter = (slider, min, max) => {
             filterCarsArray = filterCarsArray.filter(car => car[slider] >= min && car[slider] <= max);
         }
