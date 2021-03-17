@@ -1,10 +1,12 @@
+import {useHistory} from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { UserContext } from "../contexts/UserContext";
 import style from "../css/CreateAccount.module.css"
 
 const CreateAccount = () => {
 
-    const {users, setUsers} = useContext(UserContext);
+    const {users, setUsers, setLoggedInUser} = useContext(UserContext);
+    const history = useHistory();
 
     const registerHandler = (e) => {
         e.preventDefault();
@@ -16,13 +18,16 @@ const CreateAccount = () => {
                 newUserObject[input.name] = input.value;
             }
         })
-
         setUsers([...users, newUserObject])
+        setLoggedInUser(newUserObject)
+        
+        history.push("/profile")
+
     }
 
-/*     useEffect(()=>{
+    useEffect(()=>{
         console.log(users);
-    },[users]) */
+    },[users])
 
     return (
         <div>
