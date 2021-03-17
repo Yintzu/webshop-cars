@@ -192,6 +192,8 @@ const saveSliders = (e) => {
         setMaxPrice(1000000)
         setMinMiles(0)
         setMaxMiles(1000000)
+        setMinYears(1990)
+        setMaxYears(2021)
         setMake('all')
         setModel('all')
     }
