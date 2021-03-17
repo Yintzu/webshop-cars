@@ -109,22 +109,30 @@ const SearchContextProvider = (props) => {
         }
     }, [make]);
 
-    const saveFilters = (value) => {
-        if(value !== 'all'){
-            if(makeArray.includes(value)){
-                setMake(value)
-            }if(modelArray.includes(value)){
-                setModel(value)
-            }
-        } else {
-            setMake('all')
-            setModel('all')
+    const saveFilters = (value, id) => {
+        if (id === 'make' && value === 'all') {
+            setMake(value);
+            setModel(value);
+        } else if (id === 'make') {
+            setMake(value);
+        } else if (id === 'model') {
+            setModel(value);
         }
+        // if(value !== 'all'){
+        //     if(makeArray.includes(value)){
+        //         setMake(value)
+        //     }if(modelArray.includes(value)){
+        //         setModel(value)
+        //     }
+        // } else {
+        //     setMake('all')
+        //     setModel('all')
+        // }
     }
 
-    useEffect(() => {
-        saveFilters();
-    },[make, model])
+    // useEffect(() => {
+    //     saveFilters();
+    // },[make, model]);
 
     /*  Filter sliders */
     const [minPrice, setMinPrice] = useState(0)
