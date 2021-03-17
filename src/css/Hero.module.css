@@ -3,7 +3,7 @@
     background-image: url(https://images.unsplash.com/photo-1524345591067-da3f166c0e42?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80);
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 450px;
     width: 100%;
     margin-top: -25px;
 }
@@ -19,12 +19,13 @@
 .h1{
     color: white !important;
     text-align: left;
-    font-size: 1.5rem
+    font-size: 1.8rem
 }
 
 .p{
     color: white !important;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
 }
 
 .gradient{
@@ -41,64 +42,69 @@
 }
 
 .carousel{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     position: relative;
 }
 
+.noPadding {
+    padding: 0;
+}
+
 .saleSign{
-    width: 120px;
+    width: 80px;
     position: absolute;
-    top: -22px;
+    top: -12px;
     left: -25px;
     transform: rotate(349deg);
 }
 
 @media only screen and (min-width: 400px){
-    .carousel{
-        width: 80%;
+    .hero{
+        height: 490px;
+    }
+    .p{
+        margin-bottom: 1.5rem;
     }
 }
 
-@media only screen and (min-width: 480px){
-    .carousel{
-        width: 70%;
+@media only screen and (min-width: 500px){
+    .saleSign {
+        width: 100px;
+        top: -15px;
+    }
+
+    .hero{
+        height: 530px;
     }
 }
-
-@media only screen and (min-width: 550px){
-    .carousel{
-        width: 60%;
+@media only screen and (min-width: 600px){
+    .hero{
+        height: 580px;
     }
 }
 
 @media only screen and (min-width: 720px) {
-    .h1{
-        font-size: calc(1rem + 1vw);
+    .hero{
+        height: 610px;
     }
-
-    .p{
-        font-size: calc(0.5rem + 1vw);
+    .saleSign {
+        width: 120px;
     }
 
     .flexCenter{
         flex-direction: row !important;
     }
-
-    .carousel{
-        width: 56%;
-    }
 }
 
 @media only screen and (min-width: 768px) {
-    .carousel{
-        width: 100%;
+    .hero{
+        height: 400px;
     }
 
     .h1{
-        font-size: 1.8rem;
+        /* font-size: 2rem; */
     }
-
     .p{
         font-size: 1rem;
     }
@@ -106,14 +112,6 @@
 
 @media only screen and (min-width: 840px) {
     .h1{
-        font-size: 2.1rem;
-    }
-
-    .p{
-        font-size: 1rem;
-    }
-
-    .carousel{
-        width: 100%;
+        font-size: 2.2rem;
     }
 }

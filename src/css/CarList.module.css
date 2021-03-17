@@ -20,6 +20,12 @@
 
 @media screen and (min-width: 600px) {
     .carsContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .carsContainer {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
