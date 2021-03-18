@@ -132,68 +132,41 @@
 }
 
 .img {
-  width: 100%;
+  height: 100%;
+  /* width: 100%; */
 }
 
 .cartNumber {
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  font-size: .6rem;
-  font-weight: bold;
-  border-radius: 50%;
-  border: 1px solid #f4f4f4;
-  color: #eee;
   position: absolute;
+  display: inline-block;
+  font-size: .7rem;
+  font-weight: bold;
+  border: 1px solid #f4f4f4;
+  border-radius: 50px;
+  color: #eee;
   left: -6px;
   top: -6px;
   width: 19px;
   height: 19px;
   background-color: #337aa7;
-  /* background-color: #8b8b8b; */
-  /* background: linear-gradient(183deg, rgb(110, 175, 212) 0%, rgb(17, 128, 192) 100%); */
-  /* box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.08),
-              inset 1px 1px 1px rgba(255, 255, 255, 0.144); */
 }
 
 .cartNumSpan {
-  position: relative;
-  top: 1px;
-}
-
-/* .cartNumber {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: .8rem;
-  font-weight: bold;
-  color: rgb(128, 128, 128);
+  /* background-color: rgba(137, 43, 226, 0.26); */
   position: absolute;
-  left: 2px;
-  top: -9px;
-  width: 17px;
-  height: 16px;
-} */
+  width: 100%;
+  text-align: center;
+  height: 100%;
+}
 
 @keyframes updateAnimation {
   0% {
-    /* transform: scale(1); */
-    /* top: -12px;
-    width: 17px;
-    height: 16px; */
   }
   50% {
     -webkit-backface-visibility: hidden;
     transform: scale(1.2);
-    /* top: -13px;
-    width: 19px;
-    height: 18px; */
   }
   100% {
-    /* transform: scale(1); */
-    /* top: -12px;
-    width: 17px;
-    height: 16px; */
   }
 }
 
@@ -205,10 +178,9 @@
 .leftWrapper {
   position: relative;
   cursor: pointer;
-  left: 50%;
-  transform: translateX(-57%);
-  width: 50%;
-  max-width: 220px;
+  left: 51%;
+  transform: translateX(-50%);
+  width: 170px;
   display: flex;
   align-items: center;
 }
@@ -236,17 +208,20 @@
 .iconsWrapper {
   display: flex;
   align-items: center;
+  width: 106px;
   /* width: 60px; */
-  width: 30px;
-  justify-content: space-between;
+  height: 30px;
+  justify-content: flex-end;
   margin-left: auto;
+  margin-right: -4px;
 }
 
 .cartIconWrapper {
   position: relative;
   /* Change back to 47% when member page icon is added again */
-  /* width: 47%; */
-  width: 100%;
+  width: 47%;
+  /* width: 100%; */
+  height: 100%;
   cursor: pointer;
 }
 
@@ -261,27 +236,57 @@
 
 .rrrrlogoImg {
   position: relative;
-  display: inline-block;
-  margin-right: .5rem;
+  display: none;
   height: 100%;
   width: 37%;
+  order: 2;
+  margin: 0 auto;
+  /* margin-left: .3rem; */
 }
 
 .rrrrlogoText {
   position: relative;
   display: inline-block;
-  margin-right: .5rem;
   height: 100%;
-  width: 60%;
+  width: 63%;
 }
 
 .acctContact {
   position: relative;
-  width: 39%;
+  height: 100%;
+  /* width: 39%; */
+}
+
+.acctContact:hover {
+  cursor: pointer;
 }
 
 .acctContactImg {
-  width: 100%;
+  /* width: 100%; */
+  height: 100%;
+}
+
+.loginSpan{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2C7CAE;
+}
+
+.loginSpan:hover{
+  color: #DA6547;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 400px) {
+  .leftWrapper {
+    width: 185px;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .leftWrapper {
+    width: 210px;
+  }
 }
 
 @media screen and (min-width: 500px) {
@@ -292,14 +297,6 @@
   
   .links {
     top: 0;
-  }
-
-  .cartNumber {
-    font-size: .7rem;
-    left: -6px;
-    top: -8px;
-    width: 20px;
-    height: 20px;
   }
 
   .cartShadow {
@@ -320,28 +317,13 @@
     font-size: 1.1rem;
   }
 
+  .rrrrlogoImg{
+    display: inline-block;
+  }
+
   .leftWrapper {
     position: absolute;
-    display: flex;
-    justify-content: space-between;
-    width: 140px;
-    padding: 0;
-    margin: 0;
-    margin-left: .1rem;
-    left: 50%;
-  }
-
-  .rrrrlogoText {
-    width: 100%;
-    margin-top: .3rem;
-    margin-right: .5rem;
-  }
-
-  .rrrrlogoImg {
-    position: relative;
-    top: 2px;
-    width: 55%;
-    order: 2;
+    width: 38%;
   }
   
   .hamburgerWrapper {
@@ -354,8 +336,9 @@
 
   .iconsWrapper {
     /* Bring back to 70 with member icon */
-    /* width: 70px; */
-    width: 37px;
+    min-width: 70px;
+    /* width: 37px; */
+    height: 28px;
   }
 }
 
@@ -370,31 +353,21 @@
   }
 
   .leftWrapper {
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    width: 170px;
-    margin-left: .1rem;
-    left: 50%;
+    width: 270px;
   }
 
-  .rrrrlogoText {
-    width: 100%;
-    margin-top: .3rem;
-    margin-right: .5rem;
-  }
-
-  .rrrrlogoImg {
-    position: relative;
-    top: 2px;
-    width: 55%;
-    order: 2;
+  .iconsWrapper{
+    margin-right: 5px;
   }
 }
 
 @media screen and (min-width: 900px) {
   .navbar {
     padding: 1.1rem .2rem;
+  }
+
+  .iconsWrapper{
+    margin-right: 8px;
   }
 }
 

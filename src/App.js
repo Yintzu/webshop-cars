@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Checkout from './pages/Checkout';
 import Confirmation from './pages/Confirmation';
+import Profile from './pages/Profile';
 import Details from './pages/Details';
 import Footer from './components/Footer';
 import TestPage from './pages/TestPage';
@@ -13,6 +14,8 @@ import UserContext from './contexts/UserContext';
 import SearchContext from './contexts/SearchContext';
 import ScrollToTop from './components/ScrollToTop';
 import Hero from './components/Hero';
+import CreateAccount from './pages/CreateAccount';
+import UserPage from './pages/UserPage';
 
 function App() {
   return (
@@ -31,7 +34,10 @@ function App() {
                   {/* <Route exact path="/testpage" component={TestPage} /> */}
                   <Route exact path="/checkout" component={Checkout} />
                   <Route exact path="/confirmation" component={Confirmation} />
+                  <Route exact path="/profile" component={Profile} />
                   <Route exact path="/details/:id" component={Details} />
+                  <Route exact path="/register" component={CreateAccount}/>
+                  <Route exact path="/userpage" component={UserPage} />
                 </div>
                 <Footer />
               </BrowserRouter>
