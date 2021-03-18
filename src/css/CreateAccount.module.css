@@ -29,6 +29,22 @@
     justify-content: space-evenly;
 }
 
+.errorBorder{
+    box-shadow: 0 0 0 3px rgb(255, 122, 122);
+}
+
+.errorText{
+    color: red !important;
+    position: absolute;
+    top: 62px;
+    font-size: 0.8rem;
+}
+
+.positionRelative{
+    position: relative;
+    margin-bottom: 1.2rem;
+}
+
 @media only screen and (min-width: 576px){
     .registerContainer{
         width: 48%;
