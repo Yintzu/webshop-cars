@@ -22,12 +22,6 @@ const SearchContextProvider = (props) => {
     const searchCars = (inputValue) => {
         // Split the input-string into an array
         let inputArray = inputValue.toLowerCase().split(' ');
-        // let carsArray;
-        // if (filtered) {
-        //     carsArray = [...renderList];
-        // } else {
-        //     carsArray = [...cars];
-        // }
 
         // Check each item in cars-array
         // Check each word in the inputArray to see if one or more matches the matchString created for each car

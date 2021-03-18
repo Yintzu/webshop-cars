@@ -14,7 +14,6 @@ const FilterSearchContextProvider = (props) => {
     const { cars } = useContext(CarContext);
     const { searched, setRenderList } = useContext(SearchContext);
 
-
     const [make, setMake] = useState('all');
     const [model, setModel] = useState('all');
   
@@ -68,7 +67,6 @@ const FilterSearchContextProvider = (props) => {
         } else if (id === 'model') {
             setModel(value);
         }
-
     }
 
     /*  Filter sliders */
@@ -91,8 +89,7 @@ const FilterSearchContextProvider = (props) => {
             [
                 {name: "min year", value: minYears, minValue: "1960", maxValue: "2021", steps: "1"},
                 {name: "max year", value: maxYears, minValue: "1960", maxValue: "2021", steps: "1"}
-            ],
-            [
+            ],[
                 {name: "min price", value: minPrice, minValue: "0", maxValue: "1000000", steps: "50000"},
                 {name: "max price", value: maxPrice, minValue: "0", maxValue: "1000000", steps: "50000"},
             ],[
@@ -100,7 +97,6 @@ const FilterSearchContextProvider = (props) => {
                 {name: "max miles", value: maxMiles, minValue: "0", maxValue: "100000", steps: "5000"}
             ],
         ])
-
     }, [...filterWatch]);
     
     // Check which slider is pulled and update the value
