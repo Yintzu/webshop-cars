@@ -31,7 +31,7 @@ const Search = () => {
     }
 
     const handleSelect = (e) => {
-        saveSelects(e.target.value)
+        saveSelects(e.target.value, e.target.id)
         setFiltered(true)
         setSearched(false);
     }  
