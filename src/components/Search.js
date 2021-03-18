@@ -1,10 +1,14 @@
 import { useState, useContext } from 'react';
 import style from '../css/Search.module.css';
 import { SearchContext } from '../contexts/SearchContext';
+import { FilterSearchContext } from '../contexts/FilterSearchContext';
 
 const Search = () => {
     const [searchInput, setSearchInput] = useState('');
-    const { searchCars, searched, setSearched, resetRenderList, selectLists, saveSelects, sliders, saveSliders, filtered, setFiltered, removeFilters } = useContext(SearchContext);
+    const { searchCars, searched, setSearched, resetRenderList} = useContext(SearchContext);
+
+    const {selectLists, saveSelects, sliders, saveSliders, filtered, setFiltered, removeFilters } = useContext(FilterSearchContext);
+    
     const [isClicked, setIsClicked] = useState(false);
 
     const handleSubmit = (e) => {
