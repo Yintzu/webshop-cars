@@ -45,7 +45,14 @@ const CarCard = (props) => {
         </div>
         <div className={style.infoRow}>
           <h5 className={`${style.cardTitle}`}>{props.car.make} {props.car.model} </h5>
-          <div className={style.carDetailText}><span className={`${style.boldText} ${style.yearLabel}`}>Year:</span> {props.car.year}</div>
+          <div className={style.carDetailText}>
+            <div>
+              <span className={`${style.boldText} ${style.yearLabel}`}>Year:</span> {props.car.year}
+            </div>
+            <div className={style.milesWrapper}>
+              <span className={`${style.boldText} ${style.milesLabel}`}>Miles:</span> {props.car.miles}
+            </div>
+          </div>
           <hr className={style.hrCard} />
           <p className={`${style.cardDesc}`}>{props.car.descShort}</p>
           <div className={style.cardBtns}>
