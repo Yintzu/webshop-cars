@@ -2,9 +2,11 @@ import ProfileInfo from '../components/ProfileInfo';
 import ProfileCar from '../components/ProfileCar';
 import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
+import { useHistory } from 'react-router-dom';
 
 const Profile = () => {
 const {loggedInUser} = useContext(UserContext);
+const history = useHistory();
 
   return (
     <div className="container">
@@ -21,7 +23,7 @@ const {loggedInUser} = useContext(UserContext);
           </div>
         </div>
 
-        : <div>Brb</div>}
+        : history.push("/")}
 
     </div>
   );
