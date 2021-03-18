@@ -22,7 +22,6 @@ const CreateAccount = () => {
         setLoggedInUser(newUserObject)
         
         history.push("/profile")
-
     }
 
     useEffect(()=>{
@@ -36,29 +35,29 @@ const CreateAccount = () => {
                 <div className={`row ${style.spaceAround}`}>
                     <div className={`col-12 col-sm-6 ${style.registerContainer}`}>
                         <label htmlFor="registerFullName">Full name</label>
-                        <input className={`form-control`} type="text" id="registerFullName" name="fullName"></input>
+                        <input className={`form-control`} type="text" id="registerFullName" name="fullName" required></input>
 
                         <label htmlFor="registerPersonalNumber">Personal number</label>
-                        <input className={`form-control`} type="text" id="registerPersonalNumber" name="personalNumber"></input>
+                        <input className={`form-control`} type="text" id="registerPersonalNumber" name="personalNumber" required></input>
 
                         <label htmlFor="registerUserName">User name</label>
-                        <input className={`form-control`} type="text" id="registerUserName" name="userName"></input>
+                        <input className={`form-control`} type="text" id="registerUserName" name="userName" required></input>
 
                         <label htmlFor="registerPhone">Phone number</label>
-                        <input className={`form-control`} type="text" id="registerPhone" name="phoneNumber"></input>
+                        <input className={`form-control`} type="text" id="registerPhone" name="phoneNumber" required></input>
                     </div>
                     <div className={`col-12 col-sm-6 ${style.registerContainer}`}>
                         <label htmlFor="registerEmail">E-mail address</label>
-                        <input className={`form-control`} type="text" id="registerEmail" name="email"></input>
+                        <input className={`form-control`} type="text" id="registerEmail" name="email" required></input>
 
                         <label htmlFor="registerConfirmEmail">Confirm e-mail address</label>
-                        <input className={`form-control`} type="text" id="registerConfirmEmail"></input>
+                        <input className={`form-control`} type="text" id="registerConfirmEmail" required></input>
 
                         <label htmlFor="registerPassword">Password</label>
-                        <input className={`form-control`} type="text" id="registerPassword" name="password"></input>
+                        <input className={`form-control`} type="text" id="registerPassword" name="password" required></input>
 
                         <label htmlFor="registerConfirmPassword">Confirm password</label>
-                        <input className={`form-control`} type="text" id="registerConfirmPassword"></input>
+                        <input className={`form-control`} type="text" id="registerConfirmPassword" required></input>
                     </div>
                 </div>
 
