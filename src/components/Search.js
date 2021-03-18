@@ -4,14 +4,16 @@ import { SearchContext } from '../contexts/SearchContext';
 
 const Search = () => {
     const [inputValue, setInputValue] = useState("");
-    const { searchCars, resetRenderList, filterLists, saveFilters, searched, setSearched, saveSliders, sliders, removeFilters, setFiltered, filtered } = useContext(SearchContext);
+    const { searchCars, resetRenderList, filterLists, saveFilters, searched, setSearched, saveSliders, sliders, removeFilters, setFiltered, filtered, filterSearch } = useContext(SearchContext);
     const [isClicked, setIsClicked] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setFiltered(false);
+        removeFilters();
         searchCars(inputValue);
         setInputValue('');
-        setSearched(true);
+        setSearched(true);   
     }
 
     const handleChange = (e) => {
@@ -28,11 +30,14 @@ const Search = () => {
     }
 
     const handleSelect = (e) => {
-        saveFilters(e.target.value)
+        saveFilters(e.target.value, e.target.id)
         setFiltered(true)
+        setSearched(false);
+        // filterSearch();
     }  
    
     const handleSlide = (e) => {
+        setSearched(false);
         saveSliders(e)
         setFiltered(true)
     }
