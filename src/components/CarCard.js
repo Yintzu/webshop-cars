@@ -23,11 +23,11 @@ const CarCard = (props) => {
       }
     });
     if (inCart) {
-      return <button onClick={() => removeFromCart(car)} className={`btn btn-danger ${style.removeButton}`} id="addRemove">Remove</button>
+      return <button onClick={() => removeFromCart(car)} className={`btn btn-danger ${style.btnsWidth} ${style.removeButton}`} id="addRemove">Remove</button>
     } else if (bought) {
-      return <button className={`btn btn-secondary ${style.disabled} ${style.btnCustom}`} id="addRemove">Sold</button>
+      return <button className={`btn btn-secondary ${style.btnsWidth} ${style.disabled} ${style.btnCustom}`} id="addRemove">Sold</button>
     } else {
-      return <button onClick={() => addToCart(car)} className={`btn btn-primary ${style.addButton}`} id="addRemove">Add to cart</button>
+      return <button onClick={() => addToCart(car)} className={`btn btn-primary ${style.btnsWidth} ${style.addButton}`} id="addRemove">Buy</button>
     }
   }
 
@@ -45,9 +45,14 @@ const CarCard = (props) => {
         </div>
         <div className={style.infoRow}>
           <h5 className={`${style.cardTitle}`}>{props.car.make} {props.car.model} </h5>
-          <p className={style.carDetailText}><span className={style.boldText}>Price:</span> {formatSum(props.car.price)} <span className={style.boldText}>Year:</span> {props.car.year}</p>
+          <div className={style.carDetailText}><span className={`${style.boldText} ${style.yearLabel}`}>Year:</span> {props.car.year}</div>
           <hr className={style.hrCard} />
           <p className={`${style.cardDesc}`}>{props.car.descShort}</p>
+          <div className={style.cardBtns}>
+            <span className={style.largePrice}>{formatSum(props.car.price)}</span>
+            {/* <button className={`btn btn-secondary ${style.readMore} ${style.btnsWidth}`}>Read more</button> */}
+            {renderButtons(props.car)}
+          </div>
         </div>
       </div>
       <div className={style.buyRow}>
@@ -56,7 +61,7 @@ const CarCard = (props) => {
           {/* <h5 className={`${style.cardPrice}`}>{formatSum(props.car.price)} </h5> */}
         </div>
         {/* <button className={`btn btn-secondary ${style.readMore} ${style.btnReadMore}`}>Read more</button> */}
-        {renderButtons(props.car)}
+       
       </div>
     </div>
   );
