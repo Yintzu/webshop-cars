@@ -1,5 +1,6 @@
 import style from '../css/Hero.module.css';
-import Carousel from './DiscountCarousel';
+import Carousel from './discountCarousel.js';
+import SaleSign from './saleSign';
 
 const Hero = () => {
     return (
@@ -14,7 +15,8 @@ const Hero = () => {
                     <div className={`col-11 col-md-7`}>
                         <div className={`${style.gradient} ${style.carousel}`}>
                             <Carousel/>
-                            <img className={style.saleSign} src="../assets/carousel/sale.svg"></img>
+                            <img className={style.saleSign} src="../components/saleSign.js"></img>
+                            <SaleSign/>
                         </div>
                     </div>
                 </div>
