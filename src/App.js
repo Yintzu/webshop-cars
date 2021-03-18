@@ -16,6 +16,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Hero from './components/Hero';
 import CreateAccount from './pages/CreateAccount';
 import UserPage from './pages/UserPage';
+import SaleSign from './components/saleSign';
 
 function App() {
   return (
