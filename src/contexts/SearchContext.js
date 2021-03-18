@@ -80,6 +80,7 @@ const SearchContextProvider = (props) => {
         {listName: "model", list: modelArray, value: model}
     ];
 
+    // Function to create lists of makes and models, used for rendering out options in selects in the JSX in Search.js
     const createFilterArrays = (list) => {
         let tempArray = []
         cars.forEach(car => {
@@ -94,6 +95,7 @@ const SearchContextProvider = (props) => {
         setModelArray(createFilterArrays("model"))
     },[cars])
 
+    // Re-render the list of models depending on what make is chosen
     useEffect(() => {
         let modelArrayFilter = cars.filter(car => car.make === make);
         let tempArray = []
@@ -109,6 +111,8 @@ const SearchContextProvider = (props) => {
         }
     }, [make]);
 
+    // Saving value in selects (make and model)
+    // Setting state depending on what is clicked
     const saveFilters = (value, id) => {
         if (id === 'make' && value === 'all') {
             setMake(value);
@@ -138,13 +142,13 @@ const SearchContextProvider = (props) => {
     const [minPrice, setMinPrice] = useState(0)
     const [maxPrice, setMaxPrice] = useState(1000000)
     const [minMiles, setMinMiles] = useState("0")
-    const [maxMiles, setMaxMiles] = useState("1000000")
+    const [maxMiles, setMaxMiles] = useState("100000")
     const [minYears, setMinYears] = useState(1960)
     const [maxYears, setMaxYears] = useState(2021)
 
     const [sliders, setSliders] = useState(null);
 
-    // This array contains some of the states that are used in useEffect
+    // This array contains some of the states that are watched in useEffect
     const filterWatch = [minPrice, maxPrice, minMiles, maxMiles, minYears, maxYears];
     
     // This data is used to render the sliders in the JSX
