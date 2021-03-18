@@ -16,11 +16,11 @@ const {loggedInUser} = useContext(UserContext);
 
         <div>
           <div className="row">
-            <div className="col col-sm-6">
+            <div className="col col-sm-4">
               <ProfileInfo />
             </div>
             <div className="col
-                col-sm-6">
+                col-sm-8">
               <ProfileCar />
             </div>
           </div>

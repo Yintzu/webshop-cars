@@ -1,5 +1,5 @@
 .containerWrapper {
-    background-color: powderblue;
+    /* background-color: powderblue; */
     padding-top: 20px;
     max-width: 300px;
     margin-left: 0;
@@ -9,18 +9,18 @@
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: powderblue;
+    /* background-color: powderblue; */
 }
 
 .profileImage {
     /* height: 60%; */
-    width: 40%;
+    width: 60%;
     margin: 0 auto;
     display: block;
     border-radius: 50%;
-    border: 6px solid #2C7CAE;
+    border: 5px solid #2C7CAE;
     filter: drop-shadow(0 0 0.3rem #636363);
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .profileHeading {
