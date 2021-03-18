@@ -2,12 +2,14 @@ import { useState, useContext } from 'react';
 import style from '../css/Search.module.css';
 import { SearchContext } from '../contexts/SearchContext';
 import { FilterSearchContext } from '../contexts/FilterSearchContext';
+import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 
 const Search = () => {
     const [searchInput, setSearchInput] = useState('');
     const { searchCars, searched, setSearched, resetRenderList} = useContext(SearchContext);
+    const { formatSum } = useContext(ShoppingCartContext);
 
-    const {selectLists, saveSelects, sliders, saveSliders, filtered, setFiltered, removeFilters } = useContext(FilterSearchContext);
+    const { selectLists, saveSelects, sliders, saveSliders, filtered, setFiltered, removeFilters } = useContext(FilterSearchContext);
     
     const [isClicked, setIsClicked] = useState(false);
 
@@ -99,7 +101,9 @@ const Search = () => {
                                                 <div key={listObject.name} className={style.slideWrapper}>
                                                     <div className={style.labels}>
                                                         <label className={style.label} htmlFor={listObject.name}>{listObject.name}</label>
-                                                        <label htmlFor={listObject.name}>{listObject.value}</label>
+                                                        <label htmlFor={listObject.name}>
+                                                            {listObject.name.includes("price") ? formatSum(listObject.value) : listObject.value}
+                                                            </label>
                                                     </div>
                                                     <div className={style.slideContainer}>
                                                         <input className={style.slider} id={listObject.name} type="range" min={listObject.minValue} max={listObject.maxValue} step={listObject.steps} value={listObject.value} onChange={handleSlide}></input> 
