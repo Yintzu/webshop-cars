@@ -76,7 +76,7 @@ const SearchContextProvider = (props) => {
     const [makeArray, setMakeArray] = useState([]);
     const [modelArray, setModelArray] = useState([]);
 
-    const filterLists = [
+    const selectLists = [
         {listName: "make", list: makeArray, value: make}, 
         {listName: "model", list: modelArray, value: model}
     ];
@@ -110,7 +110,7 @@ const SearchContextProvider = (props) => {
         }
     }, [make]);
 
-    const saveFilters = (value) => {
+    const saveSelects = (value) => {
         if(value !== 'all'){
             if(makeArray.includes(value)){
                 setMake(value)
@@ -123,14 +123,14 @@ const SearchContextProvider = (props) => {
         }
     }
     useEffect(() => {
-        saveFilters();
+        saveSelects();
     },[make, model])
 
     /*  Filter sliders */
     const [minPrice, setMinPrice] = useState(0)
     const [maxPrice, setMaxPrice] = useState(1000000)
-    const [minMiles, setMinMiles] = useState("0")
-    const [maxMiles, setMaxMiles] = useState("1000000")
+    const [minMiles, setMinMiles] = useState(0)
+    const [maxMiles, setMaxMiles] = useState(1000000)
     const [minYears, setMinYears] = useState(1960)
     const [maxYears, setMaxYears] = useState(2021)
 
@@ -268,8 +268,8 @@ const saveSliders = (e) => {
       setSearchResult,
       renderList,
       resetRenderList,
-      filterLists,
-      saveFilters,
+      selectLists,
+      saveSelects,
       sliders,
       saveSliders,
       searched,
