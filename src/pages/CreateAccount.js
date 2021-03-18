@@ -14,11 +14,27 @@ const CreateAccount = () => {
     const registerHandler = (e) => {
         e.preventDefault();
         let inputList = document.querySelectorAll("input");
+        let error = false;
 
         if (users.some((user) => user.email == inputList[4].value)) {
             inputList[4].classList.add(`${style.errorBorder}`);
             setEmailExists(true);
+            error = true;
         }
+        if (inputList[4].value !== inputList[5].value) {
+            inputList[5].classList.add(`${style.errorBorder}`);
+            setEmailMismatch(true);
+            error = true;
+        }
+        if (inputList[6].value !== inputList[7].value) {
+            inputList[7].classList.add(`${style.errorBorder}`);
+            setPasswordMismatch(true);
+            error = true;
+        }
+        if (error) {
+            return
+        }
+
 
         let newUserObject = {};
 
@@ -30,12 +46,12 @@ const CreateAccount = () => {
         setUsers([...users, newUserObject])
         setLoggedInUser(newUserObject)
 
-        // history.push("/profile")
+        history.push("/profile")
     }
 
-    const removeError = (e) => {
+    const removeError = (e, setter) => {
         e.target.classList.remove(`${style.errorBorder}`)
-        setEmailExists(false);
+        setter(false);
     }
 
     useEffect(() => {
@@ -68,12 +84,12 @@ const CreateAccount = () => {
                     <div className={`col-12 col-sm-6 ${style.registerContainer}`}>
                         <div className={style.positionRelative}>
                             <label htmlFor="registerEmail">E-mail address</label>
-                            <input className={`form-control`} type="text" id="registerEmail" name="email" onChange={removeError}></input>
+                            <input className={`form-control`} type="text" id="registerEmail" name="email" onChange={(e) => removeError(e, setEmailExists)}></input>
                             {emailExists && <p className={`${style.errorText}`}>This e-mail address is already in use.</p>}
                         </div>
                         <div className={style.positionRelative}>
                             <label htmlFor="registerConfirmEmail">Confirm e-mail address</label>
-                            <input className={`form-control`} type="text" id="registerConfirmEmail"></input>
+                            <input className={`form-control`} type="text" id="registerConfirmEmail" onChange={(e) => removeError(e, setEmailMismatch)}></input>
                             {emailMismatch && <p className={`${style.errorText}`}>E-mail address does not match.</p>}
                         </div>
                         <div className={style.positionRelative}>
@@ -82,8 +98,8 @@ const CreateAccount = () => {
                         </div>
                         <div className={style.positionRelative}>
                             <label htmlFor="registerConfirmPassword">Confirm password</label>
-                            <input className={`form-control`} type="password" id="registerConfirmPassword"></input>
-                            {passwordMismatch && <p className={`${style.errorText}`}>Passwords does not match</p>}
+                            <input className={`form-control`} type="password" id="registerConfirmPassword" onChange={(e) => removeError(e, setPasswordMismatch)}></input>
+                            {passwordMismatch && <p className={`${style.errorText}`}>Passwords does not match.</p>}
                         </div>
                     </div>
                 </div>
