@@ -17,13 +17,13 @@ const ModalTest = () => {
           </div>
 
           
-            <div className="modal-footer ">
-              <h4>This is the Modal Title</h4>
+              <div className="modal-footer ">
+                <h4>This is the Modal Title</h4>
               </div>
             </div>
+          </div>
         </div>
       </div>
-    </div>
     </div>
    );
 }
