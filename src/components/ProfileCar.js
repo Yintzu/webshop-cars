@@ -25,7 +25,7 @@ const ProfileCar = () => {
             {order.boughtCars.map((car) => {
               return (
               <div className={styles.profileCarWrapper} key={car.vin}>
-              <img src={car.carImg}alt="Profile picture" className={`${styles.profileImage} ${styles.gridItem1}`}/>
+              <img src={car.carImg} alt="Car picture" className={`${styles.profileImage} ${styles.gridItem1}`}/>
               <p className={`${styles.profileText} ${styles.gridItem2}`}>{car.make} {car.model}</p>
               <p className={`${styles.profileText} ${styles.gridItem3}`}>{formatSum(car.price)}</p>
               <p className={`${styles.profileText} ${styles.gridItem4}`}>{car.year}</p>
