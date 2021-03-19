@@ -1,13 +1,13 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 import styles from '../css/ProfileInfo.module.css'
 import labrador_profile from './images/labrador_profile.jpg'
 
 const ProfileInfo = () => {
-
-  const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+  const { loggedInUser, setLoggedInUser, isClicked, setIsClicked } = useContext(UserContext);
   const history = useHistory();
+
   /*   {if(!loggedInUser){
       return <div></div>
     }} */
@@ -39,9 +39,10 @@ const ProfileInfo = () => {
           <p className={styles.profileText}>Telephone: {loggedInUser.phoneNumber}</p>
           <p className={styles.profileText}>E-mail: {loggedInUser.email}</p>
           <button className={`
-               ${styles.profileButton}
-               btn
-               `} type="submit">Edit profile</button>
+          ${styles.profileButton}
+           btn`} onClick={() => setIsClicked(!isClicked)}>
+                 Edit profile
+               </button>
           <button className={`
                ${styles.logOutButton}
                btn
