@@ -8,6 +8,12 @@
   border-radius: 3px;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0, 4px;
+}
+
 .modal-footer {
   padding: 10px;
 }
