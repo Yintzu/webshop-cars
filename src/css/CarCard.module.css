@@ -19,6 +19,10 @@
     flex-direction: column;
 }
 
+.cardSmallText {
+    display: none;
+}
+
 .cardTitle {
     color: #2C7CAE!important;
     font-size: .9rem;
@@ -68,7 +72,7 @@
 .largePrice {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     width: 50%;
     font-size: 1.23rem;
 }
@@ -195,154 +199,84 @@
 }
 
 @media screen and (min-width: 420px) {
-    .cardTitle {
-        font-size: 1.3rem;
-    }
-    .carDetailText {
-        font-size: 1rem;
-    }
-    .cardBtns {
-        max-height: initial;
-    }
-    .btnsWidth {
-        max-height: 35px;
-        width: 53%;
-        font-size: .9rem;
-    }
-    .largePrice {
-        font-size: 1.65rem;
-        width: 45%;
-    }
 }
 
 @media screen and (min-width: 460px) {
-    .imgWrapper {
-        width: 35%;
-    }
-    .infoRow {
-        width: 65%;
-    }
-    .cardTitle {
-        font-size: 1.4rem;
-    }
-    .carDetailText {
-        font-size: 1rem;
-    }
-    .cardBtns {
-        margin-top: auto;
-    }
-    .hrCard {
-        margin: .4rem 0 0rem 0;
-    }
 }
 
 @media screen and (min-width: 500px) {
-    .cardTitle {
-        color: #2C7CAE!important;
-        font-size: 1.25rem;
-        margin-top: .3rem;
-    }
-    .carDetailText {
-        font-size: 1rem;
-    }
-    .milesLabel {
-        margin-left: .7rem;
-    }
-    .cardBtns {
-        margin-top: .1rem;
-    }
+}
+
+
+
+@media screen and (min-width: 700px) {
+}
+
+@media screen and (min-width: 420px) {
     .carImg {
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
     }
-    .carCard {
-        flex-direction: column;
-        justify-content: space-between;
-    }
     .topRow {
         flex-direction: column;
-    }
-    .infoRow {
-        padding: 0 .2rem;
-        width: 100%;
-    }
+    }  
     .imgWrapper {
         width: 100%;
-    }
-
-    .buyRow {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        /* background-color: rgb(235, 235, 235); */
-    }   
-}
-
-@media screen and (min-width: 600px) {
-    .cardTitle {
-        font-size: 1rem;
-        margin-bottom: .1rem;
     }
     .carDetailText {
         font-size: .95rem;
     }
-    .largePrice {
-        font-size: 1.25rem;
-    }
-    .btnsWidth {
-        font-size: .8rem;
-        padding-top: .13rem;
-        padding-bottom: .13rem;
-    }
-}
-
-@media screen and (min-width: 700px) {
-    .cardTitle {
-        font-size: 1.15rem;
-    }
-    .cardDesc {
-        display: initial;
-    }
-    .largePrice {
-       
-        font-size: 1.5rem;
-    }
-    .milesWrapper {
-        display: initial;
-    }
-    .btnsWidth {
-        font-size: .9rem;
-        padding-top: .15rem;
-        padding-bottom: .15rem;
-    }
-}
-
-@media screen and (min-width: 770px) {
     .infoRow {
+        padding: 0 .2rem;
+        width: 100%;
         padding: .3rem;
     }
+    .milesWrapper {
+        margin-left: .3rem;
+        display: initial;
+    }
     .cardTitle {
-        font-size: 1.25rem;
+        font-size: 1.4rem;
+        margin-top: .3rem;
+        margin-bottom: .3rem;
+    }
+    .cardSmallText {
+        height: 40px;
+        margin: .4rem 0;
+        font-size: .8rem;
+        font-style: italic;
+    }
+    .cardDesc {
+        display: none;
+    }
+    .cardBtns {
+        margin-top: .1rem;
+        padding-bottom: .2rem;
+        flex-direction: column; 
+        border-radius: 5px;
+    }
+    .hrCard {
+        margin: .2rem 0;
     }
     .largePrice {
         line-height: 1.1;
-        font-size: 1.7rem;
+        padding: .5rem 0;
+        border-radius: 5px;
+        font-size: 1.5rem;
+        margin-bottom: .5rem;
+        width: 100%;
+        background-color: rgb(235, 235, 235);
     }
-    .cardDesc {
-        font-size: .95rem;
-    }
-    .cardBtns {
-        padding-bottom: .2rem;
+    .btnsWidth {
+        margin-left: 0;
+        width: 100%;
+        font-size: 1rem;
+        padding: .3rem .3rem;
     }
 }
 
-@media screen and (min-width: 880px) {
-    .largePrice {
-        font-size: 1.9rem;
-    }
-    .btnsWidth {
-        font-size: 1rem;
-        padding: .3rem .3rem;
+@media screen and (min-width: 600px) {
+    .cardSmallText {
+        display: initial;
     }
 }

@@ -54,6 +54,8 @@ const CarCard = (props) => {
             </div>
           </div>
           <hr className={style.hrCard} />
+          <p className={style.cardSmallText}>lorem ipusum dolor cookie tasty ipsum dolor sit amet lorem ipsum</p>
+          <hr className={style.hrCard} />
           <p className={`${style.cardDesc}`}>{props.car.descShort}</p>
           <div className={style.cardBtns}>
             <span className={style.largePrice}>{formatSum(props.car.price)}</span>
@@ -61,14 +63,6 @@ const CarCard = (props) => {
             {renderButtons(props.car)}
           </div>
         </div>
-      </div>
-      <div className={style.buyRow}>
-
-        <div className={style.priceWrapper}>
-          {/* <h5 className={`${style.cardPrice}`}>{formatSum(props.car.price)} </h5> */}
-        </div>
-        {/* <button className={`btn btn-secondary ${style.readMore} ${style.btnReadMore}`}>Read more</button> */}
-       
       </div>
     </div>
   );
