@@ -3,12 +3,17 @@ import { useContext, useEffect, useState } from 'react';
 import { CarContext } from '../contexts/CarContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 
+import ModalTest from '../components/ModalTest';
+
+    
+
 
 const Details = (props) => {
 
     const { cars, boughtCars } = useContext(CarContext);
     const [car, setCar] = useState(null);
     const { addToCart, formatSum, shoppingCartItems, removeFromCart } = useContext(ShoppingCartContext);
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         findCar()
@@ -51,9 +56,11 @@ const Details = (props) => {
     const renderCar = () => {
         return (
             <div className={style.details}>
+                {/* <Modal /> */}
+                {showModal && <ModalTest />}
                 <h1 className={`mt-0 ${style.mainHeading}`}>Car details</h1>
                 <div className="row g-0">
-                    <div className={`col ${style.imageWrapper}`}>
+                    <div className={`col ${style.imageWrapper}`} onClick={() => setShowModal(!showModal)}>
                         <img src={car.carImg} alt={`${car.make} ${car.model} ${car.year}`} />
                     </div>
                     <div className={`col-md-4 ${style.buy}`}>
@@ -77,6 +84,7 @@ const Details = (props) => {
                         </ul>
                     </div>
                 </div>
+                <button onClick={() => setShowModal(!showModal)}>Show Modal</button>
             </div>
         );
     }
@@ -85,3 +93,4 @@ const Details = (props) => {
 }
 
 export default Details;
+
