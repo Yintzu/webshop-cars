@@ -2,6 +2,9 @@ import style from '../css/Details.module.css';
 import { useContext, useEffect, useState } from 'react';
 import { CarContext } from '../contexts/CarContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
+import Modal from '../components/Modal.js'
+
+    
 
 
 const Details = (props) => {
@@ -51,6 +54,7 @@ const Details = (props) => {
     const renderCar = () => {
         return (
             <div className={style.details}>
+                <Modal />
                 <h1 className={`mt-0 ${style.mainHeading}`}>Car details</h1>
                 <div className="row g-0">
                     <div className={`col ${style.imageWrapper}`}>
@@ -73,7 +77,7 @@ const Details = (props) => {
                             <li>Make: {car.make}</li>
                             <li>Model: {car.model}</li>
                             <li>Year: {car.year}</li>
-                            <li>Miles: {car.miles} miles</li>
+                            <li>Miles: {car.miles}</li>
                         </ul>
                     </div>
                 </div>
@@ -85,3 +89,4 @@ const Details = (props) => {
 }
 
 export default Details;
+

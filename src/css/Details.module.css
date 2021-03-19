@@ -58,9 +58,15 @@
     background-color:#DA6547;
     color: white;
 }
+.details .removeBtn:hover {
+    background-color: #c56148;
+}
 .details .addToCartBtn {
     background-color: #2C7CAE;
     color: white;
+}
+.details .addToCartBtn:hover {
+    background-color: #295276;
 }
 .disabled, .disabled:hover, .disabled:active, .disabled:focus, .disabled:hover:active {
     background-color: #878f96;
@@ -73,6 +79,7 @@
 
 .btnWidth {
     min-width: 140px !important;
+    font-weight: 500;
 }
 
 @media screen and (min-width: 768px) {
