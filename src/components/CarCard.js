@@ -53,7 +53,7 @@ const CarCard = (props) => {
               <span className={`${style.boldText} ${style.milesLabel}`}>Miles:</span> {props.car.miles}
             </div>
           </div>
-          <hr className={style.hrCard} />
+          <hr className={`${style.hrCard} ${style.topHr}`} />
           <p className={style.cardSmallText}>lorem ipusum dolor cookie tasty ipsum dolor sit amet lorem ipsum</p>
           <hr className={style.hrCard} />
           <p className={`${style.cardDesc}`}>{props.car.descShort}</p>

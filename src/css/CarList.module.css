@@ -18,7 +18,7 @@
     flex-wrap: wrap;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 420px) {
     .carsContainer {
         grid-template-columns: 1fr 1fr;
     }
