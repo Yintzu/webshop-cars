@@ -16,7 +16,6 @@ const {loggedInUser} = useContext(UserContext);
 
         <div>
           <div className="row">
-          <h3 className={styles.profileCarHeading}>My purchase history</h3>
             <div className="col col-sm-4">
               <ProfileInfo />
             </div>
