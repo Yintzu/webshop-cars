@@ -15,7 +15,8 @@ const CarContextProvider = (props) => {
         const carlists=carlist.map(car=>{ 
             return {
                 ...car,
-                carImg:`../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`
+                carImg:`../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`,
+                carDetailImgs: ['chevy-front', 'chevy-interior']
             }
         })
         // console.log(carlists);
