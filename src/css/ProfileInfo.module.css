@@ -1,3 +1,78 @@
 .containerWrapper {
-    background-color: powderblue;
+    /* background-color: powderblue; */
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.profileWrapper {
+    max-width: 300px;
+    /* background-color: pink; */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.profileImage {
+    height: 60%;
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 50%;
+    border: 6px solid #2C7CAE;
+    filter: drop-shadow(0 0 0.3rem #636363)
+}
+
+.profileHeading {
+    color: #2C7CAE;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.profileSubHeading {
+    color: #2C7CAE;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+
+.profileTextBox {
+    width: 220px;
+    /* background-color: lime; */
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.profileText {
+    color: #303030;
+    font-size: .95rem;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px !important;
+}
+
+.profileButton {
+    position: relative;
+    background: #2C7CAE !important;
+    color: #ffffff !important;
+    margin: 25px 0 10px 0;
+    border: none;
+}
+
+.profileButton:hover {
+    background: #295276 !important;
+}
+
+.logOutButton {
+    margin-left: 10px !important;
+    background: #DA6547 !important;
+    color: #ffffff !important;
+    margin: 25px 0 10px 0;
+    border: none;
+}
+
+.logOutButton:hover {
+    background-color:#a04832 !important;
+    border: none;
 }
