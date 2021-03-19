@@ -1,6 +1,12 @@
+.wrapper {
+  background-color: pink;
+  width: 500px;
+  height: 500px;
+}
+
 .containerCarWrapper {
     /* background-color: powderblue; */
-    width: 400px;
+    /* width: 400px; */
     margin-bottom: 20px;
 }
 
@@ -47,17 +53,17 @@
     grid-column: 3;
 }
 
-.profileCarHeading {
+/* .profileCarHeading {
     color: #2C7CAE;
     font-size: 1.8rem;
     margin-top: 15px;
     margin-bottom: 20px;
     font-weight: 400;
     text-align: center;
-}
+} */
 
 .profileCarSubHeading {
-    color: #2C7CAE;
+    color: #2C7CAE !important;
     font-size: 1rem;
     margin-bottom: 5px;
 }
@@ -72,4 +78,16 @@
 .profileText {
     font-size: 0.9rem;
     margin-bottom: 0;
+}
+
+.infoButton {
+    background: #2C7CAE !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.infoButton:hover {
+    background: #295276 !important;
+    color: #ffffff !important;
+    border: none;
 }
