@@ -305,8 +305,7 @@
         display: initial;
     }
     .largePrice {
-        position: relative;
-        top: -1px;
+       
         font-size: 1.5rem;
     }
     .milesWrapper {
