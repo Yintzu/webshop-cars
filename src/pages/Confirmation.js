@@ -73,18 +73,18 @@ const Confirmation = () => {
             <p className={styles.boldSummary}>Total:</p>
             </div>
             <div className="col">
-            <hr className={styles.hrConfirmation}/>
-            <p className={styles.containerText}>{formatSum(orderInfo[0].price)}</p>
+              <hr />
+              <p className={styles.containerText}>{formatSum(orderInfo[0].price)}</p>
             </div>
             {/* Order Info */}
             <h4 className={styles.smallHeading}>Order info</h4>
-            <p className={styles.boldSummary}>Order number: <br/> <span className={styles.containerText}>{orderInfo[0].orderNumber}</span> </p>
-            <p className={styles.boldSummary}>Order date:<br/><span className={styles.containerText}>{orderInfo[0].orderDate[0]} {orderInfo[0].orderDate[1]}</span></p>
-            <p className={styles.boldSummary}>Payment method: <br/><span className={styles.containerText}>{orderInfo[0].payment}</span></p>
-            <p className={styles.boldSummary}>Delivery method: <br/><span className={styles.containerTextLast}>{orderInfo[0].delivery}</span></p>
+            <p className={styles.boldSummary}>Order number: <br /> <span className={styles.containerText}>{orderInfo[0].orderNumber}</span> </p>
+            <p className={styles.boldSummary}>Order date:<br /><span className={styles.containerText}>{orderInfo[0].orderDate[0]} {orderInfo[0].orderDate[1]}</span></p>
+            <p className={styles.boldSummary}>Payment method: <br /><span className={styles.containerText}>{orderInfo[0].payment}</span></p>
+            <p className={styles.boldSummary}>Delivery method: <br /><span className={styles.containerTextLast}>{orderInfo[0].delivery}</span></p>
 
           </div>
-          
+
           {/* Buttons start */}
           <button type="button"
             className={`

@@ -60,6 +60,10 @@
     top: 5px;
 }
 
+.addButton, .removeButton, .btnCustom {
+    font-weight: 500;
+  }
+
 .btnCustom {
     background-color: #878f96;
     pointer-events: none;
@@ -137,12 +141,22 @@
 
 .imgWrapper {
     width: 35%;
+    position: relative;
 }
 
 .carImg {
     width: 100%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+}
+
+.soldOverlay{
+    width: 90%;
+    position: absolute;
+    display: block;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 @media screen and (min-width: 600px) {
@@ -166,6 +180,11 @@
         align-items: center;
         width: 100%;
         /* background-color: rgb(235, 235, 235); */
+    }
+
+    .soldOverlay{
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
     }
     
 }

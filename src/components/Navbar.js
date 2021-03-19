@@ -1,16 +1,21 @@
 import { useContext, useEffect, useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
+import { UserContext } from '../contexts/UserContext';
 import style from '../css/Navbar.module.css';
+import LoginModal from './LoginModal';
 import PopupCart from './PopupCart';
 
 const Navbar = () => {
     // Importing cart from ShoppingCartContext
     // Using its length in render of cart icon
     const { shoppingCartItems: cart, createTimeStamp, cartTotal, formatSum } = useContext(ShoppingCartContext);
+    const {loggedInUser} = useContext(UserContext);
+
     const [onCartUpdate, setOnCartUpdate] = useState(false);
     const [cartVisible, setCartVisible] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [showLoginModal, setShowLoginModal] = useState(false);
     const history = useHistory();
 
     // Handle onMouseLeave event
@@ -47,9 +52,17 @@ const Navbar = () => {
             history.push('/checkout');
         } else if (cartVisible) {
             setCartVisible(false);
-        } else if (!cartVisible) {
+        } else {
             setCartVisible(true);
             setMobileMenuOpen(false);
+        }
+    }
+
+    const loginClickHandler = () => {
+        if (!loggedInUser){
+            setShowLoginModal(true);
+        } else {
+            console.log("you are already logged in");
         }
     }
 
@@ -59,17 +72,18 @@ const Navbar = () => {
 
     useEffect(() => {
         if (mobileMenuOpen) {
-            let x=window.scrollX;
-            let y=window.scrollY;
-            window.onscroll=function(){window.scrollTo(x, y);};
+            let x = window.scrollX;
+            let y = window.scrollY;
+            window.onscroll = function () { window.scrollTo(x, y); };
         } else {
-            window.onscroll=function(){};
+            window.onscroll = function () { };
         }
     }, [mobileMenuOpen])
 
     // Hide cart if route changes
     useEffect(() => {
         history.listen(() => {
+            clearTimeout(timer);
             setCartVisible(false);
         })
     }, [history]);
@@ -83,24 +97,21 @@ const Navbar = () => {
         }, 400)
     }, [cart])
 
-    let itemS = cart.length === 1 ? 'item' : 'items';
-
     return (
         <div className={style.navContainer}>
+            {showLoginModal && <LoginModal setShowLoginModal={setShowLoginModal}/>}
             <nav className={style.navbar}>
                 <div className={style.hamburgerClickBox} onClick={handleHamburgerClick} />
                 <div className={style.hamburgerWrapper}>
                     <div className={`${style.hamburgerLine} ${mobileMenuOpen && style.openBurger}`} />
                 </div>
                 <div className={style.leftWrapper} onClick={() => history.push('/')}>
-                    {/* <NavLink className={style.rrrrlogo} exact to="/"> */}
-                        <img className={style.rrrrlogoImg} src="/assets/app-components/logo.gif" />
-                        <img className={style.rrrrlogoText} src="/assets/app-components/logo-text.png" />
-                    {/* </NavLink> */}
+                    <img className={style.rrrrlogoImg} src="/assets/app-components/logo.gif" />
+                    <img className={style.rrrrlogoText} src="/assets/app-components/logo-text.png" />
                 </div>
                 <div className={`${style.navLinks} ${mobileMenuOpen && style.slideIn}`} onClick={() => setMobileMenuOpen(false)}>
-                    <NavLink className={style.links} activeClassName={style.active} exact to="/">Cars for sale</NavLink>
-                    {/* <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink> */}
+                    <NavLink className={style.links} activeClassName={style.active} exact to="/">Cars</NavLink>
+                    <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
                     {/* <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Support</NavLink> */}
                 </div>
                 <div className={style.iconsWrapper}>
@@ -116,20 +127,13 @@ const Navbar = () => {
                             <PopupCart />
                             <div className={style.cartShadow} />
                         </div>}
-                    {/* <NavLink className={style.acctContact} exact to="/">
+                    {!loggedInUser ? <span className={`${style.loginSpan}`} onClick={loginClickHandler}>Log in</span> : 
+                    <div className={style.acctContact} onClick={()=>history.push("/profile")}>
                         <img className={style.acctContactImg} src="/assets/icons/account-contact-circle.png" />
-                    </NavLink> */}
+                    </div>}
                 </div>
             </nav>
-            <aside className={style.infoBar}>
-                <div className={style.dateTime}>
-                    {/* <span>This is only a test: </span>
-                    <span>{`${createTimeStamp()[2]} ${createTimeStamp()[0]}`}</span> */}
-                </div>
-                <span className={style.totalSum}>
-                    {/* {`${cart.length} ${itemS} in cart: ${formatSum(cartTotal)}`} */}
-                </span>
-            </aside>
+            <aside className={style.infoBar}></aside>
         </div>
     );
 }
