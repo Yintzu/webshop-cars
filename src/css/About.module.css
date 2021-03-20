@@ -8,14 +8,18 @@ html {
   scroll-behavior: smooth !important;
 }
 
-.sidebar{
+.container-content {
+  display: flex;
+  max-width: 600px;
+  margin: 40px;
   padding: 1rem;
-  background-color: rgb(255, 239, 226);
-  margin-bottom: 1rem;
+  color: rgb(112, 112, 112)
 }
 
-.sidebar .row {
-  padding: 1rem;
+.sidebar{
+  background-color: rgb(253, 236, 221);
+  margin-bottom: 1rem;
+  padding-left: 1rem;
 }
 
 .a {
@@ -31,26 +35,7 @@ html {
   color: rgb(218, 101, 71);
 }
 
-
-.container-content {
-  display: flex;
-  max-width: 600px;
-  margin: 40px;
-  padding: 1rem;
-  color: rgb(112, 112, 112)
-}
 .h1 {
   display: flex;
   text-align: left;
 }
-
-p {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: #707070
-}
-
-/* 
-
-className = { style.class }
-
-className={`${style.class} ${style.class2}`} */
