@@ -154,9 +154,6 @@
 }
 
 @media screen and (min-width: 420px) {
-    .infoRow {
-        margin-left: .2rem;
-    }
     .cardTitle {
         font-size: 1.3rem;
         margin-bottom: .05rem;
@@ -189,22 +186,13 @@
     }
 }
 
-@media screen and (min-width: 470px) {
-    .cardTitle {
-        font-size: 1.45rem;
-    }
-    .largePrice {
-        font-size: 1.4rem;
-    }
-}
-
 @media screen and (min-width: 420px) {
     .carImg {
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
     }
     .topHr {
-        display: initial;
+        
     }
     .topRow {
         flex-direction: column;
@@ -227,7 +215,7 @@
     .cardTitle {
         font-size: .95rem;
         margin-top: .3rem;
-        margin-bottom: .3rem;
+        margin-bottom: .1rem;
     }
     .cardSmallText {
         margin: .4rem 0;
@@ -264,11 +252,23 @@
 }
 
 @media screen and (min-width: 500px) {
+    .cardTitle {
+        font-size: 1.2rem;
+    }
     .cardSmallText {
+        display: initial;
+    }
+    .topHr {
         display: initial;
     }
     .carDetailText {
         font-size: .85rem;
+    }
+}
+
+@media screen and (min-width: 580px) {
+    .cardTitle {
+        font-size: .93rem;
     }
 }
 
