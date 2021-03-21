@@ -1,10 +1,12 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { NavLink } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext"
 import style from "../css/LoginModal.module.css"
 
 const LoginModal = (props) => {
     const { users, setLoggedInUser } = useContext(UserContext);
+    const [userNotFound, setUserNotFound] = useState(false);
+    const [wrongPassword, setWrongPassword] = useState(false);
 
     const closeModal = (e) => {
         if (e.target.id === "modalBackground" || e.target.classList.contains("closeButton")) {
@@ -14,18 +16,27 @@ const LoginModal = (props) => {
 
     const loginHandler = (e) => {
         e.preventDefault()
-        let loginEmail = document.getElementById("loginEmail").value;
-        let loginPassword = document.getElementById("loginPassword").value;
-        let foundUser = users.find(user => user.email == loginEmail)
+        let loginEmail = document.getElementById("loginEmail");
+        let loginPassword = document.getElementById("loginPassword");
+        let foundUser = users.find(user => user.email == loginEmail.value)
         if (!foundUser){
             console.log("user does not exist");
-        } else if (foundUser.password === loginPassword){
+            setUserNotFound(true);
+            loginEmail.classList.add(`${style.errorBorder}`)
+        } else if (foundUser.password === loginPassword.value){
             console.log("info matches. logging in");
             setLoggedInUser(foundUser)
             props.setShowLoginModal(false)
         } else {
             console.log("wrong password");
+            setWrongPassword(true);
+            loginPassword.classList.add(`${style.errorBorder}`)
         }
+    }
+
+    const removeError = (e, setter) => {
+        e.target.classList.remove(`${style.errorBorder}`)
+        setter(false);
     }
 
     return (
@@ -39,11 +50,13 @@ const LoginModal = (props) => {
                 <form onSubmit={loginHandler}>
                     <div className={`${style.inputDiv}`}>
                         <label htmlFor="loginEmail">E-mail</label>
-                        <input type="text" className={`form-control ${style.input}`} id="loginEmail" required></input>
+                        <input type="text" className={`form-control ${style.input}`} id="loginEmail" onChange={(e)=>removeError(e, setUserNotFound)} required></input>
+                        {userNotFound && <p className={style.errorText}>E-mail does not match any user</p>}
                     </div>
                     <div className={`${style.inputDiv}`}>
                         <label htmlFor="loginPassword">Password</label>
-                        <input type="password" className={`form-control ${style.input}`} id="loginPassword" required></input>
+                        <input type="password" className={`form-control ${style.input}`} id="loginPassword" onChange={(e)=>removeError(e, setWrongPassword)} required></input>
+                        {wrongPassword && <p className={style.errorText}>Wrong password</p>}
                     </div>
                     <button className={`btn ${style.button}`}>Log in</button>
                 </form>
