@@ -20,15 +20,12 @@ const LoginModal = (props) => {
         let loginPassword = document.getElementById("loginPassword");
         let foundUser = users.find(user => user.email == loginEmail.value)
         if (!foundUser){
-            console.log("user does not exist");
             setUserNotFound(true);
             loginEmail.classList.add(`${style.errorBorder}`)
         } else if (foundUser.password === loginPassword.value){
-            console.log("info matches. logging in");
             setLoggedInUser(foundUser)
             props.setShowLoginModal(false)
         } else {
-            console.log("wrong password");
             setWrongPassword(true);
             loginPassword.classList.add(`${style.errorBorder}`)
         }

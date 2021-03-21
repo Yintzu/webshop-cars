@@ -31,10 +31,7 @@ const CreateAccount = () => {
             setPasswordMismatch(true);
             error = true;
         }
-        if (error) {
-            return
-        }
-
+        if (error) return
 
         let newUserObject = {};
 
@@ -53,10 +50,6 @@ const CreateAccount = () => {
         e.target.classList.remove(`${style.errorBorder}`)
         setter(false);
     }
-
-    useEffect(() => {
-        console.log(users);
-    }, [users])
 
     return (
         <div>
