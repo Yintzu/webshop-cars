@@ -7,6 +7,8 @@ const BuyButtons = (props) => {
   const { boughtCheck } = useContext(CarContext);
   const { shoppingCartItems, removeFromCart, addToCart } = useContext(ShoppingCartContext);
 
+  // Function used to render buttons on CarCards and Details-page
+  // Checks status of car (available, in cart or sold)
   const renderButtons = (car) => {
     let inCart = false;
     let bought = false;
@@ -16,8 +18,10 @@ const BuyButtons = (props) => {
       }
     });
 
+    // Uses boughtCheck-function located in CarContext to check if car is bought
     bought = boughtCheck(car);
 
+    // Return button JSX depending on car status
     if (inCart) {
       return <button onClick={() => removeFromCart(car)} className={`${style.btnsWidth} ${style.removeButton}`} id="addRemove">Remove</button>
     } else if (bought) {
@@ -28,7 +32,7 @@ const BuyButtons = (props) => {
   }
 
   return ( 
-    <div className={style.buttonsWrapper}>
+    <div>
       {renderButtons(props.car)}
     </div>
    );
