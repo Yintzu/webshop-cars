@@ -10,17 +10,14 @@ import EditProfile from '../components/EditProfile';
 
 const Profile = () => {
   const { loggedInUser, isClicked } = useContext(UserContext);
-const history = useHistory();
+  const history = useHistory();
 
   return (
-    <div className={`
-    ${styles.containerWrapper}
-    container
-  `}>
+    <div className={`${styles.containerWrapper} container`}>
       {loggedInUser ?
         <div>
           <div className="row">
-            <div className="col col-sm-4">
+            <div className="col-5">
               <ProfileInfo />
             </div>
             <div className="col-6">
@@ -28,9 +25,8 @@ const history = useHistory();
             </div>
           </div>
         </div>
-
         : history.push("/")}
-
+    </div>
   );
 }
 
