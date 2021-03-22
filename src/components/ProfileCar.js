@@ -1,26 +1,46 @@
 import styles from '../css/ProfileCar.module.css'
-import labrador_profile from './images/labrador_profile.jpg'
+import { useContext } from 'react';
+import { UserContext } from '../contexts/UserContext';
+import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 
 const ProfileCar = () => {
+
+  const { orderInfo } = useContext(UserContext);
+  const { formatSum } = useContext(ShoppingCartContext)
+
     return ( 
-        <div>
-           <div className={`
-           ${styles.containerWrapper}
-           container
-           `}>
-           <h3 className={styles.profileCarHeading}>My purchase history</h3>
-           <div className={styles.profileCarWrapper}>
-           <img src={labrador_profile} alt="Profile picture"   className={styles.profileImage}/>
-             <h4 className={styles.profileCarSubHeading}>Order number</h4>
-             <h4 className={styles.profileCarSubHeading}>Car make</h4>
-             <div className={styles.profileTextBox}>
-             <p className={styles.profileText}>Time and date of purchase</p>
-             <p className={styles.profileText}>Description Lorem,   ipsum dolor sit amet consectetur adipisicing elit.</p>
-             </div>
-             
-             </div>
-         </div>
-        </div>
+      <div>
+        <h3 className={styles.profileCarHeading}>My purchase history</h3>
+        {/* Loopa out orders */}
+        {orderInfo.map((order) => {
+          return (
+            <div className={styles.orderWrapper}>
+            <div className={styles.orderInfo}>
+              <p className={`${styles.profileCarSubHeading}`}>Order number: {order.orderNumber}</p>
+              <p className={`${styles.profileCarSubheading}`}>Date: {order.orderDate[0]} {order.orderDate[1]}</p>
+            </div>
+
+            {/* Loopa out bought cars */}
+            {order.boughtCars.map((car) => {
+              return (
+              <div className={styles.profileCarWrapper} key={car.vin}>
+              <img src={car.carImg} alt="Car picture" className={`${styles.profileImage} ${styles.gridItem1}`}/>
+              <p className={`${styles.profileText} ${styles.gridItem2}`}>{car.make} {car.model}</p>
+              <p className={`${styles.profileText} ${styles.gridItem3}`}>{formatSum(car.price)}</p>
+              <p className={`${styles.profileText} ${styles.gridItem4}`}>{car.year}</p>
+            </div>
+            )
+            })}
+           
+            <div className={styles.orderTotal}>
+              
+              <p className={styles.orderTotalText}>Total price: {formatSum(order.price)}</p>   
+            </div>
+          </div>
+          )
+        })}
+          
+      </div>
      );
 }
  
