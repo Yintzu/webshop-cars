@@ -1,0 +1,13 @@
+.containerWrapper {
+    /* background-color: pink; */
+    padding: 0;
+}
+
+.profileCarHeading {
+    color: #2C7CAE;
+    font-size: 1.8rem;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    text-align: center;
+}

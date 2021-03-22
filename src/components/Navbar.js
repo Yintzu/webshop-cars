@@ -52,7 +52,7 @@ const Navbar = () => {
             history.push('/checkout');
         } else if (cartVisible) {
             setCartVisible(false);
-        } else if (!cartVisible) {
+        } else {
             setCartVisible(true);
             setMobileMenuOpen(false);
         }
@@ -83,6 +83,7 @@ const Navbar = () => {
     // Hide cart if route changes
     useEffect(() => {
         history.listen(() => {
+            clearTimeout(timer);
             setCartVisible(false);
         })
     }, [history]);
@@ -96,8 +97,6 @@ const Navbar = () => {
         }, 400)
     }, [cart])
 
-    let itemS = cart.length === 1 ? 'item' : 'items';
-
     return (
         <div className={style.navContainer}>
             {showLoginModal && <LoginModal setShowLoginModal={setShowLoginModal}/>}
@@ -107,10 +106,8 @@ const Navbar = () => {
                     <div className={`${style.hamburgerLine} ${mobileMenuOpen && style.openBurger}`} />
                 </div>
                 <div className={style.leftWrapper} onClick={() => history.push('/')}>
-                    {/* <NavLink className={style.rrrrlogo} exact to="/"> */}
                     <img className={style.rrrrlogoImg} src="/assets/app-components/logo.gif" />
                     <img className={style.rrrrlogoText} src="/assets/app-components/logo-text.png" />
-                    {/* </NavLink> */}
                 </div>
                 <div className={`${style.navLinks} ${mobileMenuOpen && style.slideIn}`} onClick={() => setMobileMenuOpen(false)}>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/">Cars</NavLink>
@@ -136,15 +133,7 @@ const Navbar = () => {
                     </div>}
                 </div>
             </nav>
-            <aside className={style.infoBar}>
-                <div className={style.dateTime}>
-                    {/* <span>This is only a test: </span>
-                    <span>{`${createTimeStamp()[2]} ${createTimeStamp()[0]}`}</span> */}
-                </div>
-                <span className={style.totalSum}>
-                    {/* {`${cart.length} ${itemS} in cart: ${formatSum(cartTotal)}`} */}
-                </span>
-            </aside>
+            <aside className={style.infoBar}></aside>
         </div>
     );
 }
