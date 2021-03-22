@@ -1,8 +1,10 @@
 import style from '../css/Hero.module.css';
-import Carousel from './DiscountCarousel';
+import Carousel from './DiscountCarousel.js';
 import Salesign from "../components/Salesign"
 
 const Hero = () => {
+
+
     return (
         <div className={style.hero}>
             <div className={`${style.heroCenterDiv} ${style.flexCenter}`}>

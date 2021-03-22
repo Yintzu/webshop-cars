@@ -1,16 +1,16 @@
 import React from 'react';
 import style from '../css/Salesign.css';
 
-const Salesign = ({className}) => {
+const Salesign = () => {
     return (
         <svg className="saleSign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.53 60.53">
             <defs>
                 <linearGradient id="grad" x1="0%" y1="0%" x2="200%" y2="0%">
-                    <stop className="stop1" offset="0%">
+                    <stop className="stp1" offset="0%" stop-color="#da6540"stop-opacity="1">
                         <animate attributeName="offset" values="0%;1;0%" dur="4s" repeatCount="indefinite" />  
                     </stop>
-                    <stop className="stop2" offset="100%" >
-                        {/* <animate attributeName="offset" values="1;0.5;1" dur="6s" repeatCount="indefinite" /> */}
+                    <stop className="stp2" stop-color="#742710"stop-opacity="1">
+                        <animate attributeName="offset" values="1;0.5;1" dur="6s" repeatCount="indefinite" />
                     </stop>
                 </linearGradient>
             </defs>
