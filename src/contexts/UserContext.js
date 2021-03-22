@@ -8,8 +8,17 @@ const UserContextProvider = (props) => {
   const { boughtCars, setBoughtCars } = useContext(CarContext)
 
   const [loggedInUser, setLoggedInUser] = useState(null);
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState(
+    () => {
+      const usersLocalData = localStorage.getItem('users');
+      return usersLocalData ? JSON.parse(usersLocalData) : []
+    }
+  );
   const [orderInfo, setOrderInfo] = useState([]);
+
+  useEffect(() => {
+    localStorage.setItem('users', JSON.stringify(users))
+  }, [users]);
 
   const values = {
     boughtCars,
