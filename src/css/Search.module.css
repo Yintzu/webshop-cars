@@ -3,14 +3,17 @@
     background: #f4f4f4;
     border-radius: 0 0 5px 5px;
 }
-
+.input {
+    text-align: center;
+    padding: 1rem .5rem;
+}
 .search .searchInput {
     border: solid darkgrey 1px; 
     border-radius: .25em;
     padding: .5rem;
     padding-left: 1rem;
     width: 50%;
-    min-width: 200px;
+    min-width: 250px;
     outline: none;
 }
 .search .searchInput:focus {
@@ -32,12 +35,12 @@
     color: white;
     background-color: #2C7CAE;
     transform: translateY(-50%);
-    margin: 2rem 1rem 0;
+    margin: 2rem 0 0 1rem;
 }
 
 .search .clearSearch:hover {
     background: #295276 !important;
-    color: #fff !important;
+    color: #ffffff !important;
 }
 
 .clearSearch.disabledBtn {
@@ -47,7 +50,6 @@
 
 .dropDown {
     padding: 0 3rem .5rem;
-    background: #e2e2e2;
 }
 
 /*  Filter button arrow */
@@ -135,6 +137,9 @@
 .slideWrapper {
     max-width: 40ch;
     margin: 0 auto;
+}
+.removeFilterBtn{
+    text-align: center;
 }
 .btn {
     margin: 1rem 0 0 !important;

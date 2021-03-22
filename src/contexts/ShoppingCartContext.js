@@ -53,7 +53,7 @@ const ShoppingCartProvider = (props) => {
     }
 
     // Formats numbers into "100 000 kr"
-    const formatSum = (sum) => `$${new Intl.NumberFormat('de-DK', { currency: 'EUR', style: 'decimal', minimumFractionDigits: 0 }).format(Math.round(sum / 10))}`;
+    const formatSum = (sum) => `${new Intl.NumberFormat('sv-SE', { currency: 'SEK', style: 'decimal' }).format(sum)} kr`;
 
     const values = {
         shoppingCartItems,
