@@ -1,7 +1,17 @@
-.wrapper {
-  background-color: pink;
-  width: 500px;
-  height: 500px;
+.orderWrapper {
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.orderInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.orderTotal {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
 }
 
 .containerCarWrapper {
@@ -80,10 +90,16 @@
     margin-bottom: 0;
 }
 
+.orderTotalText {
+    margin-top: 5px;
+}
+
 .infoButton {
     background: #2C7CAE !important;
     color: #ffffff !important;
     border: none;
+    margin-left: 10px;
+    height: 35px;
 }
 
 .infoButton:hover {
