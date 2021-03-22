@@ -133,6 +133,7 @@
 
 .imgWrapper {
     width: 38%;
+    position: relative;
 }
 
 .carImg {
@@ -140,9 +141,15 @@
     border-radius: 5px 5px 5px 5px;
 }
 
-.imgWrapper {
-    width: 35%;
-    position: relative;
+.soldOverlay{
+    width: 90%;
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
 @media screen and (min-width: 355px) {
     .cardTitle {
         font-size: 1rem;
@@ -171,13 +178,6 @@
     }
 }
 
-.soldOverlay{
-    width: 90%;
-    position: absolute;
-    display: block;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
 @media screen and (min-width: 385px) {
     .cardTitle {
         font-size: 1.1rem;
@@ -243,12 +243,6 @@
         width: 100%;
         background-color: rgb(235, 235, 235);
     }
-
-    .soldOverlay{
-        top: 50%;
-        transform: translateX(-50%) translateY(-50%);
-    }
-    
     .btnsWidth {
         margin-left: 0;
         width: 100%;
@@ -256,6 +250,12 @@
         font-size: 1rem;
         padding: .3rem .3rem;
     }
+
+    .soldOverlay{
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    
 }
 
 @media screen and (min-width: 500px) {
