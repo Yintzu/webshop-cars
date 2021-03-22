@@ -5,8 +5,8 @@ export const UserContext = createContext();
 
 
 const UserContextProvider = (props) => {
+  const [isClicked, setIsClicked] = useState(false);
   const { boughtCars, setBoughtCars } = useContext(CarContext)
-
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [users, setUsers] = useState([]);
   const [orderInfo, setOrderInfo] = useState([]);
@@ -19,7 +19,9 @@ const UserContextProvider = (props) => {
     loggedInUser,
     setLoggedInUser,
     users,
-    setUsers
+    setUsers,
+    setIsClicked,
+    isClicked
   }
   return (
     <UserContext.Provider value={values}>
