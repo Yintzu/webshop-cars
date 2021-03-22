@@ -3,47 +3,13 @@ import { CarContext } from "../contexts/CarContext";
 import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import style from '../css/CarCard.module.css';
+import BuyButtons from './BuyButtons';
 
 const CarCard = (props) => {
   const history = useHistory();
-  const { addToCart, removeFromCart, shoppingCartItems, formatSum } = useContext(ShoppingCartContext);
-  const { viewCar, boughtCars } = useContext(CarContext);
+  const { formatSum } = useContext(ShoppingCartContext);
+  const { viewCar, boughtCheck } = useContext(CarContext);
 
-  const renderButtons = (car) => {
-    let inCart = false;
-    let bought = false;
-    shoppingCartItems.forEach(cartItem => {
-      if (cartItem.vin === car.vin) {
-        inCart = true;
-      }
-    });
-
-    bought = boughtCheck(car);
-    
-/*     boughtCars.forEach(boughtItem => {
-      if (boughtItem.vin === car.vin) {
-        bought = true;
-      }
-    }); */
-
-    if (inCart) {
-      return <button onClick={() => removeFromCart(car)} className={`${style.btnsWidth} ${style.removeButton}`} id="addRemove">Remove</button>
-    } else if (bought) {
-      return <button className={`${style.btnsWidth} ${style.disabled} ${style.btnCustom}`} id="addRemove">Sold</button>
-    } else {
-      return <button onClick={() => addToCart(car)} className={`${style.btnsWidth} ${style.addButton}`} id="addRemove">Buy</button>
-    }
-  }
-
-  const boughtCheck = (car) => {
-    let bought = false
-    boughtCars.forEach(boughtItem => {
-      if (boughtItem.vin === car.vin) {
-        bought = true;
-      }
-    })
-    if (bought){return true} else {return false}
-  }
 
   return (
     <div className={`${style.carCard}`} onClick={(e) => {
@@ -71,7 +37,9 @@ const CarCard = (props) => {
           <hr className={style.hrCard} />
           <div className={style.cardBtns}>
             <span className={style.largePrice}>{formatSum(props.car.price)}</span>
-            {renderButtons(props.car)}
+            <div className={style.buttonWrapper}>
+              <BuyButtons className={style.buttonWrapper} car={props.car} />
+            </div>
           </div>
         </div>
       </div>

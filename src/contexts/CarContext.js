@@ -7,10 +7,10 @@ import {
 export const CarContext = createContext()
 
 const CarContextProvider = (props) => {
-    const [cars, setcars]= useState([])
+    const [cars, setCars] = useState([])
     const [boughtCars, setBoughtCars] = useState([]);
 
-    const createCarList  =() =>{
+    const createCarList = () => {
         const carlist=require("../json/cars.json")
         const carlists=carlist.map(car=>{ 
             return {
@@ -19,11 +19,24 @@ const CarContextProvider = (props) => {
             }
         })
         // console.log(carlists);
-        setcars(carlists)
+        setCars(carlists)
     }
+
+    // Create the list of cars with img-link on start of app
     useEffect(()=>{
         createCarList();
-    },[])
+    }, [])
+
+    // Check the boughtCars-array to see if a car is bought
+    const boughtCheck = (car) => {
+        let bought = false
+        boughtCars.forEach(boughtItem => {
+          if (boughtItem.vin === car.vin) {
+            bought = true;
+          }
+        })
+        if (bought){return true} else {return false}
+      }
     
     /* Direction to  details page */
     const viewCar = (clickedCar, history) => {
@@ -34,7 +47,8 @@ const CarContextProvider = (props) => {
       cars,
       viewCar,
       boughtCars,
-      setBoughtCars
+      setBoughtCars,
+      boughtCheck,
     }
 
     return (
