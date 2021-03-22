@@ -12,7 +12,7 @@ const ProfileCar = () => {
     <div>
       <h3 className={styles.profileCarHeading}>My purchase history</h3>
       {/* Loopa out orders */}
-      {loggedInUser.orders.map((order, i) => {
+      {orderInfo.map((order, i) => {
         return (
           <div key={i}>
             <div className={styles.orderWrapper}>
