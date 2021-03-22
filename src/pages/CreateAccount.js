@@ -33,7 +33,7 @@ const CreateAccount = () => {
         }
         if (error) return
 
-        let newUserObject = {};
+        let newUserObject = {orders: []};
 
         inputList.forEach((input) => {
             if (input.name) {
