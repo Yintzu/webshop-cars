@@ -33,11 +33,6 @@ const CarContextProvider = (props) => {
     const values={
       cars,
       viewCar,
-    //   searchResult,
-    //   filterCars,
-    //   setSearchResult,
-    //   renderList,
-    //   resetRenderList,
       boughtCars,
       setBoughtCars
     }
