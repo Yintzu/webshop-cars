@@ -7,7 +7,7 @@ import style from '../css/CarCard.module.css';
 const CarCard = (props) => {
   const history = useHistory();
   const { addToCart, removeFromCart, shoppingCartItems, formatSum } = useContext(ShoppingCartContext);
-  const { viewCar, boughtCars } = useContext(CarContext);
+  const { viewCar, boughtCars, boughtCheck } = useContext(CarContext);
 
   const renderButtons = (car) => {
     let inCart = false;
@@ -33,16 +33,6 @@ const CarCard = (props) => {
     } else {
       return <button onClick={() => addToCart(car)} className={`${style.btnsWidth} ${style.addButton}`} id="addRemove">Buy</button>
     }
-  }
-
-  const boughtCheck = (car) => {
-    let bought = false
-    boughtCars.forEach(boughtItem => {
-      if (boughtItem.vin === car.vin) {
-        bought = true;
-      }
-    })
-    if (bought){return true} else {return false}
   }
 
   return (

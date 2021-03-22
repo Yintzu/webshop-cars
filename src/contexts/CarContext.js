@@ -24,6 +24,16 @@ const CarContextProvider = (props) => {
     useEffect(()=>{
         createCarList();
     },[])
+
+    const boughtCheck = (car) => {
+        let bought = false
+        boughtCars.forEach(boughtItem => {
+          if (boughtItem.vin === car.vin) {
+            bought = true;
+          }
+        })
+        if (bought){return true} else {return false}
+      }
     
     /* Direction to  details page */
     const viewCar = (clickedCar, history) => {
@@ -34,7 +44,8 @@ const CarContextProvider = (props) => {
       cars,
       viewCar,
       boughtCars,
-      setBoughtCars
+      setBoughtCars,
+      boughtCheck,
     }
 
     return (
