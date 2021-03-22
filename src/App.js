@@ -17,6 +17,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Hero from './components/Hero';
 import CreateAccount from './pages/CreateAccount';
 import UserPage from './pages/UserPage';
+import EditProfile from './components/EditProfile';
 
 function App() {
   return (

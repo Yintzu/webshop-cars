@@ -63,7 +63,7 @@ const CreateAccount = () => {
                         </div>
                         <div className={style.positionRelative}>
                             <label htmlFor="registerPersonalNumber">Social security number</label>
-                            <input className={`form-control`} type="text" id="registerPersonalNumber" name="personalNumber" required></input>
+                            <input className={`form-control`} type="text" id="registerSocialSecurityNumber" name="socialSecurityNumber" required></input>
                         </div>
                         <div className={style.positionRelative}>
                             <label htmlFor="registerUserName">User name</label>

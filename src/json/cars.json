@@ -59,7 +59,7 @@
   "year": 1997,
   "vin": "WAUAH78E97A881370",
   "city": "Tournavista",
-  "descShort": "platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum.",
+  "descShort": "platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id.",
   "descLong": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
   "price": 491093,
   "miles": 45262
@@ -103,7 +103,7 @@
   "year": 1990,
   "vin": "5UXFB33562L864368",
   "city": "Černelavci",
-  "descShort": "euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis.",
+  "descShort": "euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula.",
   "descLong": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\n\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
   "price": 366603,
   "miles": 55987
@@ -114,7 +114,7 @@
   "year": 1993,
   "vin": "1N6AA0CA1DN885367",
   "city": "Youguzhuang",
-  "descShort": "placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros.",
+  "descShort": "placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque.",
   "descLong": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
   "price": 499616,
   "miles": 40212
@@ -147,7 +147,7 @@
   "year": 1989,
   "vin": "3C6JD7DP2CG926416",
   "city": "Vilca",
-  "descShort": "mi sit amet lobortis sapien sapien non mi integer ac,habitasse platea dictumst aliquam augue.",
+  "descShort": "mi sit amet lobortis sapien sapien non mi integer ac,habitasse platea dictumst.",
   "descLong": "Fusce consequat. Nulla nisl. Nunc nisl.",
   "price": 519306,
   "miles": 67034
@@ -169,7 +169,7 @@
   "year": 1988,
   "vin": "WAU3MAFD1FN659764",
   "city": "Guohua",
-  "descShort": "pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus.",
+  "descShort": "pretium iaculis justo in hac habitasse platea dictumst etiam faucibus.",
   "descLong": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
   "price": 476489,
   "miles": 34756
@@ -180,7 +180,7 @@
   "year": 1989,
   "vin": "WAUJGAFCXDN803721",
   "city": "Bingfang",
-  "descShort": "sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales.",
+  "descShort": "sit amet diam in magna bibendum imperdiet nullam orci pede.",
   "descLong": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
   "price": 541866,
   "miles": 6574
@@ -356,7 +356,7 @@
   "year": 2001,
   "vin": "3VWML7AJ9DM659218",
   "city": "Ilagan",
-  "descShort": "faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor.",
+  "descShort": "faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat.",
   "descLong": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
   "price": 129237,
   "miles": 43756
@@ -389,7 +389,7 @@
   "year": 1997,
   "vin": "SALAG2V69EA020959",
   "city": "Kobrinskoye",
-  "descShort": "etiam justo etiam pretium iaculis justo in hac habitasse, ut erat id mauris vulputate elementum.",
+  "descShort": "etiam justo etiam pretium iaculis justo in hac habitasse, ut erat.",
   "descLong": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
   "price": 239736,
   "miles": 36384
@@ -455,7 +455,7 @@
   "year": 2007,
   "vin": "SCFHDDBT3EG144230",
   "city": "Calarcá",
-  "descShort": "odio odio elementum eu interdum eu tincidunt, ut erat id mauris vulputate elementum.",
+  "descShort": "odio odio elementum eu interdum eu tincidunt, ut erat id mauris.",
   "descLong": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
   "price": 171417,
   "miles": 43726
@@ -466,7 +466,7 @@
   "year": 2001,
   "vin": "4T1BF3EKXBU538280",
   "city": "Chunjiang",
-  "descShort": "urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam.",
+  "descShort": "urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat.",
   "descLong": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
   "price": 132615,
   "miles": 47264
@@ -477,7 +477,7 @@
   "year": 1990,
   "vin": "1GYEE437080858890",
   "city": "Santa Lucía",
-  "descShort": "maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus.",
+  "descShort": "maecenas tristique est et tempus semper est quam pharetra magna.",
   "descLong": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
   "price": 343760,
   "miles": 10276
@@ -510,7 +510,7 @@
   "year": 1992,
   "vin": "JN1AZ4EH6FM135195",
   "city": "Al Mijlad",
-  "descShort": "ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac.",
+  "descShort": "ultrices libero non mattis pulvinar nulla pede.",
   "descLong": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
   "price": 412400,
   "miles": 31857
