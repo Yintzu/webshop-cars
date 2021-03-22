@@ -43,7 +43,7 @@ const Checkout = () => {
             loggedInUser.orders = [orderInfoObject, ...loggedInUser.orders];
         }
         setOrderInfo([orderInfoObject, ...orderInfo])
-        setBoughtCars(shoppingCartItems, ...boughtCars)
+        setBoughtCars([...shoppingCartItems, ...boughtCars])
         removeAllFromCart();
         history.push("/confirmation");
     }
