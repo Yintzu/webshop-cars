@@ -23,11 +23,11 @@ const CarCard = (props) => {
       }
     });
     if (inCart) {
-      return <button onClick={() => removeFromCart(car)} className={`btn btn-danger ${style.btnsWidth} ${style.removeButton}`} id="addRemove">Remove</button>
+      return <button onClick={() => removeFromCart(car)} className={`${style.btnsWidth} ${style.removeButton}`} id="addRemove">Remove</button>
     } else if (bought) {
-      return <button className={`btn btn-secondary ${style.btnsWidth} ${style.disabled} ${style.btnCustom}`} id="addRemove">Sold</button>
+      return <button className={`${style.btnsWidth} ${style.disabled} ${style.btnCustom}`} id="addRemove">Sold</button>
     } else {
-      return <button onClick={() => addToCart(car)} className={`btn btn-primary ${style.btnsWidth} ${style.addButton}`} id="addRemove">Buy</button>
+      return <button onClick={() => addToCart(car)} className={`${style.btnsWidth} ${style.addButton}`} id="addRemove">Buy</button>
     }
   }
 
@@ -56,10 +56,8 @@ const CarCard = (props) => {
           <hr className={`${style.hrCard} ${style.topHr}`} />
           <p className={style.cardSmallText}>{props.car.descShort}</p>
           <hr className={style.hrCard} />
-          <p className={`${style.cardDesc}`}>{props.car.descShort}</p>
           <div className={style.cardBtns}>
             <span className={style.largePrice}>{formatSum(props.car.price)}</span>
-            {/* <button className={`btn btn-secondary ${style.readMore} ${style.btnsWidth}`}>Read more</button> */}
             {renderButtons(props.car)}
           </div>
         </div>

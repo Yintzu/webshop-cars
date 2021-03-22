@@ -9,7 +9,6 @@
     box-shadow: 2px 2px 2px #eeeeee;
     margin-top: 10px;
     background-color: rgb(252, 252, 252);
-    /* background-color: #fcfbfb !important; */
 }
 
 .infoRow {
@@ -75,12 +74,8 @@
     border-radius: 5px;
 }
 
-.milesLabel {
-    margin-left: .2rem;
-}
-
 .milesWrapper {
-    margin-left: .2rem;
+    margin-left: .4rem;
 }
 
 .addButton, .removeButton, .btnCustom {
@@ -91,8 +86,8 @@
     font-size: .8rem;
     width: 35%;
     margin-left: .5rem;
-    padding: 0;
     padding: .2rem 0;
+    border-radius: 5px;
 }
 
 .btnsWidth:focus, .btnsWidth:active {
@@ -136,14 +131,6 @@
     display: flex;
 }
 
-.cardDesc {
-    display: none;
-    font-size: .9rem;
-    line-height: 1.2;
-    margin-top: .2rem;
-    height: 60px;
-}
-
 .imgWrapper {
     width: 38%;
 }
@@ -158,8 +145,7 @@
         font-size: 1rem;
     }
     .milesWrapper {
-        display: initial;
-        margin-left: .4rem;
+        margin-left: .5rem;
     }
     .carDetailText {
         font-size: .85rem;
@@ -217,10 +203,6 @@
         width: 100%;
         padding: .3rem;
     }
-    .milesWrapper {
-        margin-left: .3rem;
-        display: initial;
-    }
     .cardTitle {
         font-size: .95rem;
         margin-top: .3rem;
@@ -231,9 +213,7 @@
         font-size: .8rem;
         font-style: italic;
     }
-    .cardDesc {
-        display: none;
-    }
+
     .cardBtns {
         margin-top: .1rem;
         padding-bottom: .2rem;
