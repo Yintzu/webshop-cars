@@ -17,11 +17,15 @@ const CarCard = (props) => {
         inCart = true;
       }
     });
-    boughtCars.forEach(boughtItem => {
+
+    bought = boughtCheck(car);
+    
+/*     boughtCars.forEach(boughtItem => {
       if (boughtItem.vin === car.vin) {
         bought = true;
       }
-    });
+    }); */
+
     if (inCart) {
       return <button onClick={() => removeFromCart(car)} className={`btn btn-danger ${style.removeButton}`} id="addRemove">Remove</button>
     } else if (bought) {
@@ -31,6 +35,15 @@ const CarCard = (props) => {
     }
   }
 
+  const boughtCheck = (car) => {
+    let bought = false
+    boughtCars.forEach(boughtItem => {
+      if (boughtItem.vin === car.vin) {
+        bought = true;
+      }
+    })
+    if (bought){return true} else {return false}
+  }
 
   return (
     <div className={`${style.carCard}`} onClick={(e) => {
@@ -41,7 +54,7 @@ const CarCard = (props) => {
       <div className={style.topRow}>
         <div className={style.imgWrapper}>
           <img src={props.car.carImg} className={`${style.carImg}`} alt="A good affordable car" />
-          {/* <img src="/assets/app-components/soldout.png" className={`${style.soldOverlay}`} /> */}
+          {boughtCheck(props.car) && <img src="/assets/app-components/soldout.png" className={`${style.soldOverlay}`} />}
         </div>
         <div className={style.infoRow}>
           <h5 className={`${style.cardTitle}`}>{props.car.make} {props.car.model} </h5>

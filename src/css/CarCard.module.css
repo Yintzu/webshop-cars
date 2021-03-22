@@ -141,6 +141,7 @@
 
 .imgWrapper {
     width: 35%;
+    position: relative;
 }
 
 .carImg {
@@ -150,6 +151,12 @@
 }
 
 .soldOverlay{
+    width: 90%;
+    position: absolute;
+    display: block;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 @media screen and (min-width: 600px) {
@@ -173,6 +180,11 @@
         align-items: center;
         width: 100%;
         /* background-color: rgb(235, 235, 235); */
+    }
+
+    .soldOverlay{
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
     }
     
 }
