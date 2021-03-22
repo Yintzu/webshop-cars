@@ -8,7 +8,12 @@ export const CarContext = createContext()
 
 const CarContextProvider = (props) => {
     const [cars, setcars]= useState([])
-    const [boughtCars, setBoughtCars] = useState([]);
+    const [boughtCars, setBoughtCars] = useState(
+        () => {
+            const boughtCarsLocalData = localStorage.getItem('boughtCars');
+            return boughtCarsLocalData ? JSON.parse(boughtCarsLocalData) : []
+          }
+    );
 
     const createCarList  =() =>{
         const carlist=require("../json/cars.json")
@@ -24,6 +29,10 @@ const CarContextProvider = (props) => {
     useEffect(()=>{
         createCarList();
     },[])
+
+    useEffect(() => {
+        localStorage.setItem('boughtCars', JSON.stringify(boughtCars))
+      }, [boughtCars]);
     
     /* Direction to  details page */
     const viewCar = (clickedCar, history) => {
