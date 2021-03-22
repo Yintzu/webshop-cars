@@ -57,6 +57,7 @@
     min-width: 280px;
     width: 70%;
     margin: 0 auto;
+    position: relative;
 }
 
 .input{
@@ -83,4 +84,15 @@
     text-align: center;
     display: block;
     margin: 0.8rem auto 0.8rem auto;
+}
+
+.errorBorder{
+    box-shadow: 0 0 0 3px rgb(255, 122, 122);
+}
+
+.errorText{
+    color: red !important;
+    position: absolute;
+    top: 62px;
+    font-size: 0.8rem;
 }
