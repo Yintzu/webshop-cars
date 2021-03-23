@@ -57,7 +57,8 @@ const About = () => {
             <p>Nulla facilisi. Aenean rutrum tortor nec sem commodo faucibus. Vestibulum nunc erat, vestibulum vitae eros et, mollis placerat purus. Quisque consectetur pellentesque metus, non dictum elit placerat vel. Aenean iaculis tincidunt orci, in scelerisque velit porta vitae. Vivamus et malesuada mauris. Proin ligula magna, lacinia quis euismod in, vehicula nec turpis. Aenean tempus fermentum felis nec interdum. Praesent eu accumsan ex, sed pulvinar urna. Mauris sit amet lectus a nulla egestas feugiat eu nec justo. </p>
           </div>
 
-          <div className="section2">
+          <div style={{position: 'relative'}}>
+            <div className="section2" style={{position: 'absolute', top: '-100px'}}></div>
             <h1 className={`section ${style.h1}`}>{title2}</h1>
           </div>
 
