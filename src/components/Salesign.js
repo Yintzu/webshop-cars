@@ -3,11 +3,12 @@ import style from '../css/Salesign.module.css';
 
 const Salesign = () => {
     return (
-        <svg className={style.saleSign} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.53 60.53">
+        <div className={style.saleSign}>
+        <svg className={style.shadow} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.53 60.53">
             <defs>
                 <linearGradient id="grad" x1="0%" y1="0%" x2="200%" y2="0%">
                     <stop className={style.stp1} offset="0%" stopColor="#da6540"stopOpacity="1">
-                        <animate attributeName="offset" values="0%;1;0%" dur="4s" repeatCount="indefinite" />  
+                        {/* <animate attributeName="offset" values="0%;1;0%" dur="4s" repeatCount="indefinite" />   */}
                     </stop>
                     <stop className={style.stp2} stopColor="#742710"stopOpacity="1">
                         <animate attributeName="offset" values="1;0.5;1" dur="6s" repeatCount="indefinite" />
@@ -21,6 +22,7 @@ const Salesign = () => {
                     <text className={style.cls2} transform="translate(18.09 26.87)">40%<tspan x="0" y="13.65">OFF</tspan></text></g>
             </g>
         </svg>
+        </div>
     )
 }
 

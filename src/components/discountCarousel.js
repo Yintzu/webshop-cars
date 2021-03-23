@@ -9,46 +9,6 @@ const Carousel = () => {
     const {discountedCars}=useContext(CarContext)
     const {formatSum}=useContext(ShoppingCartContext)
 
-
-  // let discountedCars = [
-  //   {
-  //     "make": "Panoz",
-  //     "model": "Esperante",
-  //     "year": 2006,
-  //     "vin": "WAUKF98E25A286122",
-  //     "city": "Lanxi",
-  //     "descShort": "congue risus semper porta volutpat",
-  //     "descLong": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
-  //     "price": 232476,
-  //     "miles": 24263,
-  //     "carImg": "../assets/car-pictures/Panoz-Esperante-2006.jpg"
-  //   },
-  //   {
-  //     "make": "Chevrolet",
-  //     "model": "Camaro",
-  //     "year": 1973,
-  //     "vin": "1D4PT5GK0BW487259",
-  //     "city": "Santa Rosa",
-  //     "descShort": "in lectus pellentesque at nulla suspendisse potenti cras in purus eu",
-  //     "descLong": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
-  //     "price": 554963,
-  //     "miles": 15432,
-  //     "carImg": "../assets/car-pictures/Chevrolet-Camaro-1973.jpg"
-  //   },
-  //   {
-  //     "make": "Oldsmobile",
-  //     "model": "98",
-  //     "year": 1992,
-  //     "vin": "WAUVT68E95A768929",
-  //     "city": "Tagana-an",
-  //     "descShort": "ultrices enim lorem ipsum dolor",
-  //     "descLong": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-  //     "price": 509536,
-  //     "miles": 45262,
-  //     "carImg": "../assets/car-pictures/Oldsmobile-98-1992.jpg"
-  //   }
-  // ];
-
   return (
     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-indicators">
@@ -61,7 +21,7 @@ const Carousel = () => {
           <div className={style.overlay}></div>
           {/* <img src={"../assets/carousel/PanozCarousel.jpg"} className={`d-block w-100 ${style.carouselImg}`} alt="Discounted Carousel" onClick={()=>history.push("/details/WAUKF98E25A286122")}/> */}
           <img src={discountedCars[0].carImg} className={`d-block w-100 ${style.carouselImg}`} alt="Discounted Carousel" onClick={()=>history.push("/details/WAUKF98E25A286122")}/>
-          <div className={`carousel-caption d-none d-md-block ${style.captionWrapper}`}>
+          <div className={`${style.carouselcaptioned}  d-md-block ${style.captionWrapper}`}>
           <h5>{discountedCars[0].make} {discountedCars[0].model} {discountedCars[0].year}</h5>
             <p className="text-danger" >{formatSum(discountedCars[0].discountedprice())}</p>
           </div>
@@ -70,7 +30,7 @@ const Carousel = () => {
           <div className={style.overlay}></div>
           {/* <img src={"../assets/carousel/PanozCarousel.jpg"} className={`d-block w-100 ${style.carouselImg}`} alt="Discounted Carousel" onClick={()=>history.push("/details/WAUKF98E25A286122")}/> */}
           <img src={discountedCars[1].carImg} className={`d-block w-100 ${style.carouselImg}`} alt="Discounted Carousel" onClick={()=>history.push("/details/WAUKF98E25A286122")}/>
-          <div className={`carousel-caption d-none d-md-block ${style.captionWrapper}`}>
+          <div className={`${style.carouselcaptioned}  d-md-block ${style.captionWrapper}`}>
           <h5>{discountedCars[1].make} {discountedCars[1].model} {discountedCars[1].year}</h5>
             <p className="text-danger" >{formatSum(discountedCars[1].discountedprice())}</p>
           </div>
@@ -79,7 +39,7 @@ const Carousel = () => {
           <div className={style.overlay}></div>
           {/* <img src={"../assets/carousel/PanozCarousel.jpg"} className={`d-block w-100 ${style.carouselImg}`} alt="Discounted Carousel" onClick={()=>history.push("/details/WAUKF98E25A286122")}/> */}
           <img src={discountedCars[2].carImg} className={`d-block w-100 ${style.carouselImg}`} alt="Discounted Carousel" onClick={()=>history.push("/details/WAUKF98E25A286122")}/>
-          <div className={`carousel-caption d-none d-md-block ${style.captionWrapper}`}>
+          <div className={`${style.carouselcaptioned}  d-md-block ${style.captionWrapper}`}>
           <h5>{discountedCars[2].make} {discountedCars[2].model} {discountedCars[2].year}</h5>
             <p className="text-danger" >{formatSum(discountedCars[2].discountedprice())}</p>
           </div>
