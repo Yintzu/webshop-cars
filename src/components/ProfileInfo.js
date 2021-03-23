@@ -15,6 +15,7 @@ const ProfileInfo = () => {
   const logOutHandler = () => {
     history.push("/");
     setLoggedInUser(null)
+    localStorage.setItem('loggedInUser', null)
   }
 
   useEffect(() => {
