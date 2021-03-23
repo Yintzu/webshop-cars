@@ -13,10 +13,10 @@ const Profile = () => {
   const history = useHistory();
 
   return (
-    <div className={`${styles.containerWrapper}`}>
+    <div className={`${styles.containerWrapper} container`}>
       {loggedInUser ?
-        <div>
-          <div className={styles.flexItem1}>
+        <div className="row">
+          <div className={`${styles.flexItem1}`}>
             
               <ProfileInfo />
             </div>
