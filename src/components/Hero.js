@@ -1,6 +1,6 @@
 import style from '../css/Hero.module.css';
 import Carousel from './DiscountCarousel';
-import Salesign from './Salesign.js';
+import Salesign from '../components/Salesign';
 
 const Hero = () => {
     return (
