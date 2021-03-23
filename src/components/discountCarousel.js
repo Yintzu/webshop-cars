@@ -1,14 +1,7 @@
-import { useHistory } from "react-router-dom";
-import { useContext } from "react";
 import style from "../css/DiscountCarousel.module.css";
-import { CarContext } from "../contexts/CarContext"
-import { ShoppingCartContext } from "../contexts/ShoppingCartContext"
 import  Carouselslide from "./Carouselslide";
 
 const Carousel = () => {
-  const history = useHistory();
-  const { discountedCars } = useContext(CarContext)
-  const { formatSum } = useContext(ShoppingCartContext)
 
   return (
     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
