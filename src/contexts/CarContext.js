@@ -7,7 +7,7 @@ import {
 export const CarContext = createContext()
 
 const CarContextProvider = (props) => {
-    const [cars, setcars]= useState([])
+    const [cars, setCars]= useState([])
     const [boughtCars, setBoughtCars] = useState(
         () => {
             const boughtCarsLocalData = localStorage.getItem('boughtCars');
