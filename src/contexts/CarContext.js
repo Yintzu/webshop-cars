@@ -14,7 +14,7 @@ const CarContextProvider = (props) => {
             return boughtCarsLocalData ? JSON.parse(boughtCarsLocalData) : []
           }
     );
-    const [discountedCars,setdiscountedCars]=useState([
+    const [discountedCars, setDiscountedCars] = useState([
         {
             "make": "Panoz",
             "model": "Esperante",
