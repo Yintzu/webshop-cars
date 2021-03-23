@@ -1,10 +1,7 @@
 import style from '../css/Hero.module.css';
-import Carousel from './DiscountCarousel.js';
-import Salesign from "../components/Salesign"
+import Carousel from './DiscountCarousel';
 
 const Hero = () => {
-
-
     return (
         <div className={style.hero}>
             <div className={`${style.heroCenterDiv} ${style.flexCenter}`}>
@@ -17,7 +14,7 @@ const Hero = () => {
                     <div className={`col-11 col-md-7`}>
                         <div className={`${style.gradient} ${style.carousel}`}>
                             <Carousel/>
-                            <Salesign className="" />
+                            <img className={style.saleSign} src="../assets/carousel/sale.svg"></img>
                         </div>
                     </div>
                 </div>

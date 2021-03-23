@@ -3,15 +3,16 @@ import { useContext, useEffect, useState } from 'react';
 import { CarContext } from '../contexts/CarContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import Modal from '../components/Modal.js'
+import BuyButtons from '../components/BuyButtons';
 
     
 
 
 const Details = (props) => {
 
-    const { cars, boughtCars } = useContext(CarContext);
+    const { cars } = useContext(CarContext);
     const [car, setCar] = useState(null);
-    const { addToCart, formatSum, shoppingCartItems, removeFromCart } = useContext(ShoppingCartContext);
+    const { formatSum} = useContext(ShoppingCartContext);
 
     useEffect(() => {
         findCar()
@@ -29,28 +30,6 @@ const Details = (props) => {
         }
     }
 
-    const renderButton = (car) => {
-        let inCart = false;
-        let bought = false;
-        shoppingCartItems.forEach(cartItem => {
-            if (cartItem.vin === car.vin) {
-                inCart = true;
-            }
-        });
-        boughtCars.forEach(boughtItem => {
-            if (boughtItem.vin === car.vin) {
-                bought = true;
-            }
-        });
-        if (inCart) {
-            return <button onClick={() => removeFromCart(car)} className={`btn btn-lg ${style.removeBtn} ${style.btnWidth}`}>Remove</button>
-        } else if (bought) {
-            return <button className={`btn btn-lg ${style.disabled} ${style.btnWidth}`}>Sold</button>
-        } else {
-            return <button onClick={() => addToCart(car)} className={`btn btn-lg ${style.addToCartBtn} ${style.btnWidth}`}>Add to cart</button>
-        }
-    }
-
     const renderCar = () => {
         return (
             <div className={style.details}>
@@ -64,7 +43,9 @@ const Details = (props) => {
                         <h3>{car.make} {car.model} {car.year}</h3>
                         <p>{car.city}</p>
                         <h4 className={style.price}>{formatSum(car.price)}</h4>
-                        {renderButton(car)}
+                        <div className={style.buttonWrapper}>
+                            <BuyButtons car={car} />
+                        </div>
                     </div>
                 </div>
                 <div className={`row ${style.descContainer}`}>
