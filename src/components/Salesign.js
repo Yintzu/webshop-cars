@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../css/Salesign.css';
+import style from '../css/Salesign.module.css';
 
 const Salesign = () => {
     return (
