@@ -13,7 +13,7 @@ const Profile = () => {
   const history = useHistory();
 
   return (
-    <div className={`${styles.containerWrapper} container`}>
+    <div className="container">
       {loggedInUser ?
         <div>
           <div className="row">
