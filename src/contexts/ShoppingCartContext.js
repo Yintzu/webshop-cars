@@ -7,8 +7,7 @@ const ShoppingCartProvider = (props) => {
     const [shoppingCartItems, setShoppingCartItems] = useState(
         () => {
             const localData = localStorage.getItem('shoppingCartItems');
-        return localData ? JSON.parse(localData) : []
-    
+            return localData ? JSON.parse(localData) : []
         }
     );
     const [cartTotal, setCartTotal] = useState(0);
