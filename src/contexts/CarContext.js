@@ -9,7 +9,7 @@ export const CarContext = createContext()
 const CarContextProvider = (props) => {
     const [cars, setCars] = useState([])
     const [boughtCars, setBoughtCars] = useState([]);
-    const [discountedCars]=useState([
+    const [discountedCars,setdiscountedCars]=useState([
         {
             "make": "Panoz",
             "model": "Esperante",
