@@ -16,11 +16,11 @@ const Profile = () => {
     <div className="container">
       {loggedInUser ?
         <div className="row">
-          <div className={`${styles.flexItem1}`}>
+          <div className="col">
             
               <ProfileInfo />
             </div>
-            <div className={styles.flexItem2}>
+            <div className="col">
               {isClicked ? <EditProfile /> : <ProfileCar />}
             </div>
           </div>
