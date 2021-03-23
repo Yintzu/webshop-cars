@@ -7,8 +7,13 @@ import {
 export const CarContext = createContext()
 
 const CarContextProvider = (props) => {
-    const [cars, setCars] = useState([])
-    const [boughtCars, setBoughtCars] = useState([]);
+    const [cars, setCars]= useState([])
+    const [boughtCars, setBoughtCars] = useState(
+        () => {
+            const boughtCarsLocalData = localStorage.getItem('boughtCars');
+            return boughtCarsLocalData ? JSON.parse(boughtCarsLocalData) : []
+          }
+    );
     const [discountedCars,setdiscountedCars]=useState([
         {
             "make": "Panoz",
@@ -78,6 +83,10 @@ const CarContextProvider = (props) => {
     useEffect(()=>{
         createCarList();
     }, [])
+
+    useEffect(() => {
+        localStorage.setItem('boughtCars', JSON.stringify(boughtCars))
+      }, [boughtCars]);
 
     // Check the boughtCars-array to see if a car is bought
     const boughtCheck = (car) => {
