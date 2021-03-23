@@ -1,5 +1,4 @@
 .modal {
-  position: relative;
   left: 0;
   top: 0;
   right: 0;
@@ -8,21 +7,14 @@
   border-radius: 3px;
 }
 
-.modal-content {
-  display: flex;
-  flex-wrap: wrap;
+#ModalTest.modal-content .modal-body {
+  position: absolute !important; 
+ 
 }
 
-#ModalTest  {
-  height: 300px;
-  width: 600px;
+.div #ModalTest {
+  position: absolute;
 }
-
-.row {
-  flex-direction: row;
-  padding: 0, 4px;
-}
-
 .modal-footer {
   padding: 10px;
 }

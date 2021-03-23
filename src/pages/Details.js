@@ -35,8 +35,7 @@ const Details = (props) => {
     const renderCar = () => {
         return (
             <div className={style.details}>
-                {/* <Modal /> */}
-                {showModal && <ModalTest />}
+                
                 <h1 className={`mt-0 ${style.mainHeading}`}>Car details</h1>
                 <div className="row g-0">
                     <div className={`col ${style.imageWrapper}`}>
@@ -57,6 +56,7 @@ const Details = (props) => {
                         <h5>Description</h5>
                         <p>{car.descLong}</p>
                     </div>
+                  
                     <div className="col-md-4">
                         <ul>
                             <li>Make: {car.make}</li>
@@ -64,7 +64,10 @@ const Details = (props) => {
                             <li>Year: {car.year}</li>
                             <li>Miles: {car.miles}</li>
                         </ul>
+                        {/* <Modal /> */}
+                        {showModal && <ModalTest />}
                     </div>
+                   
                 </div>
                 <button onClick={() => setShowModal(!showModal)}>Show Modal</button>
             </div>

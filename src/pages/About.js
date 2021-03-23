@@ -47,7 +47,8 @@ const About = () => {
             <p>With an extensive range of approved used cars featuring all makes and models, Richard Ryan's Reliable Rides can provide the right car at the right price. With so much choice why go anywhere else? Get the best prices and widest choice on quality used cars in Sweden, contact us today!</p>
           </div>
 
-          <div className="section1">
+          <div style={{position: 'relative'}}>
+            <div className="section1" style={{position: 'absolute', top: '-100px'}}></div>
             <h1 className={`section ${style.h1}`}>{title1}</h1>
           </div>
 
@@ -70,7 +71,8 @@ const About = () => {
             <p>Proin nec urna sed tellus fringilla mattis. Aenean scelerisque tortor ut felis imperdiet elementum. Nunc a euismod dolor. Aliquam gravida erat nec feugiat vulputate. Donec in nunc sollicitudin, tempor nibh eu, ultricies magna. Mauris massa justo, hendrerit a accumsan a, convallis eleifend felis. Praesent elit ipsum, lacinia et justo nec, tincidunt maximus risus. Duis ligula nibh, eleifend ornare iaculis nec, pretium et nunc. In facilisis, nulla sed ullamcorper tempor, orci augue interdum sapien, vel fringilla sem turpis vitae lacus. Sed eget iaculis mi, vitae suscipit lorem. </p>
           </div>
 
-          <div className="section3">
+          <div style={{position: 'relative'}}>
+            <div className="section3" style={{position: 'absolute', top: '-100px'}}></div>
             <h1 className={`section ${style.h1}`}>{title3}</h1>
           </div>
 
