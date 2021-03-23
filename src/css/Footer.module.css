@@ -4,9 +4,13 @@
     width: 100vw;
     font-size: .8rem;
     padding: 1.4rem 2rem 1rem 2rem;
+    height: 200px;
+}
+.footerContainer {
+    max-width: 900px;
     display: flex;
     justify-content: space-between;
-    height: 200px;
+    margin: auto;
 }
 .navlink {
     font-size: 1rem;

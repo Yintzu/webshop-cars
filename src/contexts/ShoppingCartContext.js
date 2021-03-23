@@ -7,8 +7,7 @@ const ShoppingCartProvider = (props) => {
     const [shoppingCartItems, setShoppingCartItems] = useState(
         () => {
             const localData = localStorage.getItem('shoppingCartItems');
-        return localData ? JSON.parse(localData) : []
-    
+            return localData ? JSON.parse(localData) : []
         }
     );
     const [cartTotal, setCartTotal] = useState(0);
@@ -53,7 +52,7 @@ const ShoppingCartProvider = (props) => {
     }
 
     // Formats numbers into "100 000 kr"
-    const formatSum = (sum) => `${new Intl.NumberFormat('sv-SE', { currency: 'SEK', style: 'decimal' }).format(sum)} kr`;
+    const formatSum = (sum) => `$${new Intl.NumberFormat('de-DK', { currency: 'EUR', style: 'decimal', minimumFractionDigits: 0 }).format(Math.round(sum / 10))}`;
 
     const values = {
         shoppingCartItems,

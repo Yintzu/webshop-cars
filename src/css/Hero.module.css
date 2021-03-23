@@ -56,7 +56,23 @@
     position: absolute;
     top: -12px;
     left: -25px;
-    transform: rotate(349deg);
+    /* transform: rotate(360deg); */
+    animation: saleAnimation 8s infinite;
+    
+}
+
+@keyframes saleAnimation{
+    0% {
+        transform: rotate(340deg);
+    }
+
+    50%{
+        transform: rotate(350deg) scale(1.1);
+    }
+
+    100%{
+        transform: rotate(340deg);
+    }
 }
 
 @media only screen and (min-width: 400px){
