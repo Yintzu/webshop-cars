@@ -31,12 +31,9 @@ const CreateAccount = () => {
             setPasswordMismatch(true);
             error = true;
         }
-        if (error) {
-            return
-        }
+        if (error) return
 
-
-        let newUserObject = {};
+        let newUserObject = {orders: []};
 
         inputList.forEach((input) => {
             if (input.name) {
@@ -54,10 +51,6 @@ const CreateAccount = () => {
         setter(false);
     }
 
-    useEffect(() => {
-        console.log(users);
-    }, [users])
-
     return (
         <div>
             <h1 className={style.h1}>Create new account</h1>
@@ -70,7 +63,7 @@ const CreateAccount = () => {
                         </div>
                         <div className={style.positionRelative}>
                             <label htmlFor="registerPersonalNumber">Social security number</label>
-                            <input className={`form-control`} type="text" id="registerPersonalNumber" name="personalNumber" required></input>
+                            <input className={`form-control`} type="text" id="registerSocialSecurityNumber" name="socialSecurityNumber" required></input>
                         </div>
                         <div className={style.positionRelative}>
                             <label htmlFor="registerUserName">User name</label>

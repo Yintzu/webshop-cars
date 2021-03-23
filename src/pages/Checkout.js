@@ -18,11 +18,9 @@ const Checkout = () => {
     const radioHandler = (e) => {
         setRadioStatus(e.target.value)
     }
-
     const selectHandler = (e) => {
         setSelectStatus(e.target.options[e.target.selectedIndex].text)
     }
-
     const submitHandler = (e) => {
         e.preventDefault();
         let orderInfoObject = {};
@@ -40,10 +38,10 @@ const Checkout = () => {
         orderInfoObject["orderDate"] = createTimeStamp();
         orderInfoObject["orderNumber"] = Math.round(Math.random() * 10000000);
         if (loggedInUser){
-            loggedInUser["orders"] = orderInfoObject;
+            loggedInUser.orders = [orderInfoObject, ...loggedInUser.orders];
         }
         setOrderInfo([orderInfoObject, ...orderInfo])
-        setBoughtCars(shoppingCartItems, ...boughtCars)
+        setBoughtCars([...shoppingCartItems, ...boughtCars])
         removeAllFromCart();
         history.push("/confirmation");
     }
