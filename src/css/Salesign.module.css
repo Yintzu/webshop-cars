@@ -1,0 +1,105 @@
+.saleSign{
+    width: 80px;
+    position: absolute;
+    top: -12px;
+    left: -25px;
+    /* transform: rotate(360deg); */
+    animation: saleAnimation 8s infinite;
+    
+}
+
+.shadow{
+    filter: drop-shadow( 2px 2px 2px black);
+}
+
+.cls1 {
+    fill: url(#grad);
+}
+
+.cls2 {
+    font-size: 11.37px;
+    fill: #fff;
+    /* font-family: CooperBlackStd, Cooper Std; */
+    text-shadow: 2px 2px black;
+}
+
+.stp1 {
+    color:#da6540;
+    opacity:1
+}
+
+.stp2 {
+    color:#742710;
+    opacity:1
+}
+
+@keyframes saleAnimation{
+    0% {
+        transform: rotate(340deg);
+    }
+
+    50%{
+        transform: rotate(350deg) scale(1.1);
+    }
+
+    100%{
+        transform: rotate(340deg);
+    }
+}
+
+@media only screen and (min-width: 400px){
+    .hero{
+        height: 490px;
+    }
+    .p{
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 500px){
+    .saleSign {
+        width: 100px;
+        top: -15px;
+    }
+
+    .hero{
+        height: 530px;
+    }
+}
+@media only screen and (min-width: 600px){
+    .hero{
+        height: 580px;
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    .hero{
+        height: 610px;
+    }
+    .saleSign {
+        width: 120px;
+    }
+
+    .flexCenter{
+        flex-direction: row !important;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .hero{
+        height: 400px;
+    }
+
+    .h1{
+        /* font-size: 2rem; */
+    }
+    .p{
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 840px) {
+    .h1{
+        font-size: 2.2rem;
+    }
+}
