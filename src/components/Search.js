@@ -32,7 +32,7 @@ const Search = () => {
     }
 
     const handleRemoveFilter = () => {
-        removeFilters()
+        removeFilters();
         setFiltered(false);
     }
 
