@@ -25,6 +25,10 @@
     padding: 1.5rem 1rem;
 }
 
+.registerContainer input {
+    background-color: rgb(252, 252, 252);
+}
+
 .spaceAround{
     display: flex;
     justify-content: space-evenly;
