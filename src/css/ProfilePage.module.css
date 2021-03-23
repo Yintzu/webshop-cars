@@ -1,6 +1,10 @@
 .containerWrapper {
     /* background-color: pink; */
     padding: 0;
+    display: flex;
+    /* flex-flow: row wrap; */
+    justify-content: flex-start;
+    padding: 20px;
 }
 
 .profileCarHeading {
@@ -10,4 +14,12 @@
     margin-bottom: 20px;
     font-weight: 400;
     text-align: center;
+}
+
+.flexItem1 {
+    background-color: peachpuff;
+}
+
+.flexItem2 {
+    background-color: pink;
 }

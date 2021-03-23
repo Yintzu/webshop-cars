@@ -13,18 +13,18 @@ const Profile = () => {
   const history = useHistory();
 
   return (
-    <div className={`${styles.containerWrapper} container`}>
+    <div className={`${styles.containerWrapper}`}>
       {loggedInUser ?
         <div>
-          <div className="row">
-            <div className="col-5">
+          <div className={styles.flexItem1}>
+            
               <ProfileInfo />
             </div>
-            <div className="col-6">
+            <div className={styles.flexItem2}>
               {isClicked ? <EditProfile /> : <ProfileCar />}
             </div>
           </div>
-        </div>
+        
         : history.push("/")}
     </div>
   );
