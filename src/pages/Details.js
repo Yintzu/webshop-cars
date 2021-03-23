@@ -2,7 +2,6 @@ import style from '../css/Details.module.css';
 import { useContext, useEffect, useState } from 'react';
 import { CarContext } from '../contexts/CarContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
-import Modal from '../components/Modal.js'
 import BuyButtons from '../components/BuyButtons';
 
 import ModalTest from '../components/ModalTest';
@@ -15,6 +14,7 @@ const Details = (props) => {
     const { cars, boughtCheck } = useContext(CarContext);
     const [car, setCar] = useState(null);
     const { formatSum} = useContext(ShoppingCartContext);
+    const [ showModal, setShowModal]= useState(false);
 
     useEffect(() => {
         findCar()
