@@ -1,16 +1,22 @@
 .navContainer {
   top: 0;
   width: 100%;
+  background-color: #f4f4f4 !important;
   position: fixed;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.200);
-  z-index: 2000;
+  z-index: 3000;
 }
 
 .navbar {
-  width: 100%;
-  background-color: rgb(235, 245, 242);
+  position: relative;
   display: flex;
-  padding: 1rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #f4f4f4 !important;
+  display: flex;
+  max-height: 65px;
+  padding: .9rem 1rem;
   align-items: center;
 }
 
@@ -23,62 +29,139 @@
   color: #111;
 }
 
+.popupWrapper {
+  animation-name: popup;
+  animation-duration: .2s; 
+}
+
+@keyframes popup {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hamburgerClickBox {
+  position: absolute;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  z-index: 10;
+}
+
+.hamburgerWrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.hamburgerLine,
+.hamburgerLine::before,
+.hamburgerLine::after {
+  cursor: pointer;
+  position: absolute;
+  height: 3px;
+  width: 25px;
+  background-color: #2C7CAE;
+  transition: .4s;
+}
+
+.hamburgerLine::before {
+  content: '';
+  top: -7px;
+}
+
+.hamburgerLine::after {
+  content: '';
+  top: 7px;
+}
+
+.hamburgerLine.openBurger {
+  width: 0;
+}
+
+.hamburgerLine.openBurger::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.hamburgerLine.openBurger::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
 .links {
-  margin: 0 .5rem;
+  margin: 1rem 0.5rem;
+  transform: translateY(-20px);
+  position: relative;
+  top: -15px;
+  color: #707070 !important;
+}
+
+.links:hover {
+  color: #DA6547 !important;
 }
 
 .navLinks {
-  margin-left: 2rem;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  left: -110%;
+  top: 73px;
+  width: 100vw;
+  height: 90vh;
+  margin-left: 0;
   font-weight: bold;
-  color: 
+  font-size: 1.1rem;
+  z-index: 2000;
+  transition: .5s;
+  background-color: #f4f4f4 !important;
+}
+
+.navLinks.slideIn {
+  left: 0;
+  opacity: 1;
 }
 
 .active {
-  text-decoration: underline;
-}
-
-.cartIcon {
-  position: relative;
-  margin-left: auto;
-  margin-right: .5rem;
-  width: 35px;
-}
-
-.cartIcon:active {
-  transform: scale(1.05);
+  color: #DA6547 !important;
 }
 
 .img {
-  width: 100%;
+  height: 100%;
+  /* width: 100%; */
 }
 
 .cartNumber {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  display: inline-block;
   font-size: .7rem;
   font-weight: bold;
-  border-radius: 4px;
+  border: 1px solid #f4f4f4;
+  border-radius: 50px;
   color: #eee;
-  position: absolute;
-  right: -4px;
+  left: -6px;
   top: -6px;
-  width: 21px;
-  height: 20px;
-  background: linear-gradient(183deg, rgb(107, 195, 219) 0%, rgb(22, 109, 117) 100%);
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.08),
-              inset 1px 1px 1px rgba(255, 255, 255, 0.25);
+  width: 19px;
+  height: 19px;
+  background-color: #337aa7;
+}
+
+.cartNumSpan {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  height: 100%;
 }
 
 @keyframes updateAnimation {
-  0% {
-    transform: scale(1);
-  }
   50% {
+    -webkit-backface-visibility: hidden;
     transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
   }
 }
 
@@ -87,28 +170,191 @@
   animation-duration: .4s;
 }
 
+.leftWrapper {
+  position: relative;
+  cursor: pointer;
+  left: 51%;
+  transform: translateX(-50%);
+  width: 170px;
+  display: flex;
+  align-items: center;
+}
+
 .infoBar {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  background-color: rgb(230, 230, 230);
-  padding: .5rem 1rem;
+  background-color: #2C7CAE;
+  height: 15px;
+  color: #E9f2f4 !important;
+}
+
+.cartShadow {
+  position: absolute;
+  pointer-events: none;
+  top: 100px;
+  left: -1rem;
+  width: 120%;
+  height: 40vh;
+  opacity: .5;
+  background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0, 0, 0, 0.295) 50%);
+}
+
+.iconsWrapper {
+  display: flex;
+  align-items: center;
+  width: 106px;
+  /* width: 60px; */
+  height: 30px;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: -4px;
+}
+
+.cartIconWrapper {
+  position: relative;
+  width: 47%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.cartIcon:active {
+  transform: scale(1.05);
 }
 
 .rrrrlogoImg {
   position: relative;
-  margin-left: auto;
-  margin-right: .5rem;
-  width: 75px;
+  display: none;
+  height: 100%;
+  width: 37%;
+  order: 2;
+  margin: 0 auto;
+  /* margin-left: .3rem; */
+}
+
+.rrrrlogoText {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: 63%;
+}
+
+.acctContact {
+  position: relative;
+  height: 100%;
+  /* width: 39%; */
+}
+
+.acctContact:hover {
+  cursor: pointer;
 }
 
 .acctContactImg {
-  position: relative;
-  margin-left: auto;
-  margin-right: .5rem;
-  width: 30px;
+  /* width: 100%; */
+  height: 100%;
 }
 
-.acctContactImg.img {
-  width: 100%;
+.loginSpan{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2C7CAE;
 }
+
+.loginSpan:hover{
+  color: #DA6547;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 400px) {
+  .leftWrapper {
+    width: 185px;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .leftWrapper {
+    width: 210px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .navbar {
+    max-height: initial;
+    padding: 1.1rem 1rem;
+  }
+  
+  .links {
+    top: 0;
+  }
+
+  .cartShadow {
+    display: none;
+  }
+
+  .navLinks {
+    order: -1;
+    display:initial;
+    background-color: initial;
+    height: initial;
+    width: initial;
+    position: initial;
+    transform: initial;
+    transition: initial;
+    font-weight: bold;
+    /* margin-left: 1.3rem; */
+    font-size: 1.1rem;
+  }
+
+  .rrrrlogoImg{
+    display: inline-block;
+  }
+
+  .leftWrapper {
+    position: absolute;
+    width: 38%;
+  }
+  
+  .hamburgerWrapper {
+    display: none;
+  }
+
+  .hamburgerClickBox {
+    display: none;
+  }
+
+  .iconsWrapper {
+    /* Bring back to 70 with member icon */
+    min-width: 70px;
+    /* width: 37px; */
+    height: 28px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .navbar {
+    padding: 1.1rem .5rem;
+  }
+
+  .navLinks {
+    font-size: 1.2rem;
+  }
+
+  .leftWrapper {
+    width: 270px;
+  }
+
+  .iconsWrapper{
+    margin-right: 5px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .navbar {
+    padding: 1.1rem .2rem;
+  }
+
+  .iconsWrapper{
+    margin-right: 8px;
+  }
+}
+

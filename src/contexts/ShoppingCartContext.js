@@ -4,7 +4,12 @@ export const ShoppingCartContext = createContext();
 
 const ShoppingCartProvider = (props) => {
 
-    const [shoppingCartItems, setShoppingCartItems] = useState([]);
+    const [shoppingCartItems, setShoppingCartItems] = useState(
+        () => {
+            const localData = localStorage.getItem('shoppingCartItems');
+            return localData ? JSON.parse(localData) : []
+        }
+    );
     const [cartTotal, setCartTotal] = useState(0);
 
     // Adds the price of all items in cart together on change in cart-array
@@ -16,17 +21,17 @@ const ShoppingCartProvider = (props) => {
     // Set the cart array by creating a new array, adding the new item at the front of the array, then spreading out the old array after.
     const addToCart = (newItem) => {
         if (!shoppingCartItems.includes(newItem)) {
-            setShoppingCartItems([newItem, ...shoppingCartItems]);  
+            setShoppingCartItems([newItem, ...shoppingCartItems]);
         } else {
             alert('this item is already in your cart')
-        }    
+        }
     }
 
     // Will connect to "remove"-buttons
     // Removes the clicked item using filter
     // Might want to use the vin-number attached to each car to compare later
     const removeFromCart = (itemToRemove) => {
-        setShoppingCartItems(shoppingCartItems.filter(item => item !== itemToRemove));
+        setShoppingCartItems(shoppingCartItems.filter(item => item.vin !== itemToRemove.vin));
     }
 
     const removeAllFromCart = () => {
@@ -47,7 +52,7 @@ const ShoppingCartProvider = (props) => {
     }
 
     // Formats numbers into "100 000 kr"
-    const formatSum = (sum) => `${new Intl.NumberFormat('sv-SE', { currency: 'SEK', style: 'decimal' }).format(sum)} kr`;
+    const formatSum = (sum) => `$${new Intl.NumberFormat('de-DK', { currency: 'EUR', style: 'decimal', minimumFractionDigits: 0 }).format(Math.round(sum / 10))}`;
 
     const values = {
         shoppingCartItems,
@@ -58,6 +63,12 @@ const ShoppingCartProvider = (props) => {
         formatSum,
         cartTotal,
     }
+
+
+
+    useEffect(() => {
+        localStorage.setItem('shoppingCartItems', JSON.stringify(shoppingCartItems))
+    }, [shoppingCartItems]);
 
     return (
         <ShoppingCartContext.Provider value={values}>

@@ -1,17 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
-
 hr {
     background-color: #ffffff;
-	border-top: 1px dotted #303030;
+	border-top: 1px solid #656565;
     
 }
 
 .mainHeading {
     font-size: 1.8rem;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     color: #2C7CAE !important;
-    margin-top: 15px;
 }
 
 .smallerHeading {
@@ -37,11 +34,20 @@ hr {
     margin-left: 25% !important;
 }
 
-.confirmationBox {
-    background-color: #EBF5F2 !important;
-    padding: 30px;
+.confirmationBoxLeft {
+    background-color: #f4f4f4 !important;
+    padding: 30px 30px 30px 30px;
     margin-top: 20px;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    position: relative;
+    box-shadow: 2px 2px 2px #d2d2d2;
+}
+
+.confirmationBoxRight {
+    background-color: #f4f4f4 !important;
+    padding: 30px 30px 30px 21px;
+    margin-top: 20px;
     position: relative;
     box-shadow: 2px 2px 2px #d2d2d2;
 }
@@ -50,29 +56,210 @@ hr {
     margin-top: 30px;
 }
 
+.boldSummary {
+    font-weight: 500;
+    color: #4b4b4b !important;
+    
+}
+
 .backButton{
-    margin-right: 10px !important;
-    background: #2C7CAE !important;
+    margin-left: 10px !important;
+    background: #DA6547 !important;
     border: none;
 }
 
+.backButton:hover {
+    background-color:#a04832 !important;
+    border: none;
+   
+}
+
 .printButton {
-    background: #DA6547 !important;
+    background: #2C7CAE !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.printButton:hover {
+    background: #295276 !important;
     color: #ffffff !important;
     border: none;
 }
 
 .containerText {
-    line-height: .8;
+    line-height: 1.7;
+    color: #303030 !important;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;   
+}
+
+.containerTextLast {
+    line-height: 1.7;
+    margin-bottom: 40px;
     color: #303030 !important;
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
 }
 
-.containerTextLast {
-    line-height: .7;
-    margin-bottom: 50px;
-    color: #303030 !important;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 400;
+.textOrderNumber {
+    color: #303030;
+}
+
+@media print {
+    @page {
+      size: landscape;
+    }
+
+    footer * {
+        visibility: hidden !important;
+        display: none !important;
+    }
+
+    nav * {
+      visibility: hidden;
+    }
+
+    aside {
+        visibility: hidden;
+    }
+
+    .toPrint, .toPrint * {
+      visibility: visible;
+    }
+
+    .toPrint {
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+    }
+
+    .mainHeading {
+        font-size: 1.5rem;
+    }
+    
+    .smallerHeading {
+        font-size: 1.2rem;        
+    }
+    
+    .smallHeading {
+        font-size: 1rem;
+    }
+
+    .containerText {
+        font-size: 0.7rem;
+    }
+
+    .containerTextLast {
+        font-size: 0.7rem;
+    }
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 575px) {
+
+    .row {
+        margin-top: 100px !important;
+        padding-top: 0 !important;
+    }
+
+    .container {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    /* body {
+        padding-top: 105px;
+      } */
+    
+    .mainHeading {
+        font-size: 1.5rem;
+    }  
+
+    .confirmationBoxLeft {
+        background-color: #f4f4f4 !important;
+        border-radius: none;
+        padding-bottom: 0;  
+    }
+    
+    .confirmationBoxRight {
+        background-color: #f4f4f4 !important;
+        border-radius: none;
+        padding-top: 0;
+        margin-top: 0 !important;
+    }
+
+    .containerText {
+        line-height: 1.6;
+        font-size: 1rem;
+    }
+    
+    .containerTextLast {
+        line-height: 1.6;
+        font-size: 1rem;
+    }
+
+    .smallerHeading {
+        font-size: 1.2rem;
+        margin-top: 0;
+        margin-bottom: 10px;
+        padding-top: 0;
+    }
+    
+    .smallHeading {
+        color: #2C7CAE !important;
+        font-size: 1.1rem;
+        margin-top: 25px;
+        margin-bottom: 5px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .confirmationBoxLeft {
+        background-color: #f4f4f4 !important;
+        padding-bottom: 0;
+        border-radius: none;
+    }
+    
+    .confirmationBoxRight {
+        background-color: #f4f4f4 !important;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        position: relative !important;
+    }
+
+    .containerText {
+        line-height: 1.6;
+        font-size: .95rem;
+    }
+    
+    .containerTextLast {
+        line-height: 1.6;
+        font-size: .95rem;
+    }
+
+    .smallerHeading {
+        font-size: 1.2rem;
+        margin-top: 0;
+        margin-bottom: 10px;
+        
+    }
+    
+    .smallHeading {
+        color: #2C7CAE !important;
+        font-size: 1.1rem;
+        margin-top: 25px;
+        margin-bottom: 5px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* body {
+        padding-top: 115px;
+      } */
+
+    .confirmationBoxRight {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
 }

@@ -1,14 +1,258 @@
-.carCards{
+.carCard {
+    padding: .3rem;
+    width: 100%;
     display: flex;
-    width: 80%;
-    margin: auto;
-}
-.carCard img {
+    flex-direction: column;
+    border-radius: .25em;
+    border: solid rgb(227, 227, 227) 1px !important;
     cursor: pointer;
+    box-shadow: 2px 2px 2px #eeeeee;
+    margin-top: 10px;
+    background-color: rgb(252, 252, 252);
 }
-.carCard p:first-letter {
-    text-transform: capitalize;
+.infoRow {
+    width: 62%;
+    padding-left: .6rem;
+    display: flex;
+    flex-direction: column;
 }
-.carCard .desc::after {
-    content: "."
+.cardSmallText {
+    display: none;
+}
+.cardTitle {
+    color: #2C7CAE!important;
+    font-size: .9rem;
+    margin-bottom: 0;
+}
+.boldText{ 
+    font-weight: 600;
+    color: #1f1f1f !important;
+    margin-bottom: 0;
+}
+.carDetailText {
+    display: flex;
+    font-size: .75rem;
+    margin-bottom: 0;
+    margin-top: 0rem;
+}
+.hrCard {
+    background-color: #ffffff;
+	border-top: 1px solid #656565;
+    width: 100%;
+    line-height: 0;
+    margin: .2rem 0 .3rem 0;
+    text-align: center;
+}
+.topHr {
+    display: none;
+}
+.cardBtns {
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-top: auto;
+}
+.largePrice {
+    background-color: rgb(235, 235, 235);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 65%;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+.milesWrapper {
+    margin-left: .4rem;
+}
+.addButton, .removeButton, .btnCustom {
+    font-weight: 500;
+}
+.buttonWrapper {
+    font-size: .8rem;
+    margin-left: .5rem;
+    width: 35%;
+}
+.buttonWrapper * {
+    font-size: .8rem;
+}
+.topRow {
+    display: flex;
+}
+.imgWrapper {
+    width: 38%;
+    position: relative;
+}
+.carImg {
+    width: 100%;
+    border-radius: 5px 5px 5px 5px;
+}
+.soldOverlay{
+    width: 90%;
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+@media screen and (min-width: 355px) {
+    .cardTitle {
+        font-size: 1rem;
+    }
+    .milesWrapper {
+        margin-left: .5rem;
+    }
+    .carDetailText {
+        font-size: .85rem;
+        margin-top: .1rem;
+    }
+}
+
+@media screen and (min-width: 385px) {
+    .cardTitle {
+        font-size: 1.07rem;
+    }
+    /* .btnsWidth {
+        padding: .4rem 0;
+    } */
+    .largePrice {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (min-width: 385px) {
+    .cardTitle {
+        font-size: 1.1rem;
+    }
+    .carDetailText {
+        font-size: .9rem;
+        margin-top: .2rem;
+    }
+    .buttonWrapper * {
+        font-size: .85rem;
+    }
+    .largePrice {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 420px) {
+    .carImg {
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    .topRow {
+        flex-direction: column;
+    }  
+    .imgWrapper {
+        width: 100%;
+    }
+    .carDetailText {
+        font-size: .95rem;
+    }
+    .infoRow {
+        padding: 0 .2rem;
+        width: 100%;
+        padding: .3rem;
+    }
+    .cardTitle {
+        font-size: .95rem;
+        margin-top: .3rem;
+        margin-bottom: .1rem;
+    }
+    .cardSmallText {
+        margin: .4rem 0;
+        font-size: .8rem;
+        font-style: italic;
+    }
+
+    .cardBtns {
+        margin-top: .1rem;
+        padding-bottom: .2rem;
+        flex-direction: column; 
+        border-radius: 5px;
+    }
+    .hrCard {
+        margin: .2rem 0;
+    }
+    .largePrice {
+        line-height: 1.1;
+        padding: .5rem 0;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        margin-bottom: .5rem;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(235, 235, 235);
+    }
+    .buttonWrapper {
+        margin-left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .buttonWrapper * {
+        font-size: 1rem;
+    }
+    .soldOverlay{
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .cardTitle {
+        font-size: 1.1rem;
+    }
+    .cardSmallText {
+        min-height: 57px;
+        display: initial;
+    }
+    .topHr {
+        display: initial;
+    }
+    .carDetailText {
+        font-size: .85rem;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .cardTitle {
+        font-size: .86rem;
+    }
+    .cardSmallText {
+        min-height: 76px;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .cardTitle {
+        font-size: .95rem;
+    }
+    .cardSmallText {
+        min-height: 76px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .cardSmallText {
+        min-height: 57px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .cardTitle {
+        font-size: 1.22rem;
+    }
+    .largePrice {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 840px) {
+    .cardTitle {
+        font-size: 1.35rem;
+    }
 }

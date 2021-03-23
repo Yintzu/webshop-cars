@@ -1,0 +1,60 @@
+.carouselcaptioned{
+    position: absolute;
+    /* right: 0%; */
+    bottom:-1rem;
+    left: 5%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    /* text-align: center; */
+    
+}
+
+.carouselImg{
+    cursor: pointer;
+}
+
+/* @media screen and (max-width: 425px) {
+    .carouselImg{
+        height: auto;
+    }
+  }
+ */
+
+/* .gradient{
+    background: linear-gradient(0deg, rgba(0,0,0,0.8) 25%, rgba(255,255,255,0) 100%);
+} */
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.836) 30%,  rgba(0, 0, 0, 0.637) 60%, rgba(0, 0, 0, 0) 100%);
+}
+
+.captionWrapper {
+    z-index: 2;
+}
+
+.carTitle, .carPrice{
+    font-size: calc(0.3rem + 5vw);
+}
+
+.carTitle{
+    color: white;
+    margin-bottom: 0;
+}
+
+.carPrice{
+    color: red !important;
+    font-weight: 500;
+}
+
+@media only screen and (min-width: 500px){
+    .carTitle, .carPrice{
+        font-size: 2rem;
+    }
+}
