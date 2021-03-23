@@ -80,12 +80,13 @@ const EditProfile = () => {
                             {passwordMismatch && <p className={style.errorText}>Password does not match</p>}
                         </div>
                     </div>
-                </div>
-
-                <div className={style.changeButtons}>
+                    <div className={style.changeButtons}>
                     <button type="submit" className={`btn ${style.changeSubmitBtn}`}>Submit</button>
                     <button type="button" className={`btn ${style.changeBackBtn}`} onClick={backButton}>Back</button>
                 </div>
+                </div>
+
+
             </form>
         </div>
     );
