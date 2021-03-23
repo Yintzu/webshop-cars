@@ -51,7 +51,7 @@ const EditProfile = () => {
                         <label htmlFor="changeFullName" className={style.changeText}>Full Name:</label>
                         <input className="form-control" type="text" id="changeFullName" name="fullName" defaultValue={loggedInUser.fullName} />
 
-                        <label htmlFor="changeSocialSecurityNumber" className={style.changeText}>SSN:</label>
+                        <label htmlFor="changeSocialSecurityNumber" className={style.changeText}>Social Security Number:</label>
                         <input className="form-control" type="text" id="changeSocialSecurityNumber" name="socialSecurityNumber" defaultValue={loggedInUser.socialSecurityNumber} />
 
                         <label htmlFor="changeUserName" className={style.changeText}>Username:</label>
@@ -66,7 +66,7 @@ const EditProfile = () => {
                         <input className="form-control" type="text" id="changeEmail" name="email" defaultValue={loggedInUser.email} />
 
                         <div className={style.inputDiv}>
-                            <label htmlFor="changeConfirmEmail" className={style.changeText}>Confirm Email:</label>
+                            <label htmlFor="changeConfirmEmail" className={style.changeText}>Confirm Email Address:</label>
                             <input className="form-control" type="text" id="changeConfirmEmail" name="confirmEmail" defaultValue={loggedInUser.email} onChange={(e) => removeError(e, setEmailMismatch)}/>
                             {emailMismatch && <p className={style.errorText}>E-mail does not match</p>}
                         </div>
