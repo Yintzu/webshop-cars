@@ -10,7 +10,7 @@ import BuyButtons from '../components/BuyButtons';
 
 const Details = (props) => {
 
-    const { cars } = useContext(CarContext);
+    const { cars, boughtCheck } = useContext(CarContext);
     const [car, setCar] = useState(null);
     const { formatSum} = useContext(ShoppingCartContext);
 
@@ -37,7 +37,8 @@ const Details = (props) => {
                 <h1 className={`mt-0 ${style.mainHeading}`}>Car details</h1>
                 <div className="row g-0">
                     <div className={`col ${style.imageWrapper}`}>
-                        <img src={car.carImg} alt={`${car.make} ${car.model} ${car.year}`} />
+                        <img className={style.carImage} src={car.carImg} alt={`${car.make} ${car.model} ${car.year}`} />
+                        {boughtCheck(car) && <img src="/assets/app-components/soldout.png" className={`${style.soldOverlay}`} />}
                     </div>
                     <div className={`col-md-4 ${style.buy}`}>
                         <h3>{car.make} {car.model} {car.year}</h3>
