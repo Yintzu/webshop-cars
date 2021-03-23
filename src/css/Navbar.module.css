@@ -137,25 +137,25 @@
 }
 
 .cartNumber {
+  color: #eee;
+  background-color: #337aa7;
   position: absolute;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: .7rem;
   font-weight: bold;
+  border-radius: 50%;
   border: 1px solid #f4f4f4;
-  border-radius: 50px;
-  color: #eee;
   left: -6px;
   top: -6px;
   width: 19px;
   height: 19px;
-  background-color: #337aa7;
 }
 
 .cartNumSpan {
-  position: absolute;
-  width: 100%;
-  text-align: center;
   height: 100%;
+  position: absolute;
 }
 
 @keyframes updateAnimation {
