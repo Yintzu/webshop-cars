@@ -15,16 +15,16 @@ const Profile = () => {
   return (
     <div className="container">
       {loggedInUser ?
-        <div>
-          <div className="row">
-            <div className="col-5">
+        <div className="row">
+          <div className="col">
+            
               <ProfileInfo />
             </div>
-            <div className="col-6">
+            <div className="col">
               {isClicked ? <EditProfile /> : <ProfileCar />}
             </div>
           </div>
-        </div>
+        
         : history.push("/")}
     </div>
   );
