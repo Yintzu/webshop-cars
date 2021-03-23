@@ -24,30 +24,30 @@
 }
 
 .profileCarWrapper {
-    min-width: 70%;
-    padding: 10px 5px 10px 15px;
-    margin-left: -10;
+    min-width: 400px;
+    padding: 10px 5px 10px 5px;
+    margin-left: 10;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    padding: 20px;
+    padding: 20px 0 20px 0;
     border-bottom: 1px solid #d4d4d4;
 }
 
 .gridItem1 {
-  /* background-color: peachpuff; */
-  margin-top: 0px;
-  grid-row: 1 / span 2;
+    background-color: peachpuff;
+    margin-top: 0px;
+    grid-row: 1 / span 2;
 }
 
 .gridItem2 {
     padding-left: 10px;
-    /* background-color: pink; */
+    background-color: pink;
 }
 
 .gridItem3 {
     padding-left: 10px;
-    /* background-color: lightblue;  */
+    background-color: lightblue; 
 }
 
 .gridItem4 {
@@ -64,18 +64,15 @@
     grid-column: 3;
 }
 
-/* .profileCarHeading {
-    color: #2C7CAE;
-    font-size: 1.8rem;
-    margin-top: 15px;
+.profileCarHeading {
+    margin-top: 20px;
     margin-bottom: 20px;
-    font-weight: 400;
-    text-align: center;
-} */
+   
+}
 
 .profileCarSubHeading {
     color: #2C7CAE !important;
-    font-size: 1rem;
+    font-size: .9rem;
     margin-bottom: 5px;
 }
 
@@ -83,7 +80,7 @@
     height: 50px;
     width: 100px;
     border-radius: 5px;
-    display: block;
+    
 }
 
 .profileText {
