@@ -18,11 +18,9 @@ const Checkout = () => {
     const radioHandler = (e) => {
         setRadioStatus(e.target.value)
     }
-
     const selectHandler = (e) => {
         setSelectStatus(e.target.options[e.target.selectedIndex].text)
     }
-
     const submitHandler = (e) => {
         e.preventDefault();
         let orderInfoObject = {};
