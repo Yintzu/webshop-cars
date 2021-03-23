@@ -39,6 +39,21 @@
     font-size: .95rem;
 }
 
+.inputDiv{
+    position: relative;
+}
+
+.errorBorder{
+    box-shadow: 0 0 0 3px rgb(255, 122, 122);
+}
+
+.errorText{
+    color: red !important;
+    position: absolute;
+    top: 62px;
+    font-size: 0.8rem;
+}
+
 @media only screen and (min-width: 768px){
     .changeHeading {
         margin-bottom: 20px;

@@ -1,10 +1,13 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import style from '../css/EditProfile.module.css';
 
 
 const EditProfile = () => {
     const { setIsClicked, loggedInUser } = useContext(UserContext)
+
+    const [emailMismatch, setEmailMismatch] = useState(false);
+    const [passwordMismatch, setPasswordMismatch] = useState(false);
 
     const backButton = (e) => {
         e.preventDefault();
@@ -13,12 +16,30 @@ const EditProfile = () => {
 
     const editHandler = (e) => {
         e.preventDefault();
-        console.log("submitting");
         const editProfileInputList = document.querySelectorAll("input");
+        let error = false;
+
+        if (editProfileInputList[4].value !== editProfileInputList[5].value) {
+            editProfileInputList[5].classList.add(`${style.errorBorder}`);
+            setEmailMismatch(true);
+            error = true;
+        }
+        if (editProfileInputList[6].value !== editProfileInputList[7].value) {
+            editProfileInputList[7].classList.add(`${style.errorBorder}`);
+            setPasswordMismatch(true);
+            error = true;
+        }
+        if (error) return
+
         editProfileInputList.forEach(element => {
             loggedInUser[element.name] = element.value;
         })
         setIsClicked(false);
+    }
+
+    const removeError = (e, setter) => {
+        e.target.classList.remove(`${style.errorBorder}`)
+        setter(false);
     }
 
     return (
@@ -44,20 +65,26 @@ const EditProfile = () => {
                         <label htmlFor="changeEmail" className={style.changeText}>Email:</label>
                         <input className="form-control" type="text" id="changeEmail" name="email" defaultValue={loggedInUser.email} />
 
-                        <label htmlFor="changeConfirmEmail" className={style.changeText}>Confirm Email:</label>
-                        <input className="form-control" type="text" id="changeConfirmEmail" name="confirmEmail" />
+                        <div className={style.inputDiv}>
+                            <label htmlFor="changeConfirmEmail" className={style.changeText}>Confirm Email:</label>
+                            <input className="form-control" type="text" id="changeConfirmEmail" name="confirmEmail" defaultValue={loggedInUser.email} onChange={(e) => removeError(e, setEmailMismatch)}/>
+                            {emailMismatch && <p className={style.errorText}>E-mail does not match</p>}
+                        </div>
 
                         <label htmlFor="changePasssword" className={style.changeText}>Password:</label>
-                        <input className="form-control" type="text" id="changePassword" name="password" defaultValue={loggedInUser.password}/>
+                        <input className="form-control" type="text" id="changePassword" name="password" defaultValue={loggedInUser.password} />
 
-                        <label htmlFor="changeConfirmPassword" className={style.changeText}>Confirm Password:</label>
-                        <input className="form-control" type="text" id="changeConfirmPassword" name="confirmPassword" />
+                        <div className={style.inputDiv}>
+                            <label htmlFor="changeConfirmPassword" className={style.changeText}>Confirm Password:</label>
+                            <input className="form-control" type="text" id="changeConfirmPassword" name="confirmPassword" defaultValue={loggedInUser.password} onChange={(e) => removeError(e, setPasswordMismatch)}/>
+                            {passwordMismatch && <p className={style.errorText}>Password does not match</p>}
+                        </div>
                     </div>
                 </div>
 
-                <div className={style.changeButtons}> 
-                <button type="submit" className={`btn ${style.changeSubmitBtn}`}>Submit</button>
-                <button type="button" className={`btn ${style.changeBackBtn}`} onClick={backButton}>Back</button>
+                <div className={style.changeButtons}>
+                    <button type="submit" className={`btn ${style.changeSubmitBtn}`}>Submit</button>
+                    <button type="button" className={`btn ${style.changeBackBtn}`} onClick={backButton}>Back</button>
                 </div>
             </form>
         </div>
