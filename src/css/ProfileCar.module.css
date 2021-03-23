@@ -3,65 +3,44 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 2px 2px 2px #d2d2d2;
- 
+  min-width: 458px;
+  margin-top: 20px;
 }
 
 .orderInfo {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    margin-right: 10px;
 }
 
 .orderTotal {
     display: flex;
     justify-content: flex-end;
-    padding-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #dbdbdb;
 }
 
-.containerCarWrapper {
-    /* background-color: powderblue; */
-    /* width: 400px; */
-    margin-bottom: 20px;
+.orderTotalText {
+    margin-right: 10px;
 }
 
-.profileCarWrapper {
-    min-width: 400px;
-    padding: 10px 5px 10px 5px;
-    margin-left: 10;
+.flexWrapper {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid #d4d4d4;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 500px;
 }
 
-.gridItem1 {
-    background-color: peachpuff;
-    margin-top: 0px;
-    grid-row: 1 / span 2;
+.flexItem {
+    padding: 10px 10px 10px 0;
+    font-size: 0.9rem;
 }
 
-.gridItem2 {
-    padding-left: 10px;
-    background-color: pink;
-}
-
-.gridItem3 {
-    padding-left: 10px;
-    background-color: lightblue; 
-}
-
-.gridItem4 {
-    padding-left: 10px;
-    /* background-color: lightblue; */
-    grid-row: 2;
-    grid-column: 2;
-}
-
-.gridItem5 {
-    padding-left: 10px;
-    /* background-color: bisque; */
-    grid-row: 2;
-    grid-column: 3;
+.flexItem2 {
+    padding: 10px 10px 10px 0;
+    margin-left: auto;
+    font-size: 0.9rem;
 }
 
 .profileCarHeading {
@@ -72,15 +51,14 @@
 
 .profileCarSubHeading {
     color: #2C7CAE !important;
-    font-size: .9rem;
+    font-size: 1rem;
     margin-bottom: 5px;
 }
 
 .profileImage {
     height: 50px;
     width: 100px;
-    border-radius: 5px;
-    
+    border-radius: 5px;  
 }
 
 .profileText {
@@ -92,16 +70,36 @@
     margin-top: 5px;
 }
 
-.infoButton {
-    background: #2C7CAE !important;
-    color: #ffffff !important;
-    border: none;
-    margin-left: 10px;
-    height: 35px;
-}
+@media only screen and (min-width: 320px) and (max-width: 575px) {
+    .orderWrapper {
+        background-color: #f4f4f4;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px #d2d2d2;
+        min-width: 280px;
+    }
 
-.infoButton:hover {
-    background: #295276 !important;
-    color: #ffffff !important;
-    border: none;
+    .profileImage {
+        height: 100px;
+        width: 150px;
+        border-radius: 5px;  
+    }
+    
+    .flexWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    
+    .flexItem {
+        padding: 10px 10px 10px 0;
+        font-size: 0.9rem;
+       
+    }
+
+    .flexItem2 {
+        padding: 10px 5px 10px 0;
+        font-size: 0.9rem;
+        justify-content: flex-start;
+    }
 }
