@@ -157,7 +157,13 @@ const FilterSearchContextProvider = (props) => {
         sliderFilter('miles', minMiles, maxMiles);
 
         // set renderList with the filtered cars array
-        setRenderList(filterCarsArray);
+        if(filterCarsArray.length) {
+            setRenderList(filterCarsArray);
+        }
+        else if(!filterCarsArray.length){
+            setRenderList(null);
+        }
+        /* setRenderList(filterCarsArray); */
     }
 
     useEffect(() => {
