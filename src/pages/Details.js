@@ -65,6 +65,7 @@ const Details = (props) => {
                             <li>Miles: {car.miles}</li>
                         </ul>
                     </div>
+                   
                 </div>
                 <button onClick={() => setShowModal(!showModal)}>Show Modal</button>
             </div>
