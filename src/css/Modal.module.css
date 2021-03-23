@@ -8,6 +8,21 @@
   border-radius: 3px;
 }
 
+.modal-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#ModalTest  {
+  height: 300px;
+  width: 600px;
+}
+
+.row {
+  flex-direction: row;
+  padding: 0, 4px;
+}
+
 .modal-footer {
   padding: 10px;
 }
@@ -15,12 +30,6 @@
 .modal-title {
   margin: 0;
 
-}
-
-.modal-body{
-  padding: 10px;
-  border-top: 1rem solid #eee;
-  border-bottom: 1rem solid #eee;
 }
 
 .closeButton{

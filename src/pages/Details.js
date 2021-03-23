@@ -2,8 +2,9 @@ import style from '../css/Details.module.css';
 import { useContext, useEffect, useState } from 'react';
 import { CarContext } from '../contexts/CarContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
-import Modal from '../components/Modal.js'
 import BuyButtons from '../components/BuyButtons';
+
+import ModalTest from '../components/ModalTest';
 
     
 
@@ -13,6 +14,7 @@ const Details = (props) => {
     const { cars, boughtCheck } = useContext(CarContext);
     const [car, setCar] = useState(null);
     const { formatSum} = useContext(ShoppingCartContext);
+    const [ showModal, setShowModal]= useState(false);
 
     useEffect(() => {
         findCar()
@@ -33,7 +35,8 @@ const Details = (props) => {
     const renderCar = () => {
         return (
             <div className={style.details}>
-                <Modal />
+                {/* <Modal /> */}
+                {showModal && <ModalTest />}
                 <h1 className={`mt-0 ${style.mainHeading}`}>Car details</h1>
                 <div className="row g-0">
                     <div className={`col ${style.imageWrapper}`}>
@@ -63,6 +66,7 @@ const Details = (props) => {
                         </ul>
                     </div>
                 </div>
+                <button onClick={() => setShowModal(!showModal)}>Show Modal</button>
             </div>
         );
     }
