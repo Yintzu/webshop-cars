@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
+import style from '../css/EditProfile.module.css';
 
 
 const EditProfile = () => {
@@ -22,41 +23,42 @@ const EditProfile = () => {
 
     return (
         <div>
-            <h1>Edit Profile</h1>
+            <h1 className={style.changeHeading}>Edit Profile</h1>
             <form onSubmit={editHandler}>
-                <div className="row">
-                    <div className="col-12 col-sm-6">
-                        <label htmlFor="changeFullName">Full Name:</label>
+                <div className={`row ${style.changeForm}`}>
+                    <div className={`col-12 col-sm-6 ${style.changeContainer}`}>
+                        <label htmlFor="changeFullName" className={style.changeText}>Full Name:</label>
                         <input className="form-control" type="text" id="changeFullName" name="fullName" defaultValue={loggedInUser.fullName} />
 
-                        <label htmlFor="changeSocialSecurityNumber">Social Security Number:</label>
+                        <label htmlFor="changeSocialSecurityNumber" className={style.changeText}>SSN:</label>
                         <input className="form-control" type="text" id="changeSocialSecurityNumber" name="socialSecurityNumber" defaultValue={loggedInUser.socialSecurityNumber} />
 
-                        <label htmlFor="changeUserName">Username:</label>
+                        <label htmlFor="changeUserName" className={style.changeText}>Username:</label>
                         <input className="form-control" type="text" id="changeUsername" name="userName" defaultValue={loggedInUser.userName} />
 
-                        <label htmlFor="changePhoneNumber">Phone Number:</label>
+                        <label htmlFor="changePhoneNumber" className={style.changeText}>Phone Number:</label>
                         <input className="form-control" type="text" id="changePhoneNumber" name="phoneNumber" defaultValue={loggedInUser.phoneNumber} />
                     </div>
 
-                    <div className="col-12 col-sm-6">
-                        <label htmlFor="changeEmail">Email:</label>
+                    <div className={`col-12 col-sm-6 ${style.changeContainer}`}>
+                        <label htmlFor="changeEmail" className={style.changeText}>Email:</label>
                         <input className="form-control" type="text" id="changeEmail" name="email" defaultValue={loggedInUser.email} />
 
-                        <label htmlFor="changeConfirmEmail">Confirm Email:</label>
+                        <label htmlFor="changeConfirmEmail" className={style.changeText}>Confirm Email:</label>
                         <input className="form-control" type="text" id="changeConfirmEmail" name="confirmEmail" />
 
-                        <label htmlFor="changePasssword">Password:</label>
+                        <label htmlFor="changePasssword" className={style.changeText}>Password:</label>
                         <input className="form-control" type="text" id="changePassword" name="password" defaultValue={loggedInUser.password}/>
 
-                        <label htmlFor="changeConfirmPassword">Confirm Password:</label>
+                        <label htmlFor="changeConfirmPassword" className={style.changeText}>Confirm Password:</label>
                         <input className="form-control" type="text" id="changeConfirmPassword" name="confirmPassword" />
                     </div>
                 </div>
 
-
-                <button type="submit" className="btn btn-primary">Submit</button>
-                <button type="button" className="btn btn-dark" onClick={backButton}>Back</button>
+                <div className={style.changeButtons}> 
+                <button type="submit" className={`btn ${style.changeSubmitBtn}`}>Submit</button>
+                <button type="button" className={`btn ${style.changeBackBtn}`} onClick={backButton}>Back</button>
+                </div>
             </form>
         </div>
     );

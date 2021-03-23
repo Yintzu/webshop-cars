@@ -1,0 +1,54 @@
+.changeForm {
+    background: #f4f4f4;
+    box-shadow: 2px 2px 2px #d2d2d2;
+    padding: 5px;
+    margin: 5px;
+}
+
+.changeButtons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.changeSubmitBtn {
+    margin: 5px;
+    background: #2C7CAE !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.changeSubmitBtn:hover {
+    background: #295276 !important;
+    border: none;
+}
+
+.changeBackBtn {
+    margin: 5px;
+    background: #DA6547 !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.changeBackBtn:hover {
+    background-color:#a04832 !important;
+    border: none;
+}
+
+.changeText {
+    font-size: .95rem;
+}
+
+@media only screen and (min-width: 768px){
+    .changeHeading {
+        margin-bottom: 20px;
+        margin-top: 7px;
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .changeHeading {
+        margin-bottom: 20px;
+        margin-top: 45px;
+    }
+}
