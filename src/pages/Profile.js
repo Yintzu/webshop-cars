@@ -16,11 +16,11 @@ const Profile = () => {
     <div className="container">
       {loggedInUser ?
         <div className="row">
-          <div className="col">
+          <div className="col-sm-5">
             
               <ProfileInfo />
             </div>
-            <div className="col">
+            <div className="col-sm-6">
               {isClicked ? <EditProfile /> : <ProfileCar />}
             </div>
           </div>
