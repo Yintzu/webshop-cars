@@ -1,3 +1,15 @@
+.carouselcaptioned{
+    position: absolute;
+    /* right: 0%; */
+    bottom:-1rem;
+    left: 5%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    /* text-align: center; */
+    
+}
+
 .carouselImg{
     cursor: pointer;
 }
