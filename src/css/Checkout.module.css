@@ -13,7 +13,7 @@ input{
 .mainHeading {
     font-size: 1.8rem;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     color: #2C7CAE !important;
     margin-top: 20px;
 }
@@ -32,6 +32,14 @@ input{
     background: #f4f4f4;
     border-radius: 5px;
     box-shadow: 2px 2px 2px #d2d2d2;
+}
+
+.background input {
+    background-color: rgb(252, 252, 252);
+}
+
+.deliveryDiv select {
+    background-color: rgb(252, 252, 252);
 }
 
 .shoppinglist{
