@@ -12,10 +12,9 @@
   
 }
 
-.imageWrapper {
-  display: block;
-  width: 20%;
-  height: 20%;
-  background-color: whitesmoke;
-}
 
+.img{
+  width: 100%;
+  max-width: 500px;
+  border: 5px solid whitesmoke;
+}

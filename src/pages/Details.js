@@ -42,7 +42,6 @@ const Details = (props) => {
         }
     }
     const thumbnailClick = (e) => { 
-        console.log(e.target)
         setClickedThumbnail(e.target.src)
         setShowModal(true)
     }
