@@ -53,9 +53,7 @@ const EditProfile = () => {
                         <input className="form-control" type="text" id="changeConfirmPassword" name="confirmPassword" />
                     </div>
                 </div>
-
-
-                <button type="submit" className="button blue-button mr-1">Submit</button>
+                <button type="submit" className="button blue-button mx-2">Submit</button>
                 <button type="button" className="button orange-button" onClick={backButton}>Back</button>
             </form>
         </div>
