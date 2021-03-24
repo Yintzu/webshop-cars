@@ -1,4 +1,3 @@
-import style from '../css/Home.module.css';
 import CarList from '../components/CarList';
 import Search from '../components/Search';
 

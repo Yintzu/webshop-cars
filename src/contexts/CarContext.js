@@ -74,7 +74,6 @@ const CarContextProvider = (props) => {
                 carDetailImgs: ['chevy-front', 'chevy-interior']
             }
         })
-        // console.log(carlists);
         setCars(carlists)
     }
 
