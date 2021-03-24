@@ -53,6 +53,8 @@ const Details = (props) => {
                 </div>
                 <div className={`row ${style.descContainer}`}>
                     <div className={`col ${style.desc}`}>
+                        {/* <Modal /> */}
+                        {showModal && <ModalTest />}
                         <h5>Description</h5>
                         <p>{car.descLong}</p>
                     </div>
@@ -64,8 +66,7 @@ const Details = (props) => {
                             <li>Year: {car.year}</li>
                             <li>Miles: {car.miles}</li>
                         </ul>
-                        {/* <Modal /> */}
-                        {showModal && <ModalTest />}
+                        
                     </div>
                    
                 </div>

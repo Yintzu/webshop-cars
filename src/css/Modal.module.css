@@ -8,13 +8,11 @@
 }
 
 #ModalTest.modal-content .modal-body {
-  position: absolute !important; 
+  display: block;
+  margin: 0 auto;
  
 }
 
-.div #ModalTest {
-  position: absolute;
-}
 .modal-footer {
   padding: 10px;
 }
