@@ -65,8 +65,6 @@ const CarContextProvider = (props) => {
           }
     ]);
 
-    console.log(discountedCars)
-
     const createCarList = () => {
         const carlist=require("../json/cars.json")
         const carlists=carlist.map(car=>{ 
@@ -109,7 +107,7 @@ const CarContextProvider = (props) => {
       return discountedCar ? <span style={{color: 'red'}}>{formatSum(discountedCar.discountedprice())}</span> : formatSum(car.price);
     }
     
-    /* Direction to  details page */
+    // Direction to details page
     const viewCar = (clickedCar, history) => {
         history.push(`/details/${clickedCar.vin}`)
     }

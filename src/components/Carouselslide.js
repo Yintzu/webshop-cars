@@ -1,7 +1,6 @@
 import React from 'react'
 import { useHistory } from "react-router-dom";
 import { CarContext } from "../contexts/CarContext"
-import { ShoppingCartContext } from "../contexts/ShoppingCartContext"
 import { useContext } from "react";
 import style from "../css/DiscountCarousel.module.css";
 
