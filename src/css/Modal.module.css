@@ -1,5 +1,4 @@
 .modal {
-  position: relative;
   left: 0;
   top: 0;
   right: 0;
@@ -8,6 +7,14 @@
   border-radius: 3px;
 }
 
+#ModalTest.modal-content .modal-body {
+  position: absolute !important; 
+ 
+}
+
+.div #ModalTest {
+  position: absolute;
+}
 .modal-footer {
   padding: 10px;
 }
@@ -15,12 +22,6 @@
 .modal-title {
   margin: 0;
 
-}
-
-.modal-body{
-  padding: 10px;
-  border-top: 1rem solid #eee;
-  border-bottom: 1rem solid #eee;
 }
 
 .closeButton{
