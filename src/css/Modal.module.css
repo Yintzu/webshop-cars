@@ -7,11 +7,7 @@
   border-radius: 3px;
 }
 
-#ModalTest.modal-content .modal-body {
-  display: block;
-  margin: 0 auto;
- 
-}
+
 
 .modal-footer {
   padding: 10px;
@@ -19,7 +15,6 @@
 
 .modal-title {
   margin: 0;
-
 }
 
 .closeButton{

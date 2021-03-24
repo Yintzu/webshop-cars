@@ -53,22 +53,20 @@ const Details = (props) => {
                 </div>
                 <div className={`row ${style.descContainer}`}>
                     <div className={`col ${style.desc}`}>
-                        {/* <Modal /> */}
-                        {showModal && <ModalTest />}
                         <h5>Description</h5>
                         <p>{car.descLong}</p>
                     </div>
-                  
+
                     <div className="col-md-4">
                         <ul>
                             <li>Make: {car.make}</li>
                             <li>Model: {car.model}</li>
                             <li>Year: {car.year}</li>
                             <li>Miles: {car.miles}</li>
-                        </ul>
-                        
+                        </ul>  
                     </div>
-                   
+                    {/* <Modal /> */}
+                    {showModal && <ModalTest />}
                 </div>
                 <button onClick={() => setShowModal(!showModal)}>Show Modal</button>
             </div>
