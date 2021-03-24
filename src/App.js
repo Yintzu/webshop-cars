@@ -16,7 +16,6 @@ import FilterSearchContext from './contexts/FilterSearchContext';
 import ScrollToTop from './components/ScrollToTop';
 import Hero from './components/Hero';
 import CreateAccount from './pages/CreateAccount';
-import UserPage from './pages/UserPage';
 import EditProfile from './components/EditProfile';
 
 function App() {
@@ -40,7 +39,6 @@ function App() {
                     <Route exact path="/profile" component={Profile} />
                     <Route exact path="/details/:id" component={Details} />
                     <Route exact path="/register" component={CreateAccount}/>
-                    <Route exact path="/userpage" component={UserPage} />
                   </div>
                   <Footer />
                 </BrowserRouter>
