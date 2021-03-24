@@ -4,7 +4,8 @@ import { CarContext } from '../contexts/CarContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import BuyButtons from '../components/BuyButtons';
 
-import ModalTest from '../components/ModalTest';
+import DetailsModal from '../components/DetailsModal';
+import { waitForElement } from '@testing-library/dom';
 
     
 
@@ -15,6 +16,13 @@ const Details = (props) => {
     const [car, setCar] = useState(null);
     const { formatSum} = useContext(ShoppingCartContext);
     const [ showModal, setShowModal]= useState(false);
+    
+    const modalPicsChevy = [ "chevy-front.jpg", "chevy-interior.jpg", "chevy-rear.jpg" ]
+
+    const modalPicsOlds =  [ "olds-front.jpg", "olds-interior.jpeg", "olds-rear.jpg" ]
+
+    const modalPicsPanoz = [ "panoz-engine.jpg", "panoz-interior.jpg", "panoz-rear.jpg" ]
+
 
     useEffect(() => {
         findCar()
@@ -65,9 +73,15 @@ const Details = (props) => {
                             <li>Miles: {car.miles}</li>
                         </ul>
                         {/* <Modal /> */}
-                        {showModal && <ModalTest />}
+                        {showModal && <DetailsModal setShowModal={setShowModal} />}
                     </div>
-                   
+                   <div className={style.detailThumbnails}>
+                       { modalPics.map( pic =>
+                        <div className={style.thumbnailWrapper}>
+                           <img src={`../assets/app-components/discount-detail/${pic}`} className={style.thumbnailImg} alt="car detail" />
+                        </div>
+                       )}
+                   </div>
                 </div>
                 <button onClick={() => setShowModal(!showModal)}>Show Modal</button>
             </div>
