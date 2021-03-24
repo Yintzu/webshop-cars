@@ -29,7 +29,7 @@ const ProfileInfo = () => {
     <div>
       
       <div className={styles.profileWrapper}>
-        <img src={labrador_profile} alt="Profile picture" className={styles.profileImage} />
+        <img src={`./assets/profilepics/Profile${loggedInUser.pic}`} alt="Profile picture" className={styles.profileImage} />
         <h3 className={styles.profileHeading}>{loggedInUser.fullName}</h3>
         {/* <h4 className={styles.profileSubHeading}>City, Country</h4> */}
         <div className={styles.profileTextBox}>
