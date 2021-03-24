@@ -98,7 +98,7 @@ const CreateAccount = () => {
                     </div>
                 </div>
 
-                <button className={`btn ${style.registerButton}`}>Register</button>
+                <button className={`button blue-button ${style.registerButton}`}>Register</button>
             </form>
         </div>
     );

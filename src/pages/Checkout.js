@@ -67,7 +67,7 @@ const Checkout = () => {
                 <div className="row">
                     <div className={`shoppinglist ${style.shoppinglist} ${style.background}`}>
                         {/* Ternary operator to display "No items in cart" or loop out the items */}
-                        {shoppingCartItems.length == 0 ? <div className={style.emptyCartWrapper}><h2 className={`text-center my-3`}>Your cart is empty</h2><NavLink exact to="/" className={`btn btn-primary ${style.cartDealsButton}`}>See our great deals!</NavLink></div> :
+                        {shoppingCartItems.length == 0 ? <div className={style.emptyCartWrapper}><h2 className={`text-center my-3`}>Your cart is empty</h2><NavLink exact to="/" className={`btn button blue-button ${style.cartDealsButton}`}>See our great deals!</NavLink></div> :
                             <div>
                                 {shoppingCartItems.map((item, key) => (
                                     <div key={key} className={`row position-relative ${style.shoppingCartCard}`} onClick={(e) => e.target.tagName !== "SPAN" && viewCar(item, history)}>
@@ -185,7 +185,7 @@ const Checkout = () => {
                                     <h3 className="text-center mb-4">
                                         {`Price total: ${formatSum(cartTotal + deliveryPrice)}`}
                                     </h3>
-                                    <button className={`btn d-block mx-auto ${style.orderButton}`}>Place order</button>
+                                    <button className={`button blue-button d-block mx-auto ${style.orderButton}`}>Place order</button>
                                 </div>
                             </div>
                         </div>

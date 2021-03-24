@@ -6,7 +6,7 @@ import style from '../css/CarList.module.css'
 
 const CarList = () => {
     const { renderList, setSearched, resetRenderList } = useContext(SearchContext);
-    const { setFiltered, removeFilters} = useContext(FilterSearchContext);
+    const { setFiltered, removeFilters } = useContext(FilterSearchContext);
 
     const handleClick = () => {
         setFiltered(false);
@@ -28,7 +28,7 @@ const CarList = () => {
                 <img src="/assets/app-components/logo.gif" alt="car logo"/>
                 <h3>No results found</h3>
                 <p>Sorry, we could not find any cars matching your search.</p>
-                <button className={`btn ${style.clearSearch}`} onClick={handleClick}>See all cars</button>
+                <button className="button blue-button" onClick={handleClick}>See all cars</button>
             </div> 
             }
         </div>

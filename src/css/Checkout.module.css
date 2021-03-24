@@ -38,7 +38,7 @@ input{
     background-color: rgb(252, 252, 252);
 }
 
-.deliveryDiv select {
+.deliveryDiv .customSelect {
     background-color: rgb(252, 252, 252);
 }
 
@@ -74,7 +74,7 @@ input{
 
 .removeButton:hover{
     cursor: pointer;
-    background-color: #c56148;
+    background-color: #a04832;
 }
 
 .deliveryDiv{
@@ -120,9 +120,6 @@ input{
 
 .orderButton{
     min-width: 50%;
-    color: white !important;
-    background: #2C7CAE !important;
-    border: none;
 }
 
 .orderButton:hover {
@@ -146,14 +143,8 @@ input{
 }
 
 .cartDealsButton {
-    color: white;
-    background-color: #2C7CAE;
     padding: 1.2rem 1.4rem;
     margin-top: 1rem;
-}
-
-.cartDealsButton:hover {
-    background-color:#295276;
 }
 
 @media only screen and (min-width: 400px){
