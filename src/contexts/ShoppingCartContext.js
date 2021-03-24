@@ -1,8 +1,10 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
+import { CarContext } from "./CarContext";
 
 export const ShoppingCartContext = createContext();
 
 const ShoppingCartProvider = (props) => {
+    const { discountedCars } = useContext(CarContext);
 
     const [shoppingCartItems, setShoppingCartItems] = useState(
         () => {
@@ -20,6 +22,11 @@ const ShoppingCartProvider = (props) => {
     // Will connect to buy-buttons later
     // Set the cart array by creating a new array, adding the new item at the front of the array, then spreading out the old array after.
     const addToCart = (newItem) => {
+        let isDiscounted = discountedCars.find(discountedCar => discountedCar.vin === newItem.vin);
+        if (isDiscounted) {
+            newItem.price = isDiscounted.discountedprice();
+        }
+
         if (!shoppingCartItems.includes(newItem)) {
             setShoppingCartItems([newItem, ...shoppingCartItems]);
         } else {
@@ -51,8 +58,10 @@ const ShoppingCartProvider = (props) => {
         return [date, time, day];
     }
 
-    // Formats numbers into "100 000 kr"
-    const formatSum = (sum) => `$${new Intl.NumberFormat('de-DK', { currency: 'EUR', style: 'decimal', minimumFractionDigits: 0 }).format(Math.round(sum / 10))}`;
+    // Set localStorage when cart updates
+    useEffect(() => {
+        localStorage.setItem('shoppingCartItems', JSON.stringify(shoppingCartItems))
+    }, [shoppingCartItems]);
 
     const values = {
         shoppingCartItems,
@@ -60,15 +69,9 @@ const ShoppingCartProvider = (props) => {
         removeFromCart,
         removeAllFromCart,
         createTimeStamp,
-        formatSum,
+        // formatSum,
         cartTotal,
     }
-
-
-
-    useEffect(() => {
-        localStorage.setItem('shoppingCartItems', JSON.stringify(shoppingCartItems))
-    }, [shoppingCartItems]);
 
     return (
         <ShoppingCartContext.Provider value={values}>
