@@ -104,8 +104,9 @@ const CarContextProvider = (props) => {
     const checkCarDiscount = (car) => {
       let discountedCar = discountedCars.find(discountCar => discountCar.vin === car.vin);
     
-      let price = discountedCar ? <span style={{color: 'red'}}>{formatSum(discountedCar.discountedprice())}</span> : formatSum(car.price);
-      return price;
+      return discountedCar ? <span>
+        <span style={{color: 'red'}}>{formatSum(discountedCar.discountedprice())}</span>
+      </span> : formatSum(car.price);
     }
     
     /* Direction to  details page */
