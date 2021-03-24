@@ -3,11 +3,12 @@ import style from '../css/Search.module.css';
 import { SearchContext } from '../contexts/SearchContext';
 import { FilterSearchContext } from '../contexts/FilterSearchContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
+import { CarContext } from '../contexts/CarContext';
 
 const Search = () => {
     const [searchInput, setSearchInput] = useState('');
     const { searchCars, searched, setSearched, resetRenderList} = useContext(SearchContext);
-    const { formatSum } = useContext(ShoppingCartContext);
+    const { formatSum } = useContext(CarContext);
 
     const { selectLists, saveSelects, sliders, saveSliders, filtered, setFiltered, removeFilters } = useContext(FilterSearchContext);
     
