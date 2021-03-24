@@ -118,11 +118,13 @@
     margin: 0 auto;
 }
 .clearBtn {
-    font-size: 1rem;
+    font-size: .9rem;
+    padding: .2rem .5rem;
     margin: auto 1rem;
 }
 .btn {
-    font-size: 1rem;
+    font-size: .9rem;
+    padding: .2rem .5rem;
     margin: 0 .3rem 1rem !important;
 }
 
