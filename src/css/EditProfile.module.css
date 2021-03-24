@@ -54,4 +54,12 @@
     font-size: 0.8rem;
 }
 
+.changeHeading {
+    margin-top: 20px;
+}
 
+@media only screen and (min-width: 576px){
+    .changeHeading {
+        margin-top: 0px;
+    }
+}
