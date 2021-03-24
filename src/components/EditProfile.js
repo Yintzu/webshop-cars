@@ -20,13 +20,13 @@ const EditProfile = () => {
         const editProfileInputList = document.querySelectorAll("input");
         let error = false;
 
-        if (editProfileInputList[4].value !== editProfileInputList[5].value) {
-            editProfileInputList[5].classList.add(`${style.errorBorder}`);
+        if (editProfileInputList[2].value !== editProfileInputList[3].value) {
+            editProfileInputList[3].classList.add(`${style.errorBorder}`);
             setEmailMismatch(true);
             error = true;
         }
-        if (editProfileInputList[6].value !== editProfileInputList[7].value) {
-            editProfileInputList[7].classList.add(`${style.errorBorder}`);
+        if (editProfileInputList[4].value !== editProfileInputList[5].value) {
+            editProfileInputList[5].classList.add(`${style.errorBorder}`);
             setPasswordMismatch(true);
             error = true;
         }
@@ -60,20 +60,14 @@ const EditProfile = () => {
                         <label htmlFor="changeFullName" className={style.changeText}>Full Name:</label>
                         <input className="form-control" type="text" id="changeFullName" name="fullName" defaultValue={loggedInUser.fullName} />
 
-                        <label htmlFor="changeSocialSecurityNumber" className={style.changeText}>Social Security Number:</label>
-                        <input className="form-control" type="text" id="changeSocialSecurityNumber" name="socialSecurityNumber" defaultValue={loggedInUser.socialSecurityNumber} />
-
-                        <label htmlFor="changeUserName" className={style.changeText}>Username:</label>
-                        <input className="form-control" type="text" id="changeUsername" name="userName" defaultValue={loggedInUser.userName} />
-
                         <label htmlFor="changePhoneNumber" className={style.changeText}>Phone Number:</label>
                         <input className="form-control" type="text" id="changePhoneNumber" name="phoneNumber" defaultValue={loggedInUser.phoneNumber} />
+                  
+                        <label htmlFor="changeEmail" className={style.changeText}>Email:</label>
+                        <input className="form-control" type="text" id="changeEmail" name="email" defaultValue={loggedInUser.email} />
                     </div>
 
                     <div className={`col-12 col-md-6 ${style.changeContainer}`}>
-                        <label htmlFor="changeEmail" className={style.changeText}>Email:</label>
-                        <input className="form-control" type="text" id="changeEmail" name="email" defaultValue={loggedInUser.email} />
-
                         <div className={style.inputDiv}>
                             <label htmlFor="changeConfirmEmail" className={style.changeText}>Confirm Email Address:</label>
                             <input className="form-control" type="text" id="changeConfirmEmail" name="confirmEmail" defaultValue={loggedInUser.email} onChange={(e) => removeError(e, setEmailMismatch)} />
@@ -104,8 +98,6 @@ const EditProfile = () => {
                         <button type="button" className={`btn ${style.changeBackBtn}`} onClick={backButton}>Back</button>
                     </div>
                 </div>
-
-
             </form>
         </div>
     );
