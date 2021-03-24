@@ -20,7 +20,7 @@ const Profile = () => {
             <div className="col-sm-5">
               <ProfileInfo />
             </div>
-            <div className="col-sm-6">
+            <div className="col-sm-7">
               {isClicked ? <EditProfile /> : <ProfileCar />}
             </div>
           </div>

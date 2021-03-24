@@ -17,12 +17,10 @@
 .profileImage {
     /* height: 60%; */
     width: 60%;
-    margin: 0 auto;
-    display: block;
+    margin: 20px auto 20px;
     border-radius: 50%;
     border: 5px solid #2C7CAE;
     filter: drop-shadow(0 0 0.3rem #636363);
-    margin-top: 15px;
 }
 
 .profileHeading {
