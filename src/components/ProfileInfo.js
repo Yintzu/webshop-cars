@@ -33,7 +33,7 @@ const ProfileInfo = () => {
         <h3 className={styles.profileHeading}>{loggedInUser.fullName}</h3>
         {/* <h4 className={styles.profileSubHeading}>City, Country</h4> */}
         <div className={styles.profileTextBox}>
-          <p className={styles.profileText}>Description Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          
           {/* <p className={styles.profileText}>Age: 35</p> */}
           <p className={styles.profileText}>Telephone: {loggedInUser.phoneNumber}</p>
           <p className={styles.profileText}>E-mail: {loggedInUser.email}</p>

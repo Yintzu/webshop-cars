@@ -13,14 +13,14 @@ const Profile = () => {
   const history = useHistory();
 
   return (
-    <div className={`${styles.containerWrapper} container`}>
+    <div className={styles.containerWrapper}>
       {loggedInUser ?
         <div>
           <div className="row">
-            <div className="col-5">
+            <div className="col-sm-5">
               <ProfileInfo />
             </div>
-            <div className="col-6">
+            <div className="col-sm-6">
               {isClicked ? <EditProfile /> : <ProfileCar />}
             </div>
           </div>

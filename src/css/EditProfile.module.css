@@ -1,0 +1,65 @@
+.changeForm {
+    background: #f4f4f4;
+    box-shadow: 2px 2px 2px #d2d2d2;
+    padding: 5px;
+    margin: 5px;
+}
+
+.changeButtons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.changeSubmitBtn {
+    margin: 5px;
+    background: #2C7CAE !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.changeSubmitBtn:hover {
+    background: #295276 !important;
+    border: none;
+}
+
+.changeBackBtn {
+    margin: 5px;
+    background: #DA6547 !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.changeBackBtn:hover {
+    background-color:#a04832 !important;
+    border: none;
+}
+
+.changeText {
+    font-size: .95rem;
+}
+
+.inputDiv{
+    position: relative;
+}
+
+.errorBorder{
+    box-shadow: 0 0 0 3px rgb(255, 122, 122);
+}
+
+.errorText{
+    color: red !important;
+    position: absolute;
+    top: 62px;
+    font-size: 0.8rem;
+}
+
+.changeHeading {
+    margin-top: 20px;
+}
+
+@media only screen and (min-width: 576px){
+    .changeHeading {
+        margin-top: 0px;
+    }
+}
