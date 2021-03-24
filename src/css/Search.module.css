@@ -117,8 +117,12 @@
     max-width: 40ch;
     margin: 0 auto;
 }
-
+.clearBtn {
+    font-size: 1rem;
+    margin: auto 1rem;
+}
 .btn {
+    font-size: 1rem;
     margin: 0 .3rem 1rem !important;
 }
 

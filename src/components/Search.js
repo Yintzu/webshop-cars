@@ -59,7 +59,7 @@ const Search = () => {
                     <button type="submit" className={style.searchIcon}><img src="./assets/icons/search-icon.png" alt="search"/></button>
                 
                     {/* Reset list button */}
-                    <div onClick={handleResetSearch} className={`btn button blue-button ${style.clearSearch} ${!searched && style.disabledBtn}`}>Clear search</div>
+                    <div onClick={handleResetSearch} className={`btn button blue-button ${style.clearBtn} ${!searched && style.disabledBtn}`}>Clear search</div>
 
                     {/* Fiter button */}
                     <button className="btn btn-lg mr-3" type="button" onClick={() => setIsClicked(isClicked ? false : true)}>
