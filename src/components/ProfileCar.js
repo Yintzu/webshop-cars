@@ -1,12 +1,13 @@
 import styles from '../css/ProfileCar.module.css'
 import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
-import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
+import { CarContext } from '../contexts/CarContext';
+import NoPurchases from '../components/NoPurchases';
 
 const ProfileCar = () => {
 
-  const { orderInfo, loggedInUser } = useContext(UserContext);
-  const { formatSum } = useContext(ShoppingCartContext)
+  const { loggedInUser } = useContext(UserContext);
+  const { formatSum } = useContext(CarContext)
 
   return (
     <div>
