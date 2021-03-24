@@ -15,7 +15,6 @@ const Hero = () => {
                     <div className={`col-11 col-md-7`}>
                         <div className={`${style.gradient} ${style.carousel}`}>
                             <Carousel/>
-                            {/* <img className={style.saleSign} src="../assets/carousel/sale.svg"></img> */}
                             <Salesign/>
                         </div>
                     </div>
