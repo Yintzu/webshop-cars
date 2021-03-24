@@ -1,8 +1,10 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
+import { CarContext } from "./CarContext";
 
 export const ShoppingCartContext = createContext();
 
 const ShoppingCartProvider = (props) => {
+    const { discountedCars } = useContext(CarContext);
 
     const [shoppingCartItems, setShoppingCartItems] = useState(
         () => {
@@ -20,6 +22,11 @@ const ShoppingCartProvider = (props) => {
     // Will connect to buy-buttons later
     // Set the cart array by creating a new array, adding the new item at the front of the array, then spreading out the old array after.
     const addToCart = (newItem) => {
+        let isDiscounted = discountedCars.find(discountedCar => discountedCar.vin === newItem.vin);
+        if (isDiscounted) {
+            newItem.price = isDiscounted.discountedprice();
+        }
+
         if (!shoppingCartItems.includes(newItem)) {
             setShoppingCartItems([newItem, ...shoppingCartItems]);
         } else {

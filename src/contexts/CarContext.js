@@ -97,7 +97,16 @@ const CarContextProvider = (props) => {
           }
         })
         if (bought){return true} else {return false}
-      }
+    }
+
+    const formatSum = (sum) => `$${new Intl.NumberFormat('de-DK', { currency: 'EUR', style: 'decimal', minimumFractionDigits: 0 }).format(Math.round(sum / 10))}`;
+
+    const checkCarDiscount = (car) => {
+      let discountedCar = discountedCars.find(discountCar => discountCar.vin === car.vin);
+    
+      let price = discountedCar ? <span style={{color: 'red'}}>{formatSum(discountedCar.discountedprice())}</span> : formatSum(car.price);
+      return price;
+    }
     
     /* Direction to  details page */
     const viewCar = (clickedCar, history) => {
@@ -111,6 +120,7 @@ const CarContextProvider = (props) => {
       setBoughtCars,
       boughtCheck,
       discountedCars,
+      checkCarDiscount,
     }
 
     return (

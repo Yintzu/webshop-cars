@@ -6,7 +6,7 @@ import style from '../css/PopupCart.module.css';
 
 const PopupCart = () => {
   const { shoppingCartItems: cart, formatSum, removeFromCart, cartTotal } = useContext(ShoppingCartContext);
-  const { viewCar } = useContext(CarContext);
+  const { viewCar, checkCarDiscount } = useContext(CarContext);
   const history = useHistory();
 
 
@@ -35,7 +35,7 @@ const PopupCart = () => {
                 <p className={style.cartYear}>{car.year}</p>
               </div>
               <div className={style.cartItemRight}>
-                <h5 className={style.carPrice}>{formatSum(car.price)}</h5>
+                <h5 className={style.carPrice}>{checkCarDiscount(car)}</h5>
                 <button onClick={() => removeFromCart(car)} className={style.cartRemoveBtn} id="removeBtn">X</button>
               </div>
             </div>
