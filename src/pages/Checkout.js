@@ -9,7 +9,7 @@ const Checkout = () => {
 
     const { shoppingCartItems, removeFromCart, removeAllFromCart, cartTotal, formatSum, createTimeStamp } = useContext(ShoppingCartContext)
     const { setOrderInfo, orderInfo, loggedInUser } = useContext(UserContext)
-    const { boughtCars, setBoughtCars, viewCar } = useContext(CarContext)
+    const { boughtCars, setBoughtCars, viewCar, checkCarDiscount } = useContext(CarContext)
     const history = useHistory();
 
     const [radioStatus, setRadioStatus] = useState("");
@@ -77,7 +77,7 @@ const Checkout = () => {
                                             <p>{`${item.descShort}`}</p>
                                         </div>
                                         <div className={`col-12 col-sm-3 col-md-2 px-0 ${style.flexer} ${style.itemPriceDiv}`}>
-                                            <h3 className={`${style.itemPrice}`}>{`${formatSum(item.price)}`}</h3>
+                                            <h3 className={`${style.itemPrice}`}>{checkCarDiscount(item)}</h3>
                                         </div>
                                         <div className={`col-0 col-sm-2 col-md-1 ${style.flexer}`}><span className={`${style.removeButton} ${style.positionFix}`} onClick={() => removeFromCart(item)}>X</span></div>
                                     </div>
