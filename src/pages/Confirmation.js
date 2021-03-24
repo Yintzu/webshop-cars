@@ -15,6 +15,20 @@ const Confirmation = () => {
   // console.log(boughtCars);
   // console.log(orderInfo);
   // console.log(shoppingCartItems)
+  
+
+  let deliveryPrice = 0;
+    const DeliverPrice = (deliveryType) => {
+        if (deliveryType === "Pick up at store") {
+            deliveryPrice = formatSum(0);
+        } else if (deliveryType === "Delivery by truck") {
+            deliveryPrice = formatSum(2000);
+        } else if (deliveryType === "Delivery by helicopter") {
+            deliveryPrice = formatSum(10000);
+        }
+        return deliveryPrice
+    }
+
 
   return (
     <div className="container">
@@ -55,7 +69,7 @@ const Confirmation = () => {
             <h3 className={styles.smallerHeading}>Summary</h3>
             <hr className={styles.hrConfirmation} />
 
-            {/* Map loop to show all the cars bought with this order */}
+            {/* Map loop to show all the cars and delivery type bought with this order */}
             {orderInfo[0].boughtCars.map((car) => (
               <div className="row" key={car.vin}>
                 <div className={`
@@ -75,10 +89,12 @@ const Confirmation = () => {
             <div className="row">
               <div className="col">
                 <hr className={styles.hrConfirmation} />
+                <p className={styles.containerText}>Delivery:</p>
                 <p className={styles.boldSummary}>Total:</p>
               </div>
               <div className="col">
                 <hr />
+                <p className={styles.containerText}>{DeliverPrice(orderInfo[0].delivery)}</p>
                 <p className={styles.containerText}>{formatSum(orderInfo[0].price)}</p>
               </div>
               {/* Order Info */}
