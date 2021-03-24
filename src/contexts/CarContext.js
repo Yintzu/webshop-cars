@@ -121,6 +121,7 @@ const CarContextProvider = (props) => {
       boughtCheck,
       discountedCars,
       checkCarDiscount,
+      formatSum,
     }
 
     return (

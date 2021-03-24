@@ -5,8 +5,8 @@ import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import style from '../css/PopupCart.module.css';
 
 const PopupCart = () => {
-  const { shoppingCartItems: cart, formatSum, removeFromCart, cartTotal } = useContext(ShoppingCartContext);
-  const { viewCar, checkCarDiscount } = useContext(CarContext);
+  const { shoppingCartItems: cart, removeFromCart, cartTotal } = useContext(ShoppingCartContext);
+  const { viewCar, checkCarDiscount, formatSum } = useContext(CarContext);
   const history = useHistory();
 
 

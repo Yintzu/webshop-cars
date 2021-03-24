@@ -7,9 +7,9 @@ import style from '../css/Checkout.module.css';
 
 const Checkout = () => {
 
-    const { shoppingCartItems, removeFromCart, removeAllFromCart, cartTotal, formatSum, createTimeStamp } = useContext(ShoppingCartContext)
+    const { shoppingCartItems, removeFromCart, removeAllFromCart, cartTotal, createTimeStamp } = useContext(ShoppingCartContext)
     const { setOrderInfo, orderInfo, loggedInUser } = useContext(UserContext)
-    const { boughtCars, setBoughtCars, viewCar, checkCarDiscount } = useContext(CarContext)
+    const { boughtCars, setBoughtCars, viewCar, checkCarDiscount, formatSum } = useContext(CarContext)
     const history = useHistory();
 
     const [radioStatus, setRadioStatus] = useState("");

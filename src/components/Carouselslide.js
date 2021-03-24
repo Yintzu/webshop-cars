@@ -7,7 +7,7 @@ import style from "../css/DiscountCarousel.module.css";
 
 const Carouselslide =()=> {
     const history = useHistory();
-    const { discountedCars } = useContext(CarContext)
+    const { discountedCars, checkCarDiscount } = useContext(CarContext)
     const { formatSum } = useContext(ShoppingCartContext)
 
     return (   
@@ -18,7 +18,7 @@ const Carouselslide =()=> {
                     <img src={discountedcar.carImg} className={`d-block w-100 ${style.carouselImg}`} alt="Discounted Carousel" onClick={() => history.push(`/details/${discountedcar.vin}`)} />
                     <div className={`${style.carouselcaptioned}  d-md-block ${style.captionWrapper}`}>
                         <h5 className={`${style.carTitle}`}>{discountedcar.make} {discountedcar.model} {discountedcar.year}</h5>
-                        <p className={`${style.carPrice}`}>{formatSum(discountedcar.discountedprice())}</p>
+                        <p className={`${style.carPrice}`}>{checkCarDiscount(discountedcar)}</p>
                     </div>
                 </div>
             ))}
