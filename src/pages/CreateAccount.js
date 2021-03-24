@@ -75,7 +75,7 @@ const CreateAccount = () => {
                             <input className={`form-control`} type="text" id="registerPhone" name="phoneNumber" required></input>
                         </div>
                     </div>
-                    <div className={`col-12 col-sm-6 ${style.registerContainer}`}>
+                    <div className={`col-12 col-sm-6 ${style.registerContainer} ${style.marginFix}`}>
                         <div className={style.positionRelative}>
                             <label htmlFor="registerEmail">E-mail address</label>
                             <input className={`form-control`} type="text" id="registerEmail" name="email" onChange={(e) => removeError(e, setEmailExists)} required></input>
