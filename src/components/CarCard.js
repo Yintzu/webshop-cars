@@ -7,7 +7,6 @@ import BuyButtons from './BuyButtons';
 
 const CarCard = (props) => {
   const history = useHistory();
-  const { formatSum } = useContext(ShoppingCartContext);
   const { viewCar, boughtCheck, checkCarDiscount } = useContext(CarContext);
 
 
