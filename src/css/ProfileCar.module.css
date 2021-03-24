@@ -1,105 +1,125 @@
 .orderWrapper {
-    background-color: #f4f4f4;
-    padding: 20px;
+    /* background-color: #f4f4f4; */
+    background-color: #ffffff;
+    padding: 10px 10px 10px 20px;
     border-radius: 5px;
-    box-shadow: 2px 2px 2px #d2d2d2;
+    border: solid rgb(227, 227, 227) 1px !important;
+    box-shadow: 2px 2px 2px #eeeeee;
     min-width: 458px;
     margin-top: 20px;
   }
   
   .orderInfo {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-right: 10px;
+    max-height: 20px;
   }
   
   .orderTotal {
-      display: flex;
-      justify-content: flex-end;
-      padding-top: 10px;
-      border-top: 1px solid #dbdbdb;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    border-top: 1px solid #dbdbdb;
+    margin-top: 10px;
   }
   
   .orderTotalText {
-      margin-right: 10px;
+    margin-right: 10px;
   }
   
   .flexWrapper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      max-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 5px 0;
+    /* max-width: 500px; */
+  }
+
+  .flexWrapper :first-child {
+    width: 50px;
+    margin: 5px 10px 0 0;
+  }
+
+  .flexWrapper > * {
+      flex: 1 1 1;
+      justify-content: flex-end;
   }
   
   .flexItem {
-      padding: 10px 10px 10px 0;
-      font-size: 0.9rem;
+    flex: 1 1 auto;
+    padding: 10px 10px 10px 0;
+    font-size: 0.9rem;
   }
   
   .flexItem2 {
-      padding: 10px 10px 10px 0;
-      margin-left: auto;
-      font-size: 0.9rem;
+    padding: 10px 10px 10px 0;
+    margin-left: auto;
+    font-size: 0.9rem;
   }
   
-  .profileCarHeading {
-      margin-top: 20px;
-      margin-bottom: 20px;
-     
+  .carHeading {
+    margin-top: 0px;
+    margin-bottom: 20px;
   }
   
-  .profileCarSubHeading {
-      color: #2C7CAE !important;
-      font-size: .9rem;
-      margin-bottom: 5px;
+  .carSubHeading {
+    color: #2C7CAE !important;
+    font-size: .9rem;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    margin-bottom: 20px;
   }
   
-  .profileImage {
-      height: 50px;
-      width: 100px;
-      border-radius: 5px;  
+  .carImage {
+    width: 30%;
+    border-radius: 5px;  
   }
   
-  .profileText {
-      font-size: 0.9rem;
-      margin-bottom: 0;
+  .carText {
+    font-size: 0.9rem;
+    margin-bottom: 0;
   }
   
   .orderTotalText {
-      margin-top: 5px;
+    margin-top: 5px;
   }
   
   @media only screen and (min-width: 320px) and (max-width: 575px) {
       .orderWrapper {
-          background-color: #f4f4f4;
-          padding: 20px;
-          border-radius: 5px;
-          box-shadow: 2px 2px 2px #d2d2d2;
-          min-width: 280px;
+        padding: 10px 10px 10px 20px;
+        min-width: 280px;
       }
   
-      .profileImage {
+      /* .carImage {
           height: 100px;
           width: 150px;
           border-radius: 5px;  
-      }
+      } */
       
       .flexWrapper {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: flex-start;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
       }
       
       .flexItem {
-          padding: 10px 10px 10px 0;
-          font-size: 0.9rem;
+        padding: 10px 10px 10px 0;
+        font-size: 0.9rem;
          
       }
   
       .flexItem2 {
-          padding: 10px 5px 10px 0;
-          font-size: 0.9rem;
-          justify-content: flex-start;
+        padding: 10px 5px 10px 0;
+        font-size: 0.9rem;
+        justify-content: flex-start;
       }
+
+      .carHeading {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        padding-top: 20px;
+        font-size: 1.5rem;
+    }
   }
