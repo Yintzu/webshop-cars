@@ -5,7 +5,7 @@ import style from "../css/CreateAccount.module.css"
 
 const CreateAccount = () => {
 
-    const { users, setUsers, setLoggedInUser } = useContext(UserContext);
+    const { users, setUsers, setLoggedInUser, profilePics } = useContext(UserContext);
     const history = useHistory();
     const [emailExists, setEmailExists] = useState(false);
     const [emailMismatch, setEmailMismatch] = useState(false);
@@ -34,7 +34,8 @@ const CreateAccount = () => {
         if (error) return
 
         let newUserObject = {orders: []};
-
+        newUserObject["pic"] = profilePics[Math.floor(Math.random()*profilePics.length)]
+        
         inputList.forEach((input) => {
             if (input.name) {
                 newUserObject[input.name] = input.value;
@@ -74,7 +75,7 @@ const CreateAccount = () => {
                             <input className={`form-control`} type="text" id="registerPhone" name="phoneNumber" required></input>
                         </div>
                     </div>
-                    <div className={`col-12 col-sm-6 ${style.registerContainer}`}>
+                    <div className={`col-12 col-sm-6 ${style.registerContainer} ${style.marginFix}`}>
                         <div className={style.positionRelative}>
                             <label htmlFor="registerEmail">E-mail address</label>
                             <input className={`form-control`} type="text" id="registerEmail" name="email" onChange={(e) => removeError(e, setEmailExists)} required></input>

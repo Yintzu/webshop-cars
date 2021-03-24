@@ -8,6 +8,7 @@ const UserContextProvider = (props) => {
   const [isClicked, setIsClicked] = useState(false);
   const { boughtCars, setBoughtCars } = useContext(CarContext)
 
+  const profilePics = ["Car.jfif", "Dog.jpg", "Fruitsalad.jfif", "Gnome.jfif", "Mantis.jfif", "Plane.jfif", "Raccoon.jfif", "Vape.jfif"]
   const [orderInfo, setOrderInfo] = useState([]);
 
   const [users, setUsers] = useState(
@@ -58,7 +59,8 @@ const UserContextProvider = (props) => {
     users,
     setUsers,
     setIsClicked,
-    isClicked
+    isClicked,
+    profilePics
   }
   return (
     <UserContext.Provider value={values}>
