@@ -1,0 +1,93 @@
+.changeForm {
+    background: #f4f4f4;
+    box-shadow: 2px 2px 2px #d2d2d2;
+    padding: 1.2rem 5px 1.5rem 5px;
+    margin: 5px;
+}
+
+.changeButtons {
+    display: flex;
+    justify-content: center;
+    margin: 1.2rem auto 0 auto;
+}
+
+.changeSubmitBtn {
+    margin: 0 5px;
+    background: #2C7CAE !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.changeSubmitBtn:hover {
+    background: #295276 !important;
+    border: none;
+}
+
+.changeBackBtn {
+    margin: 0 5px;
+    background: #DA6547 !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.changeBackBtn:hover {
+    background-color:#a04832 !important;
+    border: none;
+}
+
+.changeText {
+    font-size: .95rem;
+}
+
+.inputDiv{
+    position: relative;
+}
+
+.errorBorder{
+    box-shadow: 0 0 0 3px rgb(255, 122, 122);
+}
+
+.errorText{
+    color: red !important;
+    position: absolute;
+    top: 62px;
+    font-size: 0.8rem;
+}
+
+.changeHeading {
+    margin-top: 20px;
+}
+
+.pictureGrid{
+    margin: 1rem auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.gridItem{
+    padding: 0;
+}
+
+.thumbnail{
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+
+.selectedThumbnail{
+    box-shadow: 0 0 0 4px #2C7CAE;
+}
+
+.h2{
+    color: #2C7CAE;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+@media only screen and (min-width: 576px){
+    .changeHeading {
+        margin-top: 0px;
+    }
+}

@@ -1,5 +1,5 @@
 import style from "../css/DiscountCarousel.module.css";
-import  Carouselslide from "./Carouselslide";
+import Carouselslide from "./Carouselslide";
 
 const Carousel = () => {
 
