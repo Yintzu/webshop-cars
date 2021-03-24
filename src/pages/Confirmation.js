@@ -2,20 +2,13 @@ import styles from '../css/Confirmation.module.css';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
-import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import { CarContext } from '../contexts/CarContext';
 
 const Confirmation = () => {
 
-  const { boughtCars, orderInfo } = useContext(UserContext);
-  const { shoppingCartItems } = useContext(ShoppingCartContext)
+  const { orderInfo } = useContext(UserContext);
   const { formatSum } = useContext(CarContext);
   const history = useHistory();
-
-  // console.log(boughtCars);
-  // console.log(orderInfo);
-  // console.log(shoppingCartItems)
-  
 
   let deliveryPrice = 0;
     const DeliverPrice = (deliveryType) => {
