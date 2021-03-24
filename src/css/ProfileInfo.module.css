@@ -1,5 +1,4 @@
 .containerWrapper {
-    /* background-color: powderblue; */
     padding-top: 20px;
     max-width: 300px;
     margin-left: 0;
@@ -9,7 +8,6 @@
     margin: 0;
     padding: 0;
     text-align: center;
-    /* background-color: powderblue; */
 }
 
 .profileImage {
@@ -41,7 +39,6 @@
 
 .profileTextBox {
     width: 220px;
-    /* background-color: lime; */
     margin: 0 auto;
     line-height: 1.6;
 }
@@ -53,7 +50,7 @@
     margin-top: 10px;
     margin-bottom: 5px !important;
 }
-
+/* 
 .profileButton {
     position: relative;
     background: #2C7CAE !important;
@@ -77,4 +74,10 @@
 .logOutButton:hover {
     background-color:#a04832 !important;
     border: none;
+} */
+.profileTextBox button {
+    margin: 25px 0 10px 0;
+}
+.logOutButton {
+    margin-left: 10px !important;
 }

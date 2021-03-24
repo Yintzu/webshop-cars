@@ -58,7 +58,7 @@ const Search = () => {
                     <button type="submit" className={style.searchIcon}><img src="./assets/icons/search-icon.png" alt="search"/></button>
                 
                     {/* Reset list button */}
-                    <div onClick={handleResetSearch} className={`btn btn-sm ${style.clearSearch} ${!searched && style.disabledBtn}`}>Clear search</div>
+                    <div onClick={handleResetSearch} className={`btn button blue-button ${style.clearSearch} ${!searched && style.disabledBtn}`}>Clear search</div>
 
                     {/* Fiter button */}
                     <button className="btn btn-lg mr-3" type="button" onClick={() => setIsClicked(isClicked ? false : true)}>
@@ -114,7 +114,7 @@ const Search = () => {
                             )})}
                         </div>
                             {/*  Remove filters button  */}
-                            <div className="text-end"><div onClick={handleRemoveFilter} className={`btn btn-sm ${style.clearSearch} ${!filtered && style.disabledBtn} ${style.btn}`}>Remove filters</div></div>
+                            <div className="text-end"><div onClick={handleRemoveFilter} className={`btn button blue-button ${!filtered && style.disabledBtn} ${style.btn}`}>Remove filters</div></div>
                     </form>
                 </div>}
         </div>

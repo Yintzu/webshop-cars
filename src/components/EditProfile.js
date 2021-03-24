@@ -55,8 +55,8 @@ const EditProfile = () => {
                 </div>
 
 
-                <button type="submit" className="btn btn-primary">Submit</button>
-                <button type="button" className="btn btn-dark" onClick={backButton}>Back</button>
+                <button type="submit" className="button blue-button mr-1">Submit</button>
+                <button type="button" className="button orange-button" onClick={backButton}>Back</button>
             </form>
         </div>
     );
