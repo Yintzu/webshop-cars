@@ -3,11 +3,13 @@ import { NavLink, useHistory } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
+import { CarContext } from '../contexts/CarContext';
 
 const Confirmation = () => {
 
   const { boughtCars, orderInfo } = useContext(UserContext);
-  const { shoppingCartItems, formatSum } = useContext(ShoppingCartContext)
+  const { shoppingCartItems } = useContext(ShoppingCartContext)
+  const { formatSum } = useContext(CarContext);
   const history = useHistory();
 
   // console.log(boughtCars);
