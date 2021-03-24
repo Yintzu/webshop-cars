@@ -1,6 +1,5 @@
 .containerWrapper {
     padding-top: 0px;
-    max-width: 300px;
     margin-left: 0;
 }
 
@@ -9,6 +8,7 @@
     padding: 0;
     text-align: center;
     display: block;
+    max-width: 450px;
 }
 
 .profileImage {
