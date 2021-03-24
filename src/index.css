@@ -39,6 +39,7 @@ p {
 
 .button {
   padding: .2rem .8rem;
+  color: #ffffff !important;
   border-radius: 4px;
   font-size: 1.1rem;
   letter-spacing: -.5px;
@@ -46,25 +47,21 @@ p {
 }
 /* Blue button */
 .blue-button {
-  background: #2C7CAE !important;
-  color: #ffffff !important;
+  background-color: #2C7CAE !important;
   border: 1px solid #2C7CAE;
 }
 .blue-button:hover {
-  background: #295276 !important;
-  color: #ffffff !important;
+  background-color: #295276 !important;
   border: 1px solid #295276;
 }
 
 /* Orange button */
 .orange-button {
-  background: #DA6547 !important;
-  color: #ffffff !important;
+  background-color: #DA6547 !important;
   border: 1px solid #DA6547;
 }
 .orange-button:hover {
-  background:#a04832 !important;
-  color: #ffffff !important;
+  background-color:#a04832 !important;
   border: 1px solid #a04832;
 }
 
@@ -75,17 +72,17 @@ p {
   box-sizing: border-box;
 }
 select {
-appearance: none;
-background-color: transparent;
-border: none;
-padding: 0 1rem 0 1rem;
-margin: 0;
-width: 100%;
-font-family: inherit;
-font-size: inherit;
-cursor: inherit;
-line-height: inherit;
-outline: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1rem 0 1rem;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
 }
 
 /*   New styling to Select  */

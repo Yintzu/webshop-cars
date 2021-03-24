@@ -1,7 +1,6 @@
 hr {
     background-color: #ffffff;
 	border-top: 1px solid #656565;
-    
 }
 
 .mainHeading {
@@ -18,7 +17,6 @@ hr {
     color: #2C7CAE !important;
     margin-top: 0;
     margin-bottom: 12px;
-    
 }
 
 .smallHeading {
@@ -59,31 +57,6 @@ hr {
 .boldSummary {
     font-weight: 500;
     color: #4b4b4b !important;
-    
-}
-
-.backButton{
-    margin-left: 10px !important;
-    background: #DA6547 !important;
-    border: none;
-}
-
-.backButton:hover {
-    background-color:#a04832 !important;
-    border: none;
-   
-}
-
-.printButton {
-    background: #2C7CAE !important;
-    color: #ffffff !important;
-    border: none;
-}
-
-.printButton:hover {
-    background: #295276 !important;
-    color: #ffffff !important;
-    border: none;
 }
 
 .containerText {

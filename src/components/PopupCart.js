@@ -10,7 +10,7 @@ const PopupCart = () => {
   const history = useHistory();
 
 
-  return ( 
+  return (
     <div className={style.popupCartWrapper}>
       <div className={style.cartTitle}>
         <h4>Your cart:</h4>
@@ -46,7 +46,7 @@ const PopupCart = () => {
           <h5>Total:</h5>
           <h5>{formatSum(cartTotal)}</h5>
       </div>
-      <button onClick={() => history.push('/checkout')} className={style.toCheckoutBtn}>Go to checkout</button>
+      <button onClick={() => history.push('/checkout')} className={`button blue-button ${style.toCheckoutBtn}`}>Go to checkout</button>
     </div>
    );
 }

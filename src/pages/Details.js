@@ -12,7 +12,7 @@ const Details = (props) => {
 
     const { cars, boughtCheck, checkCarDiscount } = useContext(CarContext);
     const [car, setCar] = useState(null);
-    const { formatSum} = useContext(ShoppingCartContext);
+    const { formatSum } = useContext(ShoppingCartContext);
 
     useEffect(() => {
         findCar()
