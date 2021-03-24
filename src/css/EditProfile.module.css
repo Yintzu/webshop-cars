@@ -3,12 +3,13 @@
     box-shadow: 2px 2px 2px #d2d2d2;
     padding: 5px;
     margin: 5px;
+    padding-top: 1rem;
 }
 
 .changeButtons {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin: 1.5rem auto;
 }
 
 .changeSubmitBtn {
@@ -73,10 +74,17 @@
 .thumbnail{
     display: block;
     width: 100%;
+    cursor: pointer;
 }
 
 .selectedThumbnail{
     box-shadow: 0 0 0 4px #2C7CAE;
+}
+
+.h2{
+    color: #2C7CAE;
+    text-align: center;
+    margin-top: 1.5rem;
 }
 
 @media only screen and (min-width: 576px){

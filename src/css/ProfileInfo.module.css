@@ -1,5 +1,4 @@
 .containerWrapper {
-    /* background-color: powderblue; */
     padding-top: 50px;
     max-width: 300px;
     margin-left: 0;
@@ -9,13 +8,11 @@
     background: #f4f4f4;
     box-shadow: 2px 2px 2px #d2d2d2;
     margin-top: 41px;
-    padding: 0;
+    padding: 0.7rem 0;
     text-align: center;
-    /* background-color: powderblue; */
 }
 
 .profileImage {
-    /* height: 60%; */
     width: 60%;
     margin: 20px auto 20px;
     border-radius: 50%;
@@ -41,7 +38,6 @@
 
 .profileTextBox {
     width: 220px;
-    /* background-color: lime; */
     margin: 0 auto;
     line-height: 1.6;
 }

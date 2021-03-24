@@ -44,7 +44,7 @@ const EditProfile = () => {
         setter(false);
     }
 
-    const thumbnailClick = (index) =>{
+    const thumbnailClick = (index) => {
         setThumbnailClickState(index)
         const thumbnailList = document.querySelectorAll(".thumbnail")
         thumbnailList.forEach(item => item.classList.remove(`${style.selectedThumbnail}`))
@@ -56,7 +56,7 @@ const EditProfile = () => {
             <h1 className={style.changeHeading}>Edit Profile</h1>
             <form onSubmit={editHandler}>
                 <div className={`row ${style.changeForm}`}>
-                    <div className={`col-12 col-sm-6 ${style.changeContainer}`}>
+                    <div className={`col-12 col-md-6 ${style.changeContainer}`}>
                         <label htmlFor="changeFullName" className={style.changeText}>Full Name:</label>
                         <input className="form-control" type="text" id="changeFullName" name="fullName" defaultValue={loggedInUser.fullName} />
 
@@ -70,7 +70,7 @@ const EditProfile = () => {
                         <input className="form-control" type="text" id="changePhoneNumber" name="phoneNumber" defaultValue={loggedInUser.phoneNumber} />
                     </div>
 
-                    <div className={`col-12 col-sm-6 ${style.changeContainer}`}>
+                    <div className={`col-12 col-md-6 ${style.changeContainer}`}>
                         <label htmlFor="changeEmail" className={style.changeText}>Email:</label>
                         <input className="form-control" type="text" id="changeEmail" name="email" defaultValue={loggedInUser.email} />
 
@@ -90,10 +90,11 @@ const EditProfile = () => {
                         </div>
                     </div>
 
+                    <h2 className={style.h2}>Choose profile picture</h2>
                     <div className={`row ${style.pictureGrid}`}>
-                        {profilePics.map((pic, index) => 
+                        {profilePics.map((pic, index) =>
                             <div className={style.gridItem} key={index}>
-                                <img className={`thumbnail ${style.thumbnail}`} src={`./assets/profilepics/Profile${pic}`} onClick={()=>thumbnailClick(index)}/>
+                                <img className={`thumbnail ${style.thumbnail}`} src={`./assets/profilepics/Profile${pic}`} onClick={() => thumbnailClick(index)} />
                             </div>
                         )}
                     </div>
