@@ -22,8 +22,8 @@ const ProfileCar = () => {
             <div key={i}>
               <div className={styles.orderWrapper}>
                 <div className={styles.orderInfo}>
-                  <p className={`${styles.carSubHeading}`}>Order number: {order.orderNumber}</p>
-                  <p className={`${styles.carSubHeading}`}>Date: {order.orderDate[0]} {order.orderDate[1]}</p>
+                  <p className={`${styles.carSubHeading}`}>Order: {order.orderNumber}</p>
+                  <p className={`${styles.carSubHeading}`}>Date: {order.orderDate[0]}</p>
                 </div>
 
                 {/* Loop out bought cars */}
@@ -31,7 +31,7 @@ const ProfileCar = () => {
                   return (
                   <div className={styles.flexWrapper} key={car.vin}>
                     <div><img src={car.carImg} alt="Car picture" className={`${styles.carImage}`} /></div>
-                    <div className={`${styles.flexItem}`}>{car.make} {car.model} {car.year}</div>
+                    <div className={`${styles.flexItem}`}>{car.make} {car.model} | {car.year}</div>
                     <div className={`${styles.flexItem}`}>{formatSum(car.price)}</div>
                   </div>
                   )
