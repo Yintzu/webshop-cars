@@ -11,6 +11,10 @@ const ProfileCar = () => {
   return (
     <div>
       <h1 className={styles.profileCarHeading}>My purchase history</h1>
+        {/* Check if loggedInUser has made any orders */}
+        {loggedInUser.orders.length ?
+    <div>
+      <h1 className={styles.profileCarHeading}>My purchase history</h1>
       {/* Loopa out orders */}
       {loggedInUser.orders.map((order, i) => {
         return (
@@ -39,8 +43,10 @@ const ProfileCar = () => {
           </div>
         )
       })}
+</div> 
+ : <NoPurchases />}
+</div>
 
-    </div>
   );
 }
 
