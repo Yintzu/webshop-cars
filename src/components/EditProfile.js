@@ -4,10 +4,11 @@ import style from '../css/EditProfile.module.css';
 
 
 const EditProfile = () => {
-    const { setIsClicked, loggedInUser } = useContext(UserContext)
+    const { setIsClicked, loggedInUser, profilePics } = useContext(UserContext)
 
     const [emailMismatch, setEmailMismatch] = useState(false);
     const [passwordMismatch, setPasswordMismatch] = useState(false);
+    const [thumbnailClickState, setThumbnailClickState] = useState(profilePics.indexOf(loggedInUser.pic));
 
     const backButton = (e) => {
         e.preventDefault();
@@ -34,12 +35,20 @@ const EditProfile = () => {
         editProfileInputList.forEach(element => {
             loggedInUser[element.name] = element.value;
         })
+        loggedInUser.pic = profilePics[thumbnailClickState]
         setIsClicked(false);
     }
 
     const removeError = (e, setter) => {
         e.target.classList.remove(`${style.errorBorder}`)
         setter(false);
+    }
+
+    const thumbnailClick = (index) =>{
+        setThumbnailClickState(index)
+        const thumbnailList = document.querySelectorAll(".thumbnail")
+        thumbnailList.forEach(item => item.classList.remove(`${style.selectedThumbnail}`))
+        thumbnailList[index].classList.add(`${style.selectedThumbnail}`)
     }
 
     return (
@@ -67,7 +76,7 @@ const EditProfile = () => {
 
                         <div className={style.inputDiv}>
                             <label htmlFor="changeConfirmEmail" className={style.changeText}>Confirm Email Address:</label>
-                            <input className="form-control" type="text" id="changeConfirmEmail" name="confirmEmail" defaultValue={loggedInUser.email} onChange={(e) => removeError(e, setEmailMismatch)}/>
+                            <input className="form-control" type="text" id="changeConfirmEmail" name="confirmEmail" defaultValue={loggedInUser.email} onChange={(e) => removeError(e, setEmailMismatch)} />
                             {emailMismatch && <p className={style.errorText}>E-mail does not match</p>}
                         </div>
 
@@ -76,14 +85,23 @@ const EditProfile = () => {
 
                         <div className={style.inputDiv}>
                             <label htmlFor="changeConfirmPassword" className={style.changeText}>Confirm Password:</label>
-                            <input className="form-control" type="text" id="changeConfirmPassword" name="confirmPassword" defaultValue={loggedInUser.password} onChange={(e) => removeError(e, setPasswordMismatch)}/>
+                            <input className="form-control" type="text" id="changeConfirmPassword" name="confirmPassword" defaultValue={loggedInUser.password} onChange={(e) => removeError(e, setPasswordMismatch)} />
                             {passwordMismatch && <p className={style.errorText}>Password does not match</p>}
                         </div>
                     </div>
+
+                    <div className={`row ${style.pictureGrid}`}>
+                        {profilePics.map((pic, index) => 
+                            <div className={style.gridItem} key={index}>
+                                <img className={`thumbnail ${style.thumbnail}`} src={`./assets/profilepics/Profile${pic}`} onClick={()=>thumbnailClick(index)}/>
+                            </div>
+                        )}
+                    </div>
+
                     <div className={style.changeButtons}>
-                    <button type="submit" className={`btn ${style.changeSubmitBtn}`}>Submit</button>
-                    <button type="button" className={`btn ${style.changeBackBtn}`} onClick={backButton}>Back</button>
-                </div>
+                        <button type="submit" className={`btn ${style.changeSubmitBtn}`}>Submit</button>
+                        <button type="button" className={`btn ${style.changeBackBtn}`} onClick={backButton}>Back</button>
+                    </div>
                 </div>
 
 
