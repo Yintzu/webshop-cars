@@ -73,7 +73,6 @@ const CarContextProvider = (props) => {
                 carImg:`../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`
             }
         })
-        // console.log(carlists);
         setCars(carlists)
     }
 
