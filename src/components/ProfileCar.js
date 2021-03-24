@@ -11,7 +11,7 @@ const ProfileCar = () => {
 
   return (
     <div>
-      <h1 className={styles.profileCarHeading}>My purchase history</h1>
+      <h1 className={styles.carHeading}>My purchase history</h1>
       
       {/* Check if loggedInUser has made any orders */}
       {loggedInUser.orders.length ?
@@ -22,25 +22,23 @@ const ProfileCar = () => {
             <div key={i}>
               <div className={styles.orderWrapper}>
                 <div className={styles.orderInfo}>
-                  <p className={`${styles.profileCarSubHeading}`}>Order number: {order.orderNumber}</p>
-                  <p className={`${styles.profileCarSubheading}`}>Date: {order.orderDate[0]} {order.orderDate[1]}</p>
+                  <p className={`${styles.carSubHeading}`}>Order: {order.orderNumber}</p>
+                  <p className={`${styles.carSubHeading}`}>Date: {order.orderDate[0]}</p>
                 </div>
 
                 {/* Loop out bought cars */}
                 {order.boughtCars.map((car) => {
                   return (
-                    <div className={styles.profileCarWrapper} key={car.vin}>
-                      <img src={car.carImg} alt="Car picture" className={`${styles.profileImage} ${styles.gridItem1}`} />
-                      <p className={`${styles.profileText} ${styles.gridItem2}`}>{car.make} {car.model}</p>
-                      <p className={`${styles.profileText} ${styles.gridItem3}`}>{formatSum(car.price)}</p>
-                      <p className={`${styles.profileText} ${styles.gridItem4}`}>{car.year}</p>
-                    </div>
+                  <div className={styles.flexWrapper} key={car.vin}>
+                    <div><img src={car.carImg} alt="Car picture" className={`${styles.carImage}`} /></div>
+                    <div className={`${styles.flexItem}`}>{car.make} {car.model} | {car.year}</div>
+                    <div className={`${styles.flexItem}`}>{formatSum(car.price)}</div>
+                  </div>
                   )
                 })}
 
                 <div className={styles.orderTotal}>
-
-                  <p className={styles.orderTotalText}>Total price: {formatSum(order.price)}</p>
+                  <div className={styles.orderTotalText}>Total price: {formatSum(order.price)}</div>
                 </div>
               </div>
             </div>

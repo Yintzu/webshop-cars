@@ -37,10 +37,10 @@ const ProfileInfo = () => {
           {/* <p className={styles.profileText}>Age: 35</p> */}
           <p className={styles.profileText}>Telephone: {loggedInUser.phoneNumber}</p>
           <p className={styles.profileText}>E-mail: {loggedInUser.email}</p>
-          <button className="button blue-button" onClick={() => setIsClicked(!isClicked)}>
+          <button className="button blue-button mx-1" onClick={() => setIsClicked(!isClicked)}>
             Edit profile
           </button>
-          <button className={`button orange-button ${styles.logOutButton}`} onClick={logOutHandler}>
+          <button className="button orange-button mx-1" onClick={logOutHandler}>
             Log out
           </button>
         </div>
