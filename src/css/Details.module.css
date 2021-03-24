@@ -68,6 +68,7 @@
 
 .detailThumbnails {
     display: flex;
+    justify-content: space-between;
 }
 
 .thumbnailWrapper {

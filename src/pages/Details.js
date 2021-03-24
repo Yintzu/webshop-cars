@@ -16,12 +16,14 @@ const Details = (props) => {
     const [car, setCar] = useState(null);
     const { formatSum } = useContext(ShoppingCartContext);
     const [showModal, setShowModal] = useState(false);
+    const [clickedThumbnail, setClickedThumbnail] = useState(null);
 
     const modalPicsChevy = ["chevy-front.jpg", "chevy-interior.jpg", "chevy-rear.jpg"]
 
     const modalPicsOlds = ["olds-front.jpg", "olds-interior.jpeg", "olds-rear.jpg"]
 
     const modalPicsPanoz = ["panoz-engine.jpg", "panoz-interior.jpg", "panoz-rear.jpg"]
+
 
 
     useEffect(() => {
@@ -38,6 +40,11 @@ const Details = (props) => {
                 cars.find((car) => props.match.params.id == car.vin)
             )
         }
+    }
+    const thumbnailClick = (e) => { 
+        console.log(e.target)
+        setClickedThumbnail(e.target.src)
+        setShowModal(true)
     }
 
     const renderThumbnails = () => {
@@ -80,17 +87,17 @@ const Details = (props) => {
                             <li>Miles: {car.miles}</li>
                         </ul>
                         {/* <Modal /> */}
-                        {showModal && <DetailsModal setShowModal={setShowModal} />}
+                        {showModal && <DetailsModal setShowModal={setShowModal} imgPath={clickedThumbnail} />}
+
                     </div>
                     <div className={style.detailThumbnails}>
                         {renderThumbnails().map((pic, index) =>
                             <div className={style.thumbnailWrapper} key={index}>
-                                <img src={`../assets/app-components/discount-detail/${pic}`} className={style.thumbnailImg} alt="car detail" />
+                                <img src={`../assets/app-components/discount-detail/${pic}`} className={style.thumbnailImg} onClick={thumbnailClick } alt="car detail" />
                             </div>
                         )}
                     </div>
                 </div>
-                <button onClick={() => setShowModal(!showModal)}>Show Modal</button>
             </div>
         );
     }
