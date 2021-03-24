@@ -1,105 +1,105 @@
 .orderWrapper {
-  background-color: #f4f4f4;
-  border-radius: 5px;
-  box-shadow: 2px 2px 2px #d2d2d2;
-  min-width: 458px;
-  margin-top: 20px;
-  padding: 20px;
-}
-
-.orderInfo {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-right: 10px;
-}
-
-.orderTotal {
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 10px;
-    border-top: 1px solid #dbdbdb;
-}
-
-.orderTotalText {
-    margin-right: 10px;
-}
-
-.flexWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    max-width: 500px;
-}
-
-.flexItem {
-    padding: 10px 10px 10px 0;
-    font-size: 0.9rem;
-}
-
-.flexItem2 {
-    padding: 10px 10px 10px 0;
-    margin-left: auto;
-    font-size: 0.9rem;
-}
-
-.profileCarHeading {
-    /* margin-top: 10px; */
-    margin-bottom: 20px;
-   
-}
-
-.profileCarSubHeading {
-    color: #2C7CAE !important;
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
-
-.profileImage {
-    height: 50px;
-    width: 100px;
-    border-radius: 5px;  
-}
-
-.profileText {
-    font-size: 0.9rem;
-    margin-bottom: 0;
-}
-
-.orderTotalText {
-    margin-top: 5px;
-}
-
-@media only screen and (min-width: 320px) and (max-width: 575px) {
-    .orderWrapper {
-        background-color: #f4f4f4;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 2px 2px 2px #d2d2d2;
-        min-width: 280px;
-    }
-
-    .profileImage {
-        height: 100px;
-        width: 150px;
-        border-radius: 5px;  
-    }
-    
-    .flexWrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
-    
-    .flexItem {
-        padding: 10px 10px 10px 0;
-        font-size: 0.9rem;
-       
-    }
-
-    .flexItem2 {
-        padding: 10px 5px 10px 0;
-        font-size: 0.9rem;
-        justify-content: flex-start;
-    }
-}
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #d2d2d2;
+    min-width: 458px;
+    margin-top: 20px;
+  }
+  
+  .orderInfo {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-right: 10px;
+  }
+  
+  .orderTotal {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 10px;
+      border-top: 1px solid #dbdbdb;
+  }
+  
+  .orderTotalText {
+      margin-right: 10px;
+  }
+  
+  .flexWrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      max-width: 500px;
+  }
+  
+  .flexItem {
+      padding: 10px 10px 10px 0;
+      font-size: 0.9rem;
+  }
+  
+  .flexItem2 {
+      padding: 10px 10px 10px 0;
+      margin-left: auto;
+      font-size: 0.9rem;
+  }
+  
+  .profileCarHeading {
+      margin-top: 20px;
+      margin-bottom: 20px;
+     
+  }
+  
+  .profileCarSubHeading {
+      color: #2C7CAE !important;
+      font-size: 1rem;
+      margin-bottom: 5px;
+  }
+  
+  .profileImage {
+      height: 50px;
+      width: 100px;
+      border-radius: 5px;  
+  }
+  
+  .profileText {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+  }
+  
+  .orderTotalText {
+      margin-top: 5px;
+  }
+  
+  @media only screen and (min-width: 320px) and (max-width: 575px) {
+      .orderWrapper {
+          background-color: #f4f4f4;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 2px 2px 2px #d2d2d2;
+          min-width: 280px;
+      }
+  
+      .profileImage {
+          height: 100px;
+          width: 150px;
+          border-radius: 5px;  
+      }
+      
+      .flexWrapper {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+      }
+      
+      .flexItem {
+          padding: 10px 10px 10px 0;
+          font-size: 0.9rem;
+         
+      }
+  
+      .flexItem2 {
+          padding: 10px 5px 10px 0;
+          font-size: 0.9rem;
+          justify-content: flex-start;
+      }
+  }
