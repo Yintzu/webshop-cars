@@ -12,6 +12,9 @@
     transform: translateY(-50%);
     margin: 2rem 1rem 0;
 }
+.noResult .clearSearch:hover {
+    background-color:#295276;
+}
 .noResult img {
     margin-bottom: 1rem;
     width: 80px;
