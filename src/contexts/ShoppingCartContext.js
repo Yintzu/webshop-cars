@@ -58,8 +58,10 @@ const ShoppingCartProvider = (props) => {
         return [date, time, day];
     }
 
-    // Formats numbers into "100 000 kr"
-    // const formatSum = (sum) => `$${new Intl.NumberFormat('de-DK', { currency: 'EUR', style: 'decimal', minimumFractionDigits: 0 }).format(Math.round(sum / 10))}`;
+    // Set localStorage when cart updates
+    useEffect(() => {
+        localStorage.setItem('shoppingCartItems', JSON.stringify(shoppingCartItems))
+    }, [shoppingCartItems]);
 
     const values = {
         shoppingCartItems,
@@ -70,12 +72,6 @@ const ShoppingCartProvider = (props) => {
         // formatSum,
         cartTotal,
     }
-
-
-
-    useEffect(() => {
-        localStorage.setItem('shoppingCartItems', JSON.stringify(shoppingCartItems))
-    }, [shoppingCartItems]);
 
     return (
         <ShoppingCartContext.Provider value={values}>

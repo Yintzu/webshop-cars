@@ -99,8 +99,10 @@ const CarContextProvider = (props) => {
         if (bought){return true} else {return false}
     }
 
+    // Formats sum into $123.123
     const formatSum = (sum) => `$${new Intl.NumberFormat('de-DK', { currency: 'EUR', style: 'decimal', minimumFractionDigits: 0 }).format(Math.round(sum / 10))}`;
 
+    // Check if car is in discount array and apply price and red color
     const checkCarDiscount = (car) => {
       let discountedCar = discountedCars.find(discountCar => discountCar.vin === car.vin);
     
