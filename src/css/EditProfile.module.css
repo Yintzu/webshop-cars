@@ -58,6 +58,27 @@
     margin-top: 20px;
 }
 
+.pictureGrid{
+    margin: 1rem auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.gridItem{
+    padding: 0;
+}
+
+.thumbnail{
+    display: block;
+    width: 100%;
+}
+
+.selectedThumbnail{
+    box-shadow: 0 0 0 4px #2C7CAE;
+}
+
 @media only screen and (min-width: 576px){
     .changeHeading {
         margin-top: 0px;
