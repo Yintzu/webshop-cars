@@ -1,16 +1,18 @@
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import { CarContext } from "../contexts/CarContext";
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import style from '../css/CarCard.module.css';
 import BuyButtons from './BuyButtons';
 
 const CarCard = (props) => {
   const history = useHistory();
-  const { formatSum } = useContext(ShoppingCartContext);
-  const { viewCar, boughtCheck } = useContext(CarContext);
+  const { viewCar, boughtCheck, checkCarDiscount } = useContext(CarContext);
 
 
+  useEffect(() => {
+    checkCarDiscount(props.car)
+  }, []);
   return (
     <div className={`${style.carCard}`} onClick={(e) => {
       if (e.target.id !== 'addRemove') {
@@ -36,7 +38,7 @@ const CarCard = (props) => {
           <p className={style.cardSmallText}>{props.car.descShort}</p>
           <hr className={style.hrCard} />
           <div className={style.cardBtns}>
-            <span className={style.largePrice}>{formatSum(props.car.price)}</span>
+            <span className={style.largePrice}>{checkCarDiscount(props.car)}</span>
             <div className={style.buttonWrapper}>
               <BuyButtons className={style.buttonWrapper} car={props.car} />
             </div>
