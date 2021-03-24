@@ -2,6 +2,7 @@
     /* background-color: pink; */
     padding: 0;
     padding: 20px;
+    display: flex;
 }
 
 .profileCarHeading {

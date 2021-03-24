@@ -29,18 +29,16 @@ const ProfileCar = () => {
                 {/* Loop out bought cars */}
                 {order.boughtCars.map((car) => {
                   return (
-                    <div className={styles.profileCarWrapper} key={car.vin}>
-                      <img src={car.carImg} alt="Car picture" className={`${styles.profileImage} ${styles.gridItem1}`} />
-                      <p className={`${styles.profileText} ${styles.gridItem2}`}>{car.make} {car.model}</p>
-                      <p className={`${styles.profileText} ${styles.gridItem3}`}>{formatSum(car.price)}</p>
-                      <p className={`${styles.profileText} ${styles.gridItem4}`}>{car.year}</p>
-                    </div>
+                  <div className={styles.flexWrapper} key={car.vin}>
+                    <div className={styles.flexItem}><img src={car.carImg} alt="Car picture" className={`${styles.profileImage}`} /></div>
+                    <div className={`${styles.flexItem}`}>{car.make} {car.model} {car.year}</div>
+                    <div className={`${styles.flexItem2}`}>{formatSum(car.price)}</div>
+                  </div>
                   )
                 })}
 
                 <div className={styles.orderTotal}>
-
-                  <p className={styles.orderTotalText}>Total price: {formatSum(order.price)}</p>
+                  <div className={styles.orderTotalText}>Total price: {formatSum(order.price)}</div>
                 </div>
               </div>
             </div>

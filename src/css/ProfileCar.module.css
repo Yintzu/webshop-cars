@@ -1,10 +1,10 @@
 .orderWrapper {
   background-color: #f4f4f4;
-  padding: 20px;
   border-radius: 5px;
   box-shadow: 2px 2px 2px #d2d2d2;
   min-width: 458px;
   margin-top: 20px;
+  padding: 20px;
 }
 
 .orderInfo {
@@ -44,7 +44,7 @@
 }
 
 .profileCarHeading {
-    margin-top: 20px;
+    /* margin-top: 10px; */
     margin-bottom: 20px;
    
 }
