@@ -70,15 +70,15 @@ const Navbar = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     }
 
-    useEffect(() => {
-        if (mobileMenuOpen) {
-            let x = window.scrollX;
-            let y = window.scrollY;
-            window.onscroll = function () { window.scrollTo(x, y); };
-        } else {
-            window.onscroll = function () { };
-        }
-    }, [mobileMenuOpen])
+    // useEffect(() => {
+    //     if (mobileMenuOpen) {
+    //         let x = window.scrollX;
+    //         let y = window.scrollY;
+    //         window.onscroll = function () { window.scrollTo(x, y); };
+    //     } else {
+    //         window.onscroll = function () { };
+    //     }
+    // }, [mobileMenuOpen])
 
     // Hide cart if route changes
     useEffect(() => {

@@ -4,17 +4,27 @@ import { CarContext } from '../contexts/CarContext';
 import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import BuyButtons from '../components/BuyButtons';
 
-import ModalTest from '../components/ModalTest';
+import DetailsModal from '../components/DetailsModal';
+import { waitForElement } from '@testing-library/dom';
 
-    
+
 
 
 const Details = (props) => {
 
     const { cars, boughtCheck, checkCarDiscount } = useContext(CarContext);
     const [car, setCar] = useState(null);
-    const { formatSum} = useContext(ShoppingCartContext);
-    const [ showModal, setShowModal]= useState(false);
+    const { formatSum } = useContext(ShoppingCartContext);
+    const [showModal, setShowModal] = useState(false);
+    const [clickedThumbnail, setClickedThumbnail] = useState(null);
+
+    const modalPicsChevy = ["chevy-front.jpg", "chevy-interior.jpg", "chevy-rear.jpg"]
+
+    const modalPicsOlds = ["olds-front.jpg", "olds-interior.jpeg", "olds-rear.jpg"]
+
+    const modalPicsPanoz = ["panoz-engine.jpg", "panoz-interior.jpg", "panoz-rear.jpg"]
+
+
 
     useEffect(() => {
         findCar()
@@ -31,11 +41,22 @@ const Details = (props) => {
             )
         }
     }
+    const thumbnailClick = (e) => { 
+        setClickedThumbnail(e.target.src)
+        setShowModal(true)
+    }
+
+    const renderThumbnails = () => {
+        if (props.match.params.id == "1D4PT5GK0BW487259") return modalPicsChevy
+        if (props.match.params.id == "WAUVT68E95A768929") return modalPicsOlds
+        if (props.match.params.id == "WAUKF98E25A286122") { return modalPicsPanoz }
+        else { return [] }
+    }
 
     const renderCar = () => {
         return (
             <div className={style.details}>
-                
+
                 <h1 className={`mt-0 ${style.mainHeading}`}>Car details</h1>
                 <div className="row g-0">
                     <div className={`col ${style.imageWrapper}`}>
@@ -56,7 +77,7 @@ const Details = (props) => {
                         <h5>Description</h5>
                         <p>{car.descLong}</p>
                     </div>
-                  
+
                     <div className="col-md-4">
                         <ul>
                             <li>Make: {car.make}</li>
@@ -65,11 +86,17 @@ const Details = (props) => {
                             <li>Miles: {car.miles}</li>
                         </ul>
                         {/* <Modal /> */}
-                        {showModal && <ModalTest />}
+                        {showModal && <DetailsModal setShowModal={setShowModal} imgPath={clickedThumbnail} />}
+
                     </div>
-                   
+                    <div className={style.detailThumbnails}>
+                        {renderThumbnails().map((pic, index) =>
+                            <div className={style.thumbnailWrapper} key={index}>
+                                <img src={`../assets/app-components/discount-detail/${pic}`} className={style.thumbnailImg} onClick={thumbnailClick } alt="car detail" />
+                            </div>
+                        )}
+                    </div>
                 </div>
-                <button onClick={() => setShowModal(!showModal)}>Show Modal</button>
             </div>
         );
     }

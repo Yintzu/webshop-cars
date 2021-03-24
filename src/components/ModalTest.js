@@ -8,7 +8,7 @@ const ModalTest = () => {
     <div className={style.detailsModalWrapper}>
       <div className="modal-content" id="ModalTest">
         <div className="modal-body">
-          <div className="modalSlides">
+         
             <div className="row" id="gallery" data-toggle="modal" data-target="#exampleModal">
 
               <div className="col-12 col-sm-6 col-lg-3">
