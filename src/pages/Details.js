@@ -10,7 +10,7 @@ import BuyButtons from '../components/BuyButtons';
 
 const Details = (props) => {
 
-    const { cars, boughtCheck } = useContext(CarContext);
+    const { cars, boughtCheck, checkCarDiscount } = useContext(CarContext);
     const [car, setCar] = useState(null);
     const { formatSum} = useContext(ShoppingCartContext);
 
@@ -43,7 +43,7 @@ const Details = (props) => {
                     <div className={`col-md-4 ${style.buy}`}>
                         <h3>{car.make} {car.model} {car.year}</h3>
                         <p>{car.city}</p>
-                        <h4 className={style.price}>{formatSum(car.price)}</h4>
+                        <h4 className={style.price}>{checkCarDiscount(car)}</h4>
                         <div className={style.buttonWrapper}>
                             <BuyButtons car={car} />
                         </div>
