@@ -10,7 +10,6 @@ const NeedToLogIn = () => {
     return (
         <div className={style.noPurchases}>
             <div>
-                {/* <img src="/assets/app-components/logo.gif" alt="car logo" /> */}
                 <h4 className="mb-3">You need to log in first</h4>
                 <p className="mb-4">Placing an order requires you to log in.</p>
                 <button className="button blue-button" onClick={() => setShowLoginModal(true)}>Log in</button>
