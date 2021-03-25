@@ -15,7 +15,6 @@
   right: 0;
   width: 100%;
   border-top: 1px solid rgba(0, 0, 0, 0.178);
-  /* background-color: #f0efef; */
   background-color: #f4f4f4;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.170), -2px 2px 3px rgba(0, 0, 0, 0.170);
 }
@@ -38,7 +37,6 @@
   display: flex;
   align-items: center;
   padding: .5rem .3rem;
-  /* background-color: #eee; */
   border-top: 1px solid rgba(0, 0, 0, 0.212);
 }
 
@@ -100,7 +98,6 @@
   display: flex;
   padding: .5rem .2rem;
   border-top: 1px solid rgba(0, 0, 0, 0.5);
-  /* margin-top: .4rem; */
   justify-content: space-between;
 }
 
