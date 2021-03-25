@@ -20,8 +20,8 @@ const ShoppingCartProvider = (props) => {
         setCartTotal(shoppingCartItems.reduce((sum, curr) => sum + curr.price, 0));
     }, [shoppingCartItems]);
 
-    // Set the cart array by creating a new array, adding the new item at the front of the array, then spreading out the old array after.
     // Check if car is discounted and add new price if it is
+    // Set the cart array by creating a new array, adding the new item at the front of the array, then spreading out the old array after.
     const addToCart = (newItem) => {
         let isDiscounted = discountedCars.find(discountedCar => discountedCar.vin === newItem.vin);
         if (isDiscounted) {
@@ -35,6 +35,7 @@ const ShoppingCartProvider = (props) => {
         setShoppingCartItems(shoppingCartItems.filter(item => item.vin !== itemToRemove.vin));
     }
 
+    // Set the shopping cart to an empty array
     const removeAllFromCart = () => {
         setShoppingCartItems([]);
     }

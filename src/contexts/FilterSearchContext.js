@@ -61,7 +61,7 @@ const FilterSearchContextProvider = (props) => {
         }
     }
 
-    /*  Filter sliders */
+    // Filter sliders
     const [minPrice, setMinPrice] = useState(0)
     const [maxPrice, setMaxPrice] = useState(1000000)
     const [minMiles, setMinMiles] = useState(0)
