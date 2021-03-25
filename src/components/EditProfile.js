@@ -100,12 +100,10 @@ const EditProfile = () => {
                     </div>
 
                     <div className={style.changeButtons}>
-                        <button type="submit" className={`btn ${style.changeSubmitBtn}`}>Submit</button>
-                        <button type="button" className={`btn ${style.changeBackBtn}`} onClick={backButton}>Back</button>
+                        <button type="submit" className="button blue-button mx-1">Submit</button>
+                        <button type="button" className="button orange-button mx-1" onClick={backButton}>Back</button>
                     </div>
                 </div>
-
-
             </form>
         </div>
     );
