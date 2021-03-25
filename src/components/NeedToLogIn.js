@@ -13,7 +13,7 @@ const NeedToLogIn = () => {
                 <h4 className="mb-3">You need to log in first</h4>
                 <p className="mb-4">Placing an order requires you to log in.</p>
                 <button className="button blue-button" onClick={() => setShowLoginModal(true)}>Log in</button>
-                <NavLink exact to={"/"} className={style.link}>
+                <NavLink exact to={"/register"} className={style.link}>
                     <p className={style.link}>Or click here to create a new account.</p>
                 </NavLink>
             </div>
