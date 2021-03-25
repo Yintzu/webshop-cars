@@ -11,9 +11,17 @@ html {
 .sidebarWrapper {
   position: fixed;
 }
+
+@media screen and (min-width: 768px) {
+  .sidebarWrappper {
+  
+  position: relative; 
+}
+
+}
 .sidebar {
   padding: 1rem;
-  background-color: rgb(255, 239, 226);
+  background-color: rgb(243, 243, 243);
   margin-bottom: 1rem;
 }
 

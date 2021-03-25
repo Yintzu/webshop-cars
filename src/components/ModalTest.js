@@ -30,7 +30,6 @@ const ModalTest = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 }
  
