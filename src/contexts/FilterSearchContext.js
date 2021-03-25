@@ -1,22 +1,15 @@
-import {
-    createContext,
-    useState,
-    useEffect,
-    useContext
-} from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 import { CarContext } from './CarContext';
 import { SearchContext } from './SearchContext';
 
 export const FilterSearchContext = createContext();
 
 const FilterSearchContextProvider = (props) => {
-
     const { cars } = useContext(CarContext);
     const { searched, setRenderList } = useContext(SearchContext);
-
+    const [filtered, setFiltered] = useState(false)
     const [make, setMake] = useState('all');
     const [model, setModel] = useState('all');
-  
     const [makeArray, setMakeArray] = useState([]);
     const [modelArray, setModelArray] = useState([]);
 
@@ -56,8 +49,7 @@ const FilterSearchContextProvider = (props) => {
         }
     }, [make]);
 
-    // Saving value in selects (make and model)
-    // Setting state depending on what is clicked
+    // Saving value in selects (make and model), setting state depending on what is clicked
     const saveSelects = (value, id) => {
         if (id === 'make' && value === 'all') {
             setMake(value);
@@ -76,14 +68,12 @@ const FilterSearchContextProvider = (props) => {
     const [maxMiles, setMaxMiles] = useState(100000)
     const [minYears, setMinYears] = useState(1960)
     const [maxYears, setMaxYears] = useState(2021)
-
     const [sliders, setSliders] = useState(null);
 
     // This array contains some of the states that are watched in useEffect
     const filterWatch = [minPrice, maxPrice, minMiles, maxMiles, minYears, maxYears];
     
-    // This data is used to render the sliders in the JSX
-    // Is updated when value connected to the sliders is updated
+    // This data is used to render the sliders in the JSX, is updated when value connected to the sliders is updated
     useEffect(() => {
         setSliders([
             [
@@ -112,7 +102,6 @@ const FilterSearchContextProvider = (props) => {
                 }
             }
         }
-
         const sliderCheckMax = (id, minCheck, setMax, setMin, stopValue, step) => {
             if(e.target.id === id && value !== stopValue) {
                 setMax(value)
@@ -141,17 +130,14 @@ const FilterSearchContextProvider = (props) => {
         if (make !== 'all' && model === 'all') {
             filterCarsArray = filterCarsArray.filter(car => car.make === make);
         }
-        
         // Filter based on model
         if (model !== 'all') {
             filterCarsArray = filterCarsArray.filter(car => car.model === model);
         }
-
         // Reusable function for each slider
         const sliderFilter = (slider, min, max) => {
             filterCarsArray = filterCarsArray.filter(car => car[slider] >= min && car[slider] <= max);
         }
-
         sliderFilter('year', minYears, maxYears);
         sliderFilter('price', minPrice, maxPrice);
         sliderFilter('miles', minMiles, maxMiles);
@@ -163,9 +149,10 @@ const FilterSearchContextProvider = (props) => {
         else if(!filterCarsArray.length){
             setRenderList(null);
         }
-        /* setRenderList(filterCarsArray); */
     }
 
+    // searched is set to true when something is entered into free text search
+    // Filter will only run if there is no free text search (if check !searched)
     useEffect(() => {
         if (!searched) {
             filterSearch();
@@ -182,8 +169,6 @@ const FilterSearchContextProvider = (props) => {
         setMake('all')
         setModel('all')
     }
-    
-    const [filtered, setFiltered] = useState(false)
 
     const values={
         selectLists,

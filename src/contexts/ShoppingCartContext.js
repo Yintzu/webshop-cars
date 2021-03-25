@@ -19,8 +19,8 @@ const ShoppingCartProvider = (props) => {
         setCartTotal(shoppingCartItems.reduce((sum, curr) => sum + curr.price, 0));
     }, [shoppingCartItems]);
 
-    // Will connect to buy-buttons later
     // Set the cart array by creating a new array, adding the new item at the front of the array, then spreading out the old array after.
+    // Check if car is discounted and add new price if it is
     const addToCart = (newItem) => {
         let isDiscounted = discountedCars.find(discountedCar => discountedCar.vin === newItem.vin);
         if (isDiscounted) {
