@@ -1,6 +1,5 @@
-import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import { CarContext } from "../contexts/CarContext";
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import style from '../css/CarCard.module.css';
 import BuyButtons from './BuyButtons';
@@ -9,10 +8,6 @@ const CarCard = (props) => {
   const history = useHistory();
   const { viewCar, boughtCheck, checkCarDiscount } = useContext(CarContext);
 
-
-  useEffect(() => {
-    checkCarDiscount(props.car)
-  }, []);
   return (
     <div className={`${style.carCard}`} onClick={(e) => {
       if (e.target.id !== 'addRemove') {
@@ -22,6 +17,7 @@ const CarCard = (props) => {
       <div className={style.topRow}>
         <div className={style.imgWrapper}>
           <img src={props.car.carImg} className={`${style.carImg}`} alt="A good affordable car" />
+          {/* Runs boughtCheck to see if soldout.png should render */}
           {boughtCheck(props.car) && <img src="/assets/app-components/soldout.png" className={`${style.soldOverlay}`} />}
         </div>
         <div className={style.infoRow}>
@@ -38,6 +34,7 @@ const CarCard = (props) => {
           <p className={style.cardSmallText}>{props.car.descShort}</p>
           <hr className={style.hrCard} />
           <div className={style.cardBtns}>
+            {/* Checks which price to render with checkCarDiscount (from CarContext) */}
             <span className={style.largePrice}>{checkCarDiscount(props.car)}</span>
             <div className={style.buttonWrapper}>
               <BuyButtons className={style.buttonWrapper} car={props.car} />
