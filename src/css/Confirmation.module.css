@@ -1,7 +1,6 @@
 hr {
     background-color: #ffffff;
 	border-top: 1px solid #656565;
-    
 }
 
 .mainHeading {
@@ -18,7 +17,6 @@ hr {
     color: #2C7CAE !important;
     margin-top: 0;
     margin-bottom: 12px;
-    
 }
 
 .smallHeading {
@@ -35,21 +33,30 @@ hr {
 }
 
 .confirmationBoxLeft {
-    background-color: #f4f4f4 !important;
+    /* background-color: #f4f4f4 !important; */
     padding: 30px 30px 30px 30px;
     margin-top: 20px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     position: relative;
-    box-shadow: 2px 2px 2px #d2d2d2;
+    /* box-shadow: 2px 2px 2px #d2d2d2; */
+    border-top: solid rgb(227, 227, 227) 1px !important;
+    border-left: solid rgb(227, 227, 227) 1px !important;
+    border-bottom: solid rgb(227, 227, 227) 1px !important;
 }
 
 .confirmationBoxRight {
-    background-color: #f4f4f4 !important;
+    /* background-color: #f4f4f4 !important; */
     padding: 30px 30px 30px 21px;
     margin-top: 20px;
     position: relative;
-    box-shadow: 2px 2px 2px #d2d2d2;
+    /* box-shadow: 2px 2px 2px #d2d2d2; */
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: solid rgb(227, 227, 227) 1px !important;
+    border-right: solid rgb(227, 227, 227) 1px !important;
+    /* border-left: solid rgb(227, 227, 227) 1px !important; */
+    border-bottom: solid rgb(227, 227, 227) 1px !important;
 }
 
 .confirmationHeading {
@@ -59,31 +66,6 @@ hr {
 .boldSummary {
     font-weight: 500;
     color: #4b4b4b !important;
-    
-}
-
-.backButton{
-    margin-left: 10px !important;
-    background: #DA6547 !important;
-    border: none;
-}
-
-.backButton:hover {
-    background-color:#a04832 !important;
-    border: none;
-   
-}
-
-.printButton {
-    background: #2C7CAE !important;
-    color: #ffffff !important;
-    border: none;
-}
-
-.printButton:hover {
-    background: #295276 !important;
-    color: #ffffff !important;
-    border: none;
 }
 
 .containerText {

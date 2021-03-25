@@ -21,8 +21,7 @@ const Confirmation = () => {
         }
         return deliveryPrice
     }
-
-
+    
   return (
     <div className="container">
       {orderInfo[0] ? 
@@ -101,19 +100,12 @@ const Confirmation = () => {
 
             {/* Buttons start */}
             <button type="button"
-              className={`
-                     ${styles.printButton}
-                     btn 
-                     btn-info`}
+              className="button blue-button"
               onClick={() => window.print()}
             >Print</button>
 
             <NavLink exact to="/"><button type="button"
-              className={`
-                    ${styles.backButton}
-                    btn 
-                    btn-dark
-                   `}>Back</button>
+              className="button orange-button mx-2">Back</button>
             </NavLink>
           </div>
         </div>
