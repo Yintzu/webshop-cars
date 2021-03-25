@@ -21,8 +21,7 @@ const Confirmation = () => {
         }
         return deliveryPrice
     }
-
-
+    
   return (
     <div className="container">
       {orderInfo[0] ? 
