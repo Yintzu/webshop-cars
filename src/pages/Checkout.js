@@ -3,6 +3,7 @@ import { NavLink, useHistory } from "react-router-dom";
 import { ShoppingCartContext } from "../contexts/ShoppingCartContext";
 import { UserContext } from "../contexts/UserContext";
 import { CarContext } from "../contexts/CarContext";
+import NeedToLogIn from "../components/NeedToLogIn";
 import style from '../css/Checkout.module.css';
 
 const Checkout = () => {
@@ -62,6 +63,7 @@ const Checkout = () => {
 
     return (
         <div className={`checkout`}>
+            {loggedInUser ? 
             <div className="container">
                 <h1 className={`mt-0 ${style.mainHeading}`}>Your shopping cart</h1>
                 <div className="row">
@@ -192,6 +194,7 @@ const Checkout = () => {
                     </form>
                 }{/*Conditional form rendering end*/}
             </div>
+            : <NeedToLogIn/>}
         </div>
     );
 }
