@@ -6,8 +6,7 @@
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
     color: #fff;
-    /* text-align: center; */
-    
+    /* text-align: center; */   
 }
 
 .clickable {
@@ -18,17 +17,6 @@
     cursor: pointer;
 }
 
-/* @media screen and (max-width: 425px) {
-    .carouselImg{
-        height: auto;
-    }
-  }
- */
-
-/* .gradient{
-    background: linear-gradient(0deg, rgba(0,0,0,0.8) 25%, rgba(255,255,255,0) 100%);
-} */
-
 .soldOverlay {
     width: 90%;
     position: absolute;
@@ -36,7 +24,7 @@
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
-    z-index: 4000;
+    z-index: 500;
 }
 
 .overlay {
