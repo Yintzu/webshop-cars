@@ -24,7 +24,7 @@ const About = () => {
       <div className="row">
         <div className={`${style.sidebar} col-12 col-sm-3`}>
           <div className="links">
-            <div>
+            <div className={style.sidebarWrapper}>
               <a className={`${style.a}`} href="#section1" id="bar-item" onClick={(e) => scrollHandler(e, ".section1")}>{link1}</a>
 
               <a className={`${style.a}`} href="#section2" id="bar-item" onClick={(e) => scrollHandler(e, ".section2")}>{link2}</a>

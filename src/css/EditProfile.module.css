@@ -11,30 +11,6 @@
     margin: 1.2rem auto 0 auto;
 }
 
-.changeSubmitBtn {
-    margin: 0 5px;
-    background: #2C7CAE !important;
-    color: #ffffff !important;
-    border: none;
-}
-
-.changeSubmitBtn:hover {
-    background: #295276 !important;
-    border: none;
-}
-
-.changeBackBtn {
-    margin: 0 5px;
-    background: #DA6547 !important;
-    color: #ffffff !important;
-    border: none;
-}
-
-.changeBackBtn:hover {
-    background-color:#a04832 !important;
-    border: none;
-}
-
 .changeText {
     font-size: .95rem;
 }

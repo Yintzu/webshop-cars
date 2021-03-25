@@ -8,7 +8,10 @@ html {
   scroll-behavior: smooth !important;
 }
 
-.sidebar{
+.sidebarWrapper {
+  position: fixed;
+}
+.sidebar {
   padding: 1rem;
   background-color: rgb(255, 239, 226);
   margin-bottom: 1rem;
@@ -33,6 +36,7 @@ html {
 
 
 .container-content {
+  position: sticky;
   display: flex;
   max-width: 600px;
   margin: 40px;

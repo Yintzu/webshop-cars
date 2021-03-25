@@ -55,7 +55,7 @@ const LoginModal = (props) => {
                         <input type="password" className={`form-control ${style.input}`} id="loginPassword" onChange={(e)=>removeError(e, setWrongPassword)} required></input>
                         {wrongPassword && <p className={style.errorText}>Wrong password</p>}
                     </div>
-                    <button className={`btn ${style.button}`}>Log in</button>
+                    <button className={`button blue-button ${style.button}`}>Log in</button>
                 </form>
                 <NavLink exact to="/register" className={`${style.a}`} onClick={()=>props.setShowLoginModal(false)}>Click here to register a new account</NavLink>
             </div>

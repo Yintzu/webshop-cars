@@ -23,11 +23,11 @@ const BuyButtons = (props) => {
 
     // Return button JSX depending on car status
     if (inCart) {
-      return <button onClick={() => removeFromCart(car)} className={`${style.btnsWidth} ${style.removeButton}`} id="addRemove">Remove</button>
+      return <button onClick={() => removeFromCart(car)} className={`button orange-button ${style.btnsWidth}`} id="addRemove">Remove</button>
     } else if (bought) {
-      return <button className={`${style.btnsWidth} ${style.disabled} ${style.btnCustom}`} id="addRemove">Sold</button>
+      return <button className={`button ${style.btnsWidth} ${style.btnCustom}`} id="addRemove">Sold</button>
     } else {
-      return <button onClick={() => addToCart(car)} className={`${style.btnsWidth} ${style.addButton}`} id="addRemove">Buy</button>
+      return <button onClick={() => addToCart(car)} className={`button blue-button ${style.btnsWidth}`} id="addRemove">Buy</button>
     }
   }
 
