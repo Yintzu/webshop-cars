@@ -133,7 +133,6 @@
 
 .img {
   height: 100%;
-  /* width: 100%; */
 }
 
 .cartNumber {
@@ -205,7 +204,6 @@
   display: flex;
   align-items: center;
   width: 106px;
-  /* width: 60px; */
   height: 30px;
   justify-content: flex-end;
   margin-left: auto;
@@ -230,7 +228,6 @@
   width: 37%;
   order: 2;
   margin: 0 auto;
-  /* margin-left: .3rem; */
 }
 
 .rrrrlogoText {
@@ -243,7 +240,6 @@
 .acctContact {
   position: relative;
   height: 100%;
-  /* width: 39%; */
 }
 
 .acctContact:hover {
@@ -251,7 +247,6 @@
 }
 
 .acctContactImg {
-  /* width: 100%; */
   height: 100%;
 }
 
@@ -302,7 +297,6 @@
     transform: initial;
     transition: initial;
     font-weight: bold;
-    /* margin-left: 1.3rem; */
     font-size: 1.1rem;
   }
 
@@ -324,9 +318,7 @@
   }
 
   .iconsWrapper {
-    /* Bring back to 70 with member icon */
     min-width: 70px;
-    /* width: 37px; */
     height: 28px;
   }
 }
