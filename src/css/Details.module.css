@@ -73,11 +73,11 @@
 
 .thumbnailWrapper {
     width: 30%;
-    cursor: pointer;
 }
 
 .thumbnailImg {
     width: 75%;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
