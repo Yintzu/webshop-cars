@@ -5,6 +5,9 @@ import { ShoppingCartContext } from '../contexts/ShoppingCartContext';
 import style from '../css/TestPage.module.css';
 import Search from '../components/Search';
 
+// This page was only used in the beginning of the project to test the rendering of the cars and functions from contexts
+// We kept this file here as a reference
+
 const TestPage = () => {
   const { shoppingCartItems } = useContext(ShoppingCartContext);
   const { viewCar, renderList } = useContext(CarContext);
@@ -56,5 +59,4 @@ const TestPage = () => {
    );
 }
  
-
 export default TestPage;

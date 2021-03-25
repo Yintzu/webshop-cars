@@ -8,21 +8,12 @@ html {
   scroll-behavior: smooth !important;
 }
 
-.sidebarWrapper {
-  position: fixed;
-}
 
-@media screen and (min-width: 768px) {
-  .sidebarWrappper {
-  
-  position: relative; 
-}
-
-}
 .sidebar {
   padding: 1rem;
   background-color: rgb(243, 243, 243);
   margin-bottom: 1rem;
+  min-width: 220px;
 }
 
 .sidebar .row {
@@ -42,15 +33,16 @@ html {
   color: rgb(218, 101, 71);
 }
 
-
-.container-content {
-  position: sticky;
+.flexer{
   display: flex;
-  max-width: 600px;
-  margin: 40px;
-  padding: 1rem;
-  color: rgb(112, 112, 112)
+  flex-direction: column;
 }
+
+
+.containerContent {
+padding: 1rem;
+}
+
 .h1 {
   display: flex;
   text-align: left;
@@ -61,8 +53,12 @@ p {
   color: #707070
 }
 
-/* 
+@media only screen and (min-width: 600px){
+  .flexer{
+    flex-direction: initial;
+  }
 
-className = { style.class }
-
-className={`${style.class} ${style.class2}`} */
+  .sidebarWrapper {
+    position: fixed;
+  }
+}

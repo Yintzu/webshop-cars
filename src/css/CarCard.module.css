@@ -19,6 +19,9 @@
 .cardSmallText {
     display: none;
 }
+.cardSmallText::first-letter {
+    text-transform: capitalize;
+}
 .cardTitle {
     color: #2C7CAE!important;
     font-size: .9rem;
