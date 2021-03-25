@@ -68,7 +68,7 @@
 
 .detailThumbnails {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .thumbnailWrapper {
@@ -76,7 +76,8 @@
 }
 
 .thumbnailImg {
-    width: 100%;
+    width: 75%;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {

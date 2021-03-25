@@ -35,12 +35,7 @@
 }
 
 @keyframes popup {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  0% { opacity: 0; } 100% { opacity: 1; }
 }
 
 .hamburgerClickBox {
@@ -133,7 +128,6 @@
 
 .img {
   height: 100%;
-  /* width: 100%; */
 }
 
 .cartNumber {
@@ -160,10 +154,7 @@
 }
 
 @keyframes updateAnimation {
-  50% {
-    -webkit-backface-visibility: hidden;
-    transform: scale(1.2);
-  }
+  50% { -webkit-backface-visibility: hidden; transform: scale(1.2); }
 }
 
 .cartUpdate {
@@ -205,7 +196,6 @@
   display: flex;
   align-items: center;
   width: 106px;
-  /* width: 60px; */
   height: 30px;
   justify-content: flex-end;
   margin-left: auto;
@@ -230,7 +220,6 @@
   width: 37%;
   order: 2;
   margin: 0 auto;
-  /* margin-left: .3rem; */
 }
 
 .rrrrlogoText {
@@ -243,7 +232,6 @@
 .acctContact {
   position: relative;
   height: 100%;
-  /* width: 39%; */
 }
 
 .acctContact:hover {
@@ -251,7 +239,6 @@
 }
 
 .acctContactImg {
-  /* width: 100%; */
   height: 100%;
 }
 
@@ -267,15 +254,11 @@
 }
 
 @media screen and (min-width: 400px) {
-  .leftWrapper {
-    width: 185px;
-  }
+  .leftWrapper { width: 185px; }
 }
 
 @media screen and (min-width: 450px) {
-  .leftWrapper {
-    width: 210px;
-  }
+  .leftWrapper { width: 210px; }
 }
 
 @media screen and (min-width: 500px) {
@@ -302,7 +285,6 @@
     transform: initial;
     transition: initial;
     font-weight: bold;
-    /* margin-left: 1.3rem; */
     font-size: 1.1rem;
   }
 
@@ -324,9 +306,7 @@
   }
 
   .iconsWrapper {
-    /* Bring back to 70 with member icon */
     min-width: 70px;
-    /* width: 37px; */
     height: 28px;
   }
 }

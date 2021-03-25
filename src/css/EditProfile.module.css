@@ -50,16 +50,19 @@
     display: block;
     width: 100%;
     cursor: pointer;
+    transition: box-shadow 0.4s ease;
 }
 
 .selectedThumbnail{
     box-shadow: 0 0 0 4px #2C7CAE;
+    transition: box-shadow 0.4s ease;
 }
 
 .h2{
     color: #2C7CAE;
     text-align: center;
     margin-top: 1.5rem;
+    font-size: 1.8rem;
 }
 
 @media only screen and (min-width: 576px){

@@ -19,6 +19,9 @@
 .cardSmallText {
     display: none;
 }
+.cardSmallText::first-letter {
+    text-transform: capitalize;
+}
 .cardTitle {
     color: #2C7CAE!important;
     font-size: .9rem;
@@ -115,9 +118,6 @@
     .cardTitle {
         font-size: 1.07rem;
     }
-    /* .btnsWidth {
-        padding: .4rem 0;
-    } */
     .largePrice {
         font-size: 1.1rem;
     }

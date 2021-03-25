@@ -9,7 +9,6 @@ const PopupCart = () => {
   const { viewCar, checkCarDiscount, formatSum } = useContext(CarContext);
   const history = useHistory();
 
-
   return (
     <div className={style.popupCartWrapper}>
       <div className={style.cartTitle}>
