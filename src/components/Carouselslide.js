@@ -1,10 +1,10 @@
 import React from 'react'
 import { useHistory } from "react-router-dom";
 import { CarContext } from "../contexts/CarContext"
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import style from "../css/DiscountCarousel.module.css";
 
-const Carouselslide = (props) => {
+const Carouselslide = () => {
     const history = useHistory();
     const { discountedCars, checkCarDiscount, boughtCheck } = useContext(CarContext)
 

@@ -35,12 +35,7 @@
 }
 
 @keyframes popup {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  0% { opacity: 0; } 100% { opacity: 1; }
 }
 
 .hamburgerClickBox {
@@ -159,10 +154,7 @@
 }
 
 @keyframes updateAnimation {
-  50% {
-    -webkit-backface-visibility: hidden;
-    transform: scale(1.2);
-  }
+  50% { -webkit-backface-visibility: hidden; transform: scale(1.2); }
 }
 
 .cartUpdate {
@@ -262,15 +254,11 @@
 }
 
 @media screen and (min-width: 400px) {
-  .leftWrapper {
-    width: 185px;
-  }
+  .leftWrapper { width: 185px; }
 }
 
 @media screen and (min-width: 450px) {
-  .leftWrapper {
-    width: 210px;
-  }
+  .leftWrapper { width: 210px; }
 }
 
 @media screen and (min-width: 500px) {
