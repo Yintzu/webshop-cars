@@ -10,12 +10,11 @@ const Navbar = () => {
     // Importing cart from ShoppingCartContext
     // Using its length in render of cart icon
     const { shoppingCartItems: cart } = useContext(ShoppingCartContext);
-    const {loggedInUser} = useContext(UserContext);
+    const {loggedInUser, showLoginModal, setShowLoginModal} = useContext(UserContext);
 
     const [onCartUpdate, setOnCartUpdate] = useState(false);
     const [cartVisible, setCartVisible] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [showLoginModal, setShowLoginModal] = useState(false);
     const history = useHistory();
 
     // Handle onMouseLeave event
