@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
 .saleSign{
     width: 80px;
     position: absolute;
@@ -20,7 +22,11 @@
     font-size: 11.37px;
     fill: #fff;
     /* font-family: CooperBlackStd, Cooper Std; */
+    font-family: 'Lilita One', cursive;
     text-shadow: 2px 2px black;
+}
+.cls2 tspan {
+    font-family: 'Lilita One', cursive;
 }
 
 .stp1 {

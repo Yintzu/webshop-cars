@@ -9,13 +9,12 @@ import PopupCart from './PopupCart';
 const Navbar = () => {
     // Importing cart from ShoppingCartContext
     // Using its length in render of cart icon
-    const { shoppingCartItems: cart, createTimeStamp, cartTotal, formatSum } = useContext(ShoppingCartContext);
-    const {loggedInUser} = useContext(UserContext);
+    const { shoppingCartItems: cart } = useContext(ShoppingCartContext);
+    const {loggedInUser, showLoginModal, setShowLoginModal} = useContext(UserContext);
 
     const [onCartUpdate, setOnCartUpdate] = useState(false);
     const [cartVisible, setCartVisible] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [showLoginModal, setShowLoginModal] = useState(false);
     const history = useHistory();
 
     // Handle onMouseLeave event
@@ -46,7 +45,7 @@ const Navbar = () => {
 
     // Handle cart visibility on click of cart icon
     // Will show cart on click on touch screen
-    // Will go to checkout on click of pointer is not coarse
+    // Will go to checkout on click if pointer is not coarse
     const cartClickHandler = () => {
         if (!matchMedia('(pointer:coarse)').matches) {
             history.push('/checkout');
@@ -58,6 +57,7 @@ const Navbar = () => {
         }
     }
 
+    // Open login modal if not logged in already
     const loginClickHandler = () => {
         if (!loggedInUser){
             setShowLoginModal(true);
@@ -66,19 +66,10 @@ const Navbar = () => {
         }
     }
 
+    // Set mobile menu to opposite when clicked, open and close
     const handleHamburgerClick = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     }
-
-    // useEffect(() => {
-    //     if (mobileMenuOpen) {
-    //         let x = window.scrollX;
-    //         let y = window.scrollY;
-    //         window.onscroll = function () { window.scrollTo(x, y); };
-    //     } else {
-    //         window.onscroll = function () { };
-    //     }
-    // }, [mobileMenuOpen])
 
     // Hide cart if route changes
     useEffect(() => {
@@ -112,7 +103,6 @@ const Navbar = () => {
                 <div className={`${style.navLinks} ${mobileMenuOpen && style.slideIn}`} onClick={() => setMobileMenuOpen(false)}>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/">Cars</NavLink>
                     <NavLink className={style.links} activeClassName={style.active} exact to="/about">About</NavLink>
-                    {/* <NavLink className={style.links} activeClassName={style.active} exact to="/testpage">Support</NavLink> */}
                 </div>
                 <div className={style.iconsWrapper}>
                     <div onMouseOver={mouseOverHandler} onMouseLeave={mouseLeaveHandler} className={`${style.cartIconWrapper} ${cart.length && style.cartMoveDown}`} onClick={cartClickHandler}>

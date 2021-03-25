@@ -7,7 +7,8 @@ import {
 export const CarContext = createContext()
 
 const CarContextProvider = (props) => {
-    const [cars, setCars]= useState([])
+    const [cars, setCars] = useState([])
+    // Checks localStorage to see if there are any bought cars there
     const [boughtCars, setBoughtCars] = useState(
         () => {
             const boughtCarsLocalData = localStorage.getItem('boughtCars');
@@ -65,23 +66,25 @@ const CarContextProvider = (props) => {
           }
     ]);
 
+    // Gets the json-file with cars and creates an array of objects with map
+    // Adds img-src to object
     const createCarList = () => {
-        const carlist=require("../json/cars.json")
-        const carlists=carlist.map(car=>{ 
+        const carlist = require("../json/cars.json")
+        const carlists = carlist.map(car=>{ 
             return {
                 ...car,
                 carImg:`../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`,
-                carDetailImgs: ['chevy-front', 'chevy-interior']
             }
         })
         setCars(carlists)
     }
 
-    // Create the list of cars with img-link on start of app
+    // Create the list of cars on start of app
     useEffect(()=>{
         createCarList();
     }, [])
 
+    // Update local storage when items are added to boughtCars
     useEffect(() => {
         localStorage.setItem('boughtCars', JSON.stringify(boughtCars))
       }, [boughtCars]);
