@@ -6,6 +6,7 @@ export const ShoppingCartContext = createContext();
 const ShoppingCartProvider = (props) => {
     const { discountedCars } = useContext(CarContext);
 
+    // Check local storage to see if there are any cars in the cart since before
     const [shoppingCartItems, setShoppingCartItems] = useState(
         () => {
             const localData = localStorage.getItem('shoppingCartItems');
@@ -26,17 +27,10 @@ const ShoppingCartProvider = (props) => {
         if (isDiscounted) {
             newItem.price = isDiscounted.discountedprice();
         }
-
-        if (!shoppingCartItems.includes(newItem)) {
-            setShoppingCartItems([newItem, ...shoppingCartItems]);
-        } else {
-            alert('this item is already in your cart')
-        }
+        setShoppingCartItems([newItem, ...shoppingCartItems]);
     }
 
-    // Will connect to "remove"-buttons
-    // Removes the clicked item using filter
-    // Might want to use the vin-number attached to each car to compare later
+    // Removes the clicked item using filter, comparing vin-numbers
     const removeFromCart = (itemToRemove) => {
         setShoppingCartItems(shoppingCartItems.filter(item => item.vin !== itemToRemove.vin));
     }
@@ -69,7 +63,6 @@ const ShoppingCartProvider = (props) => {
         removeFromCart,
         removeAllFromCart,
         createTimeStamp,
-        // formatSum,
         cartTotal,
     }
 
