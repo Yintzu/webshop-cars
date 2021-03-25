@@ -14,9 +14,11 @@ const FilterSearchContextProvider = (props) => {
     const { cars } = useContext(CarContext);
     const { searched, setRenderList } = useContext(SearchContext);
 
+    // States for selected make and model values in select-lists
     const [make, setMake] = useState('all');
     const [model, setModel] = useState('all');
   
+    // States for arrays of makes and models displayed in select-lists
     const [makeArray, setMakeArray] = useState([]);
     const [modelArray, setModelArray] = useState([]);
 
