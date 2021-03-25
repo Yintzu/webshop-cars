@@ -1,20 +1,11 @@
 .h1{
     margin-bottom: 1.8rem;
-    font-weight: 500;
 }
 
 .registerButton{
     display: block;
-    color: white !important;
-    background: #2C7CAE !important;
-    border: none;
     margin: 1.8rem auto;
     min-width: 120px;
-}
-
-.registerButton:hover {
-    background-color:#295276 !important;
-   
 }
 
 .registerContainer{
@@ -23,6 +14,7 @@
     border-radius: 5px;
     box-shadow: 2px 2px 2px #d2d2d2;
     padding: 1.5rem 1.5rem;
+    width: 95%;
 }
 
 .registerContainer input {
@@ -50,8 +42,16 @@
     margin-bottom: 1.2rem;
 }
 
+.marginFix{
+    margin-top: -10px;
+}
+
 @media only screen and (min-width: 576px){
     .registerContainer{
         width: 48%;
+    }
+
+    .marginFix{
+        margin: 0;
     }
 }

@@ -15,6 +15,7 @@ const SearchContextProvider = (props) => {
     const [searched, setSearched] = useState(false);
     const { cars } = useContext(CarContext);
     
+    // Set list that will be rendered on home page when cars-array is created
     useEffect(() => {
         setRenderList(cars);
     }, [cars]);
@@ -49,6 +50,8 @@ const SearchContextProvider = (props) => {
             }
         });
 
+        // Check if the array has length, if not set renderList to null
+        // Will display message on home page (no result)
         if (freeSearchResults[1].length !== 0) {
             setRenderList(freeSearchResults[1]);
         } else if (inputValue !== '' && freeSearchResults[1].length === 0) {

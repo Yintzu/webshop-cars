@@ -1,0 +1,23 @@
+.noPurchases {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.noPurchases div {
+  margin: 2rem 1rem;
+  max-width: 400px;
+}
+.noPurchases img {
+    max-width: 80px;
+    margin-bottom: .5rem;
+}
+
+.link{
+  text-decoration: none;
+  margin-top: 1.5rem;
+  color: #2C7CAE !important;
+  cursor: pointer;
+  text-align: center;
+}

@@ -7,7 +7,6 @@ import Confirmation from './pages/Confirmation';
 import Profile from './pages/Profile';
 import Details from './pages/Details';
 import Footer from './components/Footer';
-import TestPage from './pages/TestPage';
 import ShoppingCartContext from "./contexts/ShoppingCartContext";
 import CarContextProvider from './contexts/CarContext';
 import UserContext from './contexts/UserContext';
@@ -16,8 +15,6 @@ import FilterSearchContext from './contexts/FilterSearchContext';
 import ScrollToTop from './components/ScrollToTop';
 import Hero from './components/Hero';
 import CreateAccount from './pages/CreateAccount';
-import UserPage from './pages/UserPage';
-import EditProfile from './components/EditProfile';
 
 function App() {
   return (
@@ -40,7 +37,6 @@ function App() {
                     <Route exact path="/profile" component={Profile} />
                     <Route exact path="/details/:id" component={Details} />
                     <Route exact path="/register" component={CreateAccount}/>
-                    <Route exact path="/userpage" component={UserPage} />
                   </div>
                   <Footer />
                 </BrowserRouter>

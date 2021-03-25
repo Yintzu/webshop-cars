@@ -7,7 +7,8 @@ import {
 export const CarContext = createContext()
 
 const CarContextProvider = (props) => {
-    const [cars, setCars]= useState([])
+    const [cars, setCars] = useState([])
+    // Checks localStorage to see if there are any bought cars there
     const [boughtCars, setBoughtCars] = useState(
         () => {
             const boughtCarsLocalData = localStorage.getItem('boughtCars');
@@ -24,7 +25,7 @@ const CarContextProvider = (props) => {
             "descShort": "congue risus semper porta volutpat",
             "descLong": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
             "price": 232476,
-            "discount":0.8,
+            "discount":0.6,
             "discountedprice":function () {
                 return Math.round(this.price*this.discount)
             },
@@ -40,7 +41,7 @@ const CarContextProvider = (props) => {
             "descShort": "in lectus pellentesque at nulla suspendisse potenti cras in purus eu",
             "descLong": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
             "price": 554963,
-            "discount":0.7,
+            "discount":0.6,
             "discountedprice":function () {
                 return Math.round(this.price*this.discount)
             },
@@ -56,7 +57,7 @@ const CarContextProvider = (props) => {
             "descShort": "ultrices enim lorem ipsum dolor",
             "descLong": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
             "price": 509536,
-            "discount":0.3,
+            "discount":0.6,
             "discountedprice":function () {
                 return Math.round(this.price*this.discount)
             },
@@ -65,26 +66,25 @@ const CarContextProvider = (props) => {
           }
     ]);
 
-    console.log(discountedCars)
-
+    // Gets the json-file with cars and creates an array of objects with map
+    // Adds img-src to object
     const createCarList = () => {
-        const carlist=require("../json/cars.json")
-        const carlists=carlist.map(car=>{ 
+        const carlist = require("../json/cars.json")
+        const carlists = carlist.map(car=>{ 
             return {
                 ...car,
                 carImg:`../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`,
-                carDetailImgs: ['chevy-front', 'chevy-interior']
             }
         })
-        // console.log(carlists);
         setCars(carlists)
     }
 
-    // Create the list of cars with img-link on start of app
+    // Create the list of cars on start of app
     useEffect(()=>{
         createCarList();
     }, [])
 
+    // Update local storage when items are added to boughtCars
     useEffect(() => {
         localStorage.setItem('boughtCars', JSON.stringify(boughtCars))
       }, [boughtCars]);
@@ -98,9 +98,19 @@ const CarContextProvider = (props) => {
           }
         })
         if (bought){return true} else {return false}
-      }
+    }
+
+    // Formats sum into $123.123
+    const formatSum = (sum) => `$${new Intl.NumberFormat('de-DK', { currency: 'EUR', style: 'decimal', minimumFractionDigits: 0 }).format(Math.round(sum / 10))}`;
+
+    // Check if car is in discount array and apply price and red color
+    const checkCarDiscount = (car) => {
+      let discountedCar = discountedCars.find(discountCar => discountCar.vin === car.vin);
     
-    /* Direction to  details page */
+      return discountedCar ? <span style={{color: 'red'}}>{formatSum(discountedCar.discountedprice())}</span> : formatSum(car.price);
+    }
+    
+    // Direction to details page
     const viewCar = (clickedCar, history) => {
         history.push(`/details/${clickedCar.vin}`)
     }
@@ -112,6 +122,8 @@ const CarContextProvider = (props) => {
       setBoughtCars,
       boughtCheck,
       discountedCars,
+      checkCarDiscount,
+      formatSum,
     }
 
     return (

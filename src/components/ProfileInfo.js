@@ -19,8 +19,6 @@ const ProfileInfo = () => {
   }
 
   useEffect(() => {
-    console.log("logged in user:");
-    console.log(loggedInUser);
   }, [loggedInUser])
 
 
@@ -29,23 +27,20 @@ const ProfileInfo = () => {
     <div>
       
       <div className={styles.profileWrapper}>
-        <img src={labrador_profile} alt="Profile picture" className={styles.profileImage} />
+        <img src={`./assets/profilepics/Profile${loggedInUser.pic}`} alt="Profile picture" className={styles.profileImage} />
         <h3 className={styles.profileHeading}>{loggedInUser.fullName}</h3>
         {/* <h4 className={styles.profileSubHeading}>City, Country</h4> */}
         <div className={styles.profileTextBox}>
-          <p className={styles.profileText}>Description Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          
           {/* <p className={styles.profileText}>Age: 35</p> */}
           <p className={styles.profileText}>Telephone: {loggedInUser.phoneNumber}</p>
           <p className={styles.profileText}>E-mail: {loggedInUser.email}</p>
-          <button className={`
-          ${styles.profileButton}
-           btn`} onClick={() => setIsClicked(!isClicked)}>
-                 Edit profile
-               </button>
-          <button className={`
-               ${styles.logOutButton}
-               btn
-               `} onClick={logOutHandler}>Log out</button>
+          <button className="button blue-button mx-1" onClick={() => setIsClicked(!isClicked)}>
+            Edit profile
+          </button>
+          <button className="button orange-button mx-1" onClick={logOutHandler}>
+            Log out
+          </button>
         </div>
 
       </div>

@@ -1,0 +1,72 @@
+.changeForm {
+    background: #f4f4f4;
+    box-shadow: 2px 2px 2px #d2d2d2;
+    padding: 1.2rem 5px 1.5rem 5px;
+    margin: 5px;
+}
+
+.changeButtons {
+    display: flex;
+    justify-content: center;
+    margin: 1.2rem auto 0 auto;
+}
+
+.changeText {
+    font-size: .95rem;
+}
+
+.inputDiv{
+    position: relative;
+}
+
+.errorBorder{
+    box-shadow: 0 0 0 3px rgb(255, 122, 122);
+}
+
+.errorText{
+    color: red !important;
+    position: absolute;
+    top: 62px;
+    font-size: 0.8rem;
+}
+
+.changeHeading {
+    margin-top: 20px;
+}
+
+.pictureGrid{
+    margin: 1rem auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.gridItem{
+    padding: 0;
+}
+
+.thumbnail{
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    transition: box-shadow 0.4s ease;
+}
+
+.selectedThumbnail{
+    box-shadow: 0 0 0 4px #2C7CAE;
+    transition: box-shadow 0.4s ease;
+}
+
+.h2{
+    color: #2C7CAE;
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 1.8rem;
+}
+
+@media only screen and (min-width: 576px){
+    .changeHeading {
+        margin-top: 0px;
+    }
+}

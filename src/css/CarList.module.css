@@ -1,17 +1,10 @@
-
 .noResult {
     text-align: center;
     font-size: 1.2rem;
     margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-.noResult .clearSearch {
-    font-weight: 500;
-    color: white;
-    background-color: #2C7CAE;
-    transform: translateY(-50%);
-    margin: 2rem 1rem 0;
-}
 .noResult img {
     margin-bottom: 1rem;
     width: 80px;

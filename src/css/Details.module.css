@@ -65,11 +65,27 @@
     margin-right: 2rem;
 }
 
+
+.detailThumbnails {
+    display: flex;
+    justify-content: center;
+}
+
+.thumbnailWrapper {
+    width: 30%;
+}
+
+.thumbnailImg {
+    width: 75%;
+    cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
     .imageWrapper {
         margin: 1rem 0rem;
         margin-right: .5rem;
     }
+
     .buy {
         margin-right: 0;
     }

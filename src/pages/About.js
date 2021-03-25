@@ -21,21 +21,19 @@ const About = () => {
 
   return (
     <div className="container-page">
-      <div className="row">
-        <div className={`${style.sidebar} col-12 col-sm-3`}>
-          <div className="links">
-            <div>
+      <div className={style.flexer}>
+        <div className={`${style.sidebar}`}>
+            <div className={style.sidebarWrapper}>
               <a className={`${style.a}`} href="#section1" id="bar-item" onClick={(e) => scrollHandler(e, ".section1")}>{link1}</a>
 
               <a className={`${style.a}`} href="#section2" id="bar-item" onClick={(e) => scrollHandler(e, ".section2")}>{link2}</a>
 
               <a className={`${style.a}`} href="#section3" id="bar-item" onClick={(e) => scrollHandler(e, ".section3")}>{link3}</a>
             </div>
-          </div>
         </div>
 
 
-        <div className="container-content col-12 col-sm-9">
+        <div className={style.containerContent}>
           <div>
             <h1 className={`section ${style.h1}`}>{title}</h1>
           </div>
