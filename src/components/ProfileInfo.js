@@ -19,8 +19,6 @@ const ProfileInfo = () => {
   }
 
   useEffect(() => {
-    console.log("logged in user:");
-    console.log(loggedInUser);
   }, [loggedInUser])
 
 
