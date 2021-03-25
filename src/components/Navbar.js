@@ -11,7 +11,6 @@ const Navbar = () => {
     // Using its length in render of cart icon
     const { shoppingCartItems: cart } = useContext(ShoppingCartContext);
     const {loggedInUser, showLoginModal, setShowLoginModal} = useContext(UserContext);
-
     const [onCartUpdate, setOnCartUpdate] = useState(false);
     const [cartVisible, setCartVisible] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
