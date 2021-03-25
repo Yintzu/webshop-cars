@@ -6,6 +6,7 @@ export const ShoppingCartContext = createContext();
 const ShoppingCartProvider = (props) => {
     const { discountedCars } = useContext(CarContext);
 
+    // Check local storage to see if there are any cars in the cart since before
     const [shoppingCartItems, setShoppingCartItems] = useState(
         () => {
             const localData = localStorage.getItem('shoppingCartItems');
@@ -19,28 +20,22 @@ const ShoppingCartProvider = (props) => {
         setCartTotal(shoppingCartItems.reduce((sum, curr) => sum + curr.price, 0));
     }, [shoppingCartItems]);
 
-    // Set the cart array by creating a new array, adding the new item at the front of the array, then spreading out the old array after.
     // Check if car is discounted and add new price if it is
+    // Set the cart array by creating a new array, adding the new item at the front of the array, then spreading out the old array after.
     const addToCart = (newItem) => {
         let isDiscounted = discountedCars.find(discountedCar => discountedCar.vin === newItem.vin);
         if (isDiscounted) {
             newItem.price = isDiscounted.discountedprice();
         }
-
-        if (!shoppingCartItems.includes(newItem)) {
-            setShoppingCartItems([newItem, ...shoppingCartItems]);
-        } else {
-            alert('this item is already in your cart')
-        }
+        setShoppingCartItems([newItem, ...shoppingCartItems]);
     }
 
-    // Will connect to "remove"-buttons
-    // Removes the clicked item using filter
-    // Might want to use the vin-number attached to each car to compare later
+    // Removes the clicked item using filter, comparing vin-numbers
     const removeFromCart = (itemToRemove) => {
         setShoppingCartItems(shoppingCartItems.filter(item => item.vin !== itemToRemove.vin));
     }
 
+    // Set the shopping cart to an empty array
     const removeAllFromCart = () => {
         setShoppingCartItems([]);
     }
@@ -69,7 +64,6 @@ const ShoppingCartProvider = (props) => {
         removeFromCart,
         removeAllFromCart,
         createTimeStamp,
-        // formatSum,
         cartTotal,
     }
 

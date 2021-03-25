@@ -14,8 +14,8 @@ const FilterSearchContextProvider = (props) => {
     const [modelArray, setModelArray] = useState([]);
 
     const selectLists = [
-        {listName: "make", list: makeArray, value: make}, 
-        {listName: "model", list: modelArray, value: model}
+        {name: "make", list: makeArray, value: make}, 
+        {name: "model", list: modelArray, value: model}
     ];
 
     // Function to create lists of makes and models, used for rendering out options in selects in the JSX in Search.js
@@ -61,7 +61,7 @@ const FilterSearchContextProvider = (props) => {
         }
     }
 
-    /*  Filter sliders */
+    // Filter sliders
     const [minPrice, setMinPrice] = useState(0)
     const [maxPrice, setMaxPrice] = useState(1000000)
     const [minMiles, setMinMiles] = useState(0)
