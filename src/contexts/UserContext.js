@@ -42,13 +42,7 @@ const UserContextProvider = (props) => {
     if (loggedInUser) {
       localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser.email))
     }
-  }, [
-    () => {
-      if (loggedInUser.email) {
-        return loggedInUser.email
-      } else return loggedInUser
-    }
-  ]);
+  }, [loggedInUser?.email]);
 
   const values = {
     boughtCars,
