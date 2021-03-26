@@ -33,29 +33,24 @@ hr {
 }
 
 .confirmationBoxLeft {
-    /* background-color: #f4f4f4 !important; */
     padding: 30px 30px 30px 30px;
-    margin-top: 20px;
+    margin-top: 10px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     position: relative;
-    /* box-shadow: 2px 2px 2px #d2d2d2; */
     border-top: solid rgb(227, 227, 227) 1px !important;
     border-left: solid rgb(227, 227, 227) 1px !important;
     border-bottom: solid rgb(227, 227, 227) 1px !important;
 }
 
 .confirmationBoxRight {
-    /* background-color: #f4f4f4 !important; */
     padding: 30px 30px 30px 21px;
     margin-top: 20px;
     position: relative;
-    /* box-shadow: 2px 2px 2px #d2d2d2; */
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border-top: solid rgb(227, 227, 227) 1px !important;
     border-right: solid rgb(227, 227, 227) 1px !important;
-    /* border-left: solid rgb(227, 227, 227) 1px !important; */
     border-bottom: solid rgb(227, 227, 227) 1px !important;
 }
 
@@ -148,26 +143,22 @@ hr {
         margin-top: 0 !important;
         padding-top: 0 !important;
     }
-
-    /* body {
-        padding-top: 105px;
-      } */
     
     .mainHeading {
         font-size: 1.5rem;
     }  
 
     .confirmationBoxLeft {
-        background-color: #f4f4f4 !important;
-        border-radius: none;
+        border-radius: 5px;
         padding-bottom: 0;  
+        border-right: solid rgb(227, 227, 227) 1px !important;
     }
     
     .confirmationBoxRight {
-        background-color: #f4f4f4 !important;
-        border-radius: none;
-        padding-top: 0;
-        margin-top: 0 !important;
+        border-radius: 5px;
+        padding-top: 20px;
+        margin-top: 0px !important;
+        border-left: solid rgb(227, 227, 227) 1px !important;
     }
 
     .containerText {
@@ -198,16 +189,15 @@ hr {
 @media only screen and (min-width: 576px) and (max-width: 767px) {
 
     .confirmationBoxLeft {
-        background-color: #f4f4f4 !important;
         padding-bottom: 0;
         border-radius: none;
     }
     
     .confirmationBoxRight {
-        background-color: #f4f4f4 !important;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
         position: relative !important;
+        margin-top: 10px !important;
     }
 
     .containerText {
@@ -243,5 +233,6 @@ hr {
     .confirmationBoxRight {
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
+        margin-top: 10px !important;
     }
 }
