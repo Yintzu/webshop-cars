@@ -1,7 +1,3 @@
-/* .addButton, .removeButton, .btnCustom {
-  font-weight: 500;
-}
- */
 .addBtn:focus, .addBtn:active,
 .removeButton:focus, .removeButton:active,
 .btnCustom:focus, .btnCustom:active {
@@ -9,43 +5,17 @@
     outline: none !important;
 }
 
-/* .addButton {
-  background: #2C7CAE !important;
-  color: #ffffff !important;
-  border: 1px solid #2C7CAE;
-}
-
-.addButton:hover {
-  background: #295276 !important;
-  color: #ffffff !important;
-  border: 1px solid #295276;
-}
-
-.removeButton {
-  background: #DA6547 !important;
-  color: #ffffff !important;
-  border: 1px solid #DA6547;
-}
-
-.removeButton:hover {
-  background: #a04832 !important;
-  color: #ffffff !important;
-  border: 1px solid #a04832;
-}
- */
 .btnCustom {
   background-color: #878f96;
   border: 1px solid #878f96;
   pointer-events: none;
   cursor: none;
-/*   color: white; */
 }
 
 .btnsWidth {
   height: 100%;
   width: 100%;
   padding: .2rem 0;
-/*   border-radius: 5px; */
 }
 
 @media screen and (min-width: 355px) {

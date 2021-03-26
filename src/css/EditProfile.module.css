@@ -50,10 +50,12 @@
     display: block;
     width: 100%;
     cursor: pointer;
+    transition: box-shadow 0.4s ease;
 }
 
 .selectedThumbnail{
     box-shadow: 0 0 0 4px #2C7CAE;
+    transition: box-shadow 0.4s ease;
 }
 
 .h2{
