@@ -1,0 +1,11 @@
+.containerWrapper {
+    padding: 0;
+    display: flex;
+}
+
+.profileCarHeading {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+    text-align: center;
+}

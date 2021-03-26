@@ -1,0 +1,341 @@
+.navContainer {
+  top: 0;
+  width: 100%;
+  background-color: #f4f4f4 !important;
+  position: fixed;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.200);
+  z-index: 3000;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #f4f4f4 !important;
+  display: flex;
+  max-height: 65px;
+  padding: .9rem 1rem;
+  align-items: center;
+}
+
+.cartIcon, .logo, .links {
+  color: #333;
+  text-decoration: none;
+}
+
+.cartIcon:hover, .logo:hover, .links:hover {
+  color: #111;
+}
+
+.popupWrapper {
+  animation-name: popup;
+  animation-duration: .2s; 
+}
+
+@keyframes popup {
+  0% { opacity: 0; } 100% { opacity: 1; }
+}
+
+.hamburgerClickBox {
+  position: absolute;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  z-index: 10;
+}
+
+.hamburgerWrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.hamburgerLine,
+.hamburgerLine::before,
+.hamburgerLine::after {
+  cursor: pointer;
+  position: absolute;
+  height: 3px;
+  width: 25px;
+  background-color: #2C7CAE;
+  transition: .4s;
+}
+
+.hamburgerLine::before {
+  content: '';
+  top: -7px;
+}
+
+.hamburgerLine::after {
+  content: '';
+  top: 7px;
+}
+
+.hamburgerLine.openBurger {
+  width: 0;
+}
+
+.hamburgerLine.openBurger::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.hamburgerLine.openBurger::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.links {
+  margin: 1rem 0.5rem;
+  transform: translateY(-20px);
+  position: relative;
+  top: -15px;
+  color: #707070 !important;
+}
+
+.links:hover {
+  color: #DA6547 !important;
+}
+
+.navLinks {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  left: -110%;
+  top: 73px;
+  width: 100vw;
+  height: 90vh;
+  margin-left: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+  z-index: 2000;
+  transition: .5s;
+  background-color: #f4f4f4 !important;
+}
+
+.navLinks.slideIn {
+  left: 0;
+  opacity: 1;
+}
+
+.active {
+  color: #DA6547 !important;
+}
+
+.img {
+  height: 100%;
+}
+
+.cartNumber {
+  color: #eee;
+  background-color: #337aa7;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border: 1px solid #f4f4f4;
+  border-radius: 50%;
+  left: -6px;
+  top: -6px;
+  width: 19px;
+  height: 19px;
+}
+
+.cartNumSpan {
+  position: absolute;
+  height: 100%;
+  font-size: .7rem;
+  line-height: 1rem;
+}
+
+@keyframes updateAnimation {
+  50% { -webkit-backface-visibility: hidden; transform: scale(1.2); }
+}
+
+.cartUpdate {
+  animation-name: updateAnimation;
+  animation-duration: .4s;
+}
+
+.leftWrapper {
+  position: relative;
+  cursor: pointer;
+  left: 51%;
+  transform: translateX(-50%);
+  width: 170px;
+  display: flex;
+  align-items: center;
+}
+
+.infoBar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #2C7CAE;
+  height: 15px;
+  color: #E9f2f4 !important;
+}
+
+.cartShadow {
+  position: absolute;
+  pointer-events: none;
+  top: 100px;
+  left: -1rem;
+  width: 120%;
+  height: 40vh;
+  opacity: .5;
+  background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0, 0, 0, 0.295) 50%);
+}
+
+.iconsWrapper {
+  display: flex;
+  align-items: center;
+  width: 106px;
+  height: 30px;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: -4px;
+}
+
+.cartIconWrapper {
+  position: relative;
+  width: 47%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.cartIcon:active {
+  transform: scale(1.05);
+}
+
+.rrrrlogoImg {
+  position: relative;
+  display: none;
+  height: 100%;
+  width: 37%;
+  order: 2;
+  margin: 0 auto;
+}
+
+.rrrrlogoText {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: 63%;
+}
+
+.acctContact {
+  position: relative;
+  height: 100%;
+}
+
+.acctContact:hover {
+  cursor: pointer;
+}
+
+.acctContactImg {
+  height: 100%;
+}
+
+.loginSpan{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2C7CAE;
+}
+
+.loginSpan:hover{
+  color: #DA6547;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 400px) {
+  .leftWrapper { width: 185px; }
+}
+
+@media screen and (min-width: 450px) {
+  .leftWrapper { width: 210px; }
+}
+
+@media screen and (min-width: 500px) {
+  .navbar {
+    max-height: initial;
+    padding: 1.1rem 1rem;
+  }
+  
+  .links {
+    top: 0;
+  }
+
+  .cartShadow {
+    display: none;
+  }
+
+  .navLinks {
+    order: -1;
+    display:initial;
+    background-color: initial;
+    height: initial;
+    width: initial;
+    position: initial;
+    transform: initial;
+    transition: initial;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .rrrrlogoImg{
+    display: inline-block;
+  }
+
+  .leftWrapper {
+    position: absolute;
+    width: 38%;
+  }
+  
+  .hamburgerWrapper {
+    display: none;
+  }
+
+  .hamburgerClickBox {
+    display: none;
+  }
+
+  .iconsWrapper {
+    min-width: 70px;
+    height: 28px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .navbar {
+    padding: 1.1rem .5rem;
+  }
+
+  .navLinks {
+    font-size: 1.2rem;
+  }
+
+  .leftWrapper {
+    width: 270px;
+  }
+
+  .iconsWrapper{
+    margin-right: 5px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .navbar {
+    padding: 1.1rem .2rem;
+  }
+
+  .iconsWrapper{
+    margin-right: 8px;
+  }
+}
+

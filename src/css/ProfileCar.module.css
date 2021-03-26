@@ -1,0 +1,148 @@
+.orderWrapper {
+    background-color: #ffffff;
+    padding: 10px 10px 10px 20px;
+    border-radius: 5px;
+    border: solid rgb(227, 227, 227) 1px !important;
+    box-shadow: 2px 2px 2px #eeeeee;
+    max-width: 450px;
+    margin-top: 20px;
+  }
+  
+  .orderInfo {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-right: 10px;
+    max-height: 20px;
+  }
+
+  .orderInfo :first-child {
+      width: 50%;
+  }
+
+  .orderInfo > * {
+    flex: 1 1 1;
+    justify-content: flex-end;
+}
+  
+  .orderTotal {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    border-top: 1px solid #dbdbdb;
+    margin-top: 10px;
+  }
+  
+  .orderTotalText {
+    margin-right: 10px;
+  }
+  
+  .flexWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+  }
+
+  .flexWrapper :first-child {
+    width: 100px;
+    margin: 5px 10px 0 0;
+  }
+
+  .flexWrapper > * {
+      flex: 1 1 1;
+  }
+  
+  .flexItem {
+    padding: 10px 10px 10px 0;
+    font-size: 0.9rem;
+  }
+  
+  .carHeading {
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  
+  .carSubHeading {
+    color: #2C7CAE !important;
+    font-size: .9rem;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  
+  .carImage {
+    width: 30%;
+    border-radius: 5px;  
+  }
+  
+  .carText {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+  
+  .orderTotalText {
+    margin-top: 5px;
+    font-size: 0.9rem;
+  }
+  
+  @media only screen and (min-width: 320px) and (max-width: 465px) {
+      .orderWrapper {
+        padding: 10px 10px 10px 20px;
+        min-width: 280px;
+        margin-left: 0px;
+      }
+  
+      .carHeading {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        padding-top: 20px;
+        font-size: 1.5rem;
+    }
+      
+      .flexWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 5px 0;
+      }
+    
+      .flexWrapper :first-child {
+        width: 50px;
+        margin: 5px 10px 0 0;
+      }
+    
+      .flexWrapper > * {
+        flex: 1 1 1;
+        justify-content: flex-start;
+      }
+      
+      .flexItem {
+        padding: 10px 10px 10px 0;
+        font-size: 0.8rem;
+        color: #303030;
+         
+      }
+
+      .orderInfo {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 10px;
+        max-height: 20px;
+        font-size: .8rem;
+      }
+    
+      .orderInfo :first-child {
+          width: 40%;
+      }
+
+      .orderInfo > * {
+        flex: 1 1 1;
+    }
+
+      .orderTotalText {
+        margin-top: 5px;
+        font-size: 0.7rem;
+      }
+  }

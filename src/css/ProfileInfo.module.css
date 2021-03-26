@@ -1,0 +1,93 @@
+.containerWrapper {
+    padding-top: 0px;
+    margin-left: 0;
+}
+
+.profileWrapper {
+    margin-top: 10px;
+    padding: 0;
+    text-align: center;
+    display: block;
+    max-width: 450px;
+}
+
+.profileImage {
+    width: 40%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 50%;
+    border: 5px solid #2C7CAE;
+    filter: drop-shadow(0 0 0.3rem #636363);
+    margin-top: 15px;
+}
+
+.profileHeading {
+    color: #2C7CAE;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.profileSubHeading {
+    color: #2C7CAE;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+
+.profileTextBox {
+    width: 220px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.profileText {
+    color: #303030;
+    font-size: .95rem;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px !important;
+}
+/* 
+.profileButton {
+    position: relative;
+    background: #2C7CAE !important;
+    color: #ffffff !important;
+    margin: 25px 0 10px 0;
+    border: none;
+}
+
+.profileButton:hover {
+    background: #295276 !important;
+}
+
+.logOutButton {
+    margin-left: 10px !important;
+    background: #DA6547 !important;
+    color: #ffffff !important;
+    margin: 25px 0 10px 0;
+    border: none;
+}
+
+.logOutButton:hover {
+    background-color:#a04832 !important;
+    border: none;
+} */
+.profileTextBox button {
+    margin: 25px 0 10px 0;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 575px) {
+    .profileImage {
+        width: 30%;
+        margin: 0 auto;
+        display: block;
+        border-radius: 50%;
+        border: 5px solid #2C7CAE;
+        filter: drop-shadow(0 0 0.3rem #636363);
+        margin-top: 15px;
+    }
+
+}

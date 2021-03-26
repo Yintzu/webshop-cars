@@ -1,0 +1,91 @@
+.h2{
+    color: #2C7CAE;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.cover{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.658);
+    z-index: 2001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginDiv{
+    position: relative;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    min-width: 300px;
+    max-width: 600px;
+    width: 100%;
+    min-height: 30%;
+    max-height: 400px;
+    border-radius: 3px;
+}
+
+.closeButton{
+    width: 34px;
+    height: 32px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+}
+
+.closeButton:hover div{
+    background-color:  #DA6547;
+}
+
+.xbar1, .xbar2{
+    position: absolute;
+    top: 13px;
+    background-color: #1f1f1f;
+    width: 36px;
+    height: 4px;
+    transform: rotate(45deg);
+}
+
+.xbar2{
+    transform: rotate(-45deg);
+}
+
+.inputDiv{
+    min-width: 280px;
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.input{
+    display: block;
+}
+
+.button{
+    display: block;
+    min-width: 90px;
+    margin: 2rem auto 2rem;
+}
+
+.a{
+    text-decoration: none;
+    color: #2C7CAE !important;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin: 0.8rem auto 0.8rem auto;
+}
+
+.errorBorder{
+    box-shadow: 0 0 0 3px rgb(255, 122, 122);
+}
+
+.errorText{
+    color: red !important;
+    position: absolute;
+    top: 62px;
+    font-size: 0.8rem;
+}

@@ -1,0 +1,92 @@
+.details {
+    font-family: 'Quicksand';
+}
+.mainHeading {
+    font-size: 1.8rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    color: #2C7CAE !important;
+    margin-top: 20px;
+}
+.buy {
+    background: #f4f4f4;
+    padding: 2rem;
+    margin: 1rem auto;
+    margin-right: 1rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #d2d2d2;
+}
+.buttonWrapper {
+    width: 140px;
+}
+.buttonWrapper button {
+    font-size: 1.2rem;
+    height: 50px;
+}
+.imageWrapper {
+    position: relative;
+    margin: 1rem 0rem .5rem 0rem;
+    border-radius: 5px;
+    padding: 0;
+    box-shadow: 2px 2px 2px #d2d2d2;
+}
+.imageWrapper .carImage {
+    width: 100%;
+    border-radius: 5px;
+    margin: 0;
+}
+.imageWrapper .soldOverlay {
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+.price {
+    margin: 2rem 0 1rem;
+}
+.details ul {
+    list-style-type: none;
+    margin-top: 1rem;
+    padding: 0;
+}
+.details li {
+    font-size: 1.2rem;
+}
+.descContainer {
+    margin: .5rem 0;
+    padding: 1em ;
+    background: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #d2d2d2;
+}
+.desc p {
+    margin-top: 1rem;
+    margin-right: 2rem;
+}
+
+
+.detailThumbnails {
+    display: flex;
+    justify-content: center;
+}
+
+.thumbnailWrapper {
+    width: 30%;
+}
+
+.thumbnailImg {
+    width: 75%;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .imageWrapper {
+        margin: 1rem 0rem;
+        margin-right: .5rem;
+    }
+
+    .buy {
+        margin-right: 0;
+    }
+}

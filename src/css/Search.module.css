@@ -1,0 +1,134 @@
+.search {
+    position: relative;
+    background: #f4f4f4;
+    border-radius: 0 0 5px 5px;
+}
+.search .searchInput {
+    border: solid darkgrey 1px; 
+    border-radius: .25em;
+    padding: .5rem;
+    padding-left: 1rem;
+    width: 50%;
+    min-width: 200px;
+    outline: none;
+}
+.search .searchInput:focus {
+    outline: 1.5px solid #2C7CAE;
+    -moz-outline-radius: .3em;
+}
+.search .searchIcon {
+    background: none;
+    border: none;
+    height: 40px;
+    margin: 0 1rem;
+}
+.search img {
+    height: 30px;
+}
+
+.dropDown {
+    padding: 0 3rem .5rem;
+    background: #e2e2e2;
+}
+
+/*  Filter button arrow */
+ .arrowUp, .arrowDown {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .7rem;
+ }
+ .arrowUp {
+    border-left: .5rem solid transparent;
+    border-right: .5rem solid transparent;
+    border-bottom: .5rem solid #303030;
+ }
+ .arrowDown {
+    border-left: .5rem solid transparent;
+    border-right: .5rem solid transparent;
+    border-top: .5rem solid #303030;
+ }
+
+ /* Custom selects (more css in index.css) */
+ .search label {
+    margin: 1rem .5rem .3rem;
+  }
+.selectWrapper {
+    width: 40ch;
+    margin: auto;
+}
+
+/*  custom range slider  */
+.sliderColumn {
+    padding: .5rem 1rem 0;
+}
+
+.sliderColumn label {
+    margin: 0 0 .5rem;
+  }
+
+.slideContainer {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 1rem;
+    background: #2c7cae7a;
+    border-radius: 3px;   
+    outline: none;
+    overflow: hidden;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 3px;
+    background: #fff;
+    cursor: pointer;
+    border: #2C7CAE 2px solid;
+    box-shadow: -200px 0 0 195px #2c7cae;
+  }
+  
+  .slider::-moz-range-thumb {
+    appearance: none;
+    width: .75rem;
+    height: .75rem;
+    border-radius: 3px;
+    background: #fff;
+    cursor: pointer;
+    border: #2C7CAE 2px solid;
+    box-shadow: -200px 0 0 195px #2c7cae;
+  }
+.labels {
+    display: flex;
+    justify-content: space-between;
+}
+.label:first-letter{
+    text-transform: capitalize;
+}
+.label {
+    width: 100%;
+}
+.slideWrapper {
+    max-width: 40ch;
+    margin: 0 auto;
+}
+.clearBtn {
+    font-size: .9rem;
+    padding: .2rem .5rem;
+    margin: auto 1rem;
+}
+.btn {
+    font-size: .9rem;
+    padding: .2rem .5rem;
+    margin: 0 .3rem 1rem !important;
+}
+
+.disabledBtn {
+    opacity: .5;
+    pointer-events: none;
+}

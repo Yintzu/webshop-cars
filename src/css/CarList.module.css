@@ -1,0 +1,32 @@
+.noResult {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.noResult img {
+    margin-bottom: 1rem;
+    width: 80px;
+}
+
+.carsContainer {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    gap: .4rem;
+    grid-template-columns: 1fr;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 420px) {
+    .carsContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .carsContainer {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
