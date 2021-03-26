@@ -24,6 +24,8 @@ const Details = (props) => {
 
     const modalPicsPanoz = ["panoz-engine.jpg", "panoz-interior.jpg", "panoz-rear.jpg"]
 
+    const modalDetailsImg = ["rand-front.jpg", "rand-interior.jpg", "rand-rear.jpg"]
+
 
 
     useEffect(() => {
@@ -50,7 +52,8 @@ const Details = (props) => {
         if (props.match.params.id == "1D4PT5GK0BW487259") return modalPicsChevy
         if (props.match.params.id == "WAUVT68E95A768929") return modalPicsOlds
         if (props.match.params.id == "WAUKF98E25A286122") return modalPicsPanoz
-        return []
+        return modalDetailsImg
+
     }
 
     const renderCar = () => {

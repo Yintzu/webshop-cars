@@ -7,21 +7,14 @@
   border-radius: 3px;
 }
 
-#ModalTest.modal-content .modal-body {
-  position: absolute !important; 
- 
-}
 
-.div #ModalTest {
-  position: absolute;
-}
+
 .modal-footer {
   padding: 10px;
 }
 
 .modal-title {
   margin: 0;
-
 }
 
 .closeButton{
