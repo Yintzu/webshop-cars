@@ -30,13 +30,7 @@ const UserContextProvider = (props) => {
 
   useEffect(() => {
     localStorage.setItem('users', JSON.stringify(users))
-  }, [
-    () => {
-      if (loggedInUser.orders) {
-        return loggedInUser.orders
-      } else return null
-    }
-  ]);
+  },);
 
   useEffect(() => {
     if (loggedInUser) {
